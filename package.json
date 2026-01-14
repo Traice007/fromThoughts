@@ -22,6 +22,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.1.0",
     "bcryptjs": "^2.4.3",
+    "date-fns": "^3.6.0",
     "groq-sdk": "^0.37.0",
     "lucide-react": "^0.555.0",
     "next": "16.0.7",
