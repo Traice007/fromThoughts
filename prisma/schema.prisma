@@ -1,0 +1,270 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// User & Authentication
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+
+  // OAuth accounts
+  accounts      Account[]
+  sessions      Session[]
+
+  // Business data
+  forecasts     Forecast[]
+
+  // Stripe billing
+  stripeCustomerId      String?   @unique
+  subscriptionTier      String    @default("TRIAL") // TRIAL, PRO, ENTERPRISE
+  subscriptionStatus    String?   // active, canceled, past_due
+  subscriptionPeriodEnd DateTime?
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([email])
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ============================================
+// Core Forecast Models
+// ============================================
+
+model Forecast {
+  id                String   @id @default(cuid())
+
+  // Link to user (nullable for anonymous forecasts)
+  userId            String?
+  user              User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Contact Info (collected at final step)
+  email             String
+  companyName       String?
+
+  // Step 1: Revenue Data
+  currentRevenue    Float    // Current ARR in dollars
+  targetRevenue     Float    // Target ARR
+  timeHorizonMonths Int      // Time to achieve target (months)
+
+  // Step 2: Leading Metrics
+  monthlyInboundLeads       Int?
+  marketingQualifiedAccounts Int?  // MQAs
+  salesQualifiedLeads       Int?   // SQLs
+  leadToMqaRate             Float? // Conversion %
+  mqaToSqlRate              Float? // Conversion %
+  sqlToCloseRate            Float? // Conversion %
+  averageDealSize           Float?
+  salesCycleLength          Int?   // Days
+
+  // Step 3: Market/ICP Data (optional)
+  industry              String?
+  targetMarket          String?
+  idealCustomerProfile  String?
+  competitivePosition   String?
+
+  // Processing Status: PENDING | PROCESSING | COMPLETED | FAILED
+  status            String   @default("PENDING")
+
+  // Results
+  okrs              Okr[]
+  gapAnalysis       String?
+  recommendations   String?
+
+  // AI Processing Metadata
+  aiModelUsed       String?
+  tokensUsed        Int?
+  processingTimeMs  Int?
+
+  // CRM Integration
+  crmIntegrations   CrmIntegration[]
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([userId])
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("forecasts")
+}
+
+// ============================================
+// Generated OKRs
+// ============================================
+
+model Okr {
+  id              String   @id @default(cuid())
+  forecastId      String
+
+  // OKR Structure
+  objective       String
+  // Category: REVENUE | PIPELINE | CONVERSION | CUSTOMER | OPERATIONS | PRODUCT
+  category        String
+  priority        Int      @default(0)  // Higher = more important
+  timeframe       String   // "Q1", "90 days", etc.
+
+  // Key Results
+  keyResults      KeyResult[]
+
+  // Metadata
+  rationale       String?  // Why this OKR
+  howToAchieve    String?  // How to accomplish this OKR
+
+  forecast        Forecast @relation(fields: [forecastId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
+
+  @@index([forecastId])
+  @@index([category])
+  @@map("okrs")
+}
+
+model KeyResult {
+  id              String   @id @default(cuid())
+  okrId           String
+
+  description     String
+  metricName      String   // e.g., "MQL count", "SQL conversion rate"
+  currentValue    Float?
+  targetValue     Float
+  unit            String   // "%", "count", "$", etc.
+
+  // Progress tracking
+  progressHistory KeyResultProgress[]
+
+  okr             Okr      @relation(fields: [okrId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
+
+  @@index([okrId])
+  @@map("key_results")
+}
+
+model KeyResultProgress {
+  id          String   @id @default(cuid())
+  keyResultId String
+
+  value       Float    // The recorded value
+  notes       String?  // Optional notes about this update
+
+  keyResult   KeyResult @relation(fields: [keyResultId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  @@index([keyResultId, createdAt])
+  @@map("key_result_progress")
+}
+
+// ============================================
+// CRM Integrations
+// ============================================
+
+model CrmIntegration {
+  id              String   @id @default(cuid())
+  forecastId      String
+
+  // Provider: HUBSPOT | PIPEDRIVE
+  provider        String
+
+  // OAuth Tokens
+  accessToken     String?
+  refreshToken    String?
+  tokenExpiresAt  DateTime?
+
+  // Sync Status: NOT_SYNCED | SYNCING | SYNCED | FAILED
+  lastSyncAt      DateTime?
+  syncStatus      String   @default("NOT_SYNCED")
+  syncError       String?
+
+  // External IDs
+  externalDealId  String?  // Deal/Opportunity ID in CRM
+  externalNoteId  String?  // Note ID in CRM
+
+  forecast        Forecast @relation(fields: [forecastId], references: [id], onDelete: Cascade)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([forecastId, provider])
+  @@index([provider])
+  @@index([syncStatus])
+  @@map("crm_integrations")
+}
+
+// ============================================
+// Email Delivery Tracking
+// ============================================
+
+model EmailDelivery {
+  id              String   @id @default(cuid())
+  forecastId      String   @unique
+
+  email           String
+  sentAt          DateTime?
+  deliveredAt     DateTime?
+  openedAt        DateTime?
+
+  // Status: PENDING | SENT | DELIVERED | OPENED | FAILED
+  status          String   @default("PENDING")
+
+  createdAt       DateTime @default(now())
+
+  @@index([email])
+  @@index([status])
+  @@map("email_deliveries")
+}
