@@ -1,5 +1,6 @@
 import Groq from "groq-sdk";
-import type { Forecast, OkrCategory } from "@prisma/client";
+import type { Forecast } from "@prisma/client";
+import type { OkrCategory } from "@/types/forecast";
 import { buildOkrPrompt } from "./prompts";
 
 // Lazy initialization to avoid build errors when env var is missing

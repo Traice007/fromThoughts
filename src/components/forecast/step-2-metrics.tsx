@@ -48,11 +48,11 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
   };
 
   // Check if rates are auto-calculated
-  const isRateAutoCalculated = (rateType: 'mqlToSql' | 'sqlToOpp') => {
+  const isRateAutoCalculated = (rateType: 'mqlToSql' | 'sqlToOpp'): boolean => {
     if (rateType === 'mqlToSql') {
-      return formData.monthlyInboundLeads && formData.marketingQualifiedAccounts;
+      return !!(formData.monthlyInboundLeads && formData.marketingQualifiedAccounts);
     }
-    return formData.marketingQualifiedAccounts && formData.salesQualifiedLeads;
+    return !!(formData.marketingQualifiedAccounts && formData.salesQualifiedLeads);
   };
 
   return (

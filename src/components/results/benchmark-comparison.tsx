@@ -4,7 +4,7 @@ import { TrendingUp, TrendingDown, Minus, Users } from "lucide-react";
 import { getBenchmark, compareToBenchmark, getTotalSampleSize, type BenchmarkComparison } from "@/data/benchmarks";
 
 interface BenchmarkComparisonProps {
-  industry: string | null;
+  industry?: string | null;
   metrics: {
     leadToMqaRate?: number | null;
     mqaToSqlRate?: number | null;
