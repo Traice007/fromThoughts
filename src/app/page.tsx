@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   TrendingUp,
   Target,
@@ -58,12 +59,32 @@ export default function HomePage() {
       {/* Problem Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">The Problem We Solve</h2>
             <p className="text-lg text-secondary max-w-2xl mx-auto">
               Most founders know their revenue targets but struggle to translate them into
               operational actions that actually move the needle.
             </p>
+          </div>
+
+          {/* Founder Quote */}
+          <div className="flex flex-col md:flex-row items-center gap-6 mb-16 bg-background p-8 rounded-2xl border border-border">
+            <div className="flex-shrink-0">
+              <Image
+                src="/images/founder-testimonial.jpg"
+                alt="Startup founder"
+                width={120}
+                height={120}
+                className="rounded-full object-cover"
+              />
+            </div>
+            <div>
+              <blockquote className="text-lg italic text-secondary mb-3">
+                &quot;I knew we needed to hit $3M ARR, but I had no idea how to break that down into
+                quarterly targets my team could actually execute on.&quot;
+              </blockquote>
+              <p className="font-medium">— Every founder at $1.5M ARR</p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
