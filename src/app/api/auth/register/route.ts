@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { hash } from "bcryptjs";
 import { z } from "zod";
+import { sendVerificationEmail } from "@/lib/email";
 
 const registerSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -59,10 +60,17 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    // Send verification email
+    const emailResult = await sendVerificationEmail(email, name);
+    if (!emailResult.success) {
+      console.error("Failed to send verification email:", emailResult.error);
+    }
+
     return NextResponse.json({
       id: user.id,
       email: user.email,
       name: user.name,
+      message: "Please check your email to verify your account",
     });
   } catch (error) {
     console.error("Registration error:", error);

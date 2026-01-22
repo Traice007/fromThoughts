@@ -39,25 +39,8 @@ function SignUpForm() {
         return;
       }
 
-      // Sign in the user
-      const signInResult = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
-
-      if (signInResult?.error) {
-        setError("Account created but sign in failed. Please try signing in.");
-        setIsLoading(false);
-        return;
-      }
-
-      // Redirect to dashboard or claim forecast
-      const redirectUrl = claimForecastId
-        ? `/results/${claimForecastId}`
-        : callbackUrl;
-      router.push(redirectUrl);
-      router.refresh();
+      // Redirect to verification page
+      router.push("/auth/verify");
     } catch {
       setError("An error occurred. Please try again.");
       setIsLoading(false);

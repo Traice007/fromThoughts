@@ -4,13 +4,14 @@ import { useState, Suspense } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Loader2, Mail, Lock, AlertCircle } from "lucide-react";
+import { Loader2, Mail, Lock, AlertCircle, CheckCircle } from "lucide-react";
 
 function SignInForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
   const error = searchParams.get("error");
+  const verified = searchParams.get("verified") === "true";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -54,6 +55,13 @@ function SignInForm() {
         </div>
 
         <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
+          {verified && (
+            <div className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
+              <CheckCircle className="h-4 w-4 flex-shrink-0" />
+              <p>Email verified successfully! You can now sign in.</p>
+            </div>
+          )}
+
           {formError && (
             <div className="flex items-center gap-2 p-3 mb-6 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm">
               <AlertCircle className="h-4 w-4 flex-shrink-0" />
