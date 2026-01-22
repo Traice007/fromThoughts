@@ -4,7 +4,8 @@ import crypto from "crypto";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const EMAIL_FROM = process.env.EMAIL_FROM || "FounderVision <noreply@foundervision.io>";
+// Use Resend's test domain until foundervision.io is verified
+const EMAIL_FROM = process.env.EMAIL_FROM || "FounderVision <onboarding@resend.dev>";
 const APP_URL = process.env.NEXTAUTH_URL || "https://foundervision.io";
 
 export async function createVerificationToken(email: string): Promise<string> {
