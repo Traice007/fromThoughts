@@ -81,17 +81,18 @@ export default function HomePage() {
       </section>
 
       {/* Trusted By / Social Proof */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-center text-sm font-medium text-gray-400 mb-8 uppercase tracking-wider">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
+        <div className="relative max-w-6xl mx-auto">
+          <p className="text-center text-sm font-medium text-white/80 mb-8 uppercase tracking-wider">
             Trusted by forward-thinking founders
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60">
-            <div className="text-2xl font-bold text-gray-400">TechStart</div>
-            <div className="text-2xl font-bold text-gray-400">ScaleUp</div>
-            <div className="text-2xl font-bold text-gray-400">GrowthLab</div>
-            <div className="text-2xl font-bold text-gray-400">Venture+</div>
-            <div className="text-2xl font-bold text-gray-400">NextGen</div>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            <div className="text-2xl font-bold text-white/70">TechStart</div>
+            <div className="text-2xl font-bold text-white/70">ScaleUp</div>
+            <div className="text-2xl font-bold text-white/70">GrowthLab</div>
+            <div className="text-2xl font-bold text-white/70">Venture+</div>
+            <div className="text-2xl font-bold text-white/70">NextGen</div>
           </div>
         </div>
       </section>
