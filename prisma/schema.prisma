@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-arm64-openssl-3.0.x", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
@@ -8,33 +9,22 @@ datasource db {
   directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
-// ============================================
-// User & Authentication
-// ============================================
-
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-
-  // OAuth accounts
-  accounts      Account[]
-  sessions      Session[]
-
-  // Business data
-  forecasts     Forecast[]
-
-  // Stripe billing
-  stripeCustomerId      String?   @unique
-  subscriptionTier      String    @default("TRIAL") // TRIAL, PRO, ENTERPRISE
-  subscriptionStatus    String?   // active, canceled, past_due
+  id                    String     @id @default(cuid())
+  name                  String?
+  email                 String     @unique
+  emailVerified         DateTime?
+  image                 String?
+  password              String?
+  stripeCustomerId      String?    @unique
+  subscriptionTier      String     @default("TRIAL")
+  subscriptionStatus    String?
   subscriptionPeriodEnd DateTime?
-
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+  accounts              Account[]
+  forecasts             Forecast[]
+  sessions              Session[]
 
   @@index([email])
   @@map("users")
@@ -53,8 +43,7 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map("accounts")
@@ -65,8 +54,7 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
 }
@@ -80,60 +68,37 @@ model VerificationToken {
   @@map("verification_tokens")
 }
 
-// ============================================
-// Core Forecast Models
-// ============================================
-
 model Forecast {
-  id                String   @id @default(cuid())
-
-  // Link to user (nullable for anonymous forecasts)
-  userId            String?
-  user              User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  // Contact Info (collected at final step)
-  email             String
-  companyName       String?
-
-  // Step 1: Revenue Data
-  currentRevenue    Float    // Current ARR in dollars
-  targetRevenue     Float    // Target ARR
-  timeHorizonMonths Int      // Time to achieve target (months)
-
-  // Step 2: Leading Metrics
-  monthlyInboundLeads       Int?
-  marketingQualifiedAccounts Int?  // MQAs
-  salesQualifiedLeads       Int?   // SQLs
-  leadToMqaRate             Float? // Conversion %
-  mqaToSqlRate              Float? // Conversion %
-  sqlToCloseRate            Float? // Conversion %
-  averageDealSize           Float?
-  salesCycleLength          Int?   // Days
-
-  // Step 3: Market/ICP Data (optional)
-  industry              String?
-  targetMarket          String?
-  idealCustomerProfile  String?
-  competitivePosition   String?
-
-  // Processing Status: PENDING | PROCESSING | COMPLETED | FAILED
-  status            String   @default("PENDING")
-
-  // Results
-  okrs              Okr[]
-  gapAnalysis       String?
-  recommendations   String?
-
-  // AI Processing Metadata
-  aiModelUsed       String?
-  tokensUsed        Int?
-  processingTimeMs  Int?
-
-  // CRM Integration
-  crmIntegrations   CrmIntegration[]
-
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id                         String           @id @default(cuid())
+  userId                     String?
+  email                      String
+  companyName                String?
+  currentRevenue             Float
+  targetRevenue              Float
+  timeHorizonMonths          Int
+  monthlyInboundLeads        Int?
+  marketingQualifiedAccounts Int?
+  salesQualifiedLeads        Int?
+  leadToMqaRate              Float?
+  mqaToSqlRate               Float?
+  sqlToCloseRate             Float?
+  averageDealSize            Float?
+  salesCycleLength           Int?
+  industry                   String?
+  targetMarket               String?
+  idealCustomerProfile       String?
+  competitivePosition        String?
+  status                     String           @default("PENDING")
+  gapAnalysis                String?
+  recommendations            String?
+  aiModelUsed                String?
+  tokensUsed                 Int?
+  processingTimeMs           Int?
+  createdAt                  DateTime         @default(now())
+  updatedAt                  DateTime         @updatedAt
+  crmIntegrations            CrmIntegration[]
+  user                       User?            @relation(fields: [userId], references: [id])
+  okrs                       Okr[]
 
   @@index([userId])
   @@index([email])
@@ -142,32 +107,19 @@ model Forecast {
   @@map("forecasts")
 }
 
-// ============================================
-// Generated OKRs
-// ============================================
-
 model Okr {
-  id              String   @id @default(cuid())
-  forecastId      String
-
-  // OKR Structure
-  objective       String
-  // Category: REVENUE | PIPELINE | CONVERSION | CUSTOMER | OPERATIONS | PRODUCT
-  category        String
-  priority        Int      @default(0)  // Higher = more important
-  timeframe       String   // "Q1", "90 days", etc.
-
-  // Key Results
-  keyResults      KeyResult[]
-
-  // Metadata
-  rationale       String?  // Why this OKR
-  howToAchieve    String?  // How to accomplish this OKR
-
-  forecast        Forecast @relation(fields: [forecastId], references: [id], onDelete: Cascade)
-
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @default(now()) @updatedAt
+  id           String      @id @default(cuid())
+  forecastId   String
+  objective    String
+  category     String
+  priority     Int         @default(0)
+  timeframe    String
+  rationale    String?
+  howToAchieve String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @default(now()) @updatedAt
+  keyResults   KeyResult[]
+  forecast     Forecast    @relation(fields: [forecastId], references: [id], onDelete: Cascade)
 
   @@index([forecastId])
   @@index([category])
@@ -175,71 +127,49 @@ model Okr {
 }
 
 model KeyResult {
-  id              String   @id @default(cuid())
+  id              String              @id @default(cuid())
   okrId           String
-
   description     String
-  metricName      String   // e.g., "MQL count", "SQL conversion rate"
+  metricName      String
   currentValue    Float?
   targetValue     Float
-  unit            String   // "%", "count", "$", etc.
-
-  // Progress tracking
+  unit            String
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @default(now()) @updatedAt
   progressHistory KeyResultProgress[]
-
-  okr             Okr      @relation(fields: [okrId], references: [id], onDelete: Cascade)
-
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @default(now()) @updatedAt
+  okr             Okr                 @relation(fields: [okrId], references: [id], onDelete: Cascade)
 
   @@index([okrId])
   @@map("key_results")
 }
 
 model KeyResultProgress {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   keyResultId String
-
-  value       Float    // The recorded value
-  notes       String?  // Optional notes about this update
-
+  value       Float
+  notes       String?
+  createdAt   DateTime  @default(now())
   keyResult   KeyResult @relation(fields: [keyResultId], references: [id], onDelete: Cascade)
-
-  createdAt   DateTime @default(now())
 
   @@index([keyResultId, createdAt])
   @@map("key_result_progress")
 }
 
-// ============================================
-// CRM Integrations
-// ============================================
-
 model CrmIntegration {
-  id              String   @id @default(cuid())
-  forecastId      String
-
-  // Provider: HUBSPOT | PIPEDRIVE
-  provider        String
-
-  // OAuth Tokens
-  accessToken     String?
-  refreshToken    String?
-  tokenExpiresAt  DateTime?
-
-  // Sync Status: NOT_SYNCED | SYNCING | SYNCED | FAILED
-  lastSyncAt      DateTime?
-  syncStatus      String   @default("NOT_SYNCED")
-  syncError       String?
-
-  // External IDs
-  externalDealId  String?  // Deal/Opportunity ID in CRM
-  externalNoteId  String?  // Note ID in CRM
-
-  forecast        Forecast @relation(fields: [forecastId], references: [id], onDelete: Cascade)
-
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id             String    @id @default(cuid())
+  forecastId     String
+  provider       String
+  accessToken    String?
+  refreshToken   String?
+  tokenExpiresAt DateTime?
+  lastSyncAt     DateTime?
+  syncStatus     String    @default("NOT_SYNCED")
+  syncError      String?
+  externalDealId String?
+  externalNoteId String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  forecast       Forecast  @relation(fields: [forecastId], references: [id], onDelete: Cascade)
 
   @@unique([forecastId, provider])
   @@index([provider])
@@ -247,23 +177,15 @@ model CrmIntegration {
   @@map("crm_integrations")
 }
 
-// ============================================
-// Email Delivery Tracking
-// ============================================
-
 model EmailDelivery {
-  id              String   @id @default(cuid())
-  forecastId      String   @unique
-
-  email           String
-  sentAt          DateTime?
-  deliveredAt     DateTime?
-  openedAt        DateTime?
-
-  // Status: PENDING | SENT | DELIVERED | OPENED | FAILED
-  status          String   @default("PENDING")
-
-  createdAt       DateTime @default(now())
+  id          String    @id @default(cuid())
+  forecastId  String    @unique
+  email       String
+  sentAt      DateTime?
+  deliveredAt DateTime?
+  openedAt    DateTime?
+  status      String    @default("PENDING")
+  createdAt   DateTime  @default(now())
 
   @@index([email])
   @@index([status])

@@ -35,7 +35,6 @@ export default async function DashboardPage() {
     where: { okr: { forecast: { userId: user.id } } },
   });
 
-  // Calculate total revenue gap across all forecasts
   const revenueData = forecasts.reduce(
     (acc, f) => ({
       currentTotal: acc.currentTotal + f.currentRevenue,

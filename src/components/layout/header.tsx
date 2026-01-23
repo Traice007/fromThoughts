@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { Menu, X, TrendingUp, User, LogOut, LayoutDashboard, ChevronDown } from "lucide-react";
+import { Menu, X, User, LogOut, LayoutDashboard, ChevronDown } from "lucide-react";
 
 export function Header() {
   const { data: session, status } = useSession();
@@ -15,9 +15,8 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-semibold text-xl">
-            <TrendingUp className="h-6 w-6 text-primary" />
-            <span>FounderVision</span>
+          <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+            FounderVision
           </Link>
 
           {/* Desktop nav */}
@@ -88,9 +87,9 @@ export function Header() {
                 </Link>
                 <Link
                   href="/forecast"
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark transition-colors"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black px-4 py-2 text-sm font-medium text-white hover:from-gray-700 hover:via-gray-800 hover:to-gray-900 transition-all shadow-lg shadow-black/20 border border-gray-700"
                 >
-                  Get Started Free
+                  Get Started
                 </Link>
               </div>
             )}
@@ -164,10 +163,10 @@ export function Header() {
                 </Link>
                 <Link
                   href="/forecast"
-                  className="block w-full text-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark transition-colors"
+                  className="block w-full text-center rounded-lg bg-gradient-to-b from-gray-800 via-gray-900 to-black px-4 py-2 text-sm font-medium text-white hover:from-gray-700 hover:via-gray-800 hover:to-gray-900 transition-all shadow-lg shadow-black/20 border border-gray-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Started Free
+                  Get Started
                 </Link>
               </>
             )}

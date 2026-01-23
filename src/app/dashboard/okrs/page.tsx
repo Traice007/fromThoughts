@@ -2,7 +2,6 @@ import { getCurrentUser } from "@/lib/auth/session";
 import { prisma } from "@/lib/db";
 import Link from "next/link";
 import { Target, ChevronRight, TrendingUp, DollarSign, Users, Settings, Package } from "lucide-react";
-import { formatDistanceToNow } from "date-fns";
 
 const CATEGORY_CONFIG: Record<string, { icon: typeof Target; color: string }> = {
   REVENUE: { icon: DollarSign, color: "text-green-600 bg-green-100" },

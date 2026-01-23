@@ -74,7 +74,17 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({ success: true, forecastId });
     } catch (aiError) {
-      console.error("AI generation error:", aiError);
+      // Detailed error logging for debugging
+      const errorMessage = aiError instanceof Error ? aiError.message : "Unknown AI error";
+      const errorStack = aiError instanceof Error ? aiError.stack : undefined;
+      console.error("AI generation error:", {
+        message: errorMessage,
+        stack: errorStack,
+        forecastId,
+        aiProvider: process.env.AI_PROVIDER || "openai",
+        hasGroqKey: !!process.env.GROQ_API_KEY,
+        hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+      });
 
       // Update status to failed
       await prisma.forecast.update({
@@ -83,7 +93,7 @@ export async function POST(request: NextRequest) {
       });
 
       return NextResponse.json(
-        { error: "Failed to generate OKRs" },
+        { error: `Failed to generate OKRs: ${errorMessage}` },
         { status: 500 }
       );
     }

@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/auth/session";
 import { prisma } from "@/lib/db";
 import { SettingsForm } from "@/components/dashboard/settings-form";
+import { PasswordForm } from "@/components/dashboard/password-form";
 
 export default async function SettingsPage() {
   const user = await getCurrentUser();
@@ -30,6 +31,8 @@ export default async function SettingsPage() {
 
       <div className="grid gap-6 max-w-2xl">
         <SettingsForm user={userData!} />
+
+        <PasswordForm />
 
         {/* Account Info */}
         <div className="bg-background border border-border rounded-xl p-6">

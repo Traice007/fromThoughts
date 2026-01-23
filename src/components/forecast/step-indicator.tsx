@@ -34,7 +34,7 @@ export function StepIndicator({ currentStep, steps }: StepIndicatorProps) {
                   <div
                     className={cn(
                       "h-full w-full",
-                      isCompleted ? "bg-primary" : "bg-border"
+                      isCompleted ? "bg-emerald-500" : "bg-gray-200"
                     )}
                   />
                 </div>
@@ -45,9 +45,9 @@ export function StepIndicator({ currentStep, steps }: StepIndicatorProps) {
                 <span
                   className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium transition-colors",
-                    isCompleted && "bg-primary text-white",
-                    isCurrent && "border-2 border-primary bg-background text-primary",
-                    !isCompleted && !isCurrent && "border-2 border-border bg-background text-secondary"
+                    isCompleted && "bg-emerald-500 text-white",
+                    isCurrent && "border-2 border-emerald-500 bg-white text-emerald-600",
+                    !isCompleted && !isCurrent && "border-2 border-gray-200 bg-white text-gray-400"
                   )}
                 >
                   {isCompleted ? (
@@ -59,7 +59,7 @@ export function StepIndicator({ currentStep, steps }: StepIndicatorProps) {
                 <span
                   className={cn(
                     "mt-2 text-xs font-medium hidden sm:block",
-                    isCurrent ? "text-primary" : "text-secondary"
+                    isCurrent ? "text-emerald-600" : "text-gray-500"
                   )}
                 >
                   {step.title}

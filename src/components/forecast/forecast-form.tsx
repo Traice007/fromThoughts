@@ -100,11 +100,16 @@ export function ForecastForm() {
       const { id } = await response.json();
 
       // Trigger OKR generation
-      await fetch("/api/generate-okrs", {
+      const okrResponse = await fetch("/api/generate-okrs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ forecastId: id }),
       });
+
+      if (!okrResponse.ok) {
+        const okrError = await okrResponse.json();
+        throw new Error(okrError.error || "Failed to generate OKRs");
+      }
 
       // Redirect to results page
       router.push(`/results/${id}`);
@@ -115,21 +120,21 @@ export function ForecastForm() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto p-6 sm:p-8 bg-white">
       {/* Step Indicator */}
-      <div className="mb-12">
+      <div className="mb-10">
         <StepIndicator currentStep={formState.step} steps={STEPS} />
       </div>
 
       {/* Error Message */}
       {error && (
-        <div className="mb-8 p-4 bg-destructive/10 border border-destructive/20 rounded-lg text-destructive text-center">
+        <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-center font-medium">
           {error}
         </div>
       )}
 
       {/* Step Content */}
-      <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
+      <div className="bg-white rounded-xl p-6 sm:p-8">
         {formState.step === 1 && (
           <Step1Revenue data={formState.revenue} onNext={handleRevenueNext} />
         )}
