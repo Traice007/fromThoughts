@@ -11,41 +11,41 @@ export function Header() {
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <header className="border-b border-gray-800 bg-gray-900 text-white sticky top-0 z-50">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+          <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
             FounderVision
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex md:items-center md:gap-8">
-            <Link href="/#features" className="text-secondary hover:text-foreground transition-colors">
+            <Link href="/#features" className="text-gray-300 hover:text-white transition-colors">
               Features
             </Link>
-            <Link href="/#how-it-works" className="text-secondary hover:text-foreground transition-colors">
+            <Link href="/#how-it-works" className="text-gray-300 hover:text-white transition-colors">
               How It Works
             </Link>
-            <Link href="/pricing" className="text-secondary hover:text-foreground transition-colors">
+            <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">
               Pricing
             </Link>
 
             {status === "loading" ? (
-              <div className="h-10 w-24 bg-muted animate-pulse rounded-lg" />
+              <div className="h-10 w-24 bg-gray-700 animate-pulse rounded-lg" />
             ) : session ? (
               <div className="relative">
                 <button
                   onClick={() => setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors"
                 >
-                  <div className="h-8 w-8 bg-primary/10 rounded-full flex items-center justify-center">
-                    <User className="h-4 w-4 text-primary" />
+                  <div className="h-8 w-8 bg-emerald-500/10 rounded-full flex items-center justify-center">
+                    <User className="h-4 w-4 text-emerald-400" />
                   </div>
                   <span className="text-sm font-medium max-w-[120px] truncate">
                     {session.user?.name || session.user?.email}
                   </span>
-                  <ChevronDown className="h-4 w-4 text-secondary" />
+                  <ChevronDown className="h-4 w-4 text-gray-400" />
                 </button>
 
                 {userMenuOpen && (
@@ -54,10 +54,10 @@ export function Header() {
                       className="fixed inset-0 z-10"
                       onClick={() => setUserMenuOpen(false)}
                     />
-                    <div className="absolute right-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg z-20 py-1">
+                    <div className="absolute right-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-20 py-1">
                       <Link
                         href="/dashboard"
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-muted transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors"
                         onClick={() => setUserMenuOpen(false)}
                       >
                         <LayoutDashboard className="h-4 w-4" />
@@ -68,7 +68,7 @@ export function Header() {
                           setUserMenuOpen(false);
                           signOut({ callbackUrl: "/" });
                         }}
-                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-muted transition-colors w-full text-left text-red-600"
+                        className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-700 transition-colors w-full text-left text-red-400"
                       >
                         <LogOut className="h-4 w-4" />
                         Sign out
@@ -81,7 +81,7 @@ export function Header() {
               <div className="flex items-center gap-3">
                 <Link
                   href="/auth/signin"
-                  className="text-secondary hover:text-foreground transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   Sign in
                 </Link>
@@ -110,24 +110,24 @@ export function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <div className="md:hidden py-4 space-y-4 border-t border-gray-800">
             <Link
               href="/#features"
-              className="block text-secondary hover:text-foreground transition-colors"
+              className="block text-gray-300 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Features
             </Link>
             <Link
               href="/#how-it-works"
-              className="block text-secondary hover:text-foreground transition-colors"
+              className="block text-gray-300 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               How It Works
             </Link>
             <Link
               href="/pricing"
-              className="block text-secondary hover:text-foreground transition-colors"
+              className="block text-gray-300 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
@@ -137,7 +137,7 @@ export function Header() {
               <>
                 <Link
                   href="/dashboard"
-                  className="block text-secondary hover:text-foreground transition-colors"
+                  className="block text-gray-300 hover:text-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Dashboard
@@ -147,7 +147,7 @@ export function Header() {
                     setMobileMenuOpen(false);
                     signOut({ callbackUrl: "/" });
                   }}
-                  className="block w-full text-left text-red-600 hover:text-red-700 transition-colors"
+                  className="block w-full text-left text-red-400 hover:text-red-300 transition-colors"
                 >
                   Sign out
                 </button>
@@ -156,7 +156,7 @@ export function Header() {
               <>
                 <Link
                   href="/auth/signin"
-                  className="block text-secondary hover:text-foreground transition-colors"
+                  className="block text-gray-300 hover:text-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Sign in
