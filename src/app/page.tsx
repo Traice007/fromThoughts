@@ -66,7 +66,7 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-8 text-sm text-white/80">
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-300" />
-              No signup required
+              No credit card required
             </span>
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-300" />
@@ -80,19 +80,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trusted By / Social Proof */}
+      {/* Value Anchors */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
         <div className="relative max-w-6xl mx-auto">
-          <p className="text-center text-sm font-medium text-white/80 mb-8 uppercase tracking-wider">
-            Trusted by forward-thinking founders
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-            <div className="text-2xl font-bold text-white/70">TechStart</div>
-            <div className="text-2xl font-bold text-white/70">ScaleUp</div>
-            <div className="text-2xl font-bold text-white/70">GrowthLab</div>
-            <div className="text-2xl font-bold text-white/70">Venture+</div>
-            <div className="text-2xl font-bold text-white/70">NextGen</div>
+          <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-white">10,000+</div>
+              <div className="text-sm text-white/70 mt-1">Company benchmarks</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/20" />
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-white">$200K+</div>
+              <div className="text-sm text-white/70 mt-1">Saved vs. first commercial hire</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/20" />
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-white">&lt; 2 min</div>
+              <div className="text-sm text-white/70 mt-1">From revenue target to OKRs</div>
+            </div>
           </div>
         </div>
       </section>
