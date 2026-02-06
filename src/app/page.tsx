@@ -348,8 +348,8 @@ export default function HomePage() {
                   },
                   {
                     icon: Gauge,
-                    title: "Teams of 3–10, pre-first sales hire",
-                    description: "You're thinking about hiring your first salesperson, but you don't have a documented process to hand over.",
+                    title: "Teams of 3–10, before hiring a Head of Sales",
+                    description: "You might have 1-2 people helping with sales, but no one leading the function yet — and no documented playbook to hand over.",
                   },
                   {
                     icon: Globe,
