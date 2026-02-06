@@ -532,145 +532,167 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+      {/* What You'll Get - Product Showcase */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white" />
 
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
-              Pricing
+              Your Deliverable
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600 max-w-5xl mx-auto">
-              Your first Head of Sales costs €150,000–250,000/year in total compensation—plus months of your time recruiting, onboarding, and managing. A fractional VP still runs €60,000–100,000. FounderVision gives you the structured execution framework for a fraction of the cost.
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">What You&apos;ll Get</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A complete revenue execution plan you can hand to your first hire on day one
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Starter Tier */}
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
-                Get Started
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-gray-900">€1,500</span>
-                <span className="text-gray-600 font-medium"> one-time</span>
-              </div>
-              <p className="text-gray-700 text-sm mb-8">
-                30 days of full access to FounderVision
-              </p>
+          {/* Product Mockup with Callouts */}
+          <div className="relative">
+            {/* Main Product Window */}
+            <div className="relative max-w-4xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl blur-3xl opacity-15" />
+              <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+                {/* Window chrome */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-200">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-400" />
+                    <div className="w-3 h-3 rounded-full bg-amber-400" />
+                    <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                  </div>
+                  <div className="flex-1 text-center">
+                    <div className="inline-block px-4 py-1 bg-white rounded-md text-xs text-gray-400 border border-gray-200">
+                      Your Revenue Execution Plan
+                    </div>
+                  </div>
+                </div>
 
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Unlimited forecasts",
-                  "AI-powered revenue roadmap",
-                  "Industry benchmark comparisons",
-                  "Gap analysis & recommendations",
-                  "Export to PDF/CSV",
-                  "Email support",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Dashboard Content */}
+                <div className="p-6 sm:p-8">
+                  {/* Header */}
+                  <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-100">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">Revenue Execution Plan</h3>
+                      <p className="text-sm text-gray-500 mt-1">SaaS Company • €800K → €1.5M target</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full">
+                        Ready to Execute
+                      </span>
+                    </div>
+                  </div>
 
-              <Link
-                href="/auth/signup"
-                className="block w-full text-center px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
-              >
-                Build Your Playbook
-              </Link>
+                  {/* Strategic Objectives */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Target className="h-5 w-5 text-emerald-600" />
+                      <h4 className="font-semibold text-gray-900">Strategic Objectives</h4>
+                      <span className="text-xs text-gray-400 ml-auto">Prioritized by impact</span>
+                    </div>
+                    <div className="space-y-3">
+                      {[
+                        { priority: "1", title: "Improve SQL-to-Close Rate", target: "15% → 22%", impact: "High", color: "emerald" },
+                        { priority: "2", title: "Increase Average Deal Size", target: "€14K → €18K", impact: "High", color: "teal" },
+                        { priority: "3", title: "Accelerate Sales Cycle", target: "45 → 30 days", impact: "Medium", color: "cyan" },
+                      ].map((obj) => (
+                        <div key={obj.priority} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                          <div className={`w-8 h-8 rounded-lg bg-${obj.color}-100 flex items-center justify-center font-bold text-${obj.color}-600 text-sm`}>
+                            {obj.priority}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-900">{obj.title}</p>
+                            <p className="text-sm text-gray-500">Target: {obj.target}</p>
+                          </div>
+                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${obj.impact === "High" ? "bg-amber-100 text-amber-700" : "bg-gray-100 text-gray-600"}`}>
+                            {obj.impact} Impact
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key Results Preview */}
+                  <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                    <div className="p-4 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-100">
+                      <div className="flex items-center gap-2 mb-2">
+                        <BarChart3 className="h-4 w-4 text-emerald-600" />
+                        <span className="text-sm font-medium text-gray-700">Key Results</span>
+                      </div>
+                      <p className="text-2xl font-bold text-gray-900">12</p>
+                      <p className="text-xs text-gray-500">Measurable targets defined</p>
+                    </div>
+                    <div className="p-4 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl border border-teal-100">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Zap className="h-4 w-4 text-teal-600" />
+                        <span className="text-sm font-medium text-gray-700">Action Items</span>
+                      </div>
+                      <p className="text-2xl font-bold text-gray-900">24</p>
+                      <p className="text-xs text-gray-500">Specific next steps</p>
+                    </div>
+                  </div>
+
+                  {/* Export Options */}
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center gap-3">
+                      <Download className="h-5 w-5 text-gray-400" />
+                      <span className="text-sm text-gray-600">Export your plan</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600">PDF</span>
+                      <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600">CSV</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Pro Tier */}
-            <div className="relative bg-gradient-to-b from-emerald-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl shadow-emerald-500/25 scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
-                  MOST POPULAR
-                </span>
+            {/* Floating Callout Cards */}
+            <div className="hidden lg:block absolute -left-4 top-1/4 transform -translate-x-full">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 max-w-[200px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                  </div>
+                  <span className="text-xs font-semibold text-gray-900">Prioritized</span>
+                </div>
+                <p className="text-xs text-gray-500">Know exactly what to focus on first based on your biggest gaps</p>
               </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-sm font-medium mb-4">
-                For Growing Teams
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <div className="mb-4">
-                <span className="text-5xl font-bold">€15,000</span>
-                <span className="text-white/70"> / year</span>
-              </div>
-              <p className="text-white/80 text-sm mb-8">
-                For growing companies serious about hitting targets
-              </p>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Everything in Starter",
-                  "Roadmap progress tracking",
-                  "CRM integrations (HubSpot, Pipedrive)",
-                  "Team collaboration (coming soon)",
-                  "Priority support",
-                  "Monthly strategy insights",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-200 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="/auth/signup"
-                className="block w-full text-center px-6 py-4 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg"
-              >
-                Upgrade to Pro
-              </Link>
             </div>
 
-            {/* Enterprise Tier */}
-            <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-4">
-                Full Service
+            <div className="hidden lg:block absolute -right-4 top-1/3 transform translate-x-full">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 max-w-[200px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center">
+                    <Users className="h-3.5 w-3.5 text-teal-600" />
+                  </div>
+                  <span className="text-xs font-semibold text-gray-900">Handoff-Ready</span>
+                </div>
+                <p className="text-xs text-gray-500">Give your first sales hire a playbook they can execute from day one</p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
-              <div className="mb-4">
-                <span className="text-5xl font-bold text-gray-900">Custom</span>
+            </div>
+
+            <div className="hidden lg:block absolute -right-4 bottom-1/4 transform translate-x-full">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-4 max-w-[200px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center">
+                    <TrendingUp className="h-3.5 w-3.5 text-cyan-600" />
+                  </div>
+                  <span className="text-xs font-semibold text-gray-900">Benchmark-Backed</span>
+                </div>
+                <p className="text-xs text-gray-500">Targets based on what top performers achieve at your stage</p>
               </div>
-              <p className="text-gray-700 text-sm mb-8">
-                For larger organizations with specific needs
-              </p>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Everything in Pro",
-                  "Dedicated account manager",
-                  "Custom integrations",
-                  "SLA guarantee",
-                  "API access",
-                  "On-premise deployment option",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="/lets-talk"
-                className="block w-full text-center px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-              >
-                Let&apos;s Talk
-              </Link>
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-2 mt-12 text-sm text-gray-600">
-            <Shield className="h-4 w-4 text-emerald-500" />
-            <span className="font-medium">14-day money-back guarantee on all plans.</span>
-            <span className="text-gray-500">No questions asked.</span>
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-emerald-600 font-medium hover:text-emerald-700 transition-colors"
+            >
+              View pricing
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
