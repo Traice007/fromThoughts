@@ -10,8 +10,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   return {
-    title: `Your OKRs | FounderVision`,
-    description: "View your AI-generated OKRs and strategic recommendations",
+    title: `Your Revenue Roadmap | FounderVision`,
+    description: "View your AI-generated revenue roadmap and strategic recommendations",
   };
 }
 

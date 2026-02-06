@@ -41,9 +41,9 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 mb-4 shadow-lg shadow-emerald-500/30">
           <Sparkles className="h-8 w-8 text-white" />
         </div>
-        <h2 className="text-2xl font-bold text-gray-900">Generate Your OKRs</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Generate Your Roadmap</h2>
         <p className="mt-2 text-gray-600">
-          Enter your email to receive OKRs based on data from 10,000+ companies
+          Enter your email to receive your revenue roadmap based on data from 10,000+ companies
         </p>
       </div>
 
@@ -90,7 +90,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
         <ul className="space-y-3 text-sm">
           <li className="flex items-start gap-3">
             <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-            <span className="text-gray-700">4-6 data-driven OKRs based on 10,000+ companies in your industry</span>
+            <span className="text-gray-700">4-6 strategic objectives based on 10,000+ companies in your industry</span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
@@ -129,7 +129,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
           ) : (
             <>
               <Sparkles className="h-5 w-5" />
-              Generate OKRs
+              Generate Roadmap
             </>
           )}
         </button>

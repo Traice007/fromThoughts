@@ -11,7 +11,7 @@ export function Footer() {
               FounderVision
             </Link>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
-              AI-powered revenue operations for growing companies. Transform your revenue targets into actionable OKRs without hiring a VP of Commercial too early.
+              AI-powered revenue operations for growing companies. Transform your revenue targets into a clear revenue roadmap without hiring a VP of Commercial too early.
             </p>
           </div>
 

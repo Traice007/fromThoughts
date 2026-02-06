@@ -52,14 +52,14 @@ function SignUpForm() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Create your account</h1>
-          <p className="text-secondary">Start tracking your revenue OKRs</p>
+          <p className="text-secondary">Start tracking your revenue roadmap</p>
         </div>
 
         <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
           {claimForecastId && (
             <div className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
               <CheckCircle className="h-4 w-4 flex-shrink-0" />
-              <p>Your OKRs will be saved to your new account</p>
+              <p>Your roadmap will be saved to your new account</p>
             </div>
           )}
 
@@ -167,7 +167,7 @@ function SignUpForm() {
 
         {/* Trial info */}
         <div className="mt-6 text-center text-sm text-secondary">
-          <p>Start with a 90-day trial • No credit card required</p>
+          <p>30 days of full access • 14-day money-back guarantee</p>
         </div>
       </div>
     </div>

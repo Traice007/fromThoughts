@@ -66,9 +66,9 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
             <Loader2 className="h-8 w-8 text-primary animate-spin" />
           </div>
-          <h1 className="text-2xl font-bold mb-4">Generating Your OKRs</h1>
+          <h1 className="text-2xl font-bold mb-4">Building Your Revenue Roadmap</h1>
           <p className="text-secondary mb-8">
-            Our AI is analyzing your revenue data and creating personalized OKRs.
+            Our AI is analyzing your revenue data and creating your personalized roadmap.
             This usually takes 15-30 seconds.
           </p>
           <div className="flex items-center justify-center gap-2 text-sm text-secondary">
@@ -90,7 +90,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
           </div>
           <h1 className="text-2xl font-bold mb-4">Generation Failed</h1>
           <p className="text-secondary mb-8">
-            We encountered an issue while generating your OKRs. Please try again or contact support.
+            We encountered an issue while generating your roadmap. Please try again or contact support.
           </p>
           <a
             href="/forecast"
@@ -112,7 +112,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 mb-4">
             <CheckCircle className="h-6 w-6 text-accent" />
           </div>
-          <h1 className="text-3xl font-bold">Your Strategic OKRs</h1>
+          <h1 className="text-3xl font-bold">Your Revenue Roadmap</h1>
           <p className="mt-2 text-secondary">
             AI-generated objectives based on data from {getTotalSampleSize().toLocaleString()}+ companies in your industry
           </p>
@@ -126,9 +126,9 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
                 <User className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-1">Save Your OKRs</h3>
+                <h3 className="text-lg font-semibold mb-1">Save Your Roadmap</h3>
                 <p className="text-secondary text-sm mb-4">
-                  Create a free account to save these OKRs, track your progress over time,
+                  Create a free account to save your roadmap, track your progress over time,
                   and get ongoing insights as you work toward your revenue goals.
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -188,7 +188,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
 
           {/* OKRs */}
           <div>
-            <h2 className="text-xl font-bold mb-6">Your OKRs ({forecast.okrs.length})</h2>
+            <h2 className="text-xl font-bold mb-6">Your Objectives ({forecast.okrs.length})</h2>
             <div className="space-y-6">
               {forecast.okrs.map((okr, index) => (
                 <OkrCard key={okr.id} okr={okr} index={index} />
@@ -225,7 +225,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
           ) : (
             <>
               <p className="text-secondary mb-4">
-                Want to track these OKRs and get ongoing guidance?
+                Want to track your progress and get ongoing guidance?
               </p>
               <Link
                 href="/forecast"

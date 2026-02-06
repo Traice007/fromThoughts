@@ -10,6 +10,7 @@ import {
   CreditCard,
   ChevronLeft,
   ChevronRight,
+  Plug,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -17,6 +18,7 @@ const navigation = [
   { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
   { name: "Forecasts", href: "/dashboard/forecasts", icon: TrendingUp },
   { name: "OKRs", href: "/dashboard/okrs", icon: Target },
+  { name: "Integrations", href: "/dashboard/integrations", icon: Plug },
   { name: "Billing", href: "/dashboard/billing", icon: CreditCard },
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];

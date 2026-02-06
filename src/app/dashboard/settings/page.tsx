@@ -45,7 +45,7 @@ export default async function SettingsPage() {
             <div>
               <label className="text-sm text-secondary">Subscription</label>
               <p className="font-medium">
-                {userData?.subscriptionTier === "TRIAL" && "90-Day Trial"}
+                {userData?.subscriptionTier === "TRIAL" && "Starter"}
                 {userData?.subscriptionTier === "PRO" && "Pro Plan"}
                 {userData?.subscriptionTier === "ENTERPRISE" && "Enterprise"}
               </p>
@@ -53,7 +53,7 @@ export default async function SettingsPage() {
             {userData?.subscriptionPeriodEnd && (
               <div>
                 <label className="text-sm text-secondary">
-                  {userData.subscriptionTier === "TRIAL" ? "Trial Ends" : "Next Billing Date"}
+                  {userData.subscriptionTier === "TRIAL" ? "Access Ends" : "Next Billing Date"}
                 </label>
                 <p className="font-medium">
                   {new Date(userData.subscriptionPeriodEnd).toLocaleDateString()}

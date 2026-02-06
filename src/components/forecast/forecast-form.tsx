@@ -19,7 +19,7 @@ const STEPS = [
   { title: "Revenue", description: "Set your targets" },
   { title: "Metrics", description: "Funnel data" },
   { title: "Market", description: "ICP info" },
-  { title: "Generate", description: "Get OKRs" },
+  { title: "Generate", description: "Get Roadmap" },
 ];
 
 const initialState: ForecastFormState = {

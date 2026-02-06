@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, Sparkles } from "lucide-react";
+import { CheckCircle, ArrowRight, Sparkles, UserRound, Users, Briefcase, HeadphonesIcon, TrendingDown } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pricing | FounderVision",
-  description: "Simple, transparent pricing for AI-powered revenue operations. Start with a 90-day trial.",
+  description: "Simple, transparent pricing for AI-powered revenue operations. Get started with 30 days of full access.",
 };
 
 export default function PricingPage() {
@@ -27,8 +27,8 @@ export default function PricingPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Start with a 90-day trial to see how FounderVision can help you hit your revenue targets.
-            No credit card required to get started.
+            Get started with 30 days of full access to see how FounderVision can help you hit your revenue targets.
+            14-day money-back guarantee on all plans.
           </p>
         </div>
       </section>
@@ -37,24 +37,24 @@ export default function PricingPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Trial Tier */}
+            {/* Starter Tier */}
             <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
                 Get Started
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Trial</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Starter</h2>
               <div className="mb-4">
-                <span className="text-5xl font-bold text-gray-900">$1700</span>
+                <span className="text-5xl font-bold text-gray-900">€1,500</span>
                 <span className="text-gray-600 font-medium"> one-time</span>
               </div>
               <p className="text-gray-700 text-sm mb-8">
-                Full access for 90 days to try FounderVision
+                30 days of full access to FounderVision
               </p>
 
               <ul className="space-y-4 mb-8">
                 {[
                   "Unlimited forecasts",
-                  "AI-powered OKR generation",
+                  "AI-powered revenue roadmap",
                   "Industry benchmark comparisons",
                   "Gap analysis & recommendations",
                   "Export to PDF/CSV",
@@ -71,7 +71,7 @@ export default function PricingPage() {
                 href="/auth/signup"
                 className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
               >
-                Start Trial
+                Get Started
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -88,7 +88,7 @@ export default function PricingPage() {
               </div>
               <h2 className="text-2xl font-bold mb-2">Pro</h2>
               <div className="mb-4">
-                <span className="text-5xl font-bold">$8720</span>
+                <span className="text-5xl font-bold">€15,000</span>
                 <span className="text-white/70"> / year</span>
               </div>
               <p className="text-white/90 text-sm mb-8">
@@ -97,8 +97,8 @@ export default function PricingPage() {
 
               <ul className="space-y-4 mb-8">
                 {[
-                  "Everything in Trial",
-                  "OKR progress tracking",
+                  "Everything in Starter",
+                  "Roadmap progress tracking",
                   "CRM integrations (HubSpot, Pipedrive)",
                   "Team collaboration (coming soon)",
                   "Priority support",
@@ -149,18 +149,137 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              <a
-                href="mailto:sales@foundervision.io"
+              <Link
+                href="/contact-sales"
                 className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
               >
-                Contact Sales
+                Let&apos;s Talk
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
           <p className="text-center text-sm text-gray-500 mt-12">
             We offer a full refund within the first 14 days if you&apos;re not satisfied.
+          </p>
+        </div>
+      </section>
+
+      {/* Cost Comparison Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50/50 to-cyan-50" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-emerald-200/30 via-teal-200/20 to-transparent rounded-full blur-3xl" />
+
+        <div className="relative max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              Compare & Save
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Cut Costs with FounderVision
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              See how FounderVision compares to traditional alternatives for building your revenue strategy.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden">
+            {/* Table Header */}
+            <div className="flex items-center justify-between px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Alternative</span>
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Cost / Year</span>
+            </div>
+
+            {/* Row: Head of Sales */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+                  <UserRound className="h-5 w-5 text-red-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Head of Sales</p>
+                  <p className="text-sm text-gray-500">First commercial hire</p>
+                </div>
+              </div>
+              <span className="text-lg font-bold text-gray-900">€150K – €250K</span>
+            </div>
+
+            {/* Row: Fractional VP */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="h-5 w-5 text-orange-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Fractional VP of Sales</p>
+                  <p className="text-sm text-gray-500">Part-time senior leadership</p>
+                </div>
+              </div>
+              <span className="text-lg font-bold text-gray-900">€60K – €100K</span>
+            </div>
+
+            {/* Row: Sales Consultant */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 hover:bg-gray-50/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+                  <HeadphonesIcon className="h-5 w-5 text-amber-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Sales Consultant</p>
+                  <p className="text-sm text-gray-500">Project-based engagement</p>
+                </div>
+              </div>
+              <span className="text-lg font-bold text-gray-900">€40K – €70K</span>
+            </div>
+
+            {/* Row: RevOps Consultant */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 hover:bg-gray-50/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
+                  <Users className="h-5 w-5 text-purple-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900">Revenue Ops Consultant</p>
+                  <p className="text-sm text-gray-500">Strategy & process setup</p>
+                </div>
+              </div>
+              <span className="text-lg font-bold text-gray-900">€30K – €60K</span>
+            </div>
+
+            {/* FounderVision Row - Highlighted */}
+            <div className="flex items-center justify-between px-6 py-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-200">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-emerald-900">FounderVision Pro</p>
+                  <p className="text-sm text-emerald-700">AI-powered revenue roadmap</p>
+                </div>
+              </div>
+              <span className="text-2xl font-bold text-emerald-700">€15,000<span className="text-sm font-medium text-emerald-600"> / year</span></span>
+            </div>
+
+            {/* Savings Row */}
+            <div className="flex items-center justify-between px-6 py-5 bg-gray-900">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                  <TrendingDown className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold text-white">Your Savings</p>
+                  <p className="text-sm text-gray-400">Compared to a Head of Sales hire</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <span className="text-2xl font-bold text-emerald-400">Up to 90%</span>
+                <p className="text-sm text-gray-400">saved per year</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            Cost estimates based on European market averages for early-stage B2B companies.
           </p>
         </div>
       </section>
@@ -181,9 +300,9 @@ export default function PricingPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-gray-900 mb-3">What happens after my trial?</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">What happens after my 30 days?</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                After 90 days, you can upgrade to Pro to continue using all features
+                After 30 days, you can upgrade to Pro to continue using all features
                 and unlock progress tracking and CRM integrations. Your data is always preserved.
               </p>
             </div>
@@ -222,7 +341,7 @@ export default function PricingPage() {
             Ready to transform your revenue targets?
           </h2>
           <p className="text-xl text-white/80 mb-10">
-            Start generating actionable OKRs for your business today.
+            Start building your revenue roadmap today.
           </p>
           <Link
             href="/forecast"

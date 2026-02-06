@@ -20,6 +20,8 @@ model User {
   subscriptionTier      String     @default("TRIAL")
   subscriptionStatus    String?
   subscriptionPeriodEnd DateTime?
+  cancelAtPeriodEnd     Boolean    @default(false)
+  paymentFailedAt       DateTime?
   createdAt             DateTime   @default(now())
   updatedAt             DateTime   @updatedAt
   accounts              Account[]
@@ -190,4 +192,20 @@ model EmailDelivery {
   @@index([email])
   @@index([status])
   @@map("email_deliveries")
+}
+
+model SalesLead {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  companyWebsite String?
+  teamSize       String?
+  message     String?
+  status      String   @default("NEW")
+  createdAt   DateTime @default(now())
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("sales_leads")
 }

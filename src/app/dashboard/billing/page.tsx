@@ -1,45 +1,46 @@
 import { getCurrentUser } from "@/lib/auth/session";
 import { prisma } from "@/lib/db";
 import Link from "next/link";
-import { CreditCard, Check, Zap, Building } from "lucide-react";
+import { CreditCard, Check, Zap, Building, CheckCircle, XCircle, Crown } from "lucide-react";
+import { CheckoutButton } from "@/components/billing/checkout-button";
 
 const PLANS = [
   {
-    name: "Trial",
-    price: "$1700",
+    name: "Starter",
+    planId: "STARTER" as const,
+    price: "€1,500",
     period: " one-time",
-    description: "Full access for 90 days to try FounderVision",
+    description: "30 days of full access to FounderVision",
     features: [
       "Unlimited forecasts",
-      "AI-powered OKR generation",
+      "AI-powered revenue roadmap",
       "Industry benchmark comparisons",
       "Gap analysis & recommendations",
       "Export to PDF/CSV",
       "Email support",
     ],
-    current: "TRIAL",
-    cta: "Current Plan",
-    disabled: true,
+    tier: "STARTER",
   },
   {
     name: "Pro",
-    price: "$8720",
+    planId: "PRO" as const,
+    price: "€15,000",
     period: " / year",
     description: "For growing companies serious about hitting targets",
     features: [
-      "Everything in Trial",
-      "OKR progress tracking",
+      "Everything in Starter",
+      "Roadmap progress tracking",
       "CRM integrations (HubSpot, Pipedrive)",
       "Team collaboration (coming soon)",
       "Priority support",
       "Monthly strategy insights",
     ],
-    current: "PRO",
-    cta: "Upgrade to Pro",
+    tier: "PRO",
     popular: true,
   },
   {
     name: "Enterprise",
+    planId: null,
     price: "Custom",
     period: "",
     description: "For larger organizations with specific needs",
@@ -51,16 +52,42 @@ const PLANS = [
       "API access",
       "On-premise deployment option",
     ],
-    current: "ENTERPRISE",
-    cta: "Contact Sales",
+    tier: "ENTERPRISE",
   },
 ];
 
-export default async function BillingPage() {
+interface BillingPageProps {
+  searchParams: Promise<{ success?: string; canceled?: string; plan?: string; error?: string }>;
+}
+
+export default async function BillingPage({ searchParams }: BillingPageProps) {
   const user = await getCurrentUser();
+  const params = await searchParams;
 
   if (!user) {
     return null;
+  }
+
+  // If returning from successful checkout, update the user's plan
+  if (params.success && params.plan) {
+    const planId = params.plan.toUpperCase();
+    if (planId === "STARTER" || planId === "PRO") {
+      const accessEnd = new Date();
+      if (planId === "STARTER") {
+        accessEnd.setDate(accessEnd.getDate() + 30); // 30 days for Starter
+      } else {
+        accessEnd.setFullYear(accessEnd.getFullYear() + 1); // 1 year for Pro
+      }
+
+      await prisma.user.update({
+        where: { id: user.id },
+        data: {
+          subscriptionTier: planId,
+          subscriptionStatus: "active",
+          subscriptionPeriodEnd: accessEnd,
+        },
+      });
+    }
   }
 
   const userData = await prisma.user.findUnique({
@@ -73,6 +100,11 @@ export default async function BillingPage() {
     },
   });
 
+  const currentTier = userData?.subscriptionTier || "NONE";
+  const isExpired = userData?.subscriptionPeriodEnd
+    ? userData.subscriptionPeriodEnd < new Date()
+    : false;
+
   return (
     <div className="space-y-6">
       <div>
@@ -82,27 +114,60 @@ export default async function BillingPage() {
         </p>
       </div>
 
+      {/* Success Message */}
+      {params.success && (
+        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3">
+          <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-medium text-emerald-900">Payment successful!</p>
+            <p className="text-sm text-emerald-700">
+              Thank you for your purchase. Your account has been upgraded.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Canceled Message */}
+      {params.canceled && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+          <XCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-medium text-amber-900">Payment canceled</p>
+            <p className="text-sm text-amber-700">
+              No charges were made. You can try again when you&apos;re ready.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Current Plan Status */}
       <div className="bg-background border border-border rounded-xl p-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xl font-semibold">Current Plan</h2>
             <p className="text-secondary mt-1">
-              {userData?.subscriptionTier === "TRIAL" && "You're on the 90-day trial"}
-              {userData?.subscriptionTier === "PRO" && "You're on the Pro plan"}
-              {userData?.subscriptionTier === "ENTERPRISE" && "You're on the Enterprise plan"}
+              {(currentTier === "TRIAL" || currentTier === "NONE") && "Select a plan to get started"}
+              {currentTier === "STARTER" && !isExpired && "You're on the Starter plan"}
+              {currentTier === "STARTER" && isExpired && "Your Starter plan has expired"}
+              {currentTier === "PRO" && !isExpired && "You're on the Pro plan"}
+              {currentTier === "PRO" && isExpired && "Your Pro plan has expired"}
+              {currentTier === "ENTERPRISE" && "You're on the Enterprise plan"}
             </p>
           </div>
           <div className="text-right">
             <div className="flex items-center gap-2">
               <CreditCard className="h-5 w-5 text-primary" />
-              <span className="text-lg font-semibold capitalize">
-                {userData?.subscriptionTier?.toLowerCase()}
+              <span className={`text-lg font-semibold capitalize ${isExpired ? "text-red-600" : ""}`}>
+                {(currentTier === "TRIAL" || currentTier === "NONE")
+                  ? "No Plan"
+                  : isExpired
+                  ? `${currentTier.toLowerCase()} (expired)`
+                  : currentTier.toLowerCase()}
               </span>
             </div>
-            {userData?.subscriptionPeriodEnd && (
+            {userData?.subscriptionPeriodEnd && currentTier !== "TRIAL" && currentTier !== "NONE" && (
               <p className="text-sm text-secondary mt-1">
-                {userData.subscriptionTier === "TRIAL" ? "Trial ends: " : "Next billing: "}
+                {currentTier === "STARTER" ? "Access ends: " : "Next billing: "}
                 {new Date(userData.subscriptionPeriodEnd).toLocaleDateString()}
               </p>
             )}
@@ -115,29 +180,50 @@ export default async function BillingPage() {
         <h2 className="text-xl font-semibold mb-4">Available Plans</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {PLANS.map((plan) => {
-            const isCurrent = userData?.subscriptionTier === plan.current;
-            const Icon = plan.name === "Trial" ? Zap : plan.name === "Pro" ? CreditCard : Building;
+            const isCurrent = currentTier === plan.tier && !isExpired;
+            const canPurchase =
+              // No plan yet - can buy Starter or Pro
+              ((currentTier === "TRIAL" || currentTier === "NONE") && (plan.tier === "STARTER" || plan.tier === "PRO")) ||
+              // Has Starter, not expired - can upgrade to Pro
+              (currentTier === "STARTER" && !isExpired && plan.tier === "PRO") ||
+              // Expired - can renew same plan or upgrade
+              (isExpired && (plan.tier === "STARTER" || plan.tier === "PRO"));
+            const Icon = plan.name === "Starter" ? Zap : plan.name === "Pro" ? Crown : Building;
+
+            // Determine card styling based on current plan status
+            const cardClasses = isCurrent
+              ? "bg-emerald-50/50 border-emerald-500 ring-2 ring-emerald-500/20"
+              : plan.popular && !isCurrent
+              ? "border-amber-400 ring-2 ring-amber-400/20"
+              : "border-border";
 
             return (
               <div
                 key={plan.name}
-                className={`bg-background border rounded-xl p-6 relative ${
-                  plan.popular
-                    ? "border-primary ring-2 ring-primary/20"
-                    : "border-border"
-                }`}
+                className={`bg-background border rounded-xl p-6 relative ${cardClasses}`}
               >
-                {plan.popular && (
+                {/* Current Plan Badge */}
+                {isCurrent && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-primary text-white text-xs font-medium px-3 py-1 rounded-full">
+                    <span className="bg-emerald-600 text-white text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1.5">
+                      <CheckCircle className="h-3 w-3" />
+                      Your Plan
+                    </span>
+                  </div>
+                )}
+
+                {/* Most Popular Badge (only show if not current) */}
+                {plan.popular && !isCurrent && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                       Most Popular
                     </span>
                   </div>
                 )}
 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
+                  <div className={`p-2 rounded-lg ${isCurrent ? "bg-emerald-100" : "bg-primary/10"}`}>
+                    <Icon className={`h-5 w-5 ${isCurrent ? "text-emerald-600" : "text-primary"}`} />
                   </div>
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                 </div>
@@ -152,37 +238,61 @@ export default async function BillingPage() {
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
-                      <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                      <Check className={`h-4 w-4 flex-shrink-0 ${isCurrent ? "text-emerald-600" : "text-green-600"}`} />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {plan.name === "Enterprise" ? (
-                  <a
-                    href="mailto:sales@foundervision.io"
+                  <Link
+                    href="/contact-sales"
                     className="block w-full text-center py-3 border border-border rounded-lg font-medium hover:bg-muted transition-colors"
                   >
-                    {plan.cta}
-                  </a>
-                ) : (
-                  <button
-                    disabled={isCurrent || plan.disabled}
+                    Let&apos;s Talk
+                  </Link>
+                ) : isCurrent ? (
+                  <div className="space-y-2">
+                    <div className="w-full py-3 rounded-lg font-medium bg-emerald-100 text-emerald-700 flex items-center justify-center gap-2">
+                      <CheckCircle className="h-4 w-4" />
+                      Active
+                    </div>
+                    {userData?.subscriptionPeriodEnd && (
+                      <p className="text-xs text-center text-emerald-600">
+                        {plan.tier === "STARTER" ? "Access until " : "Renews "}
+                        {new Date(userData.subscriptionPeriodEnd).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </p>
+                    )}
+                  </div>
+                ) : plan.planId ? (
+                  <CheckoutButton
+                    planId={plan.planId}
                     className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                      isCurrent
-                        ? "bg-gray-100 text-gray-500 cursor-not-allowed"
-                        : plan.popular
+                      plan.popular
                         ? "bg-primary text-white hover:bg-primary-dark"
                         : "border border-border hover:bg-muted"
                     }`}
                   >
-                    {isCurrent ? "Current Plan" : plan.cta}
-                  </button>
-                )}
+                    {isExpired && currentTier === plan.tier
+                    ? `Renew ${plan.name}`
+                    : currentTier === "STARTER" && plan.tier === "PRO"
+                    ? `Upgrade to ${plan.name}`
+                    : `Get ${plan.name}`}
+                  </CheckoutButton>
+                ) : null}
               </div>
             );
           })}
         </div>
+      </div>
+
+      {/* Money-back Guarantee */}
+      <div className="text-center text-sm text-secondary">
+        <p>14-day money-back guarantee on all plans. No questions asked.</p>
       </div>
 
       {/* Billing Portal Link */}

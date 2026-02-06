@@ -36,7 +36,7 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900">Market & ICP Data</h2>
         <p className="mt-2 text-gray-600">
-          Optional but helps us generate more targeted OKRs
+          Optional but helps us generate a more targeted roadmap
         </p>
       </div>
 
