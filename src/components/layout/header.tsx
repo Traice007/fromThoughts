@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { Menu, X, User, LogOut, LayoutDashboard, ChevronDown } from "lucide-react";
+import { Menu, X, User, LogOut, LayoutDashboard, ChevronDown, MessageCircle } from "lucide-react";
 
 export function Header() {
   const { data: session, status } = useSession();
@@ -29,6 +29,13 @@ export function Header() {
             </Link>
             <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">
               Pricing
+            </Link>
+            <Link
+              href="/contact-sales"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all text-sm font-medium"
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              Let&apos;s Talk
             </Link>
 
             {status === "loading" ? (
@@ -131,6 +138,14 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
+            </Link>
+            <Link
+              href="/contact-sales"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all text-sm font-medium w-fit"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              Let&apos;s Talk
             </Link>
 
             {session ? (
