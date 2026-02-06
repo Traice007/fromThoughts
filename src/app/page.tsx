@@ -369,21 +369,6 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 p-6">
-                <h3 className="font-semibold text-gray-700 mb-3 text-sm">This is probably not for you if:</h3>
-                <ul className="space-y-2">
-                  {[
-                    "You already have a Head of Sales or VP",
-                    "You're pre-revenue or finding product-market fit",
-                    "You're B2C without a direct sales motion",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-gray-500">
-                      <span className="text-gray-300 mt-0.5">✕</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
