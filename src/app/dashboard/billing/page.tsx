@@ -246,7 +246,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
 
                 {plan.name === "Enterprise" ? (
                   <Link
-                    href="/contact-sales"
+                    href="/lets-talk"
                     className="block w-full text-center py-3 border border-border rounded-lg font-medium hover:bg-muted transition-colors"
                   >
                     Let&apos;s Talk

@@ -659,7 +659,7 @@ export default function HomePage() {
               </ul>
 
               <Link
-                href="/contact-sales"
+                href="/lets-talk"
                 className="block w-full text-center px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
               >
                 Let&apos;s Talk

@@ -31,7 +31,7 @@ export function Header() {
               Pricing
             </Link>
             <Link
-              href="/contact-sales"
+              href="/lets-talk"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all text-sm font-medium"
             >
               <MessageCircle className="h-3.5 w-3.5" />
@@ -140,7 +140,7 @@ export function Header() {
               Pricing
             </Link>
             <Link
-              href="/contact-sales"
+              href="/lets-talk"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all text-sm font-medium w-fit"
               onClick={() => setMobileMenuOpen(false)}
             >
