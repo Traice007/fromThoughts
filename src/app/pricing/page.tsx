@@ -71,7 +71,7 @@ export default function PricingPage() {
                 href="/auth/signup"
                 className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
               >
-                Build Your Playbook
+                Build Your Execution Plan
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -347,7 +347,7 @@ export default function PricingPage() {
             href="/forecast"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-xl text-lg"
           >
-            Build Your Playbook
+            Build Your Execution Plan
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

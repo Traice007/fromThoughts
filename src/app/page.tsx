@@ -60,7 +60,7 @@ export default function HomePage() {
               href="/forecast"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 rounded-xl font-semibold hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl text-lg"
             >
-              Build Your Sales Playbook
+              Build Your Revenue Execution Plan
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -308,6 +308,53 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* When to Use This */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">
+              Timing Matters
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">The Right Moment to Use FounderVision</h2>
+            <p className="text-lg text-gray-600">
+              FounderVision works best in a specific window of your growth journey
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Just raised seed funding</h3>
+              <p className="text-sm text-gray-600">
+                You have runway and pressure to professionalize sales — but haven&apos;t hired yet
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">3-6 months from first sales hire</h3>
+              <p className="text-sm text-gray-600">
+                You&apos;re planning to hire but want a documented process to hand over
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-6 w-6 text-emerald-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900 mb-2">Interviewing for Head of Sales</h3>
+              <p className="text-sm text-gray-600">
+                Give your new hire a playbook on day one instead of hoping they figure it out
+              </p>
             </div>
           </div>
         </div>
@@ -644,7 +691,7 @@ export default function HomePage() {
             href="/forecast"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 rounded-xl font-semibold hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl shadow-amber-500/25 text-lg"
           >
-            Build Your Sales Playbook
+            Build Your Revenue Execution Plan
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
