@@ -39,20 +39,20 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-8 backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
-            For Founders Scaling €500K–€2M
+            For B2B Founders at €300K–€1.5M
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-white">
-            Know Exactly What to Focus On{" "}
+            You Can&apos;t Scale If{" "}
             <span className="text-emerald-200">
-              to Hit Your Revenue Target
+              Every Deal Needs You
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
-            FounderVision turns your revenue target into a structured execution
-            plan—with prioritized objectives, the right metrics to track, and
-            clear guidance on where to focus first.
+            Most first sales hires fail because there&apos;s no documented playbook.
+            FounderVision helps you turn what&apos;s in your head into a structured
+            revenue plan your first hire can actually execute on.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -60,7 +60,7 @@ export default function HomePage() {
               href="/forecast"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 rounded-xl font-semibold hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl text-lg"
             >
-              Build Your Execution Plan
+              Build Your Sales Playbook
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -79,11 +79,11 @@ export default function HomePage() {
             </span>
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-300" />
-              Based on 10,000+ companies
+              Ready in under 10 minutes
             </span>
             <span className="hidden sm:flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-300" />
-              Export as PDF or CSV
+              Export as PDF to share
             </span>
           </div>
         </div>
@@ -95,18 +95,18 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">10,000+</div>
-              <div className="text-sm text-white/70 mt-1">Company benchmarks</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">90%</div>
+              <div className="text-sm text-white/70 mt-1">Cheaper than a Head of Sales</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/20" />
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">€200K+</div>
-              <div className="text-sm text-white/70 mt-1">Saved vs. first commercial hire</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">&lt; 10 min</div>
+              <div className="text-sm text-white/70 mt-1">To build your sales playbook</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-white/20" />
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">&lt; 2 min</div>
-              <div className="text-sm text-white/70 mt-1">From revenue target to execution plan</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">Day 1</div>
+              <div className="text-sm text-white/70 mt-1">Your new hire has a playbook</div>
             </div>
           </div>
         </div>
@@ -119,10 +119,10 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-medium mb-4">
               The Challenge
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">The Problem We Solve</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">Why First Sales Hires Fail</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Most founders know their revenue targets but struggle to translate them into
-              operational actions that actually move the needle.
+              Most founders hand off sales without a documented playbook. The new hire
+              struggles, costs €100K+, and fails within a year. Here&apos;s why.
             </p>
           </div>
 
@@ -214,9 +214,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Target className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">The Translation Gap</h3>
+              <h3 className="text-xl font-bold mb-3">Knowledge Trapped in Your Head</h3>
               <p className="text-gray-600 leading-relaxed">
-                &quot;We need to 2x revenue&quot; isn&apos;t a plan. Without breaking targets into funnel requirements and weekly priorities, teams don&apos;t know what to do.
+                You know why your pitch works, which objections matter, and who your best customers are. But none of it is written down — so no one else can do it.
               </p>
             </div>
 
@@ -224,9 +224,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Hiring Before Fixing</h3>
+              <h3 className="text-xl font-bold mb-3">No Playbook to Hand Over</h3>
               <p className="text-gray-600 leading-relaxed">
-                A €200K+ VP of Commercial won&apos;t fix broken execution fundamentals. Most founders need a structured framework before they need a senior hire.
+                You hire someone smart, give them access to the CRM, and expect them to figure it out. They can&apos;t — because there&apos;s nothing to follow.
               </p>
             </div>
 
@@ -234,9 +234,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BarChart3 className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Wrong Metrics, Wrong Time</h3>
+              <h3 className="text-xl font-bold mb-3">The €150K Mistake</h3>
               <p className="text-gray-600 leading-relaxed">
-                Tracking everything means focusing on nothing. Without knowing which metrics matter at your stage, you can&apos;t steer growth.
+                A senior sales hire costs €150K–€250K/year. Most fail within 12 months at early-stage companies — not because they&apos;re bad, but because there&apos;s no foundation.
               </p>
             </div>
           </div>
@@ -262,23 +262,23 @@ export default function HomePage() {
               {[
                 {
                   icon: Building2,
-                  title: "B2B companies doing €500K–€2M in revenue",
-                  description: "SaaS, tech-enabled services, and B2B platforms in their first real growth phase.",
+                  title: "B2B companies doing €300K–€1.5M in revenue",
+                  description: "SaaS, tech-enabled services, and B2B platforms preparing for their next growth phase.",
                 },
                 {
                   icon: UserCircle,
-                  title: "Founders still driving commercial decisions",
-                  description: "You own the growth strategy but don't have a dedicated RevOps or sales leadership function yet.",
+                  title: "Founders who are still closing every deal",
+                  description: "You're the sales team. Your product knowledge and relationships drive revenue — but that doesn't scale.",
                 },
                 {
                   icon: Gauge,
-                  title: "Teams of 5–25 using a CRM",
-                  description: "You're on HubSpot or Pipedrive, but the data isn't translating into clear priorities for the team.",
+                  title: "Teams of 3–10, pre-first sales hire",
+                  description: "You're thinking about hiring your first salesperson, but you don't have a documented process to hand over.",
                 },
                 {
                   icon: Globe,
                   title: "Capital-efficient and deliberate about hiring",
-                  description: "You'd rather build a structured execution framework than hire a €200K VP and hope for the best.",
+                  description: "You'd rather build a structured playbook than hire a €150K Head of Sales and hope they figure it out.",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4">
@@ -297,10 +297,10 @@ export default function HomePage() {
               <h3 className="font-bold text-gray-900 mb-4 text-lg">This is probably not for you if:</h3>
               <ul className="space-y-3">
                 {[
-                  "You already have a VP of Sales or dedicated RevOps team",
+                  "You already have a Head of Sales or VP running your commercial team",
                   "You're pre-revenue or still searching for product-market fit",
-                  "You're a B2C company or not running a sales-driven model",
-                  "You're looking for a CRM—we integrate with yours, we don't replace it",
+                  "You're a B2C company or marketplace without a direct sales motion",
+                  "You're looking for a CRM — we integrate with yours, we don't replace it",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
                     <span className="text-gray-400 mt-0.5">&#x2715;</span>
@@ -398,14 +398,14 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">Prioritized Execution Plan</h3>
+                <h3 className="text-xl font-bold">Structured Sales Playbook</h3>
               </div>
               <ul className="space-y-3">
                 {[
-                  "4-6 strategic objectives decomposed from your revenue target",
-                  "Measurable key results with specific targets",
-                  "Priority ranking so your team knows what to do first",
-                  "Timeframes aligned to your revenue timeline",
+                  "Revenue roadmap with clear objectives and key results",
+                  "Documented strategy your first hire can follow",
+                  "Priority ranking so they know what to focus on first",
+                  "Timeframes aligned to your growth targets",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
@@ -535,7 +535,7 @@ export default function HomePage() {
                 href="/auth/signup"
                 className="block w-full text-center px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
               >
-                Get Started
+                Build Your Playbook
               </Link>
             </div>
 
@@ -635,16 +635,16 @@ export default function HomePage() {
 
         <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-            Stop Planning in the Dark
+            Build the Playbook Before You Hire
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Get a structured execution plan built from your revenue data and 10,000+ company benchmarks—in under 2 minutes.
+            Turn what&apos;s in your head into a structured revenue playbook your first sales hire can execute on — in under 10 minutes.
           </p>
           <Link
             href="/forecast"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 rounded-xl font-semibold hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl shadow-amber-500/25 text-lg"
           >
-            Build Your Execution Plan
+            Build Your Sales Playbook
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

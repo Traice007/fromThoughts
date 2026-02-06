@@ -27,7 +27,7 @@ export default function PricingPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get started with 30 days of full access to see how FounderVision can help you hit your revenue targets.
+            Build the sales playbook your first hire needs. Get started with 30 days of full access.
             14-day money-back guarantee on all plans.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function PricingPage() {
                 href="/auth/signup"
                 className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
               >
-                Get Started
+                Build Your Playbook
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -338,16 +338,16 @@ export default function PricingPage() {
 
         <div className="relative max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
-            Ready to transform your revenue targets?
+            Ready to build your sales playbook?
           </h2>
           <p className="text-xl text-white/80 mb-10">
-            Start building your revenue roadmap today.
+            Get the foundation your first hire needs to succeed.
           </p>
           <Link
             href="/forecast"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-xl text-lg"
           >
-            Get Started
+            Build Your Playbook
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

@@ -10,7 +10,7 @@ const PLANS = [
     planId: "STARTER" as const,
     price: "€1,500",
     period: " one-time",
-    description: "30 days of full access to FounderVision",
+    description: "30 days to build your sales playbook",
     features: [
       "Unlimited forecasts",
       "AI-powered revenue roadmap",
