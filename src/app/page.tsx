@@ -45,7 +45,7 @@ export default function HomePage() {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-white">
             You Can&apos;t Scale If{" "}
             <span className="text-emerald-200">
-              Every Deal Needs You
+              Every Deal Needs <span className="text-6xl sm:text-7xl lg:text-8xl">YOU</span>
             </span>
           </h1>
 
