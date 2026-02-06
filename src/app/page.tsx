@@ -257,57 +257,133 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              {[
-                {
-                  icon: Building2,
-                  title: "B2B companies doing €300K–€1.5M in revenue",
-                  description: "SaaS, tech-enabled services, and B2B platforms preparing for their next growth phase.",
-                },
-                {
-                  icon: UserCircle,
-                  title: "Founders who are still closing every deal",
-                  description: "You're the sales team. Your product knowledge and relationships drive revenue — but that doesn't scale.",
-                },
-                {
-                  icon: Gauge,
-                  title: "Teams of 3–10, pre-first sales hire",
-                  description: "You're thinking about hiring your first salesperson, but you don't have a documented process to hand over.",
-                },
-                {
-                  icon: Globe,
-                  title: "Capital-efficient and deliberate about hiring",
-                  description: "You'd rather build a structured playbook than hire a €150K Head of Sales and hope they figure it out.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <item.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
-                  </div>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left: Illustrated Founder Avatar */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-72 h-72 mb-8">
+                {/* Background circle */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 via-teal-50 to-cyan-100 rounded-full" />
+
+                {/* Floating elements around the founder */}
+                <div className="absolute -top-2 -right-2 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center animate-bounce" style={{ animationDuration: '3s' }}>
+                  <Euro className="h-6 w-6 text-emerald-500" />
                 </div>
-              ))}
+                <div className="absolute top-8 -left-4 w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center animate-bounce" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}>
+                  <BarChart3 className="h-5 w-5 text-teal-500" />
+                </div>
+                <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center animate-bounce" style={{ animationDuration: '2.8s', animationDelay: '0.3s' }}>
+                  <Target className="h-6 w-6 text-cyan-500" />
+                </div>
+                <div className="absolute bottom-8 -right-4 w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center animate-bounce" style={{ animationDuration: '3.2s', animationDelay: '0.7s' }}>
+                  <Users className="h-5 w-5 text-emerald-600" />
+                </div>
+
+                {/* Founder illustration */}
+                <svg viewBox="0 0 200 200" className="absolute inset-4 w-64 h-64">
+                  {/* Body/Torso */}
+                  <ellipse cx="100" cy="175" rx="45" ry="25" className="fill-emerald-500" />
+
+                  {/* Neck */}
+                  <rect x="90" y="115" width="20" height="20" rx="4" className="fill-amber-200" />
+
+                  {/* Head */}
+                  <circle cx="100" cy="85" r="40" className="fill-amber-100" />
+
+                  {/* Hair */}
+                  <ellipse cx="100" cy="55" rx="38" ry="20" className="fill-gray-800" />
+                  <ellipse cx="65" cy="70" rx="8" ry="15" className="fill-gray-800" />
+                  <ellipse cx="135" cy="70" rx="8" ry="15" className="fill-gray-800" />
+
+                  {/* Eyes */}
+                  <circle cx="85" cy="85" r="5" className="fill-gray-800" />
+                  <circle cx="115" cy="85" r="5" className="fill-gray-800" />
+                  <circle cx="86" cy="84" r="1.5" className="fill-white" />
+                  <circle cx="116" cy="84" r="1.5" className="fill-white" />
+
+                  {/* Eyebrows */}
+                  <path d="M75 75 Q85 72 92 75" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
+                  <path d="M108 75 Q115 72 125 75" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
+
+                  {/* Smile */}
+                  <path d="M85 100 Q100 112 115 100" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
+
+                  {/* Glasses */}
+                  <circle cx="85" cy="85" r="12" className="stroke-gray-600 stroke-2 fill-none" />
+                  <circle cx="115" cy="85" r="12" className="stroke-gray-600 stroke-2 fill-none" />
+                  <path d="M97 85 L103 85" className="stroke-gray-600 stroke-2" />
+                  <path d="M73 85 L65 80" className="stroke-gray-600 stroke-2" />
+                  <path d="M127 85 L135 80" className="stroke-gray-600 stroke-2" />
+
+                  {/* Laptop */}
+                  <rect x="60" y="145" width="80" height="5" rx="1" className="fill-gray-400" />
+                  <rect x="65" y="125" width="70" height="20" rx="2" className="fill-gray-300" />
+                  <rect x="68" y="128" width="64" height="14" rx="1" className="fill-emerald-400" />
+
+                  {/* Arms holding laptop */}
+                  <path d="M55 145 Q50 135 60 130" className="stroke-amber-200 stroke-8 fill-none" strokeLinecap="round" />
+                  <path d="M145 145 Q150 135 140 130" className="stroke-amber-200 stroke-8 fill-none" strokeLinecap="round" />
+                </svg>
+              </div>
+
+              {/* Caption under avatar */}
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-900 mb-1">The Busy B2B Founder</p>
+                <p className="text-sm text-gray-500">Juggling product, team, and sales — looking for structure</p>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100 p-8">
-              <h3 className="font-bold text-gray-900 mb-4 text-lg">This is probably not for you if:</h3>
-              <ul className="space-y-3">
+            {/* Right: Criteria and Not For You */}
+            <div className="space-y-8">
+              <div className="space-y-4">
                 {[
-                  "You already have a Head of Sales or VP running your commercial team",
-                  "You're pre-revenue or still searching for product-market fit",
-                  "You're a B2C company or marketplace without a direct sales motion",
-                  "You're looking for a CRM — we integrate with yours, we don't replace it",
+                  {
+                    icon: Building2,
+                    title: "B2B companies doing €300K–€1.5M in revenue",
+                    description: "SaaS, tech-enabled services, and B2B platforms preparing for their next growth phase.",
+                  },
+                  {
+                    icon: UserCircle,
+                    title: "Founders who are still closing every deal",
+                    description: "You're the sales team. Your product knowledge and relationships drive revenue — but that doesn't scale.",
+                  },
+                  {
+                    icon: Gauge,
+                    title: "Teams of 3–10, pre-first sales hire",
+                    description: "You're thinking about hiring your first salesperson, but you don't have a documented process to hand over.",
+                  },
+                  {
+                    icon: Globe,
+                    title: "Capital-efficient and deliberate about hiring",
+                    description: "You'd rather build a structured playbook than hire a €150K Head of Sales and hope they figure it out.",
+                  },
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
-                    <span className="text-gray-400 mt-0.5">&#x2715;</span>
-                    <span>{item}</span>
-                  </li>
+                  <div key={item.title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <item.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-gray-700 mb-3 text-sm">This is probably not for you if:</h3>
+                <ul className="space-y-2">
+                  {[
+                    "You already have a Head of Sales or VP",
+                    "You're pre-revenue or finding product-market fit",
+                    "You're B2C without a direct sales motion",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-gray-500">
+                      <span className="text-gray-300 mt-0.5">✕</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
