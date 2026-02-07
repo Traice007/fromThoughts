@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Shield, Lock, Eye, Database, Mail, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | FromThoughts",
+  title: "Privacy Policy | fromThoughts",
   description: "Privacy Policy for FromThoughts - How we collect, use, and protect your data",
 };
 

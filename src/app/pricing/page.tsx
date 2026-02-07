@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Sparkles, UserRound, Users, Briefcase, HeadphonesIcon, TrendingDown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing | FromThoughts",
+  title: "Pricing | fromThoughts",
   description: "Simple, transparent pricing for AI-powered revenue operations. Get started with 30 days of full access.",
 };
 

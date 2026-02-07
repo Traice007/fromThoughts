@@ -3,7 +3,7 @@ import { Sparkles, Clock, Shield, Users } from "lucide-react";
 import { ContactSalesForm } from "@/components/contact-sales/contact-sales-form";
 
 export const metadata: Metadata = {
-  title: "Let's Talk | FromThoughts",
+  title: "Let's Talk | fromThoughts",
   description: "Get in touch with our team to discuss how FromThoughts can help your organization hit its revenue targets.",
 };
 

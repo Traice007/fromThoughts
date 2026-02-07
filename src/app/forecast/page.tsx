@@ -3,7 +3,7 @@ import { ForecastForm } from "@/components/forecast/forecast-form";
 import { Sparkles, Target, Zap, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Create Your Revenue Forecast | FromThoughts",
+  title: "Create Your Revenue Forecast | fromThoughts",
   description: "Enter your revenue targets and metrics to generate your AI-powered revenue roadmap that bridges the gap between goals and execution.",
 };
 

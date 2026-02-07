@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { FileText, AlertCircle, CreditCard, Scale, Mail, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | FromThoughts",
+  title: "Terms of Service | fromThoughts",
   description: "Terms of Service for FromThoughts - AI-powered revenue operations platform",
 };
 

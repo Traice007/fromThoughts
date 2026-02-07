@@ -26,8 +26,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "FromThoughts - AI-Powered Revenue Operations for Growing Companies",
-  description: "Transform your revenue targets into a clear revenue roadmap. FromThoughts helps SMBs bridge the gap between revenue goals and operational execution without hiring a VP of Commercial too early.",
+  title: "fromThoughts - AI-Powered Revenue Operations for Growing Companies",
+  description: "Transform your revenue targets into a clear revenue roadmap. fromThoughts helps SMBs bridge the gap between revenue goals and operational execution without hiring a VP of Commercial too early.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "FromThoughts - AI-Powered Revenue Operations",
+    title: "fromThoughts - AI-Powered Revenue Operations",
     description: "Transform revenue targets into a clear revenue roadmap. Bridge the gap between goals and execution.",
-    siteName: "FromThoughts",
+    siteName: "fromThoughts",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FromThoughts - AI-Powered Revenue Operations",
+    title: "fromThoughts - AI-Powered Revenue Operations",
     description: "Transform revenue targets into a clear revenue roadmap for growing companies.",
   },
 };
