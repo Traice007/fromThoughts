@@ -258,11 +258,14 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Left: Illustrated Founder Avatar */}
+            {/* Left: Professional Founder Silhouette */}
             <div className="flex flex-col items-center">
               <div className="relative w-72 h-72 mb-8">
-                {/* Background circle */}
+                {/* Background circle with gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 via-teal-50 to-cyan-100 rounded-full" />
+
+                {/* Subtle inner glow */}
+                <div className="absolute inset-8 bg-gradient-to-br from-white/60 to-transparent rounded-full" />
 
                 {/* Floating elements around the founder */}
                 <div className="absolute -top-2 -right-2 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center animate-bounce" style={{ animationDuration: '3s' }}>
@@ -278,50 +281,36 @@ export default function HomePage() {
                   <Users className="h-5 w-5 text-emerald-600" />
                 </div>
 
-                {/* Founder illustration */}
+                {/* Abstract professional silhouette */}
                 <svg viewBox="0 0 200 200" className="absolute inset-4 w-64 h-64">
-                  {/* Body/Torso */}
-                  <ellipse cx="100" cy="175" rx="45" ry="25" className="fill-emerald-500" />
+                  <defs>
+                    <linearGradient id="silhouetteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="50%" stopColor="#14b8a6" />
+                      <stop offset="100%" stopColor="#06b6d4" />
+                    </linearGradient>
+                    <linearGradient id="shirtGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#059669" />
+                      <stop offset="100%" stopColor="#047857" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Body/Shoulders - professional shirt shape */}
+                  <path d="M40 200 L40 160 Q40 140 60 135 L85 130 Q100 128 115 130 L140 135 Q160 140 160 160 L160 200 Z" fill="url(#shirtGradient)" />
+
+                  {/* Collar detail */}
+                  <path d="M85 130 L95 145 L100 140 L105 145 L115 130" className="stroke-emerald-800/30 stroke-2 fill-none" strokeLinecap="round" strokeLinejoin="round" />
 
                   {/* Neck */}
-                  <rect x="90" y="115" width="20" height="20" rx="4" className="fill-amber-200" />
+                  <rect x="88" y="115" width="24" height="20" rx="8" fill="url(#silhouetteGradient)" opacity="0.9" />
 
-                  {/* Head */}
-                  <circle cx="100" cy="85" r="40" className="fill-amber-100" />
+                  {/* Head - clean oval */}
+                  <ellipse cx="100" cy="80" rx="35" ry="42" fill="url(#silhouetteGradient)" />
 
-                  {/* Hair */}
-                  <ellipse cx="100" cy="55" rx="38" ry="20" className="fill-gray-800" />
-                  <ellipse cx="65" cy="70" rx="8" ry="15" className="fill-gray-800" />
-                  <ellipse cx="135" cy="70" rx="8" ry="15" className="fill-gray-800" />
-
-                  {/* Eyes */}
-                  <circle cx="85" cy="85" r="5" className="fill-gray-800" />
-                  <circle cx="115" cy="85" r="5" className="fill-gray-800" />
-                  <circle cx="86" cy="84" r="1.5" className="fill-white" />
-                  <circle cx="116" cy="84" r="1.5" className="fill-white" />
-
-                  {/* Eyebrows */}
-                  <path d="M75 75 Q85 72 92 75" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
-                  <path d="M108 75 Q115 72 125 75" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
-
-                  {/* Smile */}
-                  <path d="M85 100 Q100 112 115 100" className="stroke-gray-700 stroke-2 fill-none" strokeLinecap="round" />
-
-                  {/* Glasses */}
-                  <circle cx="85" cy="85" r="12" className="stroke-gray-600 stroke-2 fill-none" />
-                  <circle cx="115" cy="85" r="12" className="stroke-gray-600 stroke-2 fill-none" />
-                  <path d="M97 85 L103 85" className="stroke-gray-600 stroke-2" />
-                  <path d="M73 85 L65 80" className="stroke-gray-600 stroke-2" />
-                  <path d="M127 85 L135 80" className="stroke-gray-600 stroke-2" />
-
-                  {/* Laptop */}
-                  <rect x="60" y="145" width="80" height="5" rx="1" className="fill-gray-400" />
-                  <rect x="65" y="125" width="70" height="20" rx="2" className="fill-gray-300" />
-                  <rect x="68" y="128" width="64" height="14" rx="1" className="fill-emerald-400" />
-
-                  {/* Arms holding laptop */}
-                  <path d="M55 145 Q50 135 60 130" className="stroke-amber-200 stroke-8 fill-none" strokeLinecap="round" />
-                  <path d="M145 145 Q150 135 140 130" className="stroke-amber-200 stroke-8 fill-none" strokeLinecap="round" />
+                  {/* Subtle hair shape on top */}
+                  <ellipse cx="100" cy="48" rx="30" ry="15" className="fill-emerald-700" />
+                  <ellipse cx="72" cy="58" rx="6" ry="12" className="fill-emerald-700" />
+                  <ellipse cx="128" cy="58" rx="6" ry="12" className="fill-emerald-700" />
                 </svg>
               </div>
 
