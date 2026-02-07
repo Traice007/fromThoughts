@@ -74,8 +74,8 @@ export async function POST(request: NextRequest) {
             price_data: {
               currency: plan.currency,
               product_data: {
-                name: `FounderVision ${plan.name}`,
-                description: `${plan.accessDays} days of full access to FounderVision`,
+                name: `FromThoughts ${plan.name}`,
+                description: `${plan.accessDays} days of full access to FromThoughts`,
               },
               unit_amount: plan.price,
             },
@@ -102,8 +102,8 @@ export async function POST(request: NextRequest) {
             price_data: {
               currency: plan.currency,
               product_data: {
-                name: `FounderVision ${plan.name}`,
-                description: "Annual subscription to FounderVision Pro",
+                name: `FromThoughts ${plan.name}`,
+                description: "Annual subscription to FromThoughts Pro",
               },
               unit_amount: plan.price,
               recurring: {

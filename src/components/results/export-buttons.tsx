@@ -38,7 +38,7 @@ export function ExportButtons({ forecastId }: ExportButtonsProps) {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `foundervision-okrs-${forecastId}.csv`;
+      a.download = `fromthoughts-okrs-${forecastId}.csv`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);

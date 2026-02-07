@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-            FounderVision
+            FromThoughts
           </Link>
 
           {/* Desktop nav */}

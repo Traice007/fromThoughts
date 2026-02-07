@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, Sparkles, UserRound, Users, Briefcase, HeadphonesIcon, TrendingDown } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing | FounderVision",
+  title: "Pricing | FromThoughts",
   description: "Simple, transparent pricing for AI-powered revenue operations. Get started with 30 days of full access.",
 };
 
@@ -48,7 +48,7 @@ export default function PricingPage() {
                 <span className="text-gray-600 font-medium"> one-time</span>
               </div>
               <p className="text-gray-700 text-sm mb-8">
-                30 days of full access to FounderVision
+                30 days of full access to FromThoughts
               </p>
 
               <ul className="space-y-4 mb-8">
@@ -176,10 +176,10 @@ export default function PricingPage() {
               Compare & Save
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Cut Costs with FounderVision
+              Cut Costs with FromThoughts
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              See how FounderVision compares to traditional alternatives for building your revenue strategy.
+              See how FromThoughts compares to traditional alternatives for building your revenue strategy.
             </p>
           </div>
 
@@ -246,14 +246,14 @@ export default function PricingPage() {
               <span className="text-lg font-bold text-gray-900">€30K – €60K</span>
             </div>
 
-            {/* FounderVision Row - Highlighted */}
+            {/* FromThoughts Row - Highlighted */}
             <div className="flex items-center justify-between px-6 py-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-200">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
                   <Sparkles className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-emerald-900">FounderVision Pro</p>
+                  <p className="font-semibold text-emerald-900">FromThoughts Pro</p>
                   <p className="text-sm text-emerald-700">AI-powered revenue roadmap</p>
                 </div>
               </div>
@@ -317,7 +317,7 @@ export default function PricingPage() {
               <h3 className="font-semibold text-gray-900 mb-3">Do you offer refunds?</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 We offer a full refund within the first 14 days if you&apos;re not satisfied
-                with FounderVision.
+                with FromThoughts.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">

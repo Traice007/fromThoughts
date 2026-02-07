@@ -82,7 +82,7 @@ export async function GET(request: NextRequest) {
     return new NextResponse(csv, {
       headers: {
         "Content-Type": "text/csv",
-        "Content-Disposition": `attachment; filename="foundervision-okrs-${forecastId}.csv"`,
+        "Content-Disposition": `attachment; filename="fromthoughts-okrs-${forecastId}.csv"`,
       },
     });
   } catch (error) {

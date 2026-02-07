@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Shield, Lock, Eye, Database, Mail, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | FounderVision",
-  description: "Privacy Policy for FounderVision - How we collect, use, and protect your data",
+  title: "Privacy Policy | FromThoughts",
+  description: "Privacy Policy for FromThoughts - How we collect, use, and protect your data",
 };
 
 export default function PrivacyPage() {
@@ -56,9 +56,9 @@ export default function PrivacyPage() {
             </h2>
             <div className="pl-10">
               <p className="text-secondary leading-relaxed">
-                FounderVision (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy.
+                FromThoughts (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information
-                when you use our revenue forecasting and OKR generation service. By using FounderVision, you agree
+                when you use our revenue forecasting and OKR generation service. By using FromThoughts, you agree
                 to the collection and use of information in accordance with this policy.
               </p>
             </div>
@@ -327,7 +327,7 @@ export default function PrivacyPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Globe className="h-5 w-5 text-primary" />
-                  <span className="text-secondary">FounderVision Inc.</span>
+                  <span className="text-secondary">FromThoughts Inc.</span>
                 </div>
               </div>
             </div>

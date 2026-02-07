@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              FounderVision
+              FromThoughts
             </Link>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
               AI-powered revenue operations for growing companies. Transform your revenue targets into a clear revenue roadmap without hiring a VP of Commercial too early.
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} FounderVision. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} FromThoughts. All rights reserved.</p>
         </div>
       </div>
     </footer>

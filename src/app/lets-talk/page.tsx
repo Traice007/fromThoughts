@@ -3,8 +3,8 @@ import { Sparkles, Clock, Shield, Users } from "lucide-react";
 import { ContactSalesForm } from "@/components/contact-sales/contact-sales-form";
 
 export const metadata: Metadata = {
-  title: "Let's Talk | FounderVision",
-  description: "Get in touch with our team to discuss how FounderVision can help your organization hit its revenue targets.",
+  title: "Let's Talk | FromThoughts",
+  description: "Get in touch with our team to discuss how FromThoughts can help your organization hit its revenue targets.",
 };
 
 export default function ContactSalesPage() {
@@ -28,7 +28,7 @@ export default function ContactSalesPage() {
                 Tell Us About Your Growth Goals
               </h1>
               <p className="text-base sm:text-lg text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8">
-                Share a bit about your team and we&apos;ll get back to you within 24 hours to discuss how FounderVision can help.
+                Share a bit about your team and we&apos;ll get back to you within 24 hours to discuss how FromThoughts can help.
               </p>
 
               {/* Trust Indicators */}

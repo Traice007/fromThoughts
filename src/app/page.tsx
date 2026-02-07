@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
             Most first sales hires fail because there&apos;s no documented playbook.
-            FounderVision helps you turn what&apos;s in your head into a structured
+            FromThoughts helps you turn what&apos;s in your head into a structured
             revenue plan your first hire can actually execute on.
           </p>
 
@@ -140,7 +140,7 @@ export default function HomePage() {
                   </div>
                   <div className="flex-1 text-center">
                     <div className="inline-block px-4 py-1 bg-white rounded-md text-xs text-gray-400 border border-gray-200">
-                      foundervision.io/results
+                      fromthoughts.com/results
                     </div>
                   </div>
                 </div>
@@ -253,7 +253,7 @@ export default function HomePage() {
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">Who This Is For</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              FounderVision is purpose-built for one specific stage of growth
+              FromThoughts is purpose-built for one specific stage of growth
             </p>
           </div>
 
@@ -390,9 +390,9 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">
               Timing Matters
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">The Right Moment to Use FounderVision</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">The Right Moment to Use FromThoughts</h2>
             <p className="text-lg text-gray-600">
-              FounderVision works best in a specific window of your growth journey
+              FromThoughts works best in a specific window of your growth journey
             </p>
           </div>
 

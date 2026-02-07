@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FounderVision - AI-Powered Revenue Operations for Growing Companies",
-  description: "Transform your revenue targets into a clear revenue roadmap. FounderVision helps SMBs bridge the gap between revenue goals and operational execution without hiring a VP of Commercial too early.",
+  title: "FromThoughts - AI-Powered Revenue Operations for Growing Companies",
+  description: "Transform your revenue targets into a clear revenue roadmap. FromThoughts helps SMBs bridge the gap between revenue goals and operational execution without hiring a VP of Commercial too early.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "FounderVision - AI-Powered Revenue Operations",
+    title: "FromThoughts - AI-Powered Revenue Operations",
     description: "Transform revenue targets into a clear revenue roadmap. Bridge the gap between goals and execution.",
-    siteName: "FounderVision",
+    siteName: "FromThoughts",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FounderVision - AI-Powered Revenue Operations",
+    title: "FromThoughts - AI-Powered Revenue Operations",
     description: "Transform revenue targets into a clear revenue roadmap for growing companies.",
   },
 };

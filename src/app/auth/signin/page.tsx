@@ -51,7 +51,7 @@ function SignInForm() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">Welcome back</h1>
-          <p className="text-secondary">Sign in to your FounderVision account</p>
+          <p className="text-secondary">Sign in to your FromThoughts account</p>
         </div>
 
         <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
