@@ -219,7 +219,7 @@ export default function PrivacyPage() {
                 We retain your forecast data for as long as your account is active or as needed to provide services.
                 Forecasts and OKRs are retained for 24 months to allow you to reference historical data.
                 You may request deletion of your data at any time by emailing{" "}
-                <a href="mailto:privacy@foundervision.io" className="text-primary hover:underline">privacy@foundervision.io</a>.
+                <a href="mailto:privacy@fromthoughts.com" className="text-primary hover:underline">privacy@fromthoughts.com</a>.
                 We will process deletion requests within 30 days.
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function PrivacyPage() {
               </div>
               <p className="text-secondary mt-4">
                 To exercise these rights, contact us at{" "}
-                <a href="mailto:privacy@foundervision.io" className="text-primary hover:underline">privacy@foundervision.io</a>.
+                <a href="mailto:privacy@fromthoughts.com" className="text-primary hover:underline">privacy@fromthoughts.com</a>.
               </p>
             </div>
           </section>
@@ -323,7 +323,7 @@ export default function PrivacyPage() {
               <div className="bg-muted rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:privacy@foundervision.io" className="text-primary hover:underline">privacy@foundervision.io</a>
+                  <a href="mailto:privacy@fromthoughts.com" className="text-primary hover:underline">privacy@fromthoughts.com</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Globe className="h-5 w-5 text-primary" />

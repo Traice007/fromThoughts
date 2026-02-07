@@ -357,7 +357,7 @@ export default function TermsPage() {
               <div className="bg-muted rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:legal@foundervision.io" className="text-primary hover:underline">legal@foundervision.io</a>
+                  <a href="mailto:legal@fromthoughts.com" className="text-primary hover:underline">legal@fromthoughts.com</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Globe className="h-5 w-5 text-primary" />

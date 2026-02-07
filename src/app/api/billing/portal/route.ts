@@ -20,7 +20,7 @@ export async function GET() {
     }
 
     const stripe = getStripe();
-    const baseUrl = process.env.NEXTAUTH_URL || "https://foundervision.io";
+    const baseUrl = process.env.NEXTAUTH_URL || "https://fromthoughts.com";
 
     const session = await stripe.billingPortal.sessions.create({
       customer: user.stripeCustomerId,

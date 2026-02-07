@@ -10,8 +10,8 @@ function getResend() {
   return _resend;
 }
 
-const EMAIL_FROM = process.env.EMAIL_FROM || "FromThoughts <noreply@foundervision.io>";
-const APP_URL = process.env.NEXTAUTH_URL || "https://foundervision.io";
+const EMAIL_FROM = process.env.EMAIL_FROM || "FromThoughts <noreply@fromthoughts.com>";
+const APP_URL = process.env.NEXTAUTH_URL || "https://fromthoughts.com";
 
 export async function createVerificationToken(email: string): Promise<string> {
   const token = crypto.randomBytes(32).toString("hex");
@@ -204,7 +204,7 @@ export async function sendPaymentFailedEmail(
               </div>
 
               <p style="color: #6b7280; font-size: 13px; margin: 24px 0 0 0;">
-                If you believe this is an error or need help, please contact us at support@foundervision.io.
+                If you believe this is an error or need help, please contact us at support@fromthoughts.com.
               </p>
             </div>
 
@@ -289,7 +289,7 @@ export async function sendSubscriptionExpiryWarningEmail(
               </div>
 
               <p style="color: #6b7280; font-size: 13px; margin: 24px 0 0 0;">
-                If you have any questions, please contact us at support@foundervision.io.
+                If you have any questions, please contact us at support@fromthoughts.com.
               </p>
             </div>
 
@@ -326,7 +326,7 @@ export async function sendSalesLeadNotificationEmail(
   try {
     const { error } = await getResend().emails.send({
       from: EMAIL_FROM,
-      to: "sales@foundervision.io",
+      to: "sales@fromthoughts.com",
       subject: `New Enterprise lead: ${lead.name} from ${lead.companyWebsite || "Unknown"}`,
       html: `
         <!DOCTYPE html>
@@ -425,7 +425,7 @@ export async function sendSalesLeadConfirmationEmail(
               </div>
 
               <p style="color: #6b7280; font-size: 13px; margin: 24px 0 0 0;">
-                If you have any urgent questions, you can reach us at support@foundervision.io.
+                If you have any urgent questions, you can reach us at support@fromthoughts.com.
               </p>
             </div>
 
