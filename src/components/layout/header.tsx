@@ -15,8 +15,9 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-            FromThoughts
+          <Link href="/" className="flex items-baseline text-2xl">
+            <span className="font-[family-name:var(--font-playfair)] italic font-normal text-white">from</span>
+            <span className="font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Thoughts</span>
           </Link>
 
           {/* Desktop nav */}

@@ -7,8 +7,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              FromThoughts
+            <Link href="/" className="flex items-baseline text-2xl">
+              <span className="font-[family-name:var(--font-playfair)] italic font-normal text-white">from</span>
+              <span className="font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Thoughts</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
               AI-powered revenue operations for growing companies. Transform your revenue targets into a clear revenue roadmap without hiring a VP of Commercial too early.

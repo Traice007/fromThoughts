@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FromThoughts - Logo Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter:ital,wght@1,300;1,400&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&family=Lora:ital,wght@1,400;1,500&family=Source+Serif+4:ital,wght@1,400;1,500&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      padding: 60px 40px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #666;
+      margin-bottom: 60px;
+    }
+    .concepts {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 40px;
+    }
+    .concept {
+      background: #111;
+      border-radius: 20px;
+      padding: 60px;
+      border: 1px solid #222;
+    }
+    .concept-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .concept-number {
+      font-size: 12px;
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .concept-name {
+      font-size: 12px;
+      color: #666;
+    }
+    .logo-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+    .variants {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid #222;
+    }
+    .variant {
+      text-align: center;
+    }
+    .variant-label {
+      font-size: 11px;
+      color: #444;
+      margin-top: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Concept 1: Clean Modern */
+    .logo-1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+    .logo-1 .from {
+      color: #fff;
+    }
+    .logo-1 .thoughts {
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1C: Italic from */
+    .logo-1c {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+    .logo-1c .from {
+      color: #fff;
+      font-style: italic;
+      font-weight: 500;
+    }
+    .logo-1c .thoughts {
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1D: Playfair Display italic "from" */
+    .logo-1d {
+      font-size: 42px;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-1d .from {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #fff;
+      margin-right: 2px;
+    }
+    .logo-1d .thoughts {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1E: Lora italic "from" */
+    .logo-1e {
+      font-size: 42px;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-1e .from {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #fff;
+      margin-right: 2px;
+    }
+    .logo-1e .thoughts {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1F: Source Serif italic "from" */
+    .logo-1f {
+      font-size: 42px;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-1f .from {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #fff;
+      margin-right: 2px;
+    }
+    .logo-1f .thoughts {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1G: Cormorant Garamond italic "from" */
+    .logo-1g {
+      font-size: 42px;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-1g .from {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: #fff;
+      margin-right: 2px;
+      font-size: 46px;
+    }
+    .logo-1g .thoughts {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 1H: DM Sans italic "from" */
+    .logo-1h {
+      font-size: 42px;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: baseline;
+    }
+    .logo-1h .from {
+      font-family: 'DM Sans', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #fff;
+      margin-right: 1px;
+    }
+    .logo-1h .thoughts {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Concept 2: With Icon */
+    .logo-2 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-2-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: white;
+    }
+    .logo-2-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    /* Concept 3: Space Grotesk */
+    .logo-3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+    .logo-3 .arrow {
+      color: #10b981;
+      margin: 0 4px;
+    }
+
+    /* Concept 4: Geometric with Symbol */
+    .logo-4 {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-4-symbol {
+      position: relative;
+      width: 44px;
+      height: 44px;
+    }
+    .logo-4-symbol .circle {
+      width: 44px;
+      height: 44px;
+      border: 3px solid #10b981;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .logo-4-symbol .arrow-out {
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 3px;
+      background: #10b981;
+    }
+    .logo-4-symbol .arrow-out::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -4px;
+      border: 5px solid transparent;
+      border-left: 6px solid #10b981;
+    }
+    .logo-4-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    /* Concept 5: Bold Sora */
+    .logo-5 {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      letter-spacing: -2px;
+    }
+    .logo-5 .ft {
+      background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo-5 .rest {
+      color: #fff;
+    }
+
+    /* Concept 6: Minimal with Lightbulb-to-Rocket */
+    .logo-6 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-6-icon {
+      width: 42px;
+      height: 42px;
+      position: relative;
+    }
+    .logo-6-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .logo-6-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    /* Small variants */
+    .small .logo-1,
+    .small .logo-1c,
+    .small .logo-1d,
+    .small .logo-1e,
+    .small .logo-1f,
+    .small .logo-1g,
+    .small .logo-1h,
+    .small .logo-3,
+    .small .logo-5 { font-size: 24px; }
+    .small .logo-1g .from { font-size: 26px; }
+    .small .logo-2-icon { width: 32px; height: 32px; font-size: 16px; border-radius: 8px; }
+    .small .logo-2-text { font-size: 20px; }
+    .small .logo-2 { gap: 10px; }
+    .small .logo-4-symbol { width: 28px; height: 28px; }
+    .small .logo-4-symbol .circle { width: 28px; height: 28px; border-width: 2px; }
+    .small .logo-4-symbol .arrow-out { width: 14px; height: 2px; right: -6px; }
+    .small .logo-4-symbol .arrow-out::after { border-width: 4px; border-left-width: 5px; top: -3px; }
+    .small .logo-4-text { font-size: 22px; }
+    .small .logo-4 { gap: 10px; }
+    .small .logo-6-icon { width: 28px; height: 28px; }
+    .small .logo-6-text { font-size: 22px; }
+    .small .logo-6 { gap: 10px; }
+
+    /* Dark/Light backgrounds */
+    .on-light {
+      background: #f8f8f8;
+      padding: 30px 40px;
+      border-radius: 12px;
+    }
+    .on-light .logo-1 .from,
+    .on-light .logo-1c .from,
+    .on-light .logo-1d .from,
+    .on-light .logo-1e .from,
+    .on-light .logo-1f .from,
+    .on-light .logo-1g .from,
+    .on-light .logo-1h .from,
+    .on-light .logo-3,
+    .on-light .logo-2-text,
+    .on-light .logo-4-text,
+    .on-light .logo-5 .rest,
+    .on-light .logo-6-text {
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <h1>FromThoughts Logo Concepts</h1>
+
+  <div class="concepts">
+    <!-- Concept 1 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01</span>
+        <span class="concept-name">Clean Gradient — Inter Bold (FromThoughts)</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1">
+          <span class="from">From</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1">
+            <span class="from">From</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1">
+            <span class="from">From</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1B -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01B</span>
+        <span class="concept-name">Clean Gradient — Inter Bold (fromThoughts)</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1C -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01C</span>
+        <span class="concept-name">Inter Italic "from" (current)</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1c">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1c">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1c">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1D -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01D</span>
+        <span class="concept-name">Playfair Display Italic — Elegant Serif</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1d">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1d">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1d">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1E -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01E</span>
+        <span class="concept-name">Lora Italic — Warm Serif</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1e">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1e">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1e">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1F -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01F</span>
+        <span class="concept-name">Source Serif Italic — Clean Serif</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1f">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1f">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1f">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1G -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01G</span>
+        <span class="concept-name">Cormorant Garamond Italic — Editorial</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1g">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1g">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1g">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 1H -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 01H</span>
+        <span class="concept-name">DM Sans Italic — Soft Sans-Serif</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-1h">
+          <span class="from">from</span><span class="thoughts">Thoughts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-1h">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-1h">
+            <span class="from">from</span><span class="thoughts">Thoughts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 2 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 02</span>
+        <span class="concept-name">Icon + Wordmark — "F" Mark</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-2">
+          <div class="logo-2-icon">F</div>
+          <div class="logo-2-text">FromThoughts</div>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-2">
+            <div class="logo-2-icon">F</div>
+            <div class="logo-2-text">FromThoughts</div>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-2">
+            <div class="logo-2-icon">F</div>
+            <div class="logo-2-text">FromThoughts</div>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 3 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 03</span>
+        <span class="concept-name">Space Grotesk — Arrow Transformation</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-3">
+          From<span class="arrow">→</span>Thoughts
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-3">
+            From<span class="arrow">→</span>Thoughts
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-3">
+            From<span class="arrow">→</span>Thoughts
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 4 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 04</span>
+        <span class="concept-name">Thought Bubble → Action Symbol</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-4">
+          <div class="logo-4-symbol">
+            <div class="circle"></div>
+            <div class="arrow-out"></div>
+          </div>
+          <div class="logo-4-text">FromThoughts</div>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-4">
+            <div class="logo-4-symbol">
+              <div class="circle"></div>
+              <div class="arrow-out"></div>
+            </div>
+            <div class="logo-4-text">FromThoughts</div>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-4">
+            <div class="logo-4-symbol">
+              <div class="circle"></div>
+              <div class="arrow-out"></div>
+            </div>
+            <div class="logo-4-text">FromThoughts</div>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 5 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 05</span>
+        <span class="concept-name">Bold Sora — Gradient Initials</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-5">
+          <span class="ft">F</span><span class="rest">rom</span><span class="ft">T</span><span class="rest">houghts</span>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-5">
+            <span class="ft">F</span><span class="rest">rom</span><span class="ft">T</span><span class="rest">houghts</span>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-5">
+            <span class="ft">F</span><span class="rest">rom</span><span class="ft">T</span><span class="rest">houghts</span>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept 6 -->
+    <div class="concept">
+      <div class="concept-header">
+        <span class="concept-number">Concept 06</span>
+        <span class="concept-name">Lightbulb Icon — DM Sans</span>
+      </div>
+      <div class="logo-display">
+        <div class="logo-6">
+          <div class="logo-6-icon">
+            <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 4C14.373 4 9 9.373 9 16c0 4.024 1.97 7.59 5 9.793V30a2 2 0 002 2h10a2 2 0 002-2v-4.207c3.03-2.203 5-5.769 5-9.793 0-6.627-5.373-12-12-12z" stroke="url(#bulb-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 38h10M18 34h6" stroke="url(#bulb-grad)" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="21" cy="16" r="4" fill="url(#bulb-grad)"/>
+              <defs>
+                <linearGradient id="bulb-grad" x1="9" y1="4" x2="33" y2="38" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10b981"/>
+                  <stop offset="1" stop-color="#0891b2"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-6-text">FromThoughts</div>
+        </div>
+      </div>
+      <div class="variants">
+        <div class="variant small">
+          <div class="logo-6">
+            <div class="logo-6-icon">
+              <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 4C14.373 4 9 9.373 9 16c0 4.024 1.97 7.59 5 9.793V30a2 2 0 002 2h10a2 2 0 002-2v-4.207c3.03-2.203 5-5.769 5-9.793 0-6.627-5.373-12-12-12z" stroke="url(#bulb-grad-sm)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 38h10M18 34h6" stroke="url(#bulb-grad-sm)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="21" cy="16" r="4" fill="url(#bulb-grad-sm)"/>
+                <defs>
+                  <linearGradient id="bulb-grad-sm" x1="9" y1="4" x2="33" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#10b981"/>
+                    <stop offset="1" stop-color="#0891b2"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="logo-6-text">FromThoughts</div>
+          </div>
+          <div class="variant-label">Small</div>
+        </div>
+        <div class="variant on-light">
+          <div class="logo-6">
+            <div class="logo-6-icon">
+              <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 4C14.373 4 9 9.373 9 16c0 4.024 1.97 7.59 5 9.793V30a2 2 0 002 2h10a2 2 0 002-2v-4.207c3.03-2.203 5-5.769 5-9.793 0-6.627-5.373-12-12-12z" stroke="url(#bulb-grad-lt)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 38h10M18 34h6" stroke="url(#bulb-grad-lt)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="21" cy="16" r="4" fill="url(#bulb-grad-lt)"/>
+                <defs>
+                  <linearGradient id="bulb-grad-lt" x1="9" y1="4" x2="33" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#10b981"/>
+                    <stop offset="1" stop-color="#0891b2"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="logo-6-text">FromThoughts</div>
+          </div>
+          <div class="variant-label" style="color: #999;">On Light</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align: center; margin-top: 80px; color: #444; font-size: 13px;">
+    <p>All concepts use free Google Fonts for easy implementation</p>
+    <p style="margin-top: 8px; color: #333;">Inter • Space Grotesk • DM Sans • Outfit • Sora</p>
+  </div>
+</body>
+</html>
