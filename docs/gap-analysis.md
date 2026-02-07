@@ -127,11 +127,11 @@ The market research identifies a real problem and a compelling market position. 
 
 ### The Knowledge Transfer Angle
 
-This is where FounderVision's positioning gets strongest. The research shows:
+This is where FromThoughts's positioning gets strongest. The research shows:
 
 - **Document before you hire** -- Experts universally agree you need a sales playbook before making your first hire, but most founders don't have one.
 - **A sales assistant should come first** -- Some advisors recommend hiring a "process-oriented sales assistant" who shadows the founder and codifies what they do into a playbook.
-- **FounderVision IS that codification step** -- It forces the founder to externalize their strategy (targets, market, competition, gaps) and produces a structured, transferable document.
+- **FromThoughts IS that codification step** -- It forces the founder to externalize their strategy (targets, market, competition, gaps) and produces a structured, transferable document.
 - **The positioning:** "Build the revenue playbook your first hire can execute on -- before you spend EUR 150K finding out they can't figure it out alone."
 
 Common failure modes when transitioning from founder-led sales:
@@ -243,7 +243,7 @@ At EUR 1,500-EUR 15,000 ACV, the recommended approach is a **hybrid PLG + founde
 
 ### Positioning Against Alternatives
 
-| Alternative | Cost | FounderVision advantage |
+| Alternative | Cost | FromThoughts advantage |
 |---|---|---|
 | Head of Sales | EUR 150K-EUR 250K/yr | 90% cheaper, available immediately, no hiring risk |
 | Fractional VP | EUR 60K-EUR 100K/yr | 75-85% cheaper, always available, structured output |
@@ -258,7 +258,7 @@ At EUR 1,500-EUR 15,000 ACV, the recommended approach is a **hybrid PLG + founde
 
 ### Partnership & Channel Strategies
 
-- **Accelerator partnerships** -- Offer FounderVision as part of accelerator program toolkits (Antler, Rockstart, Startupbootcamp)
+- **Accelerator partnerships** -- Offer FromThoughts as part of accelerator program toolkits (Antler, Rockstart, Startupbootcamp)
 - **VC portfolio value-add** -- Position with VCs like Newion, HenQ, Peak Capital as a tool they can offer their portfolio companies
 - **CRM marketplace** -- List on HubSpot and Pipedrive marketplaces for organic discovery
 - **Referral program** -- Founder-to-founder referrals with incentives (discount or extended access)
@@ -299,13 +299,13 @@ At EUR 1,500-EUR 15,000 ACV, the recommended approach is a **hybrid PLG + founde
 
 ## Goal
 
-Find 5-7 Dutch B2B founders to co-build FounderVision with. They get free access and direct founder attention; we get real feedback, validated use cases, and first case studies.
+Find 5-7 Dutch B2B founders to co-build FromThoughts with. They get free access and direct founder attention; we get real feedback, validated use cases, and first case studies.
 
 ## Program Structure
 
 ### What we offer them
 
-- Free access to FounderVision for 6 months (no Starter fee)
+- Free access to FromThoughts for 6 months (no Starter fee)
 - Direct access to Ranjith as the founder -- essentially a free fractional revenue advisor
 - Their input shapes the product -- features built around their real needs
 - After 6 months, locked-in discount (30-40% off Pro) for the first year
@@ -335,7 +335,7 @@ These have the highest conversion rate. Warm intros convert at 2x the rate of co
 
 2. **Investor networks** -- If connected to anyone at Newion, HenQ, Peak Capital, or Dutch Founders Fund, ask for introductions to 2-3 portfolio companies that fit the profile. VCs love offering value-add to their portfolio companies.
 
-3. **Accelerator alumni** -- Reach out to program managers at Antler, Rockstart, or Startupbootcamp. Ask to present FounderVision to their current cohort or alumni network. Position it as a "revenue planning workshop" -- provide value first, access follows.
+3. **Accelerator alumni** -- Reach out to program managers at Antler, Rockstart, or Startupbootcamp. Ask to present FromThoughts to their current cohort or alumni network. Position it as a "revenue planning workshop" -- provide value first, access follows.
 
 ### Tier 2: Community presence (target: 2-3 partners)
 
@@ -360,7 +360,7 @@ Use only if Tier 1 and 2 don't fill all spots.
 10. **LinkedIn search + personalized outreach** -- Search for Dutch B2B founders, 3-10 employees, recently raised seed funding. Send short (<300 character) messages. Keep it conversational, not salesy.
 
 Example outreach message:
-> "Hi [name], I'm building FounderVision -- an AI tool that helps B2B founders create a revenue playbook before their first sales hire. Looking for 5 Dutch founders to co-build with. Free access for 6 months, biweekly calls for feedback. Interested?"
+> "Hi [name], I'm building FromThoughts -- an AI tool that helps B2B founders create a revenue playbook before their first sales hire. Looking for 5 Dutch founders to co-build with. Free access for 6 months, biweekly calls for feedback. Interested?"
 
 Tips for LinkedIn outreach:
 - Messages under 300 characters get 19% more responses
@@ -425,11 +425,11 @@ Pre-fundraise isn't the best moment. Post-Series A is too late. The sweet spot i
 
 - They've typically already hired or are hiring a VP of Sales
 - Budget and stage means they'll invest in a person, not a tool
-- The founder has (hopefully) already learned the lessons FounderVision teaches
+- The founder has (hopefully) already learned the lessons FromThoughts teaches
 
 ## Targeting by Stage
 
-| Stage | Situation | Fit for FounderVision |
+| Stage | Situation | Fit for FromThoughts |
 |---|---|---|
 | Pre-revenue / bootstrapped | Still finding PMF, no money for tools | Too early |
 | EUR 100K-500K revenue, no funding | Founder selling, things are working but messy | Moderate -- pain is building but budget is tight |
@@ -456,13 +456,13 @@ Companies currently *posting* sales/BD job listings are a strong signal. It mean
 
 ## Key Insight
 
-The companies posting sales job listings right now are not competitors to FounderVision -- they're the ideal prospects. The hire and the tool are complementary: FounderVision helps the founder *prepare* for the hire, and gives the new hire a structured playbook to execute on.
+The companies posting sales job listings right now are not competitors to FromThoughts -- they're the ideal prospects. The hire and the tool are complementary: FromThoughts helps the founder *prepare* for the hire, and gives the new hire a structured playbook to execute on.
 
 ---
 
 # Value Proposition Analysis (Feb 2025)
 
-Using the Value Proposition Canvas (Osterwalder Framework) applied to FounderVision.
+Using the Value Proposition Canvas (Osterwalder Framework) applied to FromThoughts.
 
 ## Customer Profile
 
@@ -522,7 +522,7 @@ Using the Value Proposition Canvas (Osterwalder Framework) applied to FounderVis
 
 ### Pain Relievers
 
-| Pain | How FounderVision relieves it |
+| Pain | How FromThoughts relieves it |
 |---|---|
 | No structured sales process | Forces the founder to externalize their strategy into a documented roadmap with clear objectives and key results |
 | Knowledge is trapped | The roadmap output is a transferable document -- a starting point for onboarding a first hire |
@@ -533,7 +533,7 @@ Using the Value Proposition Canvas (Osterwalder Framework) applied to FounderVis
 
 ### Gain Creators
 
-| Gain | How FounderVision creates it |
+| Gain | How FromThoughts creates it |
 |---|---|
 | Clear roadmap | Structured objectives with measurable key results, generated from the founder's actual data |
 | Confidence in focus | Gap analysis and recommendations prioritize what matters most |
@@ -548,8 +548,8 @@ Using the Value Proposition Canvas (Osterwalder Framework) applied to FounderVis
 
 ### Strong Fit (pain reliever matches a real pain)
 
-- **"I have no structured plan"** --> FounderVision creates one. Clear value.
-- **"Alternatives are too expensive"** --> FounderVision is 75-90% cheaper. Clear value.
+- **"I have no structured plan"** --> FromThoughts creates one. Clear value.
+- **"Alternatives are too expensive"** --> FromThoughts is 75-90% cheaper. Clear value.
 - **"I need something to show investors"** --> PDF exports with benchmarks. Clear value.
 - **"I don't know how I compare"** --> Industry benchmarks. Clear value.
 
@@ -563,13 +563,13 @@ Using the Value Proposition Canvas (Osterwalder Framework) applied to FounderVis
 ### No Fit (pain exists but product doesn't address it at all)
 
 - **"I need accountability and someone to push me"** --> The product is passive. No check-ins, no nudges, no "you're behind" alerts. *Not addressed.*
-- **"I need help with the actual selling"** --> FounderVision plans, it doesn't execute. It won't make calls, write emails, or close deals. *Not addressed (and probably shouldn't be).*
+- **"I need help with the actual selling"** --> FromThoughts plans, it doesn't execute. It won't make calls, write emails, or close deals. *Not addressed (and probably shouldn't be).*
 
 ---
 
 ## Competitive Value Proposition Comparison
 
-| Dimension | Head of Sales | Fractional VP | Sales Consultant | DIY (Spreadsheets + ChatGPT) | FounderVision |
+| Dimension | Head of Sales | Fractional VP | Sales Consultant | DIY (Spreadsheets + ChatGPT) | FromThoughts |
 |---|---|---|---|---|---|
 | Cost/year | EUR 150K-250K | EUR 60K-100K | EUR 40K-70K | Free | EUR 1,500-15,000 |
 | Available immediately | No (3-6mo to recruit) | 2-4 weeks | 2-4 weeks | Yes | Yes |
@@ -595,7 +595,7 @@ Based on this analysis, three options ranked by strength:
 > "Get a structured revenue execution plan for EUR 1,500 -- what used to require a EUR 60,000 consultant or a EUR 150,000 hire."
 
 **Option 3 (Founder empowerment angle -- emotional resonance):**
-> "Stop guessing what to focus on. FounderVision turns your revenue targets into a clear, actionable roadmap -- so you can scale beyond founder-led sales with confidence."
+> "Stop guessing what to focus on. FromThoughts turns your revenue targets into a clear, actionable roadmap -- so you can scale beyond founder-led sales with confidence."
 
 ---
 
@@ -707,39 +707,39 @@ Companies with 3-10 employees have a wide revenue range. The EUR 300K-EUR 1.5M r
 
 ## Summary
 
-No direct competitor does exactly what FounderVision does. The market has tools for teams that already exist, tools that generate content/templates, and expensive human consultants. It doesn't have an AI tool that takes a founder's specific inputs and generates a strategic execution plan at a price point accessible to pre-Series A companies.
+No direct competitor does exactly what FromThoughts does. The market has tools for teams that already exist, tools that generate content/templates, and expensive human consultants. It doesn't have an AI tool that takes a founder's specific inputs and generates a strategic execution plan at a price point accessible to pre-Series A companies.
 
 ## Category 1: OKR / Goal-Setting Tools
 
 These track objectives and key results but don't generate them or provide sales-specific guidance.
 
-| Tool | What it does | Price | Gap vs FounderVision |
+| Tool | What it does | Price | Gap vs FromThoughts |
 |---|---|---|---|
 | Profit.co | General OKR tracking | $7-15/user/mo | No AI generation, not sales-focused |
 | Perdoo | OKR + strategy alignment | EUR 8-10/user/mo | No revenue-specific playbook |
 | Weekdone | Weekly check-ins + OKRs | Free-$29/user/mo | No AI, no sales focus |
 | Microsoft Viva Goals | OKRs for Teams users | $2/user/mo | Generic, not founder/sales focused |
 
-**FounderVision differentiator:** FounderVision *generates* the revenue roadmap with AI, not just tracks goals someone else defined.
+**FromThoughts differentiator:** FromThoughts *generates* the revenue roadmap with AI, not just tracks goals someone else defined.
 
 ## Category 2: Revenue Intelligence / Pipeline Tools
 
 Built for existing sales teams, not founder-led sales.
 
-| Tool | What it does | Price | Gap vs FounderVision |
+| Tool | What it does | Price | Gap vs FromThoughts |
 |---|---|---|---|
 | Gong | Call recording, revenue AI | ~$1,200/user/year + $5K platform | Enterprise-focused, requires sales team, very expensive |
 | Clari | Revenue forecasting, pipeline visibility | ~$1,080/user/year+ | Complex, requires existing pipeline data |
 | Outreach | Sales engagement, sequencing | Enterprise pricing | Built for sales teams, not founders |
 | Pipedrive | CRM + basic AI suggestions | $14-99/user/mo | CRM first, no strategic planning |
 
-**FounderVision differentiator:** These assume you already have a sales team and pipeline. FounderVision helps founders *before* they have either.
+**FromThoughts differentiator:** These assume you already have a sales team and pipeline. FromThoughts helps founders *before* they have either.
 
 ## Category 3: AI Sales Playbook Generators
 
-Closest to what FounderVision does, but focused on content/templates, not strategic planning.
+Closest to what FromThoughts does, but focused on content/templates, not strategic planning.
 
-| Tool | What it does | Price | Gap vs FounderVision |
+| Tool | What it does | Price | Gap vs FromThoughts |
 |---|---|---|---|
 | Waybook | AI-generated playbook templates | Free tool | Generic templates, no company-specific inputs |
 | Flight | Free playbook generator | Free | Creates outreach templates, not strategic roadmaps |
@@ -747,31 +747,31 @@ Closest to what FounderVision does, but focused on content/templates, not strate
 | Artisan | AI-powered outreach playbooks | Unknown | Focused on email personalization, not strategy |
 | Genesy AI | Sales automation + playbooks | Unknown | Lead gen focused, not founder strategy |
 
-**FounderVision differentiator:** These generate *content* (scripts, templates, emails). FounderVision generates a *strategic framework* based on the founder's specific situation, revenue targets, and market.
+**FromThoughts differentiator:** These generate *content* (scripts, templates, emails). FromThoughts generates a *strategic framework* based on the founder's specific situation, revenue targets, and market.
 
 ## Category 4: Fractional VP of Sales Services (Human)
 
 Services, not software -- the real competitive alternative for founders who can afford it.
 
-| Service | What it does | Price | Gap vs FounderVision |
+| Service | What it does | Price | Gap vs FromThoughts |
 |---|---|---|---|
 | Vendux | Marketplace for fractional sales leaders | $8K-12K/month | Human, expensive, availability varies |
 | Activated Scale | Fractional sales leadership | $8K-12K/month | Same -- human alternative |
 | My Sales Division | Fractional VP + AI support | Custom | Hybrid human/AI but expensive |
 
-**FounderVision differentiator:** 90% cheaper, available immediately, structured output vs. consulting conversations.
+**FromThoughts differentiator:** 90% cheaper, available immediately, structured output vs. consulting conversations.
 
 ## Category 5: AI Sales Coaching / Daily Prioritization
 
 These help reps execute but don't help founders plan.
 
-| Tool | What it does | Price | Gap vs FounderVision |
+| Tool | What it does | Price | Gap vs FromThoughts |
 |---|---|---|---|
 | Nooks | AI dialer + coaching for reps | Unknown | For sales reps, not founders |
 | Second Nature | AI role-play for sales training | Unknown | Training tool, not strategy |
 | Claap | Meeting intelligence + coaching | $30/user/mo | Call-focused, not planning |
 
-**FounderVision differentiator:** These coach salespeople on calls. FounderVision helps founders build the plan *before* they have salespeople.
+**FromThoughts differentiator:** These coach salespeople on calls. FromThoughts helps founders build the plan *before* they have salespeople.
 
 ## The Gap in the Market
 
@@ -780,7 +780,7 @@ These help reps execute but don't help founders plan.
 | Have a sales team | Gong, Clari, Outreach, Salesforce | Covered |
 | Building outreach sequences | Apollo, Clay, Artisan | Covered |
 | Tracking OKRs | Profit.co, Perdoo, Weekdone | Covered |
-| **Founder needs to build first revenue strategy** | **Nothing AI-native and affordable** | **FounderVision's opportunity** |
+| **Founder needs to build first revenue strategy** | **Nothing AI-native and affordable** | **FromThoughts's opportunity** |
 
 The market has:
 - Tools for teams that already exist
@@ -794,7 +794,7 @@ The market doesn't have:
 
 ## Competitors to Watch
 
-1. **Waybook / Flight** -- If they add company-specific inputs and strategic depth, they could move closer to FounderVision's space
+1. **Waybook / Flight** -- If they add company-specific inputs and strategic depth, they could move closer to FromThoughts's space
 2. **My Sales Division** -- Hybrid fractional VP + AI model; if they productize the AI piece more, they become competition
 3. **Monday CRM's "Sales Advisor"** -- If they expand this AI feature to include strategic planning, not just pipeline coaching
 

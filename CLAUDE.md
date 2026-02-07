@@ -1,4 +1,4 @@
-# FounderVision - Project Context
+# FromThoughts - Project Context
 
 ## Deployment workflow
 - **ALWAYS deploy to preview first**: `vercel` (no --prod flag)
@@ -7,7 +7,7 @@
 - Vercel is on the free Hobby plan — unlimited deploys, batch production deploys to keep history clean
 
 ## What this product is
-FounderVision is an AI-powered Revenue Operations platform for B2B founders (€500K-€2M ARR) who need to translate revenue targets into actionable execution without hiring a VP of Commercial.
+FromThoughts is an AI-powered Revenue Operations platform for B2B founders (€500K-€2M ARR) who need to translate revenue targets into actionable execution without hiring a VP of Commercial.
 
 ## Tech stack
 - Next.js 16 (App Router), React 19, TypeScript 5
