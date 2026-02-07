@@ -281,36 +281,56 @@ export default function HomePage() {
                   <Users className="h-5 w-5 text-emerald-600" />
                 </div>
 
-                {/* Abstract professional silhouette */}
+                {/* Flat design founder illustration */}
                 <svg viewBox="0 0 200 200" className="absolute inset-4 w-64 h-64">
                   <defs>
-                    <linearGradient id="silhouetteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#10b981" />
-                      <stop offset="50%" stopColor="#14b8a6" />
-                      <stop offset="100%" stopColor="#06b6d4" />
-                    </linearGradient>
                     <linearGradient id="shirtGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#059669" />
-                      <stop offset="100%" stopColor="#047857" />
+                      <stop offset="0%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#059669" />
                     </linearGradient>
                   </defs>
 
-                  {/* Body/Shoulders - professional shirt shape */}
-                  <path d="M40 200 L40 160 Q40 140 60 135 L85 130 Q100 128 115 130 L140 135 Q160 140 160 160 L160 200 Z" fill="url(#shirtGradient)" />
+                  {/* Body/Shoulders - professional shirt */}
+                  <path d="M35 200 L35 155 Q35 135 60 130 L85 125 Q100 123 115 125 L140 130 Q165 135 165 155 L165 200 Z" fill="url(#shirtGradient)" />
 
-                  {/* Collar detail */}
-                  <path d="M85 130 L95 145 L100 140 L105 145 L115 130" className="stroke-emerald-800/30 stroke-2 fill-none" strokeLinecap="round" strokeLinejoin="round" />
+                  {/* Collar */}
+                  <path d="M85 125 L97 142 L100 138 L103 142 L115 125" className="fill-emerald-600" />
+                  <path d="M88 125 L97 138 L100 135 L103 138 L112 125" className="fill-white/20" />
 
                   {/* Neck */}
-                  <rect x="88" y="115" width="24" height="20" rx="8" fill="url(#silhouetteGradient)" opacity="0.9" />
+                  <rect x="90" y="108" width="20" height="20" rx="6" className="fill-amber-200" />
 
-                  {/* Head - clean oval */}
-                  <ellipse cx="100" cy="80" rx="35" ry="42" fill="url(#silhouetteGradient)" />
+                  {/* Head */}
+                  <ellipse cx="100" cy="75" rx="32" ry="38" className="fill-amber-100" />
 
-                  {/* Subtle hair shape on top */}
-                  <ellipse cx="100" cy="48" rx="30" ry="15" className="fill-emerald-700" />
-                  <ellipse cx="72" cy="58" rx="6" ry="12" className="fill-emerald-700" />
-                  <ellipse cx="128" cy="58" rx="6" ry="12" className="fill-emerald-700" />
+                  {/* Hair */}
+                  <ellipse cx="100" cy="45" rx="30" ry="18" className="fill-gray-700" />
+                  <ellipse cx="70" cy="55" rx="5" ry="14" className="fill-gray-700" />
+                  <ellipse cx="130" cy="55" rx="5" ry="14" className="fill-gray-700" />
+                  <ellipse cx="100" cy="50" rx="26" ry="12" className="fill-gray-800" />
+
+                  {/* Eyes - simple dots */}
+                  <circle cx="88" cy="75" r="4" className="fill-gray-700" />
+                  <circle cx="112" cy="75" r="4" className="fill-gray-700" />
+
+                  {/* Eye shine */}
+                  <circle cx="89.5" cy="74" r="1.5" className="fill-white" />
+                  <circle cx="113.5" cy="74" r="1.5" className="fill-white" />
+
+                  {/* Subtle eyebrows */}
+                  <path d="M82 68 Q88 65 94 68" className="stroke-gray-600 fill-none" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M106 68 Q112 65 118 68" className="stroke-gray-600 fill-none" strokeWidth="2" strokeLinecap="round" />
+
+                  {/* Friendly smile */}
+                  <path d="M92 88 Q100 95 108 88" className="stroke-gray-600 fill-none" strokeWidth="2.5" strokeLinecap="round" />
+
+                  {/* Subtle cheeks */}
+                  <circle cx="78" cy="82" r="5" className="fill-rose-200/40" />
+                  <circle cx="122" cy="82" r="5" className="fill-rose-200/40" />
+
+                  {/* Ears */}
+                  <ellipse cx="68" cy="78" rx="4" ry="7" className="fill-amber-100" />
+                  <ellipse cx="132" cy="78" rx="4" ry="7" className="fill-amber-100" />
                 </svg>
               </div>
 
