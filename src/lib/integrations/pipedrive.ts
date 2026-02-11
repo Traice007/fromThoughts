@@ -102,7 +102,7 @@ export async function syncToPipedrive(
       Authorization: `Bearer ${accessToken}`,
     },
     body: JSON.stringify({
-      title: `${forecast.companyName || "Company"} - FromThoughts Forecast`,
+      title: `${forecast.companyName || "Company"} - fromThoughts Forecast`,
       value: forecast.targetRevenue,
       currency: "USD",
     }),
@@ -133,7 +133,7 @@ export async function syncToPipedrive(
 }
 
 function buildNoteContent(forecast: ForecastWithOkrs): string {
-  let content = `<h2>FromThoughts Revenue Forecast</h2>`;
+  let content = `<h2>fromThoughts Revenue Forecast</h2>`;
   content += `<p><strong>Current ARR:</strong> $${forecast.currentRevenue.toLocaleString()}</p>`;
   content += `<p><strong>Target ARR:</strong> $${forecast.targetRevenue.toLocaleString()}</p>`;
   content += `<p><strong>Timeline:</strong> ${forecast.timeHorizonMonths} months</p>`;

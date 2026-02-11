@@ -25,7 +25,13 @@ const playfair = Playfair_Display({
   weight: ["400", "500"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://fromthoughts.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: "/",
+  },
   title: "fromThoughts - AI-Powered Revenue Operations for Growing Companies",
   description: "Transform your revenue targets into a clear revenue roadmap. fromThoughts helps SMBs bridge the gap between revenue goals and operational execution without hiring a VP of Commercial too early.",
   icons: {
@@ -62,8 +68,8 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-          <Footer />
         </SessionProvider>
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

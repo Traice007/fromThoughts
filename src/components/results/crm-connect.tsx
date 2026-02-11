@@ -76,8 +76,8 @@ export function CrmConnect({ forecastId }: CrmConnectProps) {
     return (
       <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
         <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
-            <CheckCircle className="h-5 w-5 text-emerald-600" />
+          <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+            <CheckCircle className="h-5 w-5 text-amber-600" />
           </div>
           <div>
             <h2 className="text-lg font-bold mb-1">Thanks for your interest</h2>
@@ -112,14 +112,14 @@ export function CrmConnect({ forecastId }: CrmConnectProps) {
             onClick={() => handleSelect(crm.id)}
             className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
               selected === crm.id
-                ? "border-emerald-500 bg-emerald-50"
+                ? "border-amber-500 bg-amber-50"
                 : "border-border hover:border-gray-300 hover:bg-muted"
             }`}
           >
-            <span className={selected === crm.id ? "text-emerald-600" : "text-gray-500"}>
+            <span className={selected === crm.id ? "text-amber-600" : "text-gray-500"}>
               {crm.icon}
             </span>
-            <span className={`text-sm font-medium ${selected === crm.id ? "text-emerald-700" : "text-gray-700"}`}>
+            <span className={`text-sm font-medium ${selected === crm.id ? "text-amber-700" : "text-gray-700"}`}>
               {crm.name}
             </span>
           </button>
@@ -129,7 +129,7 @@ export function CrmConnect({ forecastId }: CrmConnectProps) {
       <button
         onClick={handleSubmit}
         disabled={!selected}
-        className="w-full py-3 rounded-lg font-medium text-sm transition-colors bg-emerald-600 text-white hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-full py-3 rounded-lg font-medium text-sm transition-colors bg-slate-900 text-white hover:bg-slate-800 disabled:opacity-40 disabled:cursor-not-allowed"
       >
         Notify me when it&apos;s ready
       </button>

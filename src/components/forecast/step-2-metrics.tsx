@@ -68,7 +68,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Funnel Metrics */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <Users className="h-5 w-5 text-emerald-600" />
+            <Users className="h-5 w-5 text-amber-600" />
             Funnel Volume (Monthly)
           </h3>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -81,7 +81,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                 value={formData.monthlyInboundLeads || ""}
                 onChange={(e) => setFormData({ ...formData, monthlyInboundLeads: parseInt(e.target.value) || undefined })}
                 placeholder="e.g., 500"
-                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
               />
               <p className="mt-2 text-xs text-gray-500 font-medium">Marketing Qualified Leads</p>
             </div>
@@ -94,7 +94,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                 value={formData.marketingQualifiedAccounts || ""}
                 onChange={(e) => setFormData({ ...formData, marketingQualifiedAccounts: parseInt(e.target.value) || undefined })}
                 placeholder="e.g., 100"
-                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
               />
               <p className="mt-2 text-xs text-gray-500 font-medium">Sales Qualified Leads</p>
             </div>
@@ -107,7 +107,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                 value={formData.salesQualifiedLeads || ""}
                 onChange={(e) => setFormData({ ...formData, salesQualifiedLeads: parseInt(e.target.value) || undefined })}
                 placeholder="e.g., 30"
-                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
               />
               <p className="mt-2 text-xs text-gray-500 font-medium">Active pipeline opportunities</p>
             </div>
@@ -117,10 +117,10 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Conversion Rates */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-emerald-600" />
+            <TrendingUp className="h-5 w-5 text-amber-600" />
             Conversion Rates
             {(isRateAutoCalculated('mqlToSql') || isRateAutoCalculated('sqlToOpp')) && (
-              <span className="text-xs font-medium text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2 py-1 rounded-full">
+              <span className="text-xs font-medium text-amber-600 flex items-center gap-1 bg-amber-50 px-2 py-1 rounded-full">
                 <Calculator className="h-3 w-3" />
                 Auto-calculated
               </span>
@@ -141,14 +141,14 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   readOnly={isRateAutoCalculated('mqlToSql')}
                   className={`w-full px-4 py-4 text-lg font-medium border-2 rounded-xl transition-all placeholder:text-gray-400 ${
                     isRateAutoCalculated('mqlToSql')
-                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
-                      : 'text-gray-900 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white'
+                      ? 'bg-amber-50 border-amber-200 text-amber-700'
+                      : 'text-gray-900 bg-gray-50 border-gray-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white'
                   }`}
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">%</span>
               </div>
               {isRateAutoCalculated('mqlToSql') && (
-                <p className="mt-2 text-xs text-emerald-600 font-medium">Calculated from funnel</p>
+                <p className="mt-2 text-xs text-amber-600 font-medium">Calculated from funnel</p>
               )}
             </div>
             <div>
@@ -165,14 +165,14 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   readOnly={isRateAutoCalculated('sqlToOpp')}
                   className={`w-full px-4 py-4 text-lg font-medium border-2 rounded-xl transition-all placeholder:text-gray-400 ${
                     isRateAutoCalculated('sqlToOpp')
-                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
-                      : 'text-gray-900 bg-gray-50 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white'
+                      ? 'bg-amber-50 border-amber-200 text-amber-700'
+                      : 'text-gray-900 bg-gray-50 border-gray-200 focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white'
                   }`}
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">%</span>
               </div>
               {isRateAutoCalculated('sqlToOpp') && (
-                <p className="mt-2 text-xs text-emerald-600 font-medium">Calculated from funnel</p>
+                <p className="mt-2 text-xs text-amber-600 font-medium">Calculated from funnel</p>
               )}
             </div>
             <div>
@@ -186,7 +186,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   value={formData.sqlToCloseRate || ""}
                   onChange={(e) => setFormData({ ...formData, sqlToCloseRate: parseFloat(e.target.value) || undefined })}
                   placeholder="e.g., 25"
-                  className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                  className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">%</span>
               </div>
@@ -198,7 +198,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Deal Metrics */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <DollarSign className="h-5 w-5 text-emerald-600" />
+            <DollarSign className="h-5 w-5 text-amber-600" />
             Deal Metrics
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -213,13 +213,13 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   value={formData.averageDealSize || ""}
                   onChange={(e) => setFormData({ ...formData, averageDealSize: parseFloat(e.target.value) || undefined })}
                   placeholder="e.g., 25000"
-                  className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                  className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
                 />
               </div>
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
-                <Clock className="h-4 w-4 text-emerald-600" />
+                <Clock className="h-4 w-4 text-amber-600" />
                 Sales Cycle Length (days)
               </label>
               <input
@@ -227,7 +227,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                 value={formData.salesCycleLength || ""}
                 onChange={(e) => setFormData({ ...formData, salesCycleLength: parseInt(e.target.value) || undefined })}
                 placeholder="e.g., 45"
-                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+                className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
               />
             </div>
           </div>
@@ -236,30 +236,30 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
 
       {/* Visual Funnel Preview */}
       {(formData.monthlyInboundLeads || formData.marketingQualifiedAccounts || formData.salesQualifiedLeads) && (
-        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-100">
+        <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
           <h3 className="font-semibold text-gray-900 mb-4">Your Funnel Preview</h3>
           <div className="flex items-center justify-center gap-4 text-sm">
             {formData.monthlyInboundLeads && (
               <>
                 <div className="text-center bg-white/60 rounded-lg p-3 min-w-[80px]">
-                  <p className="text-2xl font-bold text-emerald-600">{formData.monthlyInboundLeads}</p>
+                  <p className="text-2xl font-bold text-amber-600">{formData.monthlyInboundLeads}</p>
                   <p className="text-gray-600 font-medium">MQLs</p>
                 </div>
-                <ArrowRight className="h-5 w-5 text-emerald-400" />
+                <ArrowRight className="h-5 w-5 text-amber-400" />
               </>
             )}
             {formData.marketingQualifiedAccounts && (
               <>
                 <div className="text-center bg-white/60 rounded-lg p-3 min-w-[80px]">
-                  <p className="text-2xl font-bold text-emerald-600">{formData.marketingQualifiedAccounts}</p>
+                  <p className="text-2xl font-bold text-amber-600">{formData.marketingQualifiedAccounts}</p>
                   <p className="text-gray-600 font-medium">SQLs</p>
                 </div>
-                <ArrowRight className="h-5 w-5 text-emerald-400" />
+                <ArrowRight className="h-5 w-5 text-amber-400" />
               </>
             )}
             {formData.salesQualifiedLeads && (
               <div className="text-center bg-white/60 rounded-lg p-3 min-w-[80px]">
-                <p className="text-2xl font-bold text-emerald-600">{formData.salesQualifiedLeads}</p>
+                <p className="text-2xl font-bold text-amber-600">{formData.salesQualifiedLeads}</p>
                 <p className="text-gray-600 font-medium">Opportunities</p>
               </div>
             )}
@@ -277,7 +277,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         </button>
         <button
           type="submit"
-          className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl"
+          className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl"
         >
           Continue to Market Info →
         </button>

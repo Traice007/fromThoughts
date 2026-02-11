@@ -87,8 +87,8 @@ export function ContactSalesForm() {
   if (isSubmitted) {
     return (
       <div className="text-center py-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-6">
-          <CheckCircle className="h-8 w-8 text-emerald-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-6">
+          <CheckCircle className="h-8 w-8 text-amber-600" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900 mb-3">We&apos;ll be in touch!</h2>
         <p className="text-gray-600 max-w-md mx-auto">
@@ -109,7 +109,7 @@ export function ContactSalesForm() {
       {/* Name */}
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-          <User className="inline h-4 w-4 mr-1 text-emerald-600" />
+          <User className="inline h-4 w-4 mr-1 text-amber-600" />
           Full Name *
         </label>
         <input
@@ -118,7 +118,7 @@ export function ContactSalesForm() {
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           placeholder="Jane Smith"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
           disabled={isSubmitting}
         />
         {errors.name && (
@@ -129,7 +129,7 @@ export function ContactSalesForm() {
       {/* Email */}
       <div>
         <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Mail className="inline h-4 w-4 mr-1 text-emerald-600" />
+          <Mail className="inline h-4 w-4 mr-1 text-amber-600" />
           Work Email *
         </label>
         <input
@@ -138,7 +138,7 @@ export function ContactSalesForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="you@company.com"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
           disabled={isSubmitting}
         />
         {errors.email && (
@@ -149,7 +149,7 @@ export function ContactSalesForm() {
       {/* Company Website */}
       <div>
         <label htmlFor="companyWebsite" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Globe className="inline h-4 w-4 mr-1 text-emerald-600" />
+          <Globe className="inline h-4 w-4 mr-1 text-amber-600" />
           Company Website *
         </label>
         <input
@@ -158,7 +158,7 @@ export function ContactSalesForm() {
           value={formData.companyWebsite}
           onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
           placeholder="company.com"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
           disabled={isSubmitting}
         />
         {errors.companyWebsite && (
@@ -169,14 +169,14 @@ export function ContactSalesForm() {
       {/* Team Size */}
       <div>
         <label htmlFor="teamSize" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Users className="inline h-4 w-4 mr-1 text-emerald-600" />
+          <Users className="inline h-4 w-4 mr-1 text-amber-600" />
           Team Size
         </label>
         <select
           id="teamSize"
           value={formData.teamSize}
           onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all text-gray-700"
+          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all text-gray-700"
           disabled={isSubmitting}
         >
           <option value="">Select team size</option>
@@ -191,7 +191,7 @@ export function ContactSalesForm() {
       {/* Message */}
       <div>
         <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-          <MessageSquare className="inline h-4 w-4 mr-1 text-emerald-600" />
+          <MessageSquare className="inline h-4 w-4 mr-1 text-amber-600" />
           How can we help?
         </label>
         <textarea
@@ -200,7 +200,7 @@ export function ContactSalesForm() {
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Tell us about your goals and what you're looking for..."
           rows={4}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400 resize-none"
+          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 resize-none"
           disabled={isSubmitting}
         />
       </div>
@@ -209,7 +209,7 @@ export function ContactSalesForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           <>

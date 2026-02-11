@@ -53,7 +53,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
       } catch (error) {
         console.error("Polling error:", error);
       }
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [polling, forecast.id]);

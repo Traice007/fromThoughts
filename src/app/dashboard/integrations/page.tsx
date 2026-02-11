@@ -30,7 +30,7 @@ export default async function IntegrationsPage() {
       <div>
         <h1 className="text-3xl font-bold">Integrations</h1>
         <p className="text-secondary mt-1">
-          Connect FromThoughts to the tools your team already uses
+          Connect fromThoughts to the tools your team already uses
         </p>
       </div>
 

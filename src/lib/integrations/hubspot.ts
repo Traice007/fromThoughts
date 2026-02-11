@@ -97,7 +97,7 @@ export async function syncToHubSpot(
     },
     body: JSON.stringify({
       properties: {
-        dealname: `${forecast.companyName || "Company"} - FromThoughts Forecast`,
+        dealname: `${forecast.companyName || "Company"} - fromThoughts Forecast`,
         amount: forecast.targetRevenue.toString(),
         dealstage: "appointmentscheduled",
         pipeline: "default",
@@ -116,7 +116,7 @@ export async function syncToHubSpot(
 }
 
 function buildDealDescription(forecast: ForecastWithOkrs): string {
-  let description = `FromThoughts Revenue Forecast\n\n`;
+  let description = `fromThoughts Revenue Forecast\n\n`;
   description += `Current ARR: $${forecast.currentRevenue.toLocaleString()}\n`;
   description += `Target ARR: $${forecast.targetRevenue.toLocaleString()}\n`;
   description += `Timeline: ${forecast.timeHorizonMonths} months\n\n`;

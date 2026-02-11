@@ -12,28 +12,28 @@ export default async function DashboardPage() {
     return null;
   }
 
-  const forecasts = await prisma.forecast.findMany({
-    where: { userId: user.id },
-    include: {
-      okrs: {
-        include: { keyResults: true },
-      },
-    },
-    orderBy: { createdAt: "desc" },
-    take: 5,
-  });
-
-  const totalForecasts = await prisma.forecast.count({
-    where: { userId: user.id },
-  });
-
-  const totalOkrs = await prisma.okr.count({
-    where: { forecast: { userId: user.id } },
-  });
-
-  const totalKeyResults = await prisma.keyResult.count({
-    where: { okr: { forecast: { userId: user.id } } },
-  });
+  const [forecasts, totalForecasts, totalOkrs, totalKeyResults] =
+    await Promise.all([
+      prisma.forecast.findMany({
+        where: { userId: user.id },
+        include: {
+          okrs: {
+            include: { keyResults: true },
+          },
+        },
+        orderBy: { createdAt: "desc" },
+        take: 5,
+      }),
+      prisma.forecast.count({
+        where: { userId: user.id },
+      }),
+      prisma.okr.count({
+        where: { forecast: { userId: user.id } },
+      }),
+      prisma.keyResult.count({
+        where: { okr: { forecast: { userId: user.id } } },
+      }),
+    ]);
 
   const revenueData = forecasts.reduce(
     (acc, f) => ({

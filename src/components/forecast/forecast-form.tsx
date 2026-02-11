@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { StepIndicator } from "./step-indicator";
 import { Step1Revenue } from "./step-1-revenue";
 import { Step2Metrics } from "./step-2-metrics";
@@ -38,9 +38,38 @@ const initialState: ForecastFormState = {
 
 export function ForecastForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [formState, setFormState] = useState<ForecastFormState>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [importBanner, setImportBanner] = useState<string | null>(null);
+
+  // Pre-populate from pipeline import if importId is in URL
+  useEffect(() => {
+    const importId = searchParams.get("importId");
+    if (!importId) return;
+
+    fetch(`/api/pipeline/${importId}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load import");
+        return res.json();
+      })
+      .then((data) => {
+        const metrics = data.metrics?.forecastFormData;
+        if (metrics && Object.keys(metrics).length > 0) {
+          setFormState((prev) => ({
+            ...prev,
+            metrics: { ...prev.metrics, ...metrics },
+          }));
+          setImportBanner(
+            `Pre-filled with data from ${data.deals?.length || 0} imported deals. You can edit any field.`
+          );
+        }
+      })
+      .catch(() => {
+        // Silently fail — user can still fill the form manually
+      });
+  }, [searchParams]);
 
   const handleRevenueNext = (data: RevenueStepData) => {
     setFormState((prev) => ({
@@ -125,6 +154,13 @@ export function ForecastForm() {
       <div className="mb-10">
         <StepIndicator currentStep={formState.step} steps={STEPS} />
       </div>
+
+      {/* Import Banner */}
+      {importBanner && (
+        <div className="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-xl text-blue-700 text-center text-sm font-medium">
+          {importBanner}
+        </div>
+      )}
 
       {/* Error Message */}
       {error && (

@@ -35,29 +35,31 @@ export async function POST(request: NextRequest) {
       // Generate OKRs using AI
       const result = await generateOkrs(forecast);
 
-      // Save OKRs to database
-      for (const okr of result.okrs) {
-        await prisma.okr.create({
-          data: {
-            forecastId,
-            objective: okr.objective,
-            category: okr.category,
-            priority: okr.priority,
-            timeframe: okr.timeframe,
-            rationale: okr.rationale,
-            howToAchieve: okr.howToAchieve,
-            keyResults: {
-              create: okr.keyResults.map((kr) => ({
-                description: kr.description,
-                metricName: kr.metricName,
-                currentValue: kr.currentValue,
-                targetValue: kr.targetValue,
-                unit: kr.unit,
-              })),
+      // Save OKRs to database (parallel)
+      await Promise.all(
+        result.okrs.map((okr) =>
+          prisma.okr.create({
+            data: {
+              forecastId,
+              objective: okr.objective,
+              category: okr.category,
+              priority: okr.priority,
+              timeframe: okr.timeframe,
+              rationale: okr.rationale,
+              howToAchieve: okr.howToAchieve,
+              keyResults: {
+                create: okr.keyResults.map((kr) => ({
+                  description: kr.description,
+                  metricName: kr.metricName,
+                  currentValue: kr.currentValue,
+                  targetValue: kr.targetValue,
+                  unit: kr.unit,
+                })),
+              },
             },
-          },
-        });
-      }
+          })
+        )
+      );
 
       // Update forecast with results (serialize JSON for SQLite)
       await prisma.forecast.update({

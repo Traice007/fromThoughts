@@ -27,6 +27,7 @@ model User {
   accounts              Account[]
   forecasts             Forecast[]
   sessions              Session[]
+  pipelineImports       PipelineImport[]
 
   @@index([email])
   @@map("users")
@@ -208,4 +209,39 @@ model SalesLead {
   @@index([status])
   @@index([createdAt])
   @@map("sales_leads")
+}
+
+model PipelineImport {
+  id                 String   @id @default(cuid())
+  userId             String
+  source             String   // "csv" or "paste"
+  fileName           String?
+  totalDeals         Int
+  totalValue         Float
+  avgDealSize        Float
+  avgSalesCycleDays  Int?
+  importedAt         DateTime @default(now())
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deals              Deal[]
+
+  @@index([userId])
+  @@map("pipeline_imports")
+}
+
+model Deal {
+  id               String          @id @default(cuid())
+  pipelineImportId String
+  dealName         String
+  stage            String
+  value            Float
+  closeDate        DateTime?
+  createdDate      DateTime?
+  contactName      String?
+  companyName      String?
+  probability      Float?
+  notes            String?
+  pipelineImport   PipelineImport  @relation(fields: [pipelineImportId], references: [id], onDelete: Cascade)
+
+  @@index([pipelineImportId])
+  @@map("deals")
 }

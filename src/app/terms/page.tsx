@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { FileText, AlertCircle, CreditCard, Scale, Mail, Globe } from "lucide-react";
 
+export const revalidate = 86400; // 24 hours
+
 export const metadata: Metadata = {
   title: "Terms of Service | fromThoughts",
-  description: "Terms of Service for FromThoughts - AI-powered revenue operations platform",
+  description: "Terms of Service for fromThoughts - AI-powered revenue operations platform",
 };
 
 export default function TermsPage() {
@@ -26,7 +28,7 @@ export default function TermsPage() {
             <div>
               <p className="font-semibold text-warning">Please Read Carefully</p>
               <p className="text-secondary text-sm mt-1">
-                These Terms of Service constitute a legally binding agreement between you and FromThoughts Inc.
+                These Terms of Service constitute a legally binding agreement between you and fromThoughts Inc.
                 By using our service, you acknowledge that you have read, understood, and agree to be bound by these terms.
               </p>
             </div>
@@ -42,7 +44,7 @@ export default function TermsPage() {
             </h2>
             <div className="pl-10">
               <p className="text-secondary leading-relaxed">
-                By accessing or using FromThoughts (&quot;Service&quot;), you agree to be bound by these Terms of Service
+                By accessing or using fromThoughts (&quot;Service&quot;), you agree to be bound by these Terms of Service
                 (&quot;Terms&quot;). These Terms apply to all visitors, users, and others who access or use the Service.
                 If you disagree with any part of these terms, you may not access the Service.
               </p>
@@ -56,7 +58,7 @@ export default function TermsPage() {
             </h2>
             <div className="pl-10">
               <p className="text-secondary leading-relaxed mb-4">
-                FromThoughts provides a revenue operations platform that offers:
+                fromThoughts provides a revenue operations platform that offers:
               </p>
               <ul className="space-y-2 text-secondary">
                 <li className="flex items-start gap-2">
@@ -90,7 +92,7 @@ export default function TermsPage() {
             </h2>
             <div className="pl-10 space-y-4">
               <p className="text-secondary leading-relaxed">
-                When using FromThoughts, you agree to:
+                When using fromThoughts, you agree to:
               </p>
               <ul className="space-y-2 text-secondary">
                 <li className="flex items-start gap-2">
@@ -199,7 +201,7 @@ export default function TermsPage() {
               <div>
                 <h3 className="font-medium mb-2">Our Intellectual Property</h3>
                 <p className="text-secondary text-sm">
-                  The Service and its original content, features, and functionality are owned by FromThoughts Inc. and are
+                  The Service and its original content, features, and functionality are owned by fromThoughts Inc. and are
                   protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
                 </p>
               </div>
@@ -220,7 +222,7 @@ export default function TermsPage() {
             </h2>
             <div className="pl-10">
               <p className="text-secondary leading-relaxed">
-                FromThoughts integrates with third-party services including HubSpot and Pipedrive. Your use of these integrations
+                fromThoughts integrates with third-party services including HubSpot and Pipedrive. Your use of these integrations
                 is subject to their respective terms of service and privacy policies. We are not responsible for the practices
                 of third-party services. When you authorize a CRM connection, you grant us permission to access and modify
                 data in that service on your behalf, limited to the functionality described in our Service.
@@ -274,7 +276,7 @@ export default function TermsPage() {
             </h2>
             <div className="pl-10">
               <p className="text-secondary leading-relaxed">
-                You agree to indemnify, defend, and hold harmless FromThoughts Inc., its officers, directors, employees, and
+                You agree to indemnify, defend, and hold harmless fromThoughts Inc., its officers, directors, employees, and
                 agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable
                 attorneys&apos; fees, arising out of or in any way connected with: (a) your access to or use of the Service;
                 (b) your violation of these Terms; (c) your violation of any third-party rights; or (d) your content.
@@ -361,7 +363,7 @@ export default function TermsPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Globe className="h-5 w-5 text-primary" />
-                  <span className="text-secondary">FromThoughts Inc.</span>
+                  <span className="text-secondary">fromThoughts Inc.</span>
                 </div>
               </div>
             </div>
@@ -371,7 +373,7 @@ export default function TermsPage() {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-border text-center">
           <p className="text-secondary text-sm">
-            By using FromThoughts, you acknowledge that you have read and understood these Terms of Service
+            By using fromThoughts, you acknowledge that you have read and understood these Terms of Service
             and agree to be bound by them.
           </p>
         </div>

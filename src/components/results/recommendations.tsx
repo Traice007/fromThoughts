@@ -1,5 +1,3 @@
-"use client";
-
 import { Lightbulb, CheckCircle } from "lucide-react";
 
 interface RecommendationsProps {

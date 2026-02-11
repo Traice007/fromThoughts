@@ -81,7 +81,7 @@ export function SubscriptionBanner({
           <p className="font-medium text-red-900">Your plan has expired</p>
           <p className="text-sm text-red-700">
             Your {tier.toLowerCase()} plan expired on{" "}
-            {expiresAt ? new Date(expiresAt).toLocaleDateString() : "N/A"}. Renew to continue using FromThoughts.
+            {expiresAt ? new Date(expiresAt).toLocaleDateString() : "N/A"}. Renew to continue using fromThoughts.
           </p>
         </div>
         <Link

@@ -1,5 +1,3 @@
-"use client";
-
 import { Target, TrendingUp, Users, DollarSign, Settings, Package, Clock, Lightbulb } from "lucide-react";
 import type { OkrWithKeyResults, OkrCategory } from "@/types/forecast";
 

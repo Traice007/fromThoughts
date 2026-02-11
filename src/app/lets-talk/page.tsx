@@ -4,7 +4,7 @@ import { ContactSalesForm } from "@/components/contact-sales/contact-sales-form"
 
 export const metadata: Metadata = {
   title: "Let's Talk | fromThoughts",
-  description: "Get in touch with our team to discuss how FromThoughts can help your organization hit its revenue targets.",
+  description: "Get in touch with our team to discuss how fromThoughts can help your organization hit its revenue targets.",
 };
 
 export default function ContactSalesPage() {
@@ -12,8 +12,7 @@ export default function ContactSalesPage() {
     <div className="overflow-hidden">
       <section className="relative py-8 sm:py-12 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6bTAtMThjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
 
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -28,7 +27,7 @@ export default function ContactSalesPage() {
                 Tell Us About Your Growth Goals
               </h1>
               <p className="text-base sm:text-lg text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8">
-                Share a bit about your team and we&apos;ll get back to you within 24 hours to discuss how FromThoughts can help.
+                Share a bit about your team and we&apos;ll get back to you within 24 hours to discuss how fromThoughts can help.
               </p>
 
               {/* Trust Indicators */}

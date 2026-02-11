@@ -1,5 +1,3 @@
-"use client";
-
 import { TrendingUp, TrendingDown, Minus, Users } from "lucide-react";
 import { getBenchmark, compareToBenchmark, getTotalSampleSize, type BenchmarkComparison } from "@/data/benchmarks";
 

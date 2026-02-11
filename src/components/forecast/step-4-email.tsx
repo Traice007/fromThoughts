@@ -38,7 +38,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <div className="text-center">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 mb-4 shadow-lg shadow-emerald-500/30">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-800 mb-4 shadow-lg shadow-slate-900/30">
           <Sparkles className="h-8 w-8 text-white" />
         </div>
         <h2 className="text-2xl font-bold text-gray-900">Generate Your Roadmap</h2>
@@ -51,7 +51,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
         {/* Email */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Mail className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Mail className="inline h-4 w-4 mr-1 text-amber-600" />
             Work Email *
           </label>
           <input
@@ -59,7 +59,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
             value={formData.email || ""}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="you@company.com"
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             disabled={isSubmitting}
           />
           {errors.email && (
@@ -70,7 +70,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
         {/* Company Name */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Building className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Building className="inline h-4 w-4 mr-1 text-amber-600" />
             Company Name (optional)
           </label>
           <input
@@ -78,30 +78,30 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
             value={formData.companyName || ""}
             onChange={(e) => setFormData({ ...formData, companyName: e.target.value || undefined })}
             placeholder="Acme Inc."
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             disabled={isSubmitting}
           />
         </div>
       </div>
 
       {/* What you'll get */}
-      <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 max-w-md mx-auto border border-emerald-100">
+      <div className="bg-slate-50 rounded-xl p-6 max-w-md mx-auto border border-slate-200">
         <h3 className="font-semibold text-gray-900 mb-4">What you&apos;ll receive:</h3>
         <ul className="space-y-3 text-sm">
           <li className="flex items-start gap-3">
-            <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700">4-6 strategic objectives based on 10,000+ companies in your industry</span>
           </li>
           <li className="flex items-start gap-3">
-            <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700">Gap analysis identifying what&apos;s needed to hit your targets</span>
           </li>
           <li className="flex items-start gap-3">
-            <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700">Actionable recommendations prioritized by impact</span>
           </li>
           <li className="flex items-start gap-3">
-            <CheckCircle2 className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700">Export to PDF or sync directly to your CRM</span>
           </li>
         </ul>
@@ -119,7 +119,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           {isSubmitting ? (
             <>

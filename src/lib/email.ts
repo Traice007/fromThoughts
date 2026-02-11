@@ -10,7 +10,7 @@ function getResend() {
   return _resend;
 }
 
-const EMAIL_FROM = process.env.EMAIL_FROM || "FromThoughts <noreply@fromthoughts.com>";
+const EMAIL_FROM = process.env.EMAIL_FROM || "fromThoughts <noreply@fromthoughts.com>";
 const APP_URL = process.env.NEXTAUTH_URL || "https://fromthoughts.com";
 
 export async function createVerificationToken(email: string): Promise<string> {
@@ -45,7 +45,7 @@ export async function sendVerificationEmail(
     const { error } = await getResend().emails.send({
       from: EMAIL_FROM,
       to: email,
-      subject: "Verify your FromThoughts account",
+      subject: "Verify your fromThoughts account",
       html: `
         <!DOCTYPE html>
         <html>
@@ -57,7 +57,7 @@ export async function sendVerificationEmail(
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <!-- Header with gradient -->
             <div style="background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%); border-radius: 16px 16px 0 0; padding: 40px 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">FromThoughts</h1>
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">fromThoughts</h1>
               <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">From Target to Action</p>
             </div>
 
@@ -65,7 +65,7 @@ export async function sendVerificationEmail(
             <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
               <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Welcome, ${name}!</h2>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">Thanks for signing up for FromThoughts. Please verify your email address to activate your account and start building your execution plan.</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">Thanks for signing up for fromThoughts. Please verify your email address to activate your account and start building your execution plan.</p>
 
               <div style="text-align: center; margin: 32px 0;">
                 <a href="${verificationUrl}"
@@ -88,7 +88,7 @@ export async function sendVerificationEmail(
                 This link expires in 24 hours. If you didn't create an account, you can safely ignore this email.
               </p>
               <p style="color: #d1d5db; font-size: 11px; margin: 16px 0 0 0;">
-                © ${new Date().getFullYear()} FromThoughts. All rights reserved.
+                © ${new Date().getFullYear()} fromThoughts. All rights reserved.
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export async function sendPaymentFailedEmail(
     const { error } = await getResend().emails.send({
       from: EMAIL_FROM,
       to: email,
-      subject: "Action required: Payment failed for your FromThoughts subscription",
+      subject: "Action required: Payment failed for your fromThoughts subscription",
       html: `
         <!DOCTYPE html>
         <html>
@@ -182,7 +182,7 @@ export async function sendPaymentFailedEmail(
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <!-- Header with gradient -->
             <div style="background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%); border-radius: 16px 16px 0 0; padding: 40px 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">FromThoughts</h1>
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">fromThoughts</h1>
               <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">From Target to Action</p>
             </div>
 
@@ -192,7 +192,7 @@ export async function sendPaymentFailedEmail(
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">We were unable to process your latest payment for your FromThoughts subscription. This could be due to an expired card, insufficient funds, or a temporary issue with your payment provider.</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">We were unable to process your latest payment for your fromThoughts subscription. This could be due to an expired card, insufficient funds, or a temporary issue with your payment provider.</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">To avoid losing access to your account, please update your payment method as soon as possible.</p>
 
@@ -211,7 +211,7 @@ export async function sendPaymentFailedEmail(
             <!-- Footer -->
             <div style="text-align: center; padding: 24px 20px;">
               <p style="color: #d1d5db; font-size: 11px; margin: 0;">
-                © ${new Date().getFullYear()} FromThoughts. All rights reserved.
+                © ${new Date().getFullYear()} fromThoughts. All rights reserved.
               </p>
             </div>
           </div>
@@ -255,7 +255,7 @@ export async function sendSubscriptionExpiryWarningEmail(
     const { error } = await getResend().emails.send({
       from: EMAIL_FROM,
       to: email,
-      subject: `Your FromThoughts ${tier.toLowerCase()} plan ${urgencyText}`,
+      subject: `Your fromThoughts ${tier.toLowerCase()} plan ${urgencyText}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -267,7 +267,7 @@ export async function sendSubscriptionExpiryWarningEmail(
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <!-- Header with gradient -->
             <div style="background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%); border-radius: 16px 16px 0 0; padding: 40px 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">FromThoughts</h1>
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">fromThoughts</h1>
               <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">From Target to Action</p>
             </div>
 
@@ -277,7 +277,7 @@ export async function sendSubscriptionExpiryWarningEmail(
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">This is a friendly reminder that your FromThoughts <strong>${tier.toLowerCase()}</strong> plan will expire on <strong>${expiryDate}</strong>.</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">This is a friendly reminder that your fromThoughts <strong>${tier.toLowerCase()}</strong> plan will expire on <strong>${expiryDate}</strong>.</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">To continue using all the features you love, renew your plan before it expires.</p>
 
@@ -296,10 +296,10 @@ export async function sendSubscriptionExpiryWarningEmail(
             <!-- Footer -->
             <div style="text-align: center; padding: 24px 20px;">
               <p style="color: #9ca3af; font-size: 12px; margin: 0;">
-                You're receiving this email because your FromThoughts subscription is expiring soon.
+                You're receiving this email because your fromThoughts subscription is expiring soon.
               </p>
               <p style="color: #d1d5db; font-size: 11px; margin: 16px 0 0 0;">
-                © ${new Date().getFullYear()} FromThoughts. All rights reserved.
+                © ${new Date().getFullYear()} fromThoughts. All rights reserved.
               </p>
             </div>
           </div>
@@ -393,7 +393,7 @@ export async function sendSalesLeadConfirmationEmail(
     const { error } = await getResend().emails.send({
       from: EMAIL_FROM,
       to: email,
-      subject: "Thanks for reaching out to FromThoughts",
+      subject: "Thanks for reaching out to fromThoughts",
       html: `
         <!DOCTYPE html>
         <html>
@@ -404,7 +404,7 @@ export async function sendSalesLeadConfirmationEmail(
         <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9fafb;">
           <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <div style="background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%); border-radius: 16px 16px 0 0; padding: 40px 30px; text-align: center;">
-              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">FromThoughts</h1>
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">fromThoughts</h1>
               <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">From Target to Action</p>
             </div>
 
@@ -413,14 +413,14 @@ export async function sendSalesLeadConfirmationEmail(
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">We've received your message and a member of our team will be in touch within 24 hours to discuss how FromThoughts can help your organization.</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">We've received your message and a member of our team will be in touch within 24 hours to discuss how fromThoughts can help your organization.</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">In the meantime, feel free to explore our platform:</p>
 
               <div style="text-align: center; margin: 32px 0;">
                 <a href="${APP_URL}/forecast"
                    style="background: linear-gradient(135deg, #059669 0%, #0d9488 100%); color: white; padding: 14px 32px; text-decoration: none; border-radius: 10px; font-weight: 600; display: inline-block; font-size: 16px;">
-                  Try FromThoughts
+                  Try fromThoughts
                 </a>
               </div>
 
@@ -431,7 +431,7 @@ export async function sendSalesLeadConfirmationEmail(
 
             <div style="text-align: center; padding: 24px 20px;">
               <p style="color: #d1d5db; font-size: 11px; margin: 0;">
-                &copy; ${new Date().getFullYear()} FromThoughts. All rights reserved.
+                &copy; ${new Date().getFullYear()} fromThoughts. All rights reserved.
               </p>
             </div>
           </div>

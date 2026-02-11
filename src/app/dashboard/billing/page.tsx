@@ -116,11 +116,11 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
 
       {/* Success Message */}
       {params.success && (
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3">
-          <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+          <CheckCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-emerald-900">Payment successful!</p>
-            <p className="text-sm text-emerald-700">
+            <p className="font-medium text-amber-900">Payment successful!</p>
+            <p className="text-sm text-amber-700">
               Thank you for your purchase. Your account has been upgraded.
             </p>
           </div>
@@ -192,7 +192,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
 
             // Determine card styling based on current plan status
             const cardClasses = isCurrent
-              ? "bg-emerald-50/50 border-emerald-500 ring-2 ring-emerald-500/20"
+              ? "bg-amber-50/50 border-amber-500 ring-2 ring-amber-500/20"
               : plan.popular && !isCurrent
               ? "border-amber-400 ring-2 ring-amber-400/20"
               : "border-border";
@@ -205,7 +205,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
                 {/* Current Plan Badge */}
                 {isCurrent && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-emerald-600 text-white text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <span className="bg-slate-900 text-white text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1.5">
                       <CheckCircle className="h-3 w-3" />
                       Your Plan
                     </span>
@@ -222,8 +222,8 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
                 )}
 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg ${isCurrent ? "bg-emerald-100" : "bg-primary/10"}`}>
-                    <Icon className={`h-5 w-5 ${isCurrent ? "text-emerald-600" : "text-primary"}`} />
+                  <div className={`p-2 rounded-lg ${isCurrent ? "bg-amber-100" : "bg-primary/10"}`}>
+                    <Icon className={`h-5 w-5 ${isCurrent ? "text-amber-600" : "text-primary"}`} />
                   </div>
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                 </div>
@@ -238,7 +238,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
-                      <Check className={`h-4 w-4 flex-shrink-0 ${isCurrent ? "text-emerald-600" : "text-green-600"}`} />
+                      <Check className={`h-4 w-4 flex-shrink-0 ${isCurrent ? "text-amber-600" : "text-green-600"}`} />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -253,12 +253,12 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
                   </Link>
                 ) : isCurrent ? (
                   <div className="space-y-2">
-                    <div className="w-full py-3 rounded-lg font-medium bg-emerald-100 text-emerald-700 flex items-center justify-center gap-2">
+                    <div className="w-full py-3 rounded-lg font-medium bg-amber-100 text-amber-700 flex items-center justify-center gap-2">
                       <CheckCircle className="h-4 w-4" />
                       Active
                     </div>
                     {userData?.subscriptionPeriodEnd && (
-                      <p className="text-xs text-center text-emerald-600">
+                      <p className="text-xs text-center text-amber-600">
                         {plan.tier === "STARTER" ? "Access until " : "Renews "}
                         {new Date(userData.subscriptionPeriodEnd).toLocaleDateString("en-US", {
                           month: "short",

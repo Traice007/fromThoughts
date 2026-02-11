@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ForecastForm } from "@/components/forecast/forecast-form";
 import { Sparkles, Target, Zap, Shield } from "lucide-react";
 
@@ -13,8 +14,7 @@ export default function ForecastPage() {
       {/* Hero Header with Dark Gradient */}
       <section className="relative py-16 pb-8 px-4 sm:px-6 lg:px-8">
         {/* Dark Gradient Background - same as landing page CTA */}
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6bTAtMThjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
 
         <div className="relative max-w-4xl mx-auto">
           {/* Header */}
@@ -64,7 +64,9 @@ export default function ForecastPage() {
         <div className="relative max-w-4xl mx-auto">
           {/* Form Container */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-            <ForecastForm />
+            <Suspense>
+              <ForecastForm />
+            </Suspense>
           </div>
 
           {/* Bottom Trust Message */}

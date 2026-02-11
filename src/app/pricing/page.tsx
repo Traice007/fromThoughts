@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle, ArrowRight, Sparkles, UserRound, Users, Briefcase, HeadphonesIcon, TrendingDown } from "lucide-react";
 
+export const revalidate = 86400; // 24 hours
+
 export const metadata: Metadata = {
   title: "Pricing | fromThoughts",
   description: "Simple, transparent pricing for AI-powered revenue operations. Get started with 30 days of full access.",
@@ -12,23 +14,22 @@ export default function PricingPage() {
     <div className="relative">
       {/* Hero Section with Gradient */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50/50 to-cyan-50" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-emerald-200/30 via-teal-200/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-slate-50" />
+        
 
         <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-200/50 text-emerald-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium mb-6">
             <Sparkles className="h-4 w-4" />
             Pricing
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
             Simple, Transparent{" "}
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+            <span className="text-amber-500">
               Pricing
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Build the sales playbook your first hire needs. Get started with 30 days of full access.
-            14-day money-back guarantee on all plans.
           </p>
         </div>
       </section>
@@ -39,7 +40,7 @@ export default function PricingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Starter Tier */}
             <div className="bg-white border border-gray-200 rounded-3xl p-8 hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">
                 Get Started
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Starter</h2>
@@ -48,7 +49,7 @@ export default function PricingPage() {
                 <span className="text-gray-600 font-medium"> one-time</span>
               </div>
               <p className="text-gray-700 text-sm mb-8">
-                30 days of full access to FromThoughts
+                30 days of full access to fromThoughts
               </p>
 
               <ul className="space-y-4 mb-8">
@@ -61,7 +62,7 @@ export default function PricingPage() {
                   "Email support",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-amber-500 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -69,7 +70,7 @@ export default function PricingPage() {
 
               <Link
                 href="/auth/signup"
-                className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-emerald-500 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-colors"
+                className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-amber-500 text-amber-600 rounded-xl font-semibold hover:bg-amber-50 transition-colors"
               >
                 Build Your Execution Plan
                 <ArrowRight className="h-4 w-4" />
@@ -77,7 +78,7 @@ export default function PricingPage() {
             </div>
 
             {/* Pro Tier */}
-            <div className="relative bg-gradient-to-b from-emerald-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl shadow-emerald-500/25 scale-105">
+            <div className="relative bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-8 text-white shadow-xl shadow-slate-900/25 scale-105">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                   MOST POPULAR
@@ -99,13 +100,13 @@ export default function PricingPage() {
                 {[
                   "Everything in Starter",
                   "Roadmap progress tracking",
-                  "CRM integrations (HubSpot, Pipedrive)",
+                  "CRM integrations: HubSpot, Pipedrive (coming soon)",
                   "Team collaboration (coming soon)",
                   "Priority support",
                   "Monthly strategy insights",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-200 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-amber-300 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -113,9 +114,9 @@ export default function PricingPage() {
 
               <Link
                 href="/auth/signup"
-                className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg"
+                className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-colors shadow-lg"
               >
-                Upgrade to Pro
+                Get Started with Pro
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -143,7 +144,7 @@ export default function PricingPage() {
                   "On-premise deployment option",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm">
-                    <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-amber-500 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -159,27 +160,24 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-500 mt-12">
-            We offer a full refund within the first 14 days if you&apos;re not satisfied.
-          </p>
         </div>
       </section>
 
       {/* Cost Comparison Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50/50 to-cyan-50" />
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-emerald-200/30 via-teal-200/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-slate-50" />
+        
 
         <div className="relative max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">
               Compare & Save
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Cut Costs with FromThoughts
+              Cut Costs with fromThoughts
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              See how FromThoughts compares to traditional alternatives for building your revenue strategy.
+              See how fromThoughts compares to traditional alternatives for building your revenue strategy.
             </p>
           </div>
 
@@ -215,7 +213,7 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-500">Part-time senior leadership</p>
                 </div>
               </div>
-              <span className="text-lg font-bold text-gray-900">€60K – €100K</span>
+              <span className="text-lg font-bold text-gray-900">€80K – €120K</span>
             </div>
 
             {/* Row: Sales Consultant */}
@@ -229,7 +227,7 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-500">Project-based engagement</p>
                 </div>
               </div>
-              <span className="text-lg font-bold text-gray-900">€40K – €70K</span>
+              <span className="text-lg font-bold text-gray-900">€50K – €100K</span>
             </div>
 
             {/* Row: RevOps Consultant */}
@@ -243,27 +241,27 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-500">Strategy & process setup</p>
                 </div>
               </div>
-              <span className="text-lg font-bold text-gray-900">€30K – €60K</span>
+              <span className="text-lg font-bold text-gray-900">€50K – €100K</span>
             </div>
 
-            {/* FromThoughts Row - Highlighted */}
-            <div className="flex items-center justify-between px-6 py-5 bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-200">
+            {/* fromThoughts Row - Highlighted */}
+            <div className="flex items-center justify-between px-6 py-5 bg-amber-50 border-b border-amber-200">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center flex-shrink-0">
                   <Sparkles className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-emerald-900">FromThoughts Pro</p>
-                  <p className="text-sm text-emerald-700">AI-powered revenue roadmap</p>
+                  <p className="font-semibold text-amber-900">fromThoughts Pro</p>
+                  <p className="text-sm text-amber-700">AI-powered revenue roadmap</p>
                 </div>
               </div>
-              <span className="text-2xl font-bold text-emerald-700">€15,000<span className="text-sm font-medium text-emerald-600"> / year</span></span>
+              <span className="text-2xl font-bold text-amber-700">€15,000<span className="text-sm font-medium text-amber-600"> / year</span></span>
             </div>
 
             {/* Savings Row */}
             <div className="flex items-center justify-between px-6 py-5 bg-gray-900">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0">
                   <TrendingDown className="h-5 w-5 text-white" />
                 </div>
                 <div>
@@ -272,7 +270,7 @@ export default function PricingPage() {
                 </div>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-bold text-emerald-400">Up to 90%</span>
+                <span className="text-2xl font-bold text-amber-400">Up to 90%</span>
                 <p className="text-sm text-gray-400">saved per year</p>
               </div>
             </div>
@@ -290,7 +288,7 @@ export default function PricingPage() {
 
         <div className="relative max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-teal-100 text-teal-700 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-medium mb-4">
               FAQ
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
@@ -314,16 +312,16 @@ export default function PricingPage() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 className="font-semibold text-gray-900 mb-3">Do you offer refunds?</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">What if I&apos;m not happy with the output?</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                We offer a full refund within the first 14 days if you&apos;re not satisfied
-                with FromThoughts.
+                Reach out and we&apos;ll make it right. We want every founder to get real value
+                from their execution plan.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow">
               <h3 className="font-semibold text-gray-900 mb-3">What CRMs do you integrate with?</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                We currently support HubSpot and Pipedrive, with Salesforce coming soon.
+                HubSpot and Pipedrive integrations are coming soon. In the meantime, you can import your pipeline data via CSV or export your plan as PDF/CSV to share with your team.
                 Enterprise customers can request custom integrations.
               </p>
             </div>
@@ -333,8 +331,7 @@ export default function PricingPage() {
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6bTAtMThjMC0yLjIwOS0xLjc5MS00LTQtNHMtNCAxLjc5MS00IDQgMS43OTEgNCA0IDQgNC0xLjc5MSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
 
         <div className="relative max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
@@ -345,7 +342,7 @@ export default function PricingPage() {
           </p>
           <Link
             href="/forecast"
-            className="group inline-flex items-center gap-2 px-10 py-5 bg-white text-emerald-600 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-xl text-lg"
+            className="group inline-flex items-center gap-2 px-10 py-5 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-all shadow-xl text-lg"
           >
             Build Your Execution Plan
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />

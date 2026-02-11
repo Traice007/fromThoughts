@@ -67,7 +67,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
         {/* Current Revenue */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <DollarSign className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <DollarSign className="inline h-4 w-4 mr-1 text-amber-600" />
             Current Annual Revenue (ARR)
           </label>
           <div className="relative">
@@ -77,14 +77,14 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
               value={formData.currentRevenue || ""}
               onChange={(e) => setFormData({ ...formData, currentRevenue: parseFloat(e.target.value) || 0 })}
               placeholder="1,500,000"
-              className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+              className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             />
           </div>
           {errors.currentRevenue && (
             <p className="mt-2 text-sm text-red-600 font-medium">{errors.currentRevenue}</p>
           )}
           {formData.currentRevenue > 0 && (
-            <p className="mt-2 text-sm text-emerald-600 font-medium">
+            <p className="mt-2 text-sm text-amber-600 font-medium">
               {formatCurrency(formData.currentRevenue)} ARR
             </p>
           )}
@@ -93,7 +93,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
         {/* Target Revenue */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Target className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Target className="inline h-4 w-4 mr-1 text-amber-600" />
             Target Annual Revenue (ARR)
           </label>
           <div className="relative">
@@ -103,14 +103,14 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
               value={formData.targetRevenue || ""}
               onChange={(e) => setFormData({ ...formData, targetRevenue: parseFloat(e.target.value) || 0 })}
               placeholder="3,000,000"
-              className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+              className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             />
           </div>
           {errors.targetRevenue && (
             <p className="mt-2 text-sm text-red-600 font-medium">{errors.targetRevenue}</p>
           )}
           {formData.targetRevenue > 0 && (
-            <p className="mt-2 text-sm text-emerald-600 font-medium">
+            <p className="mt-2 text-sm text-amber-600 font-medium">
               {formatCurrency(formData.targetRevenue)} ARR
             </p>
           )}
@@ -119,7 +119,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
         {/* Time Horizon */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-3">
-            <Calendar className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Calendar className="inline h-4 w-4 mr-1 text-amber-600" />
             Time Horizon
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -130,7 +130,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
                 onClick={() => setFormData({ ...formData, timeHorizonMonths: option.value })}
                 className={`px-4 py-4 rounded-xl border-2 text-sm font-semibold transition-all ${
                   formData.timeHorizonMonths === option.value
-                    ? "border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm"
+                    ? "border-amber-500 bg-amber-50 text-amber-700 shadow-sm"
                     : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300 hover:bg-gray-100"
                 }`}
               >
@@ -143,7 +143,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
 
       {/* Summary Card */}
       {formData.currentRevenue > 0 && formData.targetRevenue > 0 && (
-        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 border border-emerald-100">
+        <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
           <h3 className="font-semibold text-gray-900 mb-4">Growth Summary</h3>
 
           {/* Growth Chart */}
@@ -159,11 +159,11 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
             <div className="bg-white/60 rounded-lg p-3">
               <span className="text-gray-600 text-xs font-medium">Growth Multiple</span>
-              <p className="text-xl font-bold text-emerald-600">{growthMultiple.toFixed(1)}x</p>
+              <p className="text-xl font-bold text-amber-600">{growthMultiple.toFixed(1)}x</p>
             </div>
             <div className="bg-white/60 rounded-lg p-3">
               <span className="text-gray-600 text-xs font-medium">Monthly Rate</span>
-              <p className="text-xl font-bold text-emerald-600">{growthRate.toFixed(1)}%</p>
+              <p className="text-xl font-bold text-amber-600">{growthRate.toFixed(1)}%</p>
             </div>
             <div className="bg-white/60 rounded-lg p-3">
               <span className="text-gray-600 text-xs font-medium">Revenue Gap</span>
@@ -182,7 +182,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl"
+          className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl"
         >
           Continue to Metrics →
         </button>

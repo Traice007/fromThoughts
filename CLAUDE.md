@@ -1,4 +1,4 @@
-# FromThoughts - Project Context
+# fromThoughts - Project Context
 
 ## Deployment workflow
 - **ALWAYS deploy to preview first**: `vercel` (no --prod flag)
@@ -7,7 +7,7 @@
 - Vercel is on the free Hobby plan — unlimited deploys, batch production deploys to keep history clean
 
 ## What this product is
-FromThoughts is an AI-powered Revenue Operations platform for B2B founders (€500K-€2M ARR) who need to translate revenue targets into actionable execution without hiring a VP of Commercial.
+fromThoughts is an AI-powered Revenue Operations platform for B2B founders (€300K-€1.5M ARR) who need to translate revenue targets into actionable execution without hiring a VP of Commercial.
 
 ## Tech stack
 - Next.js 16 (App Router), React 19, TypeScript 5
@@ -22,7 +22,7 @@ FromThoughts is an AI-powered Revenue Operations platform for B2B founders (€5
 
 ## Pricing (EUR, European market focus)
 - Starter: €1,500 one-time (30 days full access)
-- Pro: €9,600/year
+- Pro: €15,000/year
 - Enterprise: Custom
 - Credit card required at signup
 - 14-day money-back guarantee

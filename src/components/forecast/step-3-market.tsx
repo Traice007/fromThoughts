@@ -44,13 +44,13 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
         {/* Industry */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Building2 className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Building2 className="inline h-4 w-4 mr-1 text-amber-600" />
             Industry
           </label>
           <select
             value={formData.industry || ""}
             onChange={(e) => setFormData({ ...formData, industry: e.target.value || undefined })}
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all"
           >
             <option value="">Select your industry</option>
             {INDUSTRIES.map((industry) => (
@@ -64,7 +64,7 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
         {/* Target Market */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Target className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Target className="inline h-4 w-4 mr-1 text-amber-600" />
             Target Market
           </label>
           <textarea
@@ -72,14 +72,14 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
             onChange={(e) => setFormData({ ...formData, targetMarket: e.target.value || undefined })}
             placeholder="Describe your target market (e.g., Mid-market B2B SaaS companies in North America with 50-500 employees)"
             rows={3}
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
           />
         </div>
 
         {/* Ideal Customer Profile */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Users className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Users className="inline h-4 w-4 mr-1 text-amber-600" />
             Ideal Customer Profile (ICP)
           </label>
           <textarea
@@ -87,14 +87,14 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
             onChange={(e) => setFormData({ ...formData, idealCustomerProfile: e.target.value || undefined })}
             placeholder="Describe your ideal customer (e.g., VP of Sales or CRO at growing SaaS companies, struggling with scaling their sales team)"
             rows={3}
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
           />
         </div>
 
         {/* Competitive Position */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Swords className="inline h-4 w-4 mr-1 text-emerald-600" />
+            <Swords className="inline h-4 w-4 mr-1 text-amber-600" />
             Competitive Position
           </label>
           <textarea
@@ -102,7 +102,7 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
             onChange={(e) => setFormData({ ...formData, competitivePosition: e.target.value || undefined })}
             placeholder="Describe your competitive landscape and positioning (e.g., We compete with X and Y but differentiate on Z)"
             rows={3}
-            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
+            className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all resize-none placeholder:text-gray-400"
           />
         </div>
       </div>
@@ -130,7 +130,7 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
           </button>
           <button
             type="submit"
-            className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-600 transition-all shadow-lg shadow-emerald-500/25 hover:shadow-xl"
+            className="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl"
           >
             Continue to Generate →
           </button>

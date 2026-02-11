@@ -129,26 +129,26 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
                 disabled={saving}
                 className={`relative text-left p-5 rounded-xl border-2 transition-all ${
                   isSelected
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-amber-500 bg-amber-50"
                     : "border-border hover:border-gray-300 hover:bg-muted"
                 }`}
               >
                 {isSaved && (
                   <div className="absolute top-3 right-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-500" />
+                    <CheckCircle className="h-5 w-5 text-amber-500" />
                   </div>
                 )}
-                <div className={`mb-3 ${isSelected ? "text-emerald-600" : "text-gray-400"}`}>
+                <div className={`mb-3 ${isSelected ? "text-amber-600" : "text-gray-400"}`}>
                   {integration.icon}
                 </div>
-                <h3 className={`font-semibold mb-1 ${isSelected ? "text-emerald-900" : "text-foreground"}`}>
+                <h3 className={`font-semibold mb-1 ${isSelected ? "text-amber-900" : "text-foreground"}`}>
                   {integration.name}
                 </h3>
                 <p className="text-secondary text-xs leading-relaxed">
                   {integration.description}
                 </p>
                 {isSaved && (
-                  <p className="text-emerald-600 text-xs font-medium mt-3 flex items-center gap-1">
+                  <p className="text-amber-600 text-xs font-medium mt-3 flex items-center gap-1">
                     <CheckCircle className="h-3 w-3" />
                     We&apos;ll notify you when it&apos;s ready
                   </p>
@@ -182,26 +182,26 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
                 disabled={saving}
                 className={`relative text-left p-5 rounded-xl border-2 transition-all ${
                   isSelected
-                    ? "border-emerald-500 bg-emerald-50"
+                    ? "border-amber-500 bg-amber-50"
                     : "border-border hover:border-gray-300 hover:bg-muted"
                 }`}
               >
                 {isSaved && (
                   <div className="absolute top-3 right-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-500" />
+                    <CheckCircle className="h-5 w-5 text-amber-500" />
                   </div>
                 )}
-                <div className={`mb-3 ${isSelected ? "text-emerald-600" : "text-gray-400"}`}>
+                <div className={`mb-3 ${isSelected ? "text-amber-600" : "text-gray-400"}`}>
                   {integration.icon}
                 </div>
-                <h3 className={`font-semibold mb-1 ${isSelected ? "text-emerald-900" : "text-foreground"}`}>
+                <h3 className={`font-semibold mb-1 ${isSelected ? "text-amber-900" : "text-foreground"}`}>
                   {integration.name}
                 </h3>
                 <p className="text-secondary text-xs leading-relaxed">
                   {integration.description}
                 </p>
                 {isSaved && (
-                  <p className="text-emerald-600 text-xs font-medium mt-3 flex items-center gap-1">
+                  <p className="text-amber-600 text-xs font-medium mt-3 flex items-center gap-1">
                     <CheckCircle className="h-3 w-3" />
                     We&apos;ll notify you when it&apos;s ready
                   </p>
@@ -215,8 +215,8 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
       {/* Current workaround */}
       <div className="bg-muted/50 border border-border rounded-xl p-6">
         <div className="flex items-start gap-4">
-          <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
-            <ArrowRight className="h-5 w-5 text-emerald-600" />
+          <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+            <ArrowRight className="h-5 w-5 text-amber-600" />
           </div>
           <div>
             <h3 className="font-semibold mb-1">In the meantime</h3>

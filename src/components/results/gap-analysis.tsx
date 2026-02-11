@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertTriangle, TrendingDown, ArrowRight } from "lucide-react";
 import type { GapAnalysis as GapAnalysisType } from "@/types/forecast";
 import { formatCurrency, formatPercent } from "@/lib/utils";
