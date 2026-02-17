@@ -31,7 +31,7 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
     },
     {
       name: "Revenue Gap",
-      value: stats.revenueGap > 0 ? `$${(stats.revenueGap / 1000000).toFixed(1)}M` : "$0",
+      value: stats.revenueGap > 0 ? `€${(stats.revenueGap / 1000000).toFixed(1)}M` : "€0",
       icon: DollarSign,
       color: "text-amber-600 bg-amber-100",
     },

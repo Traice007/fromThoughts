@@ -55,7 +55,7 @@ function ComparisonRow({ comparison }: { comparison: BenchmarkComparison }) {
 
   const formatValue = (value: number | null) => {
     if (value === null) return "N/A";
-    if (isDealSize) return `$${value.toLocaleString()}`;
+    if (isDealSize) return `€${value.toLocaleString()}`;
     if (isCycleLength) return `${value} days`;
     if (isPercentMetric) return `${value}%`;
     return value.toString();

@@ -16,7 +16,7 @@ ${forecast.salesQualifiedLeads ? `- Sales Qualified Leads (SQLs): ${forecast.sal
 ${forecast.leadToMqaRate ? `- Lead to MQA Conversion: ${forecast.leadToMqaRate}%` : ""}
 ${forecast.mqaToSqlRate ? `- MQA to SQL Conversion: ${forecast.mqaToSqlRate}%` : ""}
 ${forecast.sqlToCloseRate ? `- SQL to Close Rate: ${forecast.sqlToCloseRate}%` : ""}
-${forecast.averageDealSize ? `- Average Deal Size: $${forecast.averageDealSize.toLocaleString()}` : ""}
+${forecast.averageDealSize ? `- Average Deal Size: €${forecast.averageDealSize.toLocaleString()}` : ""}
 ${forecast.salesCycleLength ? `- Sales Cycle Length: ${forecast.salesCycleLength} days` : ""}
 `.trim();
   }
@@ -66,10 +66,10 @@ Your audience is typically founders who are considering hiring a VP of Commercia
 
 ## Business Context
 - Company: ${forecast.companyName || "Growth-stage company"}
-- Current ARR: $${forecast.currentRevenue.toLocaleString()}
-- Target ARR: $${forecast.targetRevenue.toLocaleString()}
+- Current ARR: €${forecast.currentRevenue.toLocaleString()}
+- Target ARR: €${forecast.targetRevenue.toLocaleString()}
 - Time Horizon: ${forecast.timeHorizonMonths} months
-- Revenue Gap: $${revenueGap.toLocaleString()} (${growthRequired}% growth required)
+- Revenue Gap: €${revenueGap.toLocaleString()} (${growthRequired}% growth required)
 - Required Monthly Growth Rate: ${monthlyGrowthRate.toFixed(1)}%
 
 ${metricsSection}
@@ -117,7 +117,7 @@ Return your response as valid JSON matching this exact schema:
           "metricName": "string",
           "currentValue": number | null,
           "targetValue": number,
-          "unit": "string (%, count, $, etc.)"
+          "unit": "string (%, count, €, etc.)"
         }
       ]
     }

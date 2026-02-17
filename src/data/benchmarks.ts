@@ -1,6 +1,6 @@
 // Industry benchmark data based on aggregated industry reports
 // Sources: OpenView, KeyBanc, SaaS Capital, Bessemer, First Round Capital
-// Data represents median values for companies with $1M-$5M ARR
+// Data represents median values for companies with €1M-€5M ARR
 
 export interface IndustryBenchmark {
   industry: string;
@@ -16,16 +16,16 @@ export interface IndustryBenchmark {
 
   // Deal Metrics
   deals: {
-    averageDealSize: number;    // $
-    medianDealSize: number;     // $
+    averageDealSize: number;    // €
+    medianDealSize: number;     // €
     salesCycleLength: number;   // days
     dealsPerRep: number;        // per month
   };
 
   // Unit Economics
   economics: {
-    cac: number;                // $ Customer Acquisition Cost
-    ltv: number;                // $ Lifetime Value
+    cac: number;                // € Customer Acquisition Cost
+    ltv: number;                // € Lifetime Value
     ltvCacRatio: number;        // ratio
     paybackMonths: number;      // months
     grossMargin: number;        // %
@@ -43,7 +43,7 @@ export interface IndustryBenchmark {
 
   // Operational Benchmarks
   operations: {
-    leadsPerMonth: number;      // median for $1.5-3M ARR
+    leadsPerMonth: number;      // median for €1.5-3M ARR
     mqasPerMonth: number;
     sqlsPerMonth: number;
     closedWonPerMonth: number;
@@ -541,9 +541,9 @@ export function compareToBenchmark(
       percentile: gap > 15 ? "above" : gap < -15 ? "below" : "at",
       gap,
       recommendation: gap < -20
-        ? `Your deal size is ${Math.abs(gap).toFixed(0)}% below industry average ($${benchmark.deals.averageDealSize.toLocaleString()}). Consider upselling or moving upmarket.`
+        ? `Your deal size is ${Math.abs(gap).toFixed(0)}% below industry average (€${benchmark.deals.averageDealSize.toLocaleString()}). Consider upselling or moving upmarket.`
         : gap > 20
-        ? `Strong deal sizes! ${gap.toFixed(0)}% above the $${benchmark.deals.averageDealSize.toLocaleString()} industry average.`
+        ? `Strong deal sizes! ${gap.toFixed(0)}% above the €${benchmark.deals.averageDealSize.toLocaleString()} industry average.`
         : "Your deal size is competitive with industry benchmarks.",
     });
   }
@@ -589,14 +589,14 @@ export function formatBenchmarkForPrompt(industry: string | null | undefined): s
 - Overall MQL to Close: ${benchmark.funnel.overallConversion}%
 
 ### Deal Benchmarks
-- Average Deal Size: $${benchmark.deals.averageDealSize.toLocaleString()}
-- Median Deal Size: $${benchmark.deals.medianDealSize.toLocaleString()}
+- Average Deal Size: €${benchmark.deals.averageDealSize.toLocaleString()}
+- Median Deal Size: €${benchmark.deals.medianDealSize.toLocaleString()}
 - Sales Cycle: ${benchmark.deals.salesCycleLength} days
 - Deals per Rep: ${benchmark.deals.dealsPerRep}/month
 
 ### Unit Economics Benchmarks
-- CAC: $${benchmark.economics.cac.toLocaleString()}
-- LTV: $${benchmark.economics.ltv.toLocaleString()}
+- CAC: €${benchmark.economics.cac.toLocaleString()}
+- LTV: €${benchmark.economics.ltv.toLocaleString()}
 - LTV:CAC Ratio: ${benchmark.economics.ltvCacRatio}x
 - Payback Period: ${benchmark.economics.paybackMonths} months
 - Gross Margin: ${benchmark.economics.grossMargin}%
@@ -608,7 +608,7 @@ export function formatBenchmarkForPrompt(industry: string | null | undefined): s
 - Net Revenue Retention: ${benchmark.growth.netRevenueRetention}%
 - Monthly Churn: ${benchmark.growth.monthlyChurn}%
 
-### Operational Benchmarks (for $1.5-3M ARR)
+### Operational Benchmarks (for €1.5-3M ARR)
 - MQLs/month: ${benchmark.operations.leadsPerMonth}
 - SQLs/month: ${benchmark.operations.mqasPerMonth}
 - Opportunities/month: ${benchmark.operations.sqlsPerMonth}

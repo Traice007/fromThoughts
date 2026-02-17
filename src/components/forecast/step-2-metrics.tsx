@@ -207,7 +207,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                 Average Deal Size
               </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">$</span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
                 <input
                   type="number"
                   value={formData.averageDealSize || ""}
