@@ -71,7 +71,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
             Current Annual Revenue (ARR)
           </label>
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">$</span>
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
             <input
               type="number"
               value={formData.currentRevenue || ""}
@@ -97,7 +97,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
             Target Annual Revenue (ARR)
           </label>
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">$</span>
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
             <input
               type="number"
               value={formData.targetRevenue || ""}

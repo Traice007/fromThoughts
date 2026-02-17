@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth/session";
 
 export async function GET(request: NextRequest) {
   const forecastId = request.nextUrl.searchParams.get("forecastId");
@@ -12,6 +13,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    const user = await getCurrentUser();
+
     const forecast = await prisma.forecast.findUnique({
       where: { id: forecastId },
       include: {
@@ -26,6 +29,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: "Forecast not found" },
         { status: 404 }
+      );
+    }
+
+    if (forecast.userId && (!user || forecast.userId !== user.id)) {
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403 }
       );
     }
 
@@ -71,7 +81,7 @@ function generatePdfHtml(forecast: {
     }[];
   }[];
 }): string {
-  const growthMultiple = (forecast.targetRevenue / forecast.currentRevenue).toFixed(1);
+  const growthMultiple = forecast.currentRevenue > 0 ? (forecast.targetRevenue / forecast.currentRevenue).toFixed(1) : "0";
   // Parse JSON strings if needed (SQLite stores as strings)
   let gapAnalysis = forecast.gapAnalysis as { summary?: string } | string | null;
   let recommendations = forecast.recommendations as string[] | string | null;
@@ -130,11 +140,11 @@ function generatePdfHtml(forecast: {
   <div class="summary-grid">
     <div class="summary-item">
       <label>Current ARR</label>
-      <div class="value">$${forecast.currentRevenue.toLocaleString()}</div>
+      <div class="value">€${forecast.currentRevenue.toLocaleString()}</div>
     </div>
     <div class="summary-item">
       <label>Target ARR</label>
-      <div class="value">$${forecast.targetRevenue.toLocaleString()}</div>
+      <div class="value">€${forecast.targetRevenue.toLocaleString()}</div>
     </div>
     <div class="summary-item">
       <label>Growth Multiple</label>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth/session";
 import { exchangeHubSpotCode, syncToHubSpot } from "@/lib/integrations/hubspot";
 
 export async function GET(request: NextRequest) {
@@ -20,6 +21,14 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    // Verify authentication
+    const user = await getCurrentUser();
+    if (!user) {
+      return NextResponse.redirect(
+        new URL(`/auth/signin`, request.url)
+      );
+    }
+
     // Exchange code for tokens
     const tokens = await exchangeHubSpotCode(code);
 
@@ -36,6 +45,13 @@ export async function GET(request: NextRequest) {
     if (!forecast) {
       return NextResponse.redirect(
         new URL(`/results/${forecastId}?error=forecast_not_found`, request.url)
+      );
+    }
+
+    // Verify ownership
+    if (forecast.userId && forecast.userId !== user.id) {
+      return NextResponse.redirect(
+        new URL(`/results/${forecastId}?error=unauthorized`, request.url)
       );
     }
 

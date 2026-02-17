@@ -13,9 +13,16 @@ export async function PATCH(request: NextRequest) {
     const body = await request.json();
     const { name } = body;
 
+    if (!name || typeof name !== "string" || name.trim().length === 0 || name.length > 255) {
+      return NextResponse.json(
+        { error: "Name must be between 1 and 255 characters" },
+        { status: 400 }
+      );
+    }
+
     const updatedUser = await prisma.user.update({
       where: { id: user.id },
-      data: { name },
+      data: { name: name.trim() },
       select: { id: true, name: true, email: true },
     });
 

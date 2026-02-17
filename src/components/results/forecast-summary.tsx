@@ -10,7 +10,7 @@ interface ForecastSummaryProps {
 
 export function ForecastSummary({ forecast }: ForecastSummaryProps) {
   const revenueGap = forecast.targetRevenue - forecast.currentRevenue;
-  const growthMultiple = forecast.targetRevenue / forecast.currentRevenue;
+  const growthMultiple = forecast.currentRevenue > 0 ? forecast.targetRevenue / forecast.currentRevenue : 0;
   const monthlyGrowth = calculateGrowthRate(
     forecast.currentRevenue,
     forecast.targetRevenue,

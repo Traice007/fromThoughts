@@ -60,7 +60,7 @@ export function RecentForecasts({ forecasts }: RecentForecastsProps) {
 
       <div className="space-y-3">
         {forecasts.map((forecast) => {
-          const growthMultiple = forecast.targetRevenue / forecast.currentRevenue;
+          const growthMultiple = forecast.currentRevenue > 0 ? forecast.targetRevenue / forecast.currentRevenue : 0;
 
           return (
             <Link

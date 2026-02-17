@@ -68,7 +68,7 @@ export default async function ForecastsPage() {
       ) : (
         <div className="grid gap-4">
           {forecasts.map((forecast) => {
-            const growthMultiple = forecast.targetRevenue / forecast.currentRevenue;
+            const growthMultiple = forecast.currentRevenue > 0 ? forecast.targetRevenue / forecast.currentRevenue : 0;
             const totalKeyResults = forecast.okrs.reduce(
               (sum, okr) => sum + okr.keyResults.length,
               0

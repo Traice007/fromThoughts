@@ -10,6 +10,17 @@ function getResend() {
   return _resend;
 }
 
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
 const EMAIL_FROM = process.env.EMAIL_FROM || "fromThoughts <noreply@fromthoughts.com>";
 const APP_URL = process.env.NEXTAUTH_URL || "https://fromthoughts.com";
 
@@ -63,7 +74,7 @@ export async function sendVerificationEmail(
 
             <!-- Content -->
             <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-              <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Welcome, ${name}!</h2>
+              <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Welcome, ${escapeHtml(name)}!</h2>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">Thanks for signing up for fromThoughts. Please verify your email address to activate your account and start building your execution plan.</p>
 
@@ -190,7 +201,7 @@ export async function sendPaymentFailedEmail(
             <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
               <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Payment failed</h2>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${escapeHtml(name)},</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">We were unable to process your latest payment for your fromThoughts subscription. This could be due to an expired card, insufficient funds, or a temporary issue with your payment provider.</p>
 
@@ -275,7 +286,7 @@ export async function sendSubscriptionExpiryWarningEmail(
             <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
               <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Your plan ${urgencyText}</h2>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${escapeHtml(name)},</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">This is a friendly reminder that your fromThoughts <strong>${tier.toLowerCase()}</strong> plan will expire on <strong>${expiryDate}</strong>.</p>
 
@@ -345,24 +356,24 @@ export async function sendSalesLeadNotificationEmail(
               <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151; width: 120px;">Name</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${lead.name}</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${escapeHtml(lead.name)}</td>
                 </tr>
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Email</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;"><a href="mailto:${lead.email}" style="color: #059669;">${lead.email}</a></td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;"><a href="mailto:${escapeHtml(lead.email)}" style="color: #059669;">${escapeHtml(lead.email)}</a></td>
                 </tr>
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Website</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${lead.companyWebsite ? `<a href="${lead.companyWebsite.startsWith("http") ? lead.companyWebsite : `https://${lead.companyWebsite}`}" style="color: #059669;">${lead.companyWebsite}</a>` : "Not provided"}</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${lead.companyWebsite ? `<a href="${escapeHtml(lead.companyWebsite.startsWith("http") ? lead.companyWebsite : `https://${lead.companyWebsite}`)}" style="color: #059669;">${escapeHtml(lead.companyWebsite)}</a>` : "Not provided"}</td>
                 </tr>
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151;">Team Size</td>
-                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${lead.teamSize || "Not provided"}</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb; color: #4b5563;">${escapeHtml(lead.teamSize || "Not provided")}</td>
                 </tr>
                 ${lead.message ? `
                 <tr>
                   <td style="padding: 12px 0; font-weight: 600; color: #374151; vertical-align: top;">Message</td>
-                  <td style="padding: 12px 0; color: #4b5563;">${lead.message}</td>
+                  <td style="padding: 12px 0; color: #4b5563;">${escapeHtml(lead.message)}</td>
                 </tr>
                 ` : ""}
               </table>
@@ -411,7 +422,7 @@ export async function sendSalesLeadConfirmationEmail(
             <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
               <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Thanks for reaching out!</h2>
 
-              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${name},</p>
+              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${escapeHtml(name)},</p>
 
               <p style="color: #4b5563; margin: 0 0 24px 0;">We've received your message and a member of our team will be in touch within 24 hours to discuss how fromThoughts can help your organization.</p>
 

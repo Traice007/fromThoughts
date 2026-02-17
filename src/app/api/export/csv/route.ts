@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth/session";
 
 export async function GET(request: NextRequest) {
   const forecastId = request.nextUrl.searchParams.get("forecastId");
@@ -12,6 +13,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    const user = await getCurrentUser();
+
     const forecast = await prisma.forecast.findUnique({
       where: { id: forecastId },
       include: {
@@ -26,6 +29,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: "Forecast not found" },
         { status: 404 }
+      );
+    }
+
+    if (forecast.userId && (!user || forecast.userId !== user.id)) {
+      return NextResponse.json(
+        { error: "Forbidden" },
+        { status: 403 }
       );
     }
 
