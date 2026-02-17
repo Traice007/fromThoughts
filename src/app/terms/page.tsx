@@ -257,7 +257,7 @@ export default function TermsPage() {
               <div className="flex items-start gap-3">
                 <Scale className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p className="text-secondary text-sm leading-relaxed">
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, VIRTUALVP INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, FROMTHOUGHTS INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
                   SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY
                   OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM: (A) YOUR
                   ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE; (B) ANY CONDUCT OR CONTENT OF ANY THIRD
