@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Users, TrendingUp, ArrowRight, DollarSign, Clock, Calculator } from "lucide-react";
 import type { MetricsStepData } from "@/types/forecast";
 
@@ -13,38 +13,27 @@ interface Step2MetricsProps {
 export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
   const [formData, setFormData] = useState<MetricsStepData>(data);
 
-  // Auto-calculate conversion rates when funnel volumes change
-  useEffect(() => {
-    const mqls = formData.monthlyInboundLeads;
-    const sqls = formData.marketingQualifiedAccounts;
-    const opportunities = formData.salesQualifiedLeads;
+  // Derive auto-calculated rates from funnel volumes
+  const autoMqlToSqlRate = formData.monthlyInboundLeads && formData.marketingQualifiedAccounts && formData.monthlyInboundLeads > 0
+    ? Math.round((formData.marketingQualifiedAccounts / formData.monthlyInboundLeads) * 100 * 10) / 10
+    : undefined;
 
-    const updates: Partial<MetricsStepData> = {};
+  const autoSqlToOppRate = formData.marketingQualifiedAccounts && formData.salesQualifiedLeads && formData.marketingQualifiedAccounts > 0
+    ? Math.round((formData.salesQualifiedLeads / formData.marketingQualifiedAccounts) * 100 * 10) / 10
+    : undefined;
 
-    // MQL → SQL rate
-    if (mqls && sqls && mqls > 0) {
-      const rate = Math.round((sqls / mqls) * 100 * 10) / 10;
-      if (rate !== formData.leadToMqaRate) {
-        updates.leadToMqaRate = rate;
-      }
-    }
-
-    // SQL → Opportunity rate
-    if (sqls && opportunities && sqls > 0) {
-      const rate = Math.round((opportunities / sqls) * 100 * 10) / 10;
-      if (rate !== formData.mqaToSqlRate) {
-        updates.mqaToSqlRate = rate;
-      }
-    }
-
-    if (Object.keys(updates).length > 0) {
-      setFormData(prev => ({ ...prev, ...updates }));
-    }
-  }, [formData.monthlyInboundLeads, formData.marketingQualifiedAccounts, formData.salesQualifiedLeads]);
+  // Use auto-calculated rates when available, otherwise use manual input
+  const displayMqlToSqlRate = autoMqlToSqlRate ?? formData.leadToMqaRate;
+  const displaySqlToOppRate = autoSqlToOppRate ?? formData.mqaToSqlRate;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onNext(formData);
+    // Include auto-calculated rates in submitted data
+    onNext({
+      ...formData,
+      leadToMqaRate: displayMqlToSqlRate,
+      mqaToSqlRate: displaySqlToOppRate,
+    });
   };
 
   // Check if rates are auto-calculated
@@ -139,7 +128,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   id="mqlToSqlRate"
                   type="number"
                   step="0.1"
-                  value={formData.leadToMqaRate || ""}
+                  value={displayMqlToSqlRate || ""}
                   onChange={(e) => setFormData({ ...formData, leadToMqaRate: parseFloat(e.target.value) || undefined })}
                   placeholder="e.g., 20"
                   readOnly={isRateAutoCalculated('mqlToSql')}
@@ -164,7 +153,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   id="sqlToOppRate"
                   type="number"
                   step="0.1"
-                  value={formData.mqaToSqlRate || ""}
+                  value={displaySqlToOppRate || ""}
                   onChange={(e) => setFormData({ ...formData, mqaToSqlRate: parseFloat(e.target.value) || undefined })}
                   placeholder="e.g., 30"
                   readOnly={isRateAutoCalculated('sqlToOpp')}

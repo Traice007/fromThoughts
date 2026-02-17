@@ -38,7 +38,6 @@ export default async function ResultsPage({ params }: PageProps) {
   }
 
   // Transform for client component (parse JSON strings from SQLite)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const forecastData: any = {
     ...forecast,
     gapAnalysis: forecast.gapAnalysis ? JSON.parse(forecast.gapAnalysis) : null,
