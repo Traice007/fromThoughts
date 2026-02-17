@@ -57,8 +57,8 @@ export function SettingsForm({ user }: SettingsFormProps) {
       <h2 className="text-xl font-semibold mb-4">Profile</h2>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 mb-4 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
-          <AlertCircle className="h-4 w-4 flex-shrink-0" />
+        <div role="alert" className="flex items-center gap-2 p-3 mb-4 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
+          <AlertCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <p>{error}</p>
         </div>
       )}
@@ -95,8 +95,8 @@ export function SettingsForm({ user }: SettingsFormProps) {
           </button>
 
           {saved && (
-            <span className="flex items-center gap-1 text-green-600 text-sm">
-              <Check className="h-4 w-4" />
+            <span role="status" className="flex items-center gap-1 text-green-600 text-sm">
+              <Check className="h-4 w-4" aria-hidden="true" />
               Saved
             </span>
           )}

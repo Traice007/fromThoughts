@@ -171,6 +171,103 @@ export async function verifyEmailToken(
   }
 }
 
+export async function createPasswordResetToken(email: string): Promise<string> {
+  const token = crypto.randomBytes(32).toString("hex");
+  const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+  // Delete any existing reset tokens for this email
+  await prisma.verificationToken.deleteMany({
+    where: { identifier: `reset:${email}` },
+  });
+
+  await prisma.verificationToken.create({
+    data: {
+      identifier: `reset:${email}`,
+      token,
+      expires,
+    },
+  });
+
+  return token;
+}
+
+export async function sendPasswordResetEmail(
+  email: string,
+  name: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const token = await createPasswordResetToken(email);
+    const resetUrl = `${APP_URL}/auth/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
+
+    const { error } = await getResend().emails.send({
+      from: EMAIL_FROM,
+      to: email,
+      subject: "Reset your fromThoughts password",
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9fafb;">
+          <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <!-- Header with gradient -->
+            <div style="background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%); border-radius: 16px 16px 0 0; padding: 40px 30px; text-align: center;">
+              <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">fromThoughts</h1>
+              <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0 0; font-size: 14px;">From Target to Action</p>
+            </div>
+
+            <!-- Content -->
+            <div style="background: white; padding: 40px 30px; border-radius: 0 0 16px 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+              <h2 style="color: #111827; margin: 0 0 16px 0; font-size: 24px;">Reset your password</h2>
+
+              <p style="color: #4b5563; margin: 0 0 24px 0;">Hi ${escapeHtml(name)},</p>
+
+              <p style="color: #4b5563; margin: 0 0 24px 0;">We received a request to reset your password. Click the button below to choose a new password.</p>
+
+              <div style="text-align: center; margin: 32px 0;">
+                <a href="${resetUrl}"
+                   style="background: linear-gradient(135deg, #059669 0%, #0d9488 100%); color: white; padding: 14px 32px; text-decoration: none; border-radius: 10px; font-weight: 600; display: inline-block; font-size: 16px;">
+                  Reset Password
+                </a>
+              </div>
+
+              <p style="color: #6b7280; font-size: 13px; margin: 24px 0 8px 0;">
+                If the button doesn't work, copy and paste this link into your browser:
+              </p>
+              <p style="color: #0d9488; font-size: 13px; word-break: break-all; margin: 0;">
+                ${resetUrl}
+              </p>
+            </div>
+
+            <!-- Footer -->
+            <div style="text-align: center; padding: 24px 20px;">
+              <p style="color: #9ca3af; font-size: 12px; margin: 0;">
+                This link expires in 1 hour. If you didn't request a password reset, you can safely ignore this email.
+              </p>
+              <p style="color: #d1d5db; font-size: 11px; margin: 16px 0 0 0;">
+                &copy; ${new Date().getFullYear()} fromThoughts. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+    });
+
+    if (error) {
+      console.error("Failed to send password reset email:", error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error sending password reset email:", error);
+    return { success: false, error: "Failed to send password reset email" };
+  }
+}
+
 export async function sendPaymentFailedEmail(
   email: string,
   name: string

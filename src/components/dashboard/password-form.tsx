@@ -59,20 +59,20 @@ export function PasswordForm() {
   return (
     <div className="bg-background border border-border rounded-xl p-6">
       <div className="flex items-center gap-2 mb-4">
-        <Lock className="h-5 w-5 text-gray-500" />
+        <Lock className="h-5 w-5 text-gray-500" aria-hidden="true" />
         <h2 className="text-xl font-semibold">Change Password</h2>
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 mb-4 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
-          <AlertCircle className="h-4 w-4 flex-shrink-0" />
+        <div role="alert" className="flex items-center gap-2 p-3 mb-4 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
+          <AlertCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <p>{error}</p>
         </div>
       )}
 
       {success && (
-        <div className="flex items-center gap-2 p-3 mb-4 bg-green-50 text-green-700 rounded-lg text-sm border border-green-100">
-          <Check className="h-4 w-4 flex-shrink-0" />
+        <div role="status" className="flex items-center gap-2 p-3 mb-4 bg-green-50 text-green-700 rounded-lg text-sm border border-green-100">
+          <Check className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <p>Password changed successfully!</p>
         </div>
       )}
@@ -95,9 +95,10 @@ export function PasswordForm() {
             <button
               type="button"
               onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+              aria-label={showCurrentPassword ? "Hide current password" : "Show current password"}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
-              {showCurrentPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              {showCurrentPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -115,17 +116,19 @@ export function PasswordForm() {
               placeholder="Enter new password"
               required
               minLength={8}
+              aria-describedby="newPasswordHint"
               className="w-full px-4 py-3 pr-12 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             />
             <button
               type="button"
               onClick={() => setShowNewPassword(!showNewPassword)}
+              aria-label={showNewPassword ? "Hide new password" : "Show new password"}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             >
-              {showNewPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              {showNewPassword ? <EyeOff className="h-5 w-5" aria-hidden="true" /> : <Eye className="h-5 w-5" aria-hidden="true" />}
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+          <p id="newPasswordHint" className="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
         </div>
 
         <div>

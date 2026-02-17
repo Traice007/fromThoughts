@@ -57,15 +57,15 @@ function SignUpForm() {
 
         <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
           {claimForecastId && (
-            <div className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
-              <CheckCircle className="h-4 w-4 flex-shrink-0" />
+            <div role="status" className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
+              <CheckCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <p>Your roadmap will be saved to your new account</p>
             </div>
           )}
 
           {error && (
-            <div className="flex items-center gap-2 p-3 mb-6 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <div role="alert" className="flex items-center gap-2 p-3 mb-6 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm">
+              <AlertCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <p>{error}</p>
             </div>
           )}
@@ -76,7 +76,7 @@ function SignUpForm() {
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" aria-hidden="true" />
                 <input
                   id="name"
                   type="text"
@@ -94,7 +94,7 @@ function SignUpForm() {
                 Work Email
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" aria-hidden="true" />
                 <input
                   id="email"
                   type="email"
@@ -112,7 +112,7 @@ function SignUpForm() {
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" aria-hidden="true" />
                 <input
                   id="password"
                   type="password"
@@ -121,10 +121,11 @@ function SignUpForm() {
                   placeholder="••••••••"
                   required
                   minLength={8}
+                  aria-describedby="passwordHint"
                   className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                 />
               </div>
-              <p className="text-xs text-secondary mt-1">Minimum 8 characters</p>
+              <p id="passwordHint" className="text-xs text-secondary mt-1">Minimum 8 characters</p>
             </div>
 
             <button

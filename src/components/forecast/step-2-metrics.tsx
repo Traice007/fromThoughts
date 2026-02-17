@@ -68,15 +68,16 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Funnel Metrics */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <Users className="h-5 w-5 text-amber-600" />
+            <Users className="h-5 w-5 text-amber-600" aria-hidden="true" />
             Funnel Volume (Monthly)
           </h3>
           <div className="grid sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="mqls" className="block text-sm font-semibold text-gray-700 mb-2">
                 MQLs per Month
               </label>
               <input
+                id="mqls"
                 type="number"
                 value={formData.monthlyInboundLeads || ""}
                 onChange={(e) => setFormData({ ...formData, monthlyInboundLeads: parseInt(e.target.value) || undefined })}
@@ -86,10 +87,11 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               <p className="mt-2 text-xs text-gray-500 font-medium">Marketing Qualified Leads</p>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="sqls" className="block text-sm font-semibold text-gray-700 mb-2">
                 SQLs per Month
               </label>
               <input
+                id="sqls"
                 type="number"
                 value={formData.marketingQualifiedAccounts || ""}
                 onChange={(e) => setFormData({ ...formData, marketingQualifiedAccounts: parseInt(e.target.value) || undefined })}
@@ -99,10 +101,11 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               <p className="mt-2 text-xs text-gray-500 font-medium">Sales Qualified Leads</p>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="opportunities" className="block text-sm font-semibold text-gray-700 mb-2">
                 Sales Opportunities
               </label>
               <input
+                id="opportunities"
                 type="number"
                 value={formData.salesQualifiedLeads || ""}
                 onChange={(e) => setFormData({ ...formData, salesQualifiedLeads: parseInt(e.target.value) || undefined })}
@@ -117,22 +120,23 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Conversion Rates */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-amber-600" />
+            <TrendingUp className="h-5 w-5 text-amber-600" aria-hidden="true" />
             Conversion Rates
             {(isRateAutoCalculated('mqlToSql') || isRateAutoCalculated('sqlToOpp')) && (
               <span className="text-xs font-medium text-amber-600 flex items-center gap-1 bg-amber-50 px-2 py-1 rounded-full">
-                <Calculator className="h-3 w-3" />
+                <Calculator className="h-3 w-3" aria-hidden="true" />
                 Auto-calculated
               </span>
             )}
           </h3>
           <div className="grid sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="mqlToSqlRate" className="block text-sm font-semibold text-gray-700 mb-2">
                 MQL → SQL Rate
               </label>
               <div className="relative">
                 <input
+                  id="mqlToSqlRate"
                   type="number"
                   step="0.1"
                   value={formData.leadToMqaRate || ""}
@@ -152,11 +156,12 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               )}
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="sqlToOppRate" className="block text-sm font-semibold text-gray-700 mb-2">
                 SQL → Opportunity Rate
               </label>
               <div className="relative">
                 <input
+                  id="sqlToOppRate"
                   type="number"
                   step="0.1"
                   value={formData.mqaToSqlRate || ""}
@@ -176,11 +181,12 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               )}
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="closeRate" className="block text-sm font-semibold text-gray-700 mb-2">
                 Opportunity → Close Rate
               </label>
               <div className="relative">
                 <input
+                  id="closeRate"
                   type="number"
                   step="0.1"
                   value={formData.sqlToCloseRate || ""}
@@ -198,17 +204,18 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
         {/* Deal Metrics */}
         <div>
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-            <DollarSign className="h-5 w-5 text-amber-600" />
+            <DollarSign className="h-5 w-5 text-amber-600" aria-hidden="true" />
             Deal Metrics
           </h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="dealSize" className="block text-sm font-semibold text-gray-700 mb-2">
                 Average Deal Size
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
                 <input
+                  id="dealSize"
                   type="number"
                   value={formData.averageDealSize || ""}
                   onChange={(e) => setFormData({ ...formData, averageDealSize: parseFloat(e.target.value) || undefined })}
@@ -218,11 +225,12 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
-                <Clock className="h-4 w-4 text-amber-600" />
+              <label htmlFor="salesCycle" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
+                <Clock className="h-4 w-4 text-amber-600" aria-hidden="true" />
                 Sales Cycle Length (days)
               </label>
               <input
+                id="salesCycle"
                 type="number"
                 value={formData.salesCycleLength || ""}
                 onChange={(e) => setFormData({ ...formData, salesCycleLength: parseInt(e.target.value) || undefined })}
@@ -245,7 +253,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   <p className="text-2xl font-bold text-amber-600">{formData.monthlyInboundLeads}</p>
                   <p className="text-gray-600 font-medium">MQLs</p>
                 </div>
-                <ArrowRight className="h-5 w-5 text-amber-400" />
+                <ArrowRight className="h-5 w-5 text-amber-400" aria-hidden="true" />
               </>
             )}
             {formData.marketingQualifiedAccounts && (
@@ -254,7 +262,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
                   <p className="text-2xl font-bold text-amber-600">{formData.marketingQualifiedAccounts}</p>
                   <p className="text-gray-600 font-medium">SQLs</p>
                 </div>
-                <ArrowRight className="h-5 w-5 text-amber-400" />
+                <ArrowRight className="h-5 w-5 text-amber-400" aria-hidden="true" />
               </>
             )}
             {formData.salesQualifiedLeads && (

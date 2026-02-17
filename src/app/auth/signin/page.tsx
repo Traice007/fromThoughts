@@ -56,15 +56,15 @@ function SignInForm() {
 
         <div className="bg-background border border-border rounded-xl p-8 shadow-sm">
           {verified && (
-            <div className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
-              <CheckCircle className="h-4 w-4 flex-shrink-0" />
+            <div role="status" className="flex items-center gap-2 p-3 mb-6 bg-green-50 dark:bg-green-950/30 text-green-600 rounded-lg text-sm">
+              <CheckCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <p>Email verified successfully! You can now sign in.</p>
             </div>
           )}
 
           {formError && (
-            <div className="flex items-center gap-2 p-3 mb-6 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <div role="alert" className="flex items-center gap-2 p-3 mb-6 bg-red-50 dark:bg-red-950/30 text-red-600 rounded-lg text-sm">
+              <AlertCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
               <p>{formError}</p>
             </div>
           )}
@@ -75,7 +75,7 @@ function SignInForm() {
                 Email
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" aria-hidden="true" />
                 <input
                   id="email"
                   type="email"
@@ -93,7 +93,7 @@ function SignInForm() {
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-secondary" aria-hidden="true" />
                 <input
                   id="password"
                   type="password"
@@ -104,6 +104,15 @@ function SignInForm() {
                   className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                 />
               </div>
+            </div>
+
+            <div className="text-right">
+              <Link
+                href="/auth/forgot-password"
+                className="text-sm text-primary hover:underline"
+              >
+                Forgot password?
+              </Link>
             </div>
 
             <button

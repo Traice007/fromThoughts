@@ -31,12 +31,13 @@ export function DashboardNav() {
 
   return (
     <aside
+      aria-label="Dashboard navigation"
       className={`hidden lg:flex flex-col border-r border-border bg-muted/30 transition-all duration-300 ${
         collapsed ? "w-16" : "w-64"
       }`}
     >
       <div className="flex-1 pt-20 px-3 py-4">
-        <nav className="space-y-1">
+        <nav aria-label="Main menu" className="space-y-1">
           {navigation.map((item) => {
             const isActive =
               pathname === item.href ||
@@ -46,6 +47,8 @@ export function DashboardNav() {
               <Link
                 key={item.name}
                 href={item.href}
+                aria-label={collapsed ? item.name : undefined}
+                aria-current={isActive ? "page" : undefined}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive
                     ? "bg-primary text-white"
@@ -53,7 +56,7 @@ export function DashboardNav() {
                 }`}
                 title={collapsed ? item.name : undefined}
               >
-                <item.icon className="h-5 w-5 flex-shrink-0" />
+                <item.icon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
                 {!collapsed && <span>{item.name}</span>}
               </Link>
             );
@@ -64,13 +67,15 @@ export function DashboardNav() {
       <div className="p-3 border-t border-border">
         <button
           onClick={() => setCollapsed(!collapsed)}
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          aria-expanded={!collapsed}
           className="flex items-center justify-center w-full py-2 text-secondary hover:text-foreground transition-colors"
         >
           {collapsed ? (
-            <ChevronRight className="h-5 w-5" />
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
           ) : (
             <>
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5" aria-hidden="true" />
               <span className="ml-2 text-sm">Collapse</span>
             </>
           )}

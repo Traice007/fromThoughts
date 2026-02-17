@@ -43,11 +43,12 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
       <div className="space-y-6">
         {/* Industry */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Building2 className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="industry" className="block text-sm font-semibold text-gray-700 mb-2">
+            <Building2 className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Industry
           </label>
           <select
+            id="industry"
             value={formData.industry || ""}
             onChange={(e) => setFormData({ ...formData, industry: e.target.value || undefined })}
             className="w-full px-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all"
@@ -63,11 +64,12 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
 
         {/* Target Market */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Target className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="targetMarket" className="block text-sm font-semibold text-gray-700 mb-2">
+            <Target className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Target Market
           </label>
           <textarea
+            id="targetMarket"
             value={formData.targetMarket || ""}
             onChange={(e) => setFormData({ ...formData, targetMarket: e.target.value || undefined })}
             placeholder="Describe your target market (e.g., Mid-market B2B SaaS companies in North America with 50-500 employees)"
@@ -78,11 +80,12 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
 
         {/* Ideal Customer Profile */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Users className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="idealCustomerProfile" className="block text-sm font-semibold text-gray-700 mb-2">
+            <Users className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Ideal Customer Profile (ICP)
           </label>
           <textarea
+            id="idealCustomerProfile"
             value={formData.idealCustomerProfile || ""}
             onChange={(e) => setFormData({ ...formData, idealCustomerProfile: e.target.value || undefined })}
             placeholder="Describe your ideal customer (e.g., VP of Sales or CRO at growing SaaS companies, struggling with scaling their sales team)"
@@ -93,11 +96,12 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
 
         {/* Competitive Position */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Swords className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="competitivePosition" className="block text-sm font-semibold text-gray-700 mb-2">
+            <Swords className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Competitive Position
           </label>
           <textarea
+            id="competitivePosition"
             value={formData.competitivePosition || ""}
             onChange={(e) => setFormData({ ...formData, competitivePosition: e.target.value || undefined })}
             placeholder="Describe your competitive landscape and positioning (e.g., We compete with X and Y but differentiate on Z)"

@@ -66,13 +66,14 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
       <div className="space-y-6">
         {/* Current Revenue */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <DollarSign className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="currentRevenue" className="block text-sm font-semibold text-gray-700 mb-2">
+            <DollarSign className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Current Annual Revenue (ARR)
           </label>
           <div className="relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
             <input
+              id="currentRevenue"
               type="number"
               value={formData.currentRevenue || ""}
               onChange={(e) => setFormData({ ...formData, currentRevenue: parseFloat(e.target.value) || 0 })}
@@ -92,13 +93,14 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
 
         {/* Target Revenue */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            <Target className="inline h-4 w-4 mr-1 text-amber-600" />
+          <label htmlFor="targetRevenue" className="block text-sm font-semibold text-gray-700 mb-2">
+            <Target className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Target Annual Revenue (ARR)
           </label>
           <div className="relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">€</span>
             <input
+              id="targetRevenue"
               type="number"
               value={formData.targetRevenue || ""}
               onChange={(e) => setFormData({ ...formData, targetRevenue: parseFloat(e.target.value) || 0 })}
@@ -118,15 +120,17 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
 
         {/* Time Horizon */}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-3">
-            <Calendar className="inline h-4 w-4 mr-1 text-amber-600" />
+          <fieldset>
+          <legend className="block text-sm font-semibold text-gray-700 mb-3">
+            <Calendar className="inline h-4 w-4 mr-1 text-amber-600" aria-hidden="true" />
             Time Horizon
-          </label>
+          </legend>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {TIME_HORIZONS.map((option) => (
               <button
                 key={option.value}
                 type="button"
+                aria-pressed={formData.timeHorizonMonths === option.value}
                 onClick={() => setFormData({ ...formData, timeHorizonMonths: option.value })}
                 className={`px-4 py-4 rounded-xl border-2 text-sm font-semibold transition-all ${
                   formData.timeHorizonMonths === option.value
@@ -138,6 +142,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
               </button>
             ))}
           </div>
+          </fieldset>
         </div>
       </div>
 
