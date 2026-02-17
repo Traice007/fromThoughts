@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader2, Check, AlertCircle, Lock, Eye, EyeOff } from "lucide-react";
 
 export function PasswordForm() {
@@ -12,6 +12,12 @@ export function PasswordForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!success) return;
+    const timer = setTimeout(() => setSuccess(false), 5000);
+    return () => clearTimeout(timer);
+  }, [success]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +49,6 @@ export function PasswordForm() {
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
-      setTimeout(() => setSuccess(false), 5000);
     } catch {
       setError("An error occurred. Please try again.");
     } finally {

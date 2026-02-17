@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Clock, ArrowRight } from "lucide-react";
+import { CheckCircle, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
 interface IntegrationCardsProps {
   userId: string;
@@ -81,20 +81,29 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
   const [selected, setSelected] = useState<string | null>(existingProvider);
   const [saved, setSaved] = useState<string | null>(existingProvider);
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSelect = async (integrationId: string) => {
     setSelected(integrationId);
     setSaving(true);
+    setError(null);
 
     try {
-      await fetch("/api/dashboard/integrations", {
+      const res = await fetch("/api/dashboard/integrations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ crm: integrationId }),
       });
-      setSaved(integrationId);
+
+      if (res.ok) {
+        setSaved(integrationId);
+      } else {
+        setError("Failed to save your preference. Please try again.");
+        setSelected(saved);
+      }
     } catch {
-      // Silently handle
+      setError("An error occurred. Please try again.");
+      setSelected(saved);
     } finally {
       setSaving(false);
     }
@@ -105,6 +114,13 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
 
   return (
     <div className="space-y-8">
+      {error && (
+        <div className="flex items-center gap-2 p-3 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
+          <AlertCircle className="h-4 w-4 flex-shrink-0" />
+          <p>{error}</p>
+        </div>
+      )}
+
       {/* CRM Integrations */}
       <div>
         <div className="flex items-center gap-3 mb-4">

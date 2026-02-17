@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, Check } from "lucide-react";
+import { Loader2, Check, AlertCircle } from "lucide-react";
 
 interface SettingsFormProps {
   user: {
@@ -17,11 +17,19 @@ export function SettingsForm({ user }: SettingsFormProps) {
   const [name, setName] = useState(user.name || "");
   const [isLoading, setIsLoading] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!saved) return;
+    const timer = setTimeout(() => setSaved(false), 3000);
+    return () => clearTimeout(timer);
+  }, [saved]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setSaved(false);
+    setError(null);
 
     try {
       const res = await fetch("/api/dashboard/settings", {
@@ -33,10 +41,12 @@ export function SettingsForm({ user }: SettingsFormProps) {
       if (res.ok) {
         setSaved(true);
         router.refresh();
-        setTimeout(() => setSaved(false), 3000);
+      } else {
+        const data = await res.json();
+        setError(data.error || "Failed to save changes");
       }
-    } catch (error) {
-      console.error("Failed to update settings:", error);
+    } catch {
+      setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -45,6 +55,13 @@ export function SettingsForm({ user }: SettingsFormProps) {
   return (
     <div className="bg-background border border-border rounded-xl p-6">
       <h2 className="text-xl font-semibold mb-4">Profile</h2>
+
+      {error && (
+        <div className="flex items-center gap-2 p-3 mb-4 bg-red-50 text-red-700 rounded-lg text-sm border border-red-100">
+          <AlertCircle className="h-4 w-4 flex-shrink-0" />
+          <p>{error}</p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
