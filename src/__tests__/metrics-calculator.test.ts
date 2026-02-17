@@ -7,11 +7,14 @@ function makeDeal(overrides: Partial<ParsedDeal> = {}): ParsedDeal {
     dealName: "Test Deal",
     value: 25000,
     stage: "LEAD",
+    stageOriginal: "Lead",
+    stageWasUnknown: false,
     probability: null,
     createdDate: null,
     closeDate: null,
-    ownerName: null,
-    ownerEmail: null,
+    contactName: null,
+    companyName: null,
+    notes: null,
     ...overrides,
   };
 }
