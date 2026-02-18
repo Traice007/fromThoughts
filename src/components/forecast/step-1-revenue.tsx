@@ -76,7 +76,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
               id="currentRevenue"
               type="number"
               value={formData.currentRevenue || ""}
-              onChange={(e) => setFormData({ ...formData, currentRevenue: parseFloat(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, currentRevenue: Math.round(Number(e.target.value)) || 0 })}
               placeholder="1,500,000"
               className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             />
@@ -103,7 +103,7 @@ export function Step1Revenue({ data, onNext }: Step1RevenueProps) {
               id="targetRevenue"
               type="number"
               value={formData.targetRevenue || ""}
-              onChange={(e) => setFormData({ ...formData, targetRevenue: parseFloat(e.target.value) || 0 })}
+              onChange={(e) => setFormData({ ...formData, targetRevenue: Math.round(Number(e.target.value)) || 0 })}
               placeholder="3,000,000"
               className="w-full pl-10 pr-4 py-4 text-lg font-medium text-gray-900 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
             />

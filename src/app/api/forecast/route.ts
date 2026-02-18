@@ -27,8 +27,8 @@ export async function POST(request: NextRequest) {
         userId: user?.id || null, // Link to user if authenticated
         email: data.email,
         companyName: data.companyName,
-        currentRevenue: data.currentRevenue,
-        targetRevenue: data.targetRevenue,
+        currentRevenue: Math.round(data.currentRevenue),
+        targetRevenue: Math.round(data.targetRevenue),
         timeHorizonMonths: data.timeHorizonMonths,
         monthlyInboundLeads: data.monthlyInboundLeads,
         marketingQualifiedAccounts: data.marketingQualifiedAccounts,

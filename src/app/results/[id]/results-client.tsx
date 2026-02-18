@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { Loader2, RefreshCw, CheckCircle, XCircle, User, ArrowRight } from "lucide-react";
@@ -32,7 +32,38 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
   const [polling, setPolling] = useState(
     initialForecast.status === "PENDING" || initialForecast.status === "PROCESSING"
   );
+  const generationTriggered = useRef(false);
+  const [progressStep, setProgressStep] = useState(0);
 
+  // Trigger AI generation if forecast is PENDING (just created, not yet processed)
+  useEffect(() => {
+    if (forecast.status !== "PENDING" || generationTriggered.current) return;
+    generationTriggered.current = true;
+
+    fetch("/api/generate-okrs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ forecastId: forecast.id }),
+    }).catch((err) => {
+      console.error("Failed to trigger generation:", err);
+    });
+  }, [forecast.status, forecast.id]);
+
+  // Animate progress steps during loading
+  useEffect(() => {
+    if (!polling) return;
+
+    const steps = [0, 1, 2, 3];
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      currentIndex = Math.min(currentIndex + 1, steps.length - 1);
+      setProgressStep(steps[currentIndex]);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [polling]);
+
+  // Poll for completion
   useEffect(() => {
     if (!polling) return;
 
@@ -53,13 +84,20 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
       } catch (error) {
         console.error("Polling error:", error);
       }
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [polling, forecast.id]);
 
-  // Loading state
+  // Loading state with progress steps
   if (forecast.status === "PENDING" || forecast.status === "PROCESSING") {
+    const progressSteps = [
+      "Analyzing your revenue data",
+      "Benchmarking against your industry",
+      "Generating strategic OKRs",
+      "Building your roadmap",
+    ];
+
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center py-12 px-4">
         <div className="text-center max-w-md">
@@ -68,12 +106,26 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
           </div>
           <h1 className="text-2xl font-bold mb-4">Building Your Revenue Roadmap</h1>
           <p className="text-secondary mb-8">
-            Our AI is analyzing your revenue data and creating your personalized roadmap.
+            Our AI is analyzing your data and creating your personalized roadmap.
             This usually takes 15-30 seconds.
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-secondary">
-            <RefreshCw className="h-4 w-4 animate-spin" />
-            <span>Processing...</span>
+
+          {/* Progress steps */}
+          <div className="space-y-3 text-left max-w-xs mx-auto mb-8">
+            {progressSteps.map((step, index) => (
+              <div key={step} className="flex items-center gap-3">
+                {index < progressStep ? (
+                  <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                ) : index === progressStep ? (
+                  <Loader2 className="h-5 w-5 text-primary animate-spin flex-shrink-0" />
+                ) : (
+                  <div className="h-5 w-5 rounded-full border-2 border-gray-200 flex-shrink-0" />
+                )}
+                <span className={`text-sm ${index <= progressStep ? "text-foreground font-medium" : "text-secondary"}`}>
+                  {step}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

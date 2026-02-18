@@ -128,19 +128,7 @@ export function ForecastForm() {
 
       const { id } = await response.json();
 
-      // Trigger OKR generation
-      const okrResponse = await fetch("/api/generate-okrs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ forecastId: id }),
-      });
-
-      if (!okrResponse.ok) {
-        const okrError = await okrResponse.json();
-        throw new Error(okrError.error || "Failed to generate OKRs");
-      }
-
-      // Redirect to results page
+      // Redirect immediately — results page triggers AI generation and polls
       router.push(`/results/${id}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");

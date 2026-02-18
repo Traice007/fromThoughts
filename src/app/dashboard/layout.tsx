@@ -19,7 +19,7 @@ export default async function DashboardLayout({
     <div className="flex min-h-screen">
       <DashboardNav />
       <div className="flex-1 pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24 lg:pb-8">
           <Suspense fallback={<div className="h-0" />}>
             <SubscriptionBannerWrapper />
           </Suspense>

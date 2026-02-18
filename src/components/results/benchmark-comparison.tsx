@@ -78,12 +78,12 @@ function ComparisonRow({ comparison }: { comparison: BenchmarkComparison }) {
 
   return (
     <div className={`rounded-lg p-4 ${getBgColor()}`}>
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-2">
+        <div className="flex items-center gap-2 min-w-0">
           {getIcon()}
-          <span className="font-medium">{comparison.metric}</span>
+          <span className="font-medium truncate">{comparison.metric}</span>
         </div>
-        <div className="text-right">
+        <div className="sm:text-right">
           <span className="text-lg font-bold">{formatValue(comparison.userValue)}</span>
           <span className="text-secondary text-sm ml-2">
             vs {formatValue(comparison.benchmarkValue)} benchmark

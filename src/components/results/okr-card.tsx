@@ -22,13 +22,13 @@ export function OkrCard({ okr, index }: OkrCardProps) {
   return (
     <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
       {/* Header */}
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div className="flex items-start gap-3">
-          <div className={`p-2 rounded-lg ${config.color}`}>
+      <div className="flex items-start justify-between gap-3 mb-4">
+        <div className="flex items-start gap-3 min-w-0">
+          <div className={`p-2 rounded-lg flex-shrink-0 ${config.color}`}>
             <Icon className="h-5 w-5" />
           </div>
-          <div>
-            <div className="flex items-center gap-2 mb-1">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-1.5 mb-1">
               <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-muted">
                 OKR {index + 1}
               </span>
@@ -42,7 +42,7 @@ export function OkrCard({ okr, index }: OkrCardProps) {
             <h3 className="text-lg font-semibold">{okr.objective}</h3>
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right flex-shrink-0">
           <span className="text-xs text-secondary">Priority</span>
           <p className="text-2xl font-bold text-primary">{okr.priority}</p>
         </div>
@@ -72,18 +72,18 @@ export function OkrCard({ okr, index }: OkrCardProps) {
         {okr.keyResults.map((kr, krIndex) => (
           <div
             key={kr.id}
-            className="flex items-center justify-between p-3 bg-muted rounded-lg"
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-3 bg-muted rounded-lg"
           >
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-background text-xs font-medium">
+            <div className="flex items-start gap-3 min-w-0">
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-background text-xs font-medium flex-shrink-0">
                 {krIndex + 1}
               </span>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-medium">{kr.description}</p>
                 <p className="text-xs text-secondary">{kr.metricName}</p>
               </div>
             </div>
-            <div className="text-right">
+            <div className="sm:text-right flex-shrink-0 pl-9 sm:pl-0">
               <p className="text-sm font-semibold">
                 {kr.currentValue !== null ? (
                   <>

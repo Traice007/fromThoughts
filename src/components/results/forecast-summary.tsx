@@ -9,11 +9,13 @@ interface ForecastSummaryProps {
 }
 
 export function ForecastSummary({ forecast }: ForecastSummaryProps) {
-  const revenueGap = forecast.targetRevenue - forecast.currentRevenue;
-  const growthMultiple = forecast.currentRevenue > 0 ? forecast.targetRevenue / forecast.currentRevenue : 0;
+  const currentRevenue = Math.round(forecast.currentRevenue);
+  const targetRevenue = Math.round(forecast.targetRevenue);
+  const revenueGap = targetRevenue - currentRevenue;
+  const growthMultiple = currentRevenue > 0 ? targetRevenue / currentRevenue : 0;
   const monthlyGrowth = calculateGrowthRate(
-    forecast.currentRevenue,
-    forecast.targetRevenue,
+    currentRevenue,
+    targetRevenue,
     forecast.timeHorizonMonths
   );
 
@@ -28,7 +30,7 @@ export function ForecastSummary({ forecast }: ForecastSummaryProps) {
             <DollarSign className="h-4 w-4" />
             <span className="text-sm">Current ARR</span>
           </div>
-          <p className="text-2xl font-bold">{formatCurrency(forecast.currentRevenue)}</p>
+          <p className="text-2xl font-bold">{formatCurrency(currentRevenue)}</p>
         </div>
 
         {/* Target Revenue */}
@@ -37,7 +39,7 @@ export function ForecastSummary({ forecast }: ForecastSummaryProps) {
             <Target className="h-4 w-4" />
             <span className="text-sm">Target ARR</span>
           </div>
-          <p className="text-2xl font-bold text-primary">{formatCurrency(forecast.targetRevenue)}</p>
+          <p className="text-2xl font-bold text-primary">{formatCurrency(targetRevenue)}</p>
         </div>
 
         {/* Growth Required */}
