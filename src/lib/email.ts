@@ -428,6 +428,33 @@ export async function sendSubscriptionExpiryWarningEmail(
   }
 }
 
+export async function sendGenerationFailureAlert(
+  forecastId: string,
+  errorMessage: string
+): Promise<void> {
+  try {
+    await getResend().emails.send({
+      from: EMAIL_FROM,
+      to: "sales@fromthoughts.com",
+      subject: `[Alert] AI generation failed for forecast ${forecastId.slice(0, 8)}`,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px;">
+          <h2 style="color: #dc2626;">AI Generation Failed</h2>
+          <p><strong>Forecast ID:</strong> ${escapeHtml(forecastId)}</p>
+          <p><strong>Error:</strong> ${escapeHtml(errorMessage)}</p>
+          <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+          <p style="color: #6b7280; font-size: 13px; margin-top: 24px;">
+            Check the <a href="${APP_URL}/dashboard">dashboard</a> or Vercel logs for details.
+          </p>
+        </div>
+      `,
+    });
+  } catch {
+    // Don't throw — alerting failure shouldn't break the main flow
+    console.error("Failed to send generation failure alert email");
+  }
+}
+
 export async function sendSalesLeadNotificationEmail(
   lead: { name: string; email: string; companyWebsite?: string | null; teamSize?: string | null; message?: string | null }
 ): Promise<{ success: boolean; error?: string }> {

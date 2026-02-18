@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateOkrs } from "@/lib/ai";
+import { sendGenerationFailureAlert } from "@/lib/email";
 
 // AI generation can take 15-30s — extend beyond the default 10s timeout
 export const maxDuration = 60;
@@ -92,6 +93,9 @@ export async function POST(request: NextRequest) {
         where: { id: forecastId },
         data: { status: "FAILED" },
       });
+
+      // Alert via email so you know when generation fails
+      await sendGenerationFailureAlert(forecastId, errorMessage);
 
       return NextResponse.json(
         { error: `Failed to generate OKRs: ${errorMessage}` },
