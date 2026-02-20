@@ -6,36 +6,39 @@ import { CheckoutButton } from "@/components/billing/checkout-button";
 
 const PLANS = [
   {
-    name: "Starter",
-    planId: "STARTER" as const,
-    price: "€1,500",
-    period: " one-time",
-    description: "30 days to build your sales playbook",
-    features: [
-      "Unlimited forecasts",
-      "AI-powered revenue roadmap",
-      "Industry benchmark comparisons",
-      "Gap analysis & recommendations",
-      "Export to PDF/CSV",
-      "Email support",
-    ],
-    tier: "STARTER",
-  },
-  {
-    name: "Pro",
-    planId: "PRO" as const,
+    name: "Foundation",
+    planId: "STARTER" as const, // Stripe/DB ID — do not change
     price: "€15,000",
     period: " / year",
-    description: "For growing companies serious about hitting targets",
+    description: "AI platform for founders who just made their first sales hire",
     features: [
-      "Everything in Starter",
-      "Roadmap progress tracking",
-      "CRM integrations (HubSpot, Pipedrive)",
-      "Team collaboration (coming soon)",
-      "Priority support",
-      "Monthly strategy insights",
+      "Revenue playbook & execution plan",
+      "Pipeline dashboard & health score",
+      "Weekly brief with deal prioritisation",
+      "Stall detection & deal alerts",
+      "Gap analysis & OKR framework",
+      "HubSpot & Pipedrive integration (coming soon)",
+      "Email support",
     ],
-    tier: "PRO",
+    tier: "STARTER", // DB value — do not change
+  },
+  {
+    name: "Growth",
+    planId: "PRO" as const, // Stripe/DB ID — do not change
+    price: "€19,000",
+    period: " / year",
+    description: "AI platform + dedicated revenue advisor for post-hire founders",
+    features: [
+      "Everything in Foundation",
+      "Dedicated revenue advisor",
+      "Monthly 45-min pipeline review call",
+      "Async advisor access (email/Slack)",
+      "Curated weekly opportunity list",
+      "ICP sharpening & win/loss analysis (coming soon)",
+      "Rep performance tracking (coming soon)",
+      "Priority support",
+    ],
+    tier: "PRO", // DB value — do not change
     popular: true,
   },
   {
@@ -43,14 +46,14 @@ const PLANS = [
     planId: null,
     price: "Custom",
     period: "",
-    description: "For larger organizations with specific needs",
+    description: "For larger teams with multiple reps and custom requirements",
     features: [
-      "Everything in Pro",
-      "Dedicated account manager",
-      "Custom integrations",
-      "SLA guarantee",
+      "Everything in Growth",
+      "Multi-rep team management",
+      "Custom CRM & tool integrations",
+      "Dedicated implementation support",
       "API access",
-      "On-premise deployment option",
+      "SLA guarantee",
     ],
     tier: "ENTERPRISE",
   },
@@ -73,11 +76,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
     const planId = params.plan.toUpperCase();
     if (planId === "STARTER" || planId === "PRO") {
       const accessEnd = new Date();
-      if (planId === "STARTER") {
-        accessEnd.setDate(accessEnd.getDate() + 30); // 30 days for Starter
-      } else {
-        accessEnd.setFullYear(accessEnd.getFullYear() + 1); // 1 year for Pro
-      }
+      accessEnd.setFullYear(accessEnd.getFullYear() + 1); // 1 year for all paid plans
 
       await prisma.user.update({
         where: { id: user.id },
@@ -147,10 +146,10 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
             <h2 className="text-xl font-semibold">Current Plan</h2>
             <p className="text-secondary mt-1">
               {(currentTier === "TRIAL" || currentTier === "NONE") && "Select a plan to get started"}
-              {currentTier === "STARTER" && !isExpired && "You're on the Starter plan"}
-              {currentTier === "STARTER" && isExpired && "Your Starter plan has expired"}
-              {currentTier === "PRO" && !isExpired && "You're on the Pro plan"}
-              {currentTier === "PRO" && isExpired && "Your Pro plan has expired"}
+              {currentTier === "STARTER" && !isExpired && "You're on the Foundation plan"}
+              {currentTier === "STARTER" && isExpired && "Your Foundation plan has expired"}
+              {currentTier === "PRO" && !isExpired && "You're on the Growth plan"}
+              {currentTier === "PRO" && isExpired && "Your Growth plan has expired"}
               {currentTier === "ENTERPRISE" && "You're on the Enterprise plan"}
             </p>
           </div>
@@ -188,7 +187,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
               (currentTier === "STARTER" && !isExpired && plan.tier === "PRO") ||
               // Expired - can renew same plan or upgrade
               (isExpired && (plan.tier === "STARTER" || plan.tier === "PRO"));
-            const Icon = plan.name === "Starter" ? Zap : plan.name === "Pro" ? Crown : Building;
+            const Icon = plan.name === "Foundation" ? Zap : plan.name === "Growth" ? Crown : Building;
 
             // Determine card styling based on current plan status
             const cardClasses = isCurrent
@@ -259,7 +258,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
                     </div>
                     {userData?.subscriptionPeriodEnd && (
                       <p className="text-xs text-center text-amber-600">
-                        {plan.tier === "STARTER" ? "Access until " : "Renews "}
+                        {"Renews "}
                         {new Date(userData.subscriptionPeriodEnd).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
@@ -292,7 +291,7 @@ export default async function BillingPage({ searchParams }: BillingPageProps) {
 
       {/* Money-back Guarantee */}
       <div className="text-center text-sm text-secondary">
-        <p>14-day money-back guarantee on all plans. No questions asked.</p>
+        <p>30-day satisfaction guarantee on all plans. No questions asked.</p>
       </div>
 
       {/* Billing Portal Link */}

@@ -46,9 +46,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Most first sales hires fail because there&apos;s no documented playbook.
-            fromThoughts helps you turn what&apos;s in your head into a structured
-            revenue plan your first hire can actually execute on.
+            Your sales instincts are what got you here. fromThoughts structures them into a revenue playbook your team can execute on, so you stop being the bottleneck in every deal.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -203,7 +201,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6">
                 <Target className="h-7 w-7 text-red-500" />
@@ -233,6 +231,16 @@ export default function HomePage() {
                 A senior sales hire costs €150K–€250K/year. Most fail within 12 months at early-stage companies, not because they&apos;re bad, but because there&apos;s no foundation.
               </p>
             </div>
+
+            <div className="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-6">
+                <TrendingDown className="h-7 w-7 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">No Visibility Into Why You&apos;re Losing</h3>
+              <p className="text-gray-600 leading-relaxed">
+                You close deals, you lose deals, but you never step back far enough to see the pattern. Which deal types close fastest? Where are you consistently losing? Without that view, every week is improvisation.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -254,7 +262,7 @@ export default function HomePage() {
           </div>
 
           {/* Comparison Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             {/* Generic AI */}
             <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
               <div className="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center mb-6">
@@ -358,6 +366,9 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <p className="text-center text-xs text-slate-500 mt-4">
+            Continuous pipeline monitoring, weekly briefs, and ICP sharpening are included in the Growth plan. Foundation includes the platform and weekly structure without the advisory layer.
+          </p>
         </div>
       </section>
 
@@ -390,8 +401,8 @@ export default function HomePage() {
               },
               {
                 icon: Gauge,
-                title: "3–10 people, no Head of Sales yet",
-                description: "Maybe 1-2 people helping with sales, but no one leading the function and no documented playbook.",
+                title: "You have 1-2 people in sales but you're still closing every deal yourself",
+                description: "You've started building a team, but without clear direction and a documented process, every deal still runs through you.",
               },
               {
                 icon: Globe,
@@ -427,8 +438,8 @@ export default function HomePage() {
                   description: "Planning to hire but want a documented process to hand over",
                 },
                 {
-                  title: "Interviewing for Head of Sales",
-                  description: "Give your new hire a playbook on day one",
+                  title: "You've made your first hire and need to manage them",
+                  description: "Know exactly where to point them each week, and see whether it's working",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-3 p-4 rounded-lg bg-amber-50 border border-amber-200/60">
@@ -776,8 +787,7 @@ export default function HomePage() {
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Happens After You Get Your Plan</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              This isn&apos;t a report that sits in a folder. Every plan comes with hands-on guidance
-              from someone who&apos;s built commercial teams from scratch.
+              This isn&apos;t a report that sits in a folder. Every plan comes with ongoing intelligence from fromThoughts, so you always know what to do next.
             </p>
           </div>
 
@@ -786,33 +796,33 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-amber-400 font-bold">1</span>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Personal Review</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">Pipeline Review</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                fromThoughts reviews your execution plan and adds context based on what&apos;s worked at companies like yours.
+                fromThoughts reviews your live pipeline, flags what&apos;s stalling before it goes cold, and surfaces where your pattern of losses is.
               </p>
             </div>
             <div className="text-center p-6">
               <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-amber-400 font-bold">2</span>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Execution Check-ins</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">ICP Sharpening</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Regular follow-ups to see what&apos;s moving, what&apos;s stuck, and where to adjust your priorities.
+                Over time, fromThoughts identifies which types of deals you&apos;re winning and losing, and adjusts where you and your team should be spending time.
               </p>
             </div>
             <div className="text-center p-6">
               <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center mx-auto mb-4">
                 <span className="text-amber-400 font-bold">3</span>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Course Corrections</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">Weekly Direction</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                As your pipeline evolves, your plan should too. We help you recalibrate so your first hire stays on track.
+                Every week, you and your team know exactly where to focus. Not based on gut feel, but on what your pipeline data is actually saying.
               </p>
             </div>
           </div>
 
           <p className="text-center text-sm text-gray-500 mt-8">
-            You don&apos;t just get a report. You get someone in your corner who&apos;s done this before.
+            You don&apos;t just get a report. fromThoughts learns your business and tells you what to do next.
           </p>
         </div>
       </section>
@@ -821,10 +831,10 @@ export default function HomePage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-            Build the Playbook Before You Hire
+            Build the Playbook Your Team Can Sell From
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            Turn what&apos;s in your head into a structured revenue execution plan your first sales hire can act on. In under 10 minutes.
+            Turn what&apos;s in your head into a revenue playbook your team can follow and your pipeline can show progress against. In under 10 minutes.
           </p>
           <Link
             href="/forecast"

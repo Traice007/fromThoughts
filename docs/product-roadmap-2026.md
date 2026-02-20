@@ -3,6 +3,45 @@
 *Last updated: February 2026*
 *Goal: Make the €15K/year Pro tier deliver comparable value to a fractional VP of Sales (€80K-120K/year)*
 
+> **Related docs:**
+> - `docs/sales-manager-benchmark.md` — the strategic benchmark: what good Sales Managers actually do, positioning framings, first outreach questions, product implication table
+> - `docs/icp-assumptions.md` — the two ICPs (pre-hire and post-hire founder), validation assumptions, and conversation questions for design partner calls
+
+---
+
+## Retention Mechanics: What Makes a Dutch Founder Return
+
+*Understanding why a €500K-€1.5M ARR founder would open fromThoughts every week — not just once.*
+
+Dutch founders at this stage are tough, critical, and time-poor. They have zero tolerance for noise. One generic recommendation and they're gone. "Looks useful" doesn't make them pay — they pay when something demonstrably moves their number. The product needs to earn every session.
+
+### The five mechanisms that would actually work for this ICP
+
+**1. Fear of loss on a specific deal**
+Nothing moves a founder faster than "you're about to lose €40K." Not a framework — a specific deal they care about, flagged before it dies. The product needs to say: "Deal X with Acme has had no activity in 19 days and your average deal dies at day 21 at this stage." Loss aversion is stronger than any positive incentive for this ICP. This is the highest-priority retention mechanism to build.
+
+**2. A number that moves — and is theirs**
+Not a generic benchmark. A score calibrated to their own baseline that changes week over week. Dutch founders trust data over opinions. "Your health score went from 58 to 64 — pipeline coverage improved but stage 3 velocity slowed" gives them something to react to. A static score they saw three weeks ago is invisible. The number needs to move, and the movement needs to be explained.
+
+**3. The moment of truth**
+The single most powerful retention event: the tool predicts something, the founder ignores it, and then it happens exactly as predicted. "fromThoughts flagged that deal six weeks ago and I didn't act on it — never ignoring it again." This cannot be manufactured, but it can be set up. Ranjith calling something specific and being right is what converts a skeptic into a believer. Early design partners need to experience this moment. Structure conversations and reviews to maximise the chance of it happening.
+
+**4. Accountability from Ranjith**
+The monthly review call creates pull-through for everything else. Founders engage with the dashboard in the days before the call because they don't want to show up unprepared. The call is not just a delivery mechanism — it's the accountability structure that makes the tool feel like a commitment rather than a subscription they can quietly ignore. Ranjith knowing their business is a feature, not overhead.
+
+**5. The first hire threat**
+At this stage, the biggest fear is making a €150K mistake on the wrong sales hire. If fromThoughts can credibly say "you're not ready to hire yet — here's specifically what needs to be true first," that's a reason to stay engaged. It's risk avoidance, which this ICP feels more acutely than upside. The hire-readiness scorecard (Phase 3) is not just a feature — it's a retention anchor.
+
+### What Phase 0 cannot do
+
+None of these mechanisms exist in the current product. A one-time OKR report creates no fear of deal loss, no moving score, no moment of truth, no accountability loop, no hire-readiness signal. Phase 1 is not a nice upgrade — it is what makes the business model viable at all.
+
+### Implication for design partner conversations
+
+Don't ask: *"Would you find this useful?"* — founders will say yes to be polite.
+
+Ask instead: *"Show me a deal you're worried about right now."* Then see if you can tell them something about it they didn't already know. That's the real test of whether fromThoughts earns a return visit.
+
 ---
 
 ## What a Fractional VP Actually Does (the benchmark)
@@ -52,7 +91,40 @@ fromThoughts needs to deliver most of this through AI + Ranjith's time, at 1/5th
 - Score is calibrated per company (measures progress against their own baseline, not generic benchmarks)
 - Industry benchmarks provided as context, not as the target
 
-### 1.3 The Monday Brief with Next Best Actions
+### 1.3 "This Week's Opportunities" — Dashboard UX Direction
+*Inspired by Searchable's product pattern: score → gap analysis → prioritised opportunity list → specific next actions.*
+
+**Product inspiration mapping (Searchable → fromThoughts):**
+
+| Searchable | fromThoughts |
+|---|---|
+| AI visibility score | Revenue health score (pipeline coverage, deal velocity, execution rate) |
+| "Where competitors outrank you" | "Where you're falling behind your revenue target" |
+| Opportunity list → content gaps to fix | Opportunity list → deals to unstick, pipeline gaps to fill, process improvements |
+| Weekly pulls from LLM engines | Weekly pull from HubSpot/Pipedrive + pipeline import |
+| Content Studio → generate content to close gaps | Monday Brief → specific actions to close revenue gaps |
+
+Instead of "Weekly Brief" (passive, email-flavoured), the dashboard should have a persistent **"This Week's Opportunities"** section — always live, always prioritised, always specific. Founders open the dashboard and immediately see: *here are the 3 things worth your time this week, ranked by impact.*
+
+**Validation approach (Feb 2026):** Do not build this until the engagement model is validated. Conversations alone are insufficient — founders will say "yes that sounds useful" even if they'd never return to the dashboard. The test is behavioural, not attitudinal.
+
+Run the service manually with 2-3 design partners first:
+1. Conduct a pipeline review call with each partner
+2. Send them their 3 opportunities for the week via email or a Notion doc (not the product)
+3. Watch for three signals: Do they read it? Do they act on at least one item? Do they come back asking for next week's list?
+
+If all three happen consistently across 3-4 weeks, the engagement model is validated and the build is the obvious next step. If they don't engage, adjust the format or content until they do — before writing a line of code.
+
+**The core hypothesis to test:** "A founder will pay €15K/year because Ranjith + AI give them better pipeline focus than they'd have alone." This can only be answered by delivering the service to someone, not by asking them about it.
+
+**Implementation spec (when ready to build):**
+- New `/dashboard/opportunities` page — dedicated tab alongside Forecasts/OKRs/Pipeline
+- Opportunity card: category (deal/pipeline/process/hiring), priority (high/medium/low), impact estimate, specific next action, status (open/in_progress/done)
+- Founder can update status; Ranjith curates the list via an admin interface
+- Data source initially: pipeline import (CSV) + Ranjith's manual review; upgrade to live CRM sync once validated
+- Category colours follow existing OKR pattern; sorting: high priority first, open before done
+
+### 1.4 The Monday Brief with Next Best Actions
 *Inspired by Skarbe's deal-level next-best-actions but elevated to the sales manager level.*
 
 Every Monday, the founder and their sales rep(s) receive:
