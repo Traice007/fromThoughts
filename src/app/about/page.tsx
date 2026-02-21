@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "About | fromThoughts",
   description:
-    "I've helped multiple B2B companies build their commercial engine from scratch. Now I'm turning that playbook into software, so founders can stop guessing and start executing.",
+    "I've helped multiple B2B companies build their commercial engine from scratch. Now I'm turning that experience into software, so founders can stop guessing and start executing.",
 };
 
 export default function AboutPage() {
@@ -52,7 +52,7 @@ export default function AboutPage() {
               <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-6">
                 I&apos;ve helped multiple B2B companies build their commercial engine
                 from scratch, from first pipeline to repeatable revenue. Now
-                I&apos;m turning that playbook into software.
+                I&apos;m turning that experience into software.
               </p>
               <p className="text-base text-slate-400 leading-relaxed mb-8">
                 Based in Utrecht, working across Europe and Asia. 10+ years of
@@ -155,7 +155,7 @@ export default function AboutPage() {
               },
               {
                 icon: Lightbulb,
-                title: "Execution Playbook",
+                title: "Execution Plan",
                 description:
                   "Get a structured plan with OKRs, priorities, and recommendations your first commercial hire can actually execute on.",
               },
@@ -203,7 +203,7 @@ export default function AboutPage() {
               {
                 pattern: "Building from zero",
                 insight:
-                  "Joined a SaaS startup as the second employee. No pipeline, no process, no playbook. Built the entire commercial operation (sales, marketing, and service) and generated the company's first recurring revenue.",
+                  "Joined a SaaS startup as the second employee. No pipeline, no process, no documented way of selling. Built the entire commercial operation (sales, marketing, and service) and generated the company's first recurring revenue.",
                 lesson: "The gap analysis framework was born here.",
               },
               {
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 insight:
                   "Guided enterprise sales cycles with multiple stakeholders, unclear mandates, and competing priorities. Healthcare, education, HR-tech, retail. Different industries, same decision-making friction.",
                 lesson:
-                  "The execution playbook structure comes from these conversations.",
+                  "The execution structure comes from these conversations.",
               },
               {
                 pattern: "Working internationally",
@@ -263,7 +263,7 @@ export default function AboutPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to Build Your Revenue Playbook?
+            Ready to Build Your Sales Mechanism?
           </h2>
           <p className="text-lg text-slate-400 mb-8 max-w-xl mx-auto">
             Stop relying on gut feeling. Get a structured plan built on

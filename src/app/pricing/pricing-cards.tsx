@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const foundationFeatures = [
-  "Revenue playbook & execution plan",
+  "Sales mechanism & execution plan",
   "Pipeline dashboard & health score",
   "Weekly brief with deal prioritisation",
   "Stall detection & deal alerts",

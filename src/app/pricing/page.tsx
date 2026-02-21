@@ -7,7 +7,7 @@ export const revalidate = 86400; // 24 hours
 
 export const metadata: Metadata = {
   title: "Pricing | fromThoughts",
-  description: "Transparent, annual pricing for B2B founders who need a revenue playbook their team can execute on.",
+  description: "Transparent, annual pricing for B2B founders who need a sales mechanism their team can execute on.",
 };
 
 export default function PricingPage() {
@@ -134,11 +134,11 @@ export default function PricingPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-white">Your Savings</p>
-                  <p className="text-sm text-gray-400">Compared to a fractional VP of Sales</p>
+                  <p className="text-sm text-gray-400">vs. a Head of Sales</p>
                 </div>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-bold text-amber-400">Up to 84%</span>
+                <span className="text-2xl font-bold text-amber-400">90% cheaper</span>
                 <p className="text-sm text-gray-400">saved per year</p>
               </div>
             </div>

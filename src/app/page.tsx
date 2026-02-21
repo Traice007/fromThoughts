@@ -46,7 +46,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Your sales instincts are what got you here. fromThoughts structures them into a revenue playbook your team can execute on, so you stop being the bottleneck in every deal.
+            Your sales instincts are what got you here. fromThoughts turns them into a sales mechanism your team can execute on, so you stop being the bottleneck in every deal.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -69,7 +69,7 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-8 text-sm text-slate-400">
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
-              30 days of full access
+              30-day money-back guarantee
             </span>
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
@@ -88,18 +88,18 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">90%</div>
-              <div className="text-sm text-slate-400 mt-1">Cheaper than a Head of Sales</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">90% cheaper</div>
+              <div className="text-sm text-slate-400 mt-1">vs. a Head of Sales</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-slate-700" />
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white">&lt; 10 min</div>
-              <div className="text-sm text-slate-400 mt-1">To build your sales playbook</div>
+              <div className="text-sm text-slate-400 mt-1">To build your sales mechanism</div>
             </div>
             <div className="hidden sm:block w-px h-12 bg-slate-700" />
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white">Day 1</div>
-              <div className="text-sm text-slate-400 mt-1">Your new hire has a playbook</div>
+              <div className="text-sm text-slate-400 mt-1">Your new hire has a sales mechanism</div>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">Why First Sales Hires Fail</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Most founders hand off sales without a documented playbook. The new hire
+              Most founders hand off sales without a documented sales mechanism. The new hire
               struggles, costs €150K+, and fails within a year.
             </p>
           </div>
@@ -216,7 +216,7 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-6">
                 <Users className="h-7 w-7 text-amber-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">No Playbook to Hand Over</h3>
+              <h3 className="text-xl font-bold mb-3">No Sales Mechanism to Hand Over</h3>
               <p className="text-gray-600 leading-relaxed">
                 You hire someone smart, give them access to the CRM, and expect them to figure it out. They can&apos;t, because there&apos;s nothing to follow.
               </p>
@@ -343,7 +343,7 @@ export default function HomePage() {
                 <span className="font-[family-name:var(--font-playfair)] italic font-normal text-slate-500">from</span>
                 <span className="font-bold text-slate-900">Thoughts</span>
               </h3>
-              <p className="text-sm text-slate-500 mb-6">Curated revenue playbook</p>
+              <p className="text-sm text-slate-500 mb-6">Curated sales mechanism</p>
               <div className="space-y-4">
                 {[
                   "Knows your stage",
@@ -361,7 +361,7 @@ export default function HomePage() {
               </div>
               <div className="mt-8 pt-6 border-t border-slate-200">
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  10+ years of B2B commercial playbooks, curated for your stage, your numbers, your market.
+                  10+ years of B2B commercial experience, structured for your stage, your numbers, your market.
                 </p>
               </div>
             </div>
@@ -401,13 +401,13 @@ export default function HomePage() {
               },
               {
                 icon: Gauge,
-                title: "You have 1-2 people in sales but you're still closing every deal yourself",
+                title: "You've made your first hire but the deals still run through you",
                 description: "You've started building a team, but without clear direction and a documented process, every deal still runs through you.",
               },
               {
                 icon: Globe,
                 title: "Deliberate about your next hire",
-                description: "You'd rather build a structured playbook first than hire a VP of Sales and hope they figure it out.",
+                description: "You'd rather build a structured sales mechanism first than hire a VP of Sales and hope they figure it out.",
               },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4 bg-slate-50 p-6 rounded-xl border border-slate-200">
@@ -529,7 +529,7 @@ export default function HomePage() {
                 <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center">
                   <Target className="h-6 w-6 text-amber-400" />
                 </div>
-                <h3 className="text-xl font-bold">Structured Sales Playbook</h3>
+                <h3 className="text-xl font-bold">Structured Sales Mechanism</h3>
               </div>
               <ul className="space-y-3">
                 {[
@@ -603,7 +603,7 @@ export default function HomePage() {
                   "Your metrics compared against top-performing companies at your stage",
                   "Industry-specific benchmarks for conversion, deal size, and cycle time",
                   "See where you're ahead and where you're falling behind",
-                  "Export as PDF or CSV to share with your team",
+                  "Targets calibrated to your stage, not generic industry averages",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -748,7 +748,7 @@ export default function HomePage() {
                   </div>
                   <span className="text-xs font-semibold text-gray-900">Handoff-Ready</span>
                 </div>
-                <p className="text-xs text-gray-500">Give your first sales hire a playbook they can execute from day one</p>
+                <p className="text-xs text-gray-500">Give your first sales hire a sales mechanism they can execute from day one</p>
               </div>
             </div>
 
@@ -831,10 +831,10 @@ export default function HomePage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-            Build the Playbook Your Team Can Sell From
+            Build the Sales Mechanism Your Team Can Execute
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            Turn what&apos;s in your head into a revenue playbook your team can follow and your pipeline can show progress against. In under 10 minutes.
+            Turn what&apos;s in your head into a sales mechanism your team can follow and your pipeline can show progress against. In under 10 minutes.
           </p>
           <Link
             href="/forecast"
