@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Sparkles, Clock, Shield, Users } from "lucide-react";
+import { Clock, Shield, MessageCircle } from "lucide-react";
 import { ContactSalesForm } from "@/components/contact-sales/contact-sales-form";
 
 export const metadata: Metadata = {
   title: "Let's Talk | fromThoughts",
-  description: "Get in touch with our team to discuss how fromThoughts can help your organization hit its revenue targets.",
+  description: "No demo call required. Tell us where you are in your revenue journey and we'll tell you honestly whether we're the right fit.",
 };
 
 export default function ContactSalesPage() {
@@ -18,37 +18,32 @@ export default function ContactSalesPage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Content */}
             <div className="text-center lg:text-left lg:py-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 text-white text-sm font-medium mb-6 backdrop-blur-sm">
-                <Sparkles className="h-4 w-4" />
-                Let&apos;s Talk
-              </div>
-
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight text-white">
-                Tell Us About Your Growth Goals
+                No demo call.<br />Just a real conversation.
               </h1>
-              <p className="text-base sm:text-lg text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8">
-                Share a bit about your team and we&apos;ll get back to you within 24 hours to discuss how fromThoughts can help.
+              <p className="text-base sm:text-lg text-white/80 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-10">
+                Tell us where you are in your revenue journey. We&apos;ll tell you honestly whether we&apos;re the right fit. No pitch, no pressure.
               </p>
 
               {/* Trust Indicators */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-4 items-center lg:items-start">
+              <div className="flex flex-col gap-4 items-center lg:items-start">
                 <span className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-4 w-4 text-amber-400" />
                   </div>
-                  <span className="font-medium text-white/90">Response within 24 hours</span>
+                  <span className="text-white/90">Response within 24 hours</span>
                 </span>
                 <span className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                    <Users className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="h-4 w-4 text-amber-400" />
                   </div>
-                  <span className="font-medium text-white/90">No commitment required</span>
+                  <span className="text-white/90">No pitch, no pressure</span>
                 </span>
                 <span className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                    <Shield className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-4 w-4 text-amber-400" />
                   </div>
-                  <span className="font-medium text-white/90">Custom solutions available</span>
+                  <span className="text-white/90">30-day guarantee applies</span>
                 </span>
               </div>
             </div>
@@ -58,7 +53,7 @@ export default function ContactSalesPage() {
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden p-6 sm:p-8">
                 <ContactSalesForm />
               </div>
-              <p className="text-xs text-white/70 text-center mt-4">
+              <p className="text-xs text-white/50 text-center mt-4">
                 We respect your privacy and will never share your information.
               </p>
             </div>

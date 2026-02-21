@@ -1,21 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { User, Mail, Globe, Users, MessageSquare, Loader2, CheckCircle, Sparkles } from "lucide-react";
-
-const TEAM_SIZES = [
-  { value: "1-5", label: "1-5 people" },
-  { value: "6-15", label: "6-15 people" },
-  { value: "16-50", label: "16-50 people" },
-  { value: "51-200", label: "51-200 people" },
-  { value: "200+", label: "200+ people" },
-];
+import { Loader2, CheckCircle } from "lucide-react";
 
 interface FormData {
   name: string;
   email: string;
   companyWebsite: string;
-  teamSize: string;
   message: string;
 }
 
@@ -24,7 +15,6 @@ export function ContactSalesForm() {
     name: "",
     email: "",
     companyWebsite: "",
-    teamSize: "",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -108,8 +98,7 @@ export function ContactSalesForm() {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-          <User className="inline h-4 w-4 mr-1 text-amber-600" />
+        <label htmlFor="name" className="block text-sm font-medium text-gray-600 mb-1.5">
           Full Name *
         </label>
         <input
@@ -118,18 +107,17 @@ export function ContactSalesForm() {
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           placeholder="Jane Smith"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 outline-none"
           disabled={isSubmitting}
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
         )}
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Mail className="inline h-4 w-4 mr-1 text-amber-600" />
+        <label htmlFor="email" className="block text-sm font-medium text-gray-600 mb-1.5">
           Work Email *
         </label>
         <input
@@ -138,18 +126,17 @@ export function ContactSalesForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           placeholder="you@company.com"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 outline-none"
           disabled={isSubmitting}
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
         )}
       </div>
 
       {/* Company Website */}
       <div>
-        <label htmlFor="companyWebsite" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Globe className="inline h-4 w-4 mr-1 text-amber-600" />
+        <label htmlFor="companyWebsite" className="block text-sm font-medium text-gray-600 mb-1.5">
           Company Website *
         </label>
         <input
@@ -158,49 +145,26 @@ export function ContactSalesForm() {
           value={formData.companyWebsite}
           onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
           placeholder="company.com"
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400"
+          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 outline-none"
           disabled={isSubmitting}
         />
         {errors.companyWebsite && (
-          <p className="mt-1 text-sm text-red-600">{errors.companyWebsite}</p>
+          <p className="mt-1 text-sm text-red-500">{errors.companyWebsite}</p>
         )}
-      </div>
-
-      {/* Team Size */}
-      <div>
-        <label htmlFor="teamSize" className="block text-sm font-semibold text-gray-700 mb-2">
-          <Users className="inline h-4 w-4 mr-1 text-amber-600" />
-          Team Size
-        </label>
-        <select
-          id="teamSize"
-          value={formData.teamSize}
-          onChange={(e) => setFormData({ ...formData, teamSize: e.target.value })}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all text-gray-700"
-          disabled={isSubmitting}
-        >
-          <option value="">Select team size</option>
-          {TEAM_SIZES.map((size) => (
-            <option key={size.value} value={size.value}>
-              {size.label}
-            </option>
-          ))}
-        </select>
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-          <MessageSquare className="inline h-4 w-4 mr-1 text-amber-600" />
-          How can we help?
+        <label htmlFor="message" className="block text-sm font-medium text-gray-600 mb-1.5">
+          Where are you right now?
         </label>
         <textarea
           id="message"
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          placeholder="Tell us about your goals and what you're looking for..."
+          placeholder="Tell us about your current revenue situation, what's working, and what isn't..."
           rows={4}
-          className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:ring-4 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 resize-none"
+          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 focus:bg-white transition-all placeholder:text-gray-400 resize-none outline-none"
           disabled={isSubmitting}
         />
       </div>
@@ -209,7 +173,7 @@ export function ContactSalesForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full px-8 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/25 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {isSubmitting ? (
           <>
@@ -217,10 +181,7 @@ export function ContactSalesForm() {
             Sending...
           </>
         ) : (
-          <>
-            <Sparkles className="h-5 w-5" />
-            Let&apos;s Talk
-          </>
+          "Let\u2019s Talk"
         )}
       </button>
     </form>

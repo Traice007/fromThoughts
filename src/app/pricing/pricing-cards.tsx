@@ -16,9 +16,9 @@ const foundationFeatures = [
 
 const growthFeatures = [
   "Everything in Foundation",
-  "Dedicated revenue advisor",
+  "Dedicated revenue strategist",
   "Monthly 45-min pipeline review call",
-  "Async advisor access (email/Slack)",
+  "Strategic input between calls (email/Slack)",
   "Curated weekly opportunity list",
   "ICP sharpening & win/loss analysis (coming soon)",
   "Rep performance tracking (coming soon)",
@@ -134,7 +134,7 @@ export function PricingCards() {
 
           <h2 className="text-2xl font-bold mb-2">Growth</h2>
           <p className="text-white/70 text-sm mb-5">
-            For founders who need both the platform and a dedicated revenue advisor reviewing their pipeline and telling them what to do next.
+            For founders who want the platform and a revenue strategist in their corner. Someone who knows your numbers, challenges your assumptions, and tells you where to focus.
           </p>
 
           <div className="mb-1">

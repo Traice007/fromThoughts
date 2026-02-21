@@ -12,7 +12,7 @@ export function Footer() {
               <span className="font-bold text-white">Thoughts</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
-              AI-powered revenue operations for growing companies. Transform your revenue targets into a clear revenue roadmap without hiring a VP of Commercial too early.
+              For B2B founders where every deal still runs through you. Turn what&apos;s in your head into a sales mechanism your team can execute.
             </p>
             <p className="mt-4 text-gray-400 text-sm">
               <a href="mailto:ranjith@fromthoughts.com" className="hover:text-amber-400 transition-colors">
