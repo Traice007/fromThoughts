@@ -3,7 +3,7 @@
 *Foundation for fromThoughts positioning, first outreach, and product build priority.*
 *Last updated: February 2026*
 
-> **Related:** See `docs/icp-assumptions.md` for the two ICP profiles, the assumptions to validate in design partner conversations, and the conversation questions mapped to each ICP.
+> **Related:** See `docs/strategy/icp-assumptions.md` for the two ICP profiles, the assumptions to validate in design partner conversations, and the conversation questions mapped to each ICP.
 
 ---
 

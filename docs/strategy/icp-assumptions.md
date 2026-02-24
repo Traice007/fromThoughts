@@ -4,7 +4,7 @@
 
 *Last updated: February 2026*
 
-> **Related:** For the full ICP profile (psychographics, communities, market size), see `docs/gap-analysis.md`. For the Sales Manager benchmark and outreach questions, see `docs/sales-manager-benchmark.md`.
+> **Related:** For the full ICP profile (psychographics, communities, market size), see `docs/product/gap-analysis.md`. For the Sales Manager benchmark and outreach questions, see `docs/strategy/sales-manager-benchmark.md`.
 
 ---
 

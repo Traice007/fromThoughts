@@ -2,7 +2,7 @@
 
 *Last updated: February 2026*
 
-> This document captures the strategic thinking on what to build and deliver first for design partners (post-hire founders with 1–2 sales reps). Read in conjunction with `docs/icp-assumptions.md` and `docs/product-roadmap-2026.md`.
+> This document captures the strategic thinking on what to build and deliver first for design partners (post-hire founders with 1–2 sales reps). Read in conjunction with `docs/strategy/icp-assumptions.md` and `docs/product/product-roadmap-2026.md`.
 
 ---
 
@@ -139,7 +139,7 @@ No tool currently exists for a founder + single rep structured pipeline review a
 
 **The gap:** No tool does AI-assisted strategic guidance + human review at €15K/year for this ICP. The market has tools for teams that already have RevOps maturity, tools that generate templates, and expensive human consultants. Nothing in between.
 
-**Key stats:** See `docs/market-stats.md` for fully sourced and credibility-rated statistics. For conversations: Bridge Group's 2024 data shows fewer than 1 in 2 SaaS AEs hit quota, and the average new hire takes 5.7 months to ramp. The 68% figure (RVNU, Dec 2025) is directionally useful but too thinly sourced for public claims.
+**Key stats:** See `docs/strategy/market-stats.md` for fully sourced and credibility-rated statistics. For conversations: Bridge Group's 2024 data shows fewer than 1 in 2 SaaS AEs hit quota, and the average new hire takes 5.7 months to ramp. The 68% figure (RVNU, Dec 2025) is directionally useful but too thinly sourced for public claims.
 
 ---
 

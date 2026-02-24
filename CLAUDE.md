@@ -58,4 +58,4 @@ The market research (docs/market-research.pdf) envisions a **guided growth execu
 - European focus vs USD pricing inconsistency
 
 ## Full analysis
-See docs/gap-analysis.md for the complete comparison.
+See docs/product/gap-analysis.md for the complete comparison.

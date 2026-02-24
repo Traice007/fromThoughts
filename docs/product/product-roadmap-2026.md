@@ -4,8 +4,8 @@
 *Goal: Make the €15K/year Pro tier deliver comparable value to a fractional VP of Sales (€80K-120K/year)*
 
 > **Related docs:**
-> - `docs/sales-manager-benchmark.md` — the strategic benchmark: what good Sales Managers actually do, positioning framings, first outreach questions, product implication table
-> - `docs/icp-assumptions.md` — the two ICPs (pre-hire and post-hire founder), validation assumptions, and conversation questions for design partner calls
+> - `docs/strategy/sales-manager-benchmark.md` — the strategic benchmark: what good Sales Managers actually do, positioning framings, first outreach questions, product implication table
+> - `docs/strategy/icp-assumptions.md` — the two ICPs (pre-hire and post-hire founder), validation assumptions, and conversation questions for design partner calls
 
 ---
 
