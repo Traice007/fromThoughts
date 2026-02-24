@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Plug,
   Upload,
+  Lightbulb,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -20,6 +21,7 @@ const navigation = [
   { name: "Forecasts", href: "/dashboard/forecasts", icon: TrendingUp },
   { name: "OKRs", href: "/dashboard/okrs", icon: Target },
   { name: "Pipeline", href: "/dashboard/pipeline", icon: Upload },
+  { name: "Opportunities", href: "/dashboard/opportunities", icon: Lightbulb },
   { name: "Integrations", href: "/dashboard/integrations", icon: Plug },
   { name: "Billing", href: "/dashboard/billing", icon: CreditCard },
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
@@ -30,8 +32,8 @@ const mobileNavItems = [
   navigation[0], // Overview
   navigation[1], // Forecasts
   navigation[2], // OKRs
+  navigation[4], // Opportunities
   navigation[3], // Pipeline
-  navigation[6], // Settings
 ];
 
 export function DashboardNav() {
