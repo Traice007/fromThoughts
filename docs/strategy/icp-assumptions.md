@@ -8,6 +8,42 @@
 
 ---
 
+## Hard Filters — Disqualify Before Anything Else
+
+These are not assumptions to validate. They are prerequisites. If a prospect fails any of these, do not send a message.
+
+**1. Human-assisted sales motion (most important)**
+fromThoughts requires a pipeline with real deals that humans work through stages. The founder or rep must be actively having conversations, running demos, sending proposals, and tracking where accounts are. Without this, there is nothing to review, prioritise, or manage.
+
+Disqualified:
+- Product-led growth (PLG) — users sign up and upgrade in-product, no sales conversations
+- Pure self-serve with low ACV — €500/year subscriptions where individual deals don't matter
+- B2C — no sales process by definition
+- Community or content businesses — revenue comes from memberships or ads, not closed deals
+
+Qualifies:
+- B2B with a "Book a demo" or "Contact us" buying path
+- ACVs high enough that individual deals matter (roughly €5K+ per deal)
+- A visible sales team on LinkedIn (AE, BDR, Account Executive, Business Development titles)
+- A pricing page that includes a "talk to us" tier
+
+**30-second LinkedIn check before sending:**
+- Look at their team page — are there people with sales titles (AE, BDR, Head of Sales)?
+- Look at their pricing — is there a "Contact us" option, or is everything self-serve?
+- Is the product B2B with a recognisable sales cycle? (developer tools, fintech B2B, HR software, logistics software — yes. Photography communities, consumer apps, marketplaces — no.)
+
+**2. B2B SaaS or B2B software**
+The benchmark data, the pipeline mechanics, and the ICP assumptions are all built around B2B SaaS deal cycles. A B2B services company or agency may have a pipeline but the dynamics are different enough to be out of scope at this stage.
+
+**3. €100K–€1.5M ARR range**
+Below €100K: too early — founder is still figuring out PMF, not ready for a sales mechanism.
+Above €1.5M: too mature — they likely have RevOps or a proper sales leader already.
+
+**4. NL / DE / Nordics geography**
+Outreach is relationship-based and community-driven. Staying in the Dutch/German/Nordic B2B SaaS ecosystem keeps the network compounding. Global or US-first companies are out of scope for now.
+
+---
+
 ## The Two ICPs: One Problem, Two Stages
 
 fromThoughts serves one core problem — **founder sales knowledge is tacit and can't scale** — at two stages of the same journey:
@@ -75,6 +111,7 @@ Start design partner conversations with ICP 2. Three reasons:
 
 | # | Assumption | How to validate | How to invalidate | Status |
 |---|---|---|---|---|
+| S.0 | Both ICPs have a human-assisted sales motion — deals require a conversation to close, not a self-serve signup | Confirmed when prospect has AE/BDR roles on team, a "Contact us" pricing path, and pipeline with named accounts | PLG or self-serve companies where no individual deal matters | 🔲 Unvalidated |
 | S.1 | Dutch B2B founders at this stage use HubSpot or Pipedrive as their primary CRM | Confirmed in first 5 outreach conversations | Material number using Salesforce, Monday CRM, or spreadsheets | 🔲 Unvalidated |
 | S.2 | The trigger event "posting a sales job role" reliably identifies in-window prospects | High response rate from founders actively hiring | Low conversion from job-posting-triggered outreach | 🔲 Unvalidated |
 | S.3 | Dutch founders respond better to direct, problem-specific outreach than to product pitches | Higher response rate on problem-framing messages vs. feature-led messages | No significant difference in response rate | 🔲 Unvalidated |
