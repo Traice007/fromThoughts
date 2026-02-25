@@ -51,7 +51,9 @@ fromThoughts serves one core problem — **founder sales knowledge is tacit and 
 | | ICP 1: Pre-Hire Founder | ICP 2: Post-Hire Founder |
 |---|---|---|
 | **Revenue** | €100K–€500K ARR | €500K–€1.5M ARR |
-| **Team** | Founder only, or 1 non-sales person | 1–2 salespeople already hired |
+| **Headcount** | 1–3 people (founder + maybe a dev or marketer, no sales person) | 4–8 people (founder + 1–2 reps + supporting roles) — *hypothesis, to validate* |
+| **Team** | Founder is the only seller | 1–2 salespeople already hired, founder still closing most deals |
+| **Funding** | Bootstrapped or very early seed — *hypothesis: biggest pain, most conservative spender* | Bootstrapped or light funding — *hypothesis: at ~€1M ARR + 8 people in NL, profitable without external capital* |
 | **Core pain** | "I need to document what I know before I hand this off" | "I hired someone and I'm still closing every deal myself" |
 | **Urgency** | Moderate — future-oriented | High — salary clock is already ticking |
 | **Product fit** | Starter (€1,500 one-time) | Pro (€15,000/year) |
@@ -73,7 +75,7 @@ Start design partner conversations with ICP 2. Three reasons:
 
 ## ICP 1: Pre-Hire Founder
 
-**Profile in one sentence:** B2B founder at €100K–€500K ARR, still the only seller, starting to think seriously about their first commercial hire.
+**Profile in one sentence:** Solo B2B founder at €100K–€500K ARR — possibly with a developer or marketer alongside them — who is still the only person selling, and starting to think seriously about their first commercial hire.
 
 ### Assumptions to Validate
 
@@ -85,12 +87,14 @@ Start design partner conversations with ICP 2. Three reasons:
 | 1.4 | A one-time execution plan delivers enough value at this stage | Do they act on the output? Do they reference it? | They use it once and never return | 🔲 Unvalidated |
 | 1.5 | They naturally upgrade to Pro after making their first hire | Track whether Starter customers return post-hire | They churn after hire and find another solution | 🔲 Unvalidated |
 | 1.6 | The €1,500 price feels fair for a one-time plan | No price objection, or objection resolves when compared to alternative cost | Consistent price objection even after anchoring against consultant cost | 🔲 Unvalidated |
+| 1.7 | The pre-hire ICP is 1–3 people total (founder + possibly a dev or marketer, no sales hire yet) | LinkedIn team pages show 1–3 people, none with sales titles | Pre-hire founders consistently have 4+ people already | 🔲 Unvalidated |
+| 1.8 | Bootstrapped pre-hire founders feel the most acute pain — they can't afford a failed hire | Strong urgency signal in conversations; no mention of investor budget | Funded founders show equal or higher urgency | 🔲 Unvalidated |
 
 ---
 
 ## ICP 2: Post-Hire Founder
 
-**Profile in one sentence:** B2B founder at €500K–€1.5M ARR who has hired 1–2 salespeople and is still closing most deals themselves — because they don't know what to tell their rep to do.
+**Profile in one sentence:** B2B founder at €500K–€1.5M ARR with 4–8 people on payroll, who has hired 1–2 salespeople and is still closing most deals themselves — because they don't know what to tell their rep to do. At ~€1M ARR with 8 employees in the Netherlands, likely profitable without external funding — which makes every hire high-stakes and every mistake expensive. *(Headcount and funding hypotheses — to validate.)*
 
 ### Assumptions to Validate
 
@@ -104,6 +108,9 @@ Start design partner conversations with ICP 2. Three reasons:
 | 2.6 | They will return weekly if the product surfaces something specific about a deal they care about | Track login frequency post-onboarding | They log in once, see the output, and don't return | 🔲 Unvalidated |
 | 2.7 | The first 6–12 months post-hire is the highest urgency window | Urgency is markedly higher in conversations with <12 months post-hire founders | Founders who hired >18 months ago are equally urgent | 🔲 Unvalidated |
 | 2.8 | They are open to Ranjith/fromThoughts being involved in their pipeline review | No resistance to sharing pipeline data and deal-level detail | Privacy concerns or reluctance to show weak pipeline | 🔲 Unvalidated |
+| 2.9 | The post-hire sweet spot is 4–8 employees total — below 4 they haven't hired yet, above 10 the transition is already behind them | Confirmed when companies in the 4–8 range consistently show the right pain; 10+ feel past it | No meaningful difference in pain between 4 and 15 employees | ⚠️ Partial — first outreach observation (Feb 2026): 10+ employee companies appear past the transition |
+| 2.10 | Bootstrapped post-hire founders feel higher urgency than funded founders — every salary is real money, not runway | Stronger urgency language, faster decision-making in conversations | Funded founders equally or more urgent due to board pressure | 🔲 Unvalidated |
+| 2.11 | At ~€1M ARR with 8 people in NL, the company is profitable without external capital needed — making the founder more conservative but the ROI argument stronger | Founder confirms bootstrapped or minimal funding; responds strongly to cost-of-failed-hire framing | Material number are VC-backed at this stage | 🔲 Unvalidated |
 
 ---
 
@@ -117,6 +124,9 @@ Start design partner conversations with ICP 2. Three reasons:
 | S.3 | Dutch founders respond better to direct, problem-specific outreach than to product pitches | Higher response rate on problem-framing messages vs. feature-led messages | No significant difference in response rate | 🔲 Unvalidated |
 | S.4 | The ICP is reachable through LinkedIn outreach without paid channels at early stage | 3–5 design partners secured through LinkedIn alone | Cannot reach decision-makers without warm intros or paid acquisition | 🔲 Unvalidated |
 | S.5 | The €1,500 → €15,000 pricing gap does not create upgrade friction | Starter customers convert to Pro without significant price objection | Consistent resistance at the Pro price point even with clear ROI | 🔲 Unvalidated |
+| S.6 | The headcount sweet spot is 4–8 employees for ICP 2 and 1–3 for ICP 1 — companies at 10+ have already made the transition and feel a different pain | Consistent pattern across outreach: 10+ employee companies are past the window | No meaningful difference in pain at 8 vs. 15 employees | ⚠️ Partial — first outreach observation (Feb 2026): 10+ employee companies visibly past the transition point on LinkedIn |
+| S.7 | Bootstrapped founders are the highest-pain segment — they feel urgency most acutely because every hire is real money, not runway | Bootstrapped founders show stronger urgency and faster decision-making | Funded founders equally urgent due to board pressure for growth | 🔲 Unvalidated |
+| S.8 | LinkedIn company size filter (11–50) is too broad — use profile-level signals (team composition, job postings, founding year) to find the 4–8 employee sweet spot | Better conversion rate from profile-level qualification vs. company size filter alone | Company size filter alone is sufficient | ⚠️ Partial — Feb 2026: LinkedIn filter confirmed too blunt; 1–10 bucket too wide |
 
 ---
 
