@@ -146,6 +146,30 @@ Notes / What you're hearing:
 
 ---
 
+**"I don't have time — I just hired a rep to take sales off my plate"**
+
+Your response: That's exactly what concerns me. You hired them to buy back time, but Bridge Group's 2024 data shows the average new hire takes 5.7 months to ramp — so for the next 6 months you're managing someone who isn't producing yet. And data from 2026 shows 47% of managers coach their rep less than 30 minutes a week, not because they don't care, but because they have no system. When coaching drops below that threshold, win rates fall significantly. fromThoughts is 10 minutes a week on your end — you scan the brief, act on one or two things. The alternative is 9 months of rationalising underperformance because you're too close to it.
+
+Notes / What you're hearing:
+
+---
+
+**"My rep is still ramping — now isn't the right time"**
+
+Your response: The ramp period is exactly the right time. Average ramp is 5.7 months — during that window you have maximum leverage to shape how they sell. What they learn in month 1 becomes their default behaviour in month 6. If there's no process to ramp into, they invent one. That invented process is what you'll spend the next year trying to fix. A documented system doesn't slow ramp — it shortens it.
+
+Notes / What you're hearing:
+
+---
+
+**"I'll just hire a VP of Sales and let them figure it out"**
+
+Your response: 70% of first VP Sales hires at SaaS startups don't make it to 12 months (SaaStr). The average time founders wait before acting on a mis-hire is around 9 months — despite the signal being visible within 30 days. That's one full year of startup life and €150–250K in direct cost, plus the opportunity cost of everything that didn't happen. A VP of Sales who walks in with no documented process spends their first quarter reverse-engineering what you know intuitively. Most don't survive that quarter. fromThoughts builds the process before the hire, so the VP can run it from day one instead of inventing it.
+
+Notes / What you're hearing:
+
+---
+
 **"Founder-led sales is working fine for now"**
 
 Your response: That's great — it means you have something worth documenting. The question is: what happens when you can't be in every deal? The playbook is how you scale yourself.
