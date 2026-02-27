@@ -54,7 +54,17 @@ De PMF-kwalificatievragen uit `docs/strategy/icp-assumptions.md` omgebouwd naar 
 
 **Bereikt:** pre-hire ICP én post-hire ICP die terugkijkt op hun hiring beslissing.
 
-### Implementatie
+### Overlap met bestaande tools — lees dit eerst
+
+**Niet bouwen tot gevalideerd in gesprekken.**
+
+De bestaande "Build Your Revenue Roadmap" forecast tool doet al een deel van wat de Pipeline Reality Check zou doen: het berekent de revenue gap, vergelijkt met benchmarks, en geeft een gap analysis. Het Opportunities dashboard is al de wekelijkse recurring engagement mechanic — Ranjith reviewt de pipeline, founders checken hun curated lijst.
+
+Het verschil in theorie: de bestaande tool is strategisch en eénmalig (OKRs, executieplan), de calculator zou tactisch en wekelijks zijn (is mijn pipeline deze week gezond?). Maar of founders die wekelijkse calculator daadwerkelijk willen — en of ze hem buiten het product om zouden gebruiken als inbound tool — is een aanname, geen vastgesteld feit.
+
+**Bouw dit alleen als:** in gesprekken met design partners of prospects blijkt dat ze specifiek een zelfstandige, snelle pipeline check willen — los van het volledige onboarding-traject. Dan is er vraag bewezen. Niet eerder.
+
+### Implementatie (als gevalideerd)
 
 - Geen e-mail vereist voor basisresultaat (verlaagt drempel)
 - E-mail vereist voor gedetailleerde output of om op te slaan
