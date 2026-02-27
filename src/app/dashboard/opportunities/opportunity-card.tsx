@@ -38,6 +38,7 @@ const STATUS_LABELS: Record<string, string> = {
 export function OpportunityCard({ opportunity: initial }: { opportunity: Opportunity }) {
   const [opp, setOpp] = useState(initial);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const cat = CATEGORY_CONFIG[opp.category] ?? CATEGORY_CONFIG.deal;
   const pri = PRIORITY_CONFIG[opp.priority] ?? PRIORITY_CONFIG.medium;
@@ -46,6 +47,7 @@ export function OpportunityCard({ opportunity: initial }: { opportunity: Opportu
 
   async function updateStatus(status: string) {
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch(`/api/opportunities/${opp.id}`, {
         method: "PATCH",
@@ -55,7 +57,11 @@ export function OpportunityCard({ opportunity: initial }: { opportunity: Opportu
       if (res.ok) {
         const updated = await res.json();
         setOpp(updated);
+      } else {
+        setError("Could not update status. Please try again.");
       }
+    } catch {
+      setError("Something went wrong. Please check your connection.");
     } finally {
       setLoading(false);
     }
@@ -135,6 +141,11 @@ export function OpportunityCard({ opportunity: initial }: { opportunity: Opportu
             day: "numeric", month: "short", year: "numeric",
           })}
         </p>
+      )}
+
+      {/* Error message */}
+      {error && (
+        <p className="text-xs text-red-600 mb-3">{error}</p>
       )}
 
       {/* Action buttons */}
