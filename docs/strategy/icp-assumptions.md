@@ -44,6 +44,30 @@ Outreach is relationship-based and community-driven. Staying in the Dutch/German
 
 ---
 
+## PMF Qualification Gate — Check Before Any Design Partner Conversation
+
+fromThoughts cannot fix a PMF problem. A prospect with weak product-market fit will blame their failed sales transition on fromThoughts. Qualify PMF explicitly before onboarding anyone as a design partner.
+
+**Practitioner consensus (Seth DeHart, Point Nine):** The majority of what presents as a sales execution problem in early-stage B2B SaaS is actually a positioning, PMF, or ICP problem. If PMF isn't there, no sales management layer will help.
+
+**The four qualifying questions:**
+
+| # | Question | Red flag | What it signals |
+|---|---|---|---|
+| PMF.1 | *"If you stopped all outbound tomorrow — would deals still come in?"* | "No, everything stops" | No inbound pull; value prop not compelling enough to generate word of mouth |
+| PMF.2 | *"What's your NRR? Are existing customers expanding or shrinking?"* | NRR below 100% | Core value proposition not validated; existing customers are leaking |
+| PMF.3 | *"How much higher is your close rate when you're personally on the call vs. your rep alone?"* | Large gap (e.g. "I close 70%, rep closes 10%") | The selling insight hasn't been made learnable yet |
+| PMF.4 | *"How many customers have you won outside your personal network?"* | Fewer than 3–5 | PMF proven only within a warm network, not with strangers |
+
+**Minimum thresholds to proceed:**
+- At least 3–5 customers acquired outside personal network
+- NRR ≥ 100% (or clear explanation of why it's temporarily below)
+- Close rate not fully dependent on founder presence
+
+**If a prospect fails these questions:** Do not onboard. The conversation can still be valuable as research — but be explicit internally that this is discovery, not a design partner. Document what you learn.
+
+---
+
 ## The Two ICPs: One Problem, Two Stages
 
 fromThoughts serves one core problem — **founder sales knowledge is tacit and can't scale** — at two stages of the same journey:
