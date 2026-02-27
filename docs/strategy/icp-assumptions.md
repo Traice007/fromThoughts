@@ -115,6 +115,23 @@ fromThoughts serves one core problem — **founder sales knowledge is tacit and 
 
 ---
 
+## Refined ICP Definition — February 2026
+
+*Added after critical market size analysis. This is the operative definition for outreach and design partner qualification. The detailed assumption tables below remain as the validation framework.*
+
+> **Primary ICP (the only one to pursue until 5 Pro customers are signed):**
+> B2B SaaS founder, NL, €400K–€1.5M ARR, first commercial hire made ≤ 15 months ago, no Head of Sales on payroll, HubSpot or Pipedrive in active use, founder's own presence still required to close most deals.
+
+**Key refinements from February 2026 analysis:**
+
+- **Drop the headcount filter.** 4–8 employees is too blunt. Use salesteam composition instead: no dedicated sales leader on LinkedIn, 1–2 AEs/BDRs max. A 12-person company where 9 are in product/engineering is still the right profile.
+- **Add hire age as the primary urgency signal.** 0–6 months post-hire = maximum urgency. 6–15 months = high urgency. 15+ months = significantly lower urgency, higher sales friction.
+- **Bootstrapped is a hypothesis, not a hard filter.** Light seed (≤ €500K raised) is equally valid. Lightly funded founders may have higher urgency due to board pressure on rep performance.
+- **Pre-hire ICP (ICP 1) is explicitly deprioritised** until 5 Pro customers are signed and retention is proven. Do not split focus.
+- **The window is short.** Maximum pain lasts 12–15 months post-hire. A constant flow of new companies entering this window is required — this is a flow business, not a stock business. NL alone (~60 new companies/year entering the window) is not enough for long-term scale. See `docs/strategy/growth-strategy.md` for the full market size analysis and €10M ARR path.
+
+---
+
 ## Validation Priority: Why Post-Hire First
 
 Start design partner conversations with ICP 2. Three reasons:
