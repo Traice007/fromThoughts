@@ -64,7 +64,35 @@ fromThoughts cannot fix a PMF problem. A prospect with weak product-market fit w
 - NRR ≥ 100% (or clear explanation of why it's temporarily below)
 - Close rate not fully dependent on founder presence
 
-**If a prospect fails these questions:** Do not onboard. The conversation can still be valuable as research — but be explicit internally that this is discovery, not a design partner. Document what you learn.
+**If a prospect fails these questions:** Do not onboard as a design partner. Handle the conversation with the protocol below.
+
+### When a prospect fails the PMF gate — how to handle it
+
+**The approach: be honest, refer them, keep the door open.**
+
+Honesty builds trust even when it doesn't produce a customer. A founder who remembers that you told them the truth — when everyone else was trying to sell them something — is a future customer, a referral source, or a reference. Don't let the conversation be a dead end.
+
+**How the conversation goes:**
+
+1. **Name what you see, specifically.** Don't say "you're not ready." Say: *"Based on what you've described, the constraint right now isn't sales management — it's that the value proposition isn't yet learnable by someone who isn't you. If I bring in a process layer on top of that, it won't change the underlying problem."*
+
+2. **Give them something concrete to work on.** Resources that are genuinely useful:
+   - Seth DeHart (Point Nine): ["No PMF, No Sales Hire"](https://www.buzzsprout.com/2187664/episodes/14552847-no-pmf-no-sales-hire-ep-37-seth-dehart) — podcast episode, directly on point
+   - April Dunford: *Obviously Awesome* (book) — the clearest framework for identifying the positioning gap
+   - First Round Review: ["The Levels of Product-Market Fit"](https://www.firstround.com/levels) — diagnostic to know where you actually are
+
+3. **Give them a concrete milestone to come back on.** *"When you have 3–5 customers you closed without leaning on your network, and your NRR is above 100% — that's when fromThoughts is the highest-leverage thing you can do. Come back then."*
+
+4. **Stay in touch.** Add them to a simple follow-up list. A check-in in 3–6 months: *"How is it going? Where are you now?"* No pitch, just genuine interest.
+
+**What to document after the conversation:**
+
+- Which PMF question(s) they failed
+- What they said when you named the problem — did they recognise it or push back?
+- What they said they'd need help with (this is signal for a potential future offering)
+- Whether they responded positively to being redirected (trust signal) or defensively (tells you something about founder self-awareness)
+
+**Tracking whether this is a pattern:** If more than 30% of early conversations hit the PMF gate, that's a signal worth acting on. A bounded "Commercial Readiness Assessment" — a one-time paid diagnostic that tells founders exactly what needs to be true before a sales hire makes sense — could become a natural upstream product. Don't build it speculatively. Validate demand by counting how often the need appears.
 
 ---
 
