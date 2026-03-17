@@ -1,6 +1,6 @@
 # fromThoughts — Sales Objections Playbook
 
-*Last updated: February 2026*
+*Last updated: March 2026*
 
 Use this document to prepare for early customer conversations and refine your responses based on real feedback.
 
@@ -262,6 +262,90 @@ Notes / What you're hearing:
 
 ---
 
+### "Kan HubSpot Dit Ook Niet?" Objections
+
+*(Sourced from Rikkert Walbeek call, 13 maart 2026 — deze bezwaren hoor je bij elke founder met een CRM)*
+
+**"Kan HubSpot dit ook niet?"**
+
+Your response: "HubSpot slaat je deals op. fromThoughts leest ze en zegt je wat je moet doen. HubSpot toont je: 'je hebt 12 open deals voor €180K.' fromThoughts zegt: 'je hebt €360K te weinig pipeline voor je target — dit zijn de 3 dingen die je nu aanpast.' HubSpot is je CRM. fromThoughts is de Head of Sales die achter je CRM zit."
+
+The distinction to make: HubSpot is a database. fromThoughts is a decision engine. Every founder who uses HubSpot still has to figure out *what the data means* — that's exactly the gap.
+
+Notes / What you're hearing:
+
+---
+
+**"Wat haal je precies uit mijn CRM? En wat krijg ik daarna?"**
+
+This is a product clarity objection — they can't visualize the input/output. Answer it concretely every time.
+
+Your response: "We lezen je open deals, deal ages, conversie per fase, en pipeline coverage. We vergelijken dat met benchmarks voor bedrijven op jouw stage. Wat je daarna krijgt: een weekly brief met 3 specifieke acties, een pipeline diagnose ('je dekt je target met factor 2, je hebt factor 4 nodig'), en een Sales Playbook — gedocumenteerd wat jouw winnende deals gemeen hebben, zodat je eerste hire op dag 1 weet wat ze doen."
+
+Never answer this abstractly. Always name the specific inputs and name the specific outputs. Zie `docs/product/product-narrative.md` for the full script.
+
+Notes / What you're hearing:
+
+---
+
+**"Voor welke organisaties is dit zinvol?"**
+
+This is an ICP clarity objection — they're trying to place the product but can't, because the positioning isn't sharp enough.
+
+Your response: "Founders met €300K–€1.5M ARR die founder-led sales doen en een eerste salesperson zien aankomen. Die een actieve CRM hebben — HubSpot of Pipedrive. En die weten dat hun sales kennis in hun hoofd zit en niet wordt overgedragen als ze iemand aannemen. Als je net je eerste rep hebt aangenomen of er actief naar zoekt — dat is het moment."
+
+Notes / What you're hearing:
+
+---
+
+**"Hoe ga je concurreren met ZZP'ers die ook sales doen?"**
+
+*(This came up from Rikkert — the NL market has many freelance sales managers charging €5-8K/month. This is a direct competitor category that was underweighted before.)*
+
+Your response: "Een ZZP'er is een persoon. fromThoughts is een systeem. Een ZZP'er brengt hun ervaring en neemt die mee als ze vertrekt naar de volgende opdracht. fromThoughts bouwt IP op in jouw bedrijf — een Sales Playbook, gedocumenteerde processen, pipeline inzichten. €15K/jaar versus €60-90K/jaar voor een ZZP'er. En als de ZZP'er ziek wordt, heb je niks. Het systeem blijft altijd draaien."
+
+Follow-up: "Voor founders die willen schalen: een ZZP'er kan je helpen om deals binnen te halen. fromThoughts helpt je om de machine te bouwen die blijft werken als jij er niet meer in elke deal zit."
+
+Notes / What you're hearing:
+
+---
+
+**"Ik zie het probleem wel, maar niet de meerwaarde — wat krijg je nu eigenlijk?"**
+
+*(The most important objection from the Rikkert call. This means the positioning is landing but the product isn't concrete enough yet.)*
+
+Your response: Stop explaining the concept. Show the output. "Laat me je laten zien wat iemand in jouw situatie krijgt." Then show a concrete Weekly Brief and a concrete Sales Playbook excerpt. If you can't show it, say: "Geef me 10 minuten van je pipeline en ik laat je precies zien wat er uitkomt."
+
+The rule: if someone says they see the problem but not the value, never respond with more words about the concept. Always move to a concrete demonstration or a concrete example of the output.
+
+Notes / What you're hearing:
+
+---
+
+### Credibility & Seniority Objections
+
+**"NL ondernemers kijken naar credibility — die heb je nu nog niet"**
+
+*(Direct feedback from Rikkert about early sales barrier in the Dutch founder market.)*
+
+Your response: Don't fight it. Acknowledge it and turn it into a design partner offer. "Dat klopt — en daarom wil ik starten met een design partner constructie, niet een standaard klantrelatie. Je krijgt directe toegang tot mij, je input bepaalt wat er gebouwd wordt, en de output bewijst zichzelf in 30 dagen. Als het niet levert wat ik zeg dat het levert, stop je. Geen risico."
+
+The angle: credibility is earned through output, not through a CV. Make the output the proof point, not your background.
+
+Notes / What you're hearing:
+
+---
+
+**"Founders zijn eigenwijs en werken op gevoel — hoe bereik je die?"**
+
+*(Rikkert's observation about founder psychology in the NL market.)*
+
+Your response: Don't argue with gut feel. Work with it. "Precies — en founders die op gevoel werken willen geen extra data-dashboard. Ze willen iemand die hun gevoel bevestigt of corrigeert met een concreet argument. Dat is precies wat de strategic review doet: niet 'hier zijn je metrics', maar 'hier is wat ik zie in je pipeline en dit is wat ik zou doen'."
+
+Notes / What you're hearing:
+
+---
+
 ### Implementation Concerns
 
 **"I don't have a clean CRM. My data is in spreadsheets and email."**
@@ -333,23 +417,40 @@ These open conversations without selling and surface whether they feel the pain:
 
 | Date | Who | Objection | What I Said | What I Wish I'd Said |
 |------|-----|-----------|-------------|---------------------|
-|      |     |           |             |                     |
-|      |     |           |             |                     |
-|      |     |           |             |                     |
+| 13 maart 2026 | Rikkert Walbeek (TA Audit / SalesXeed) | "Kan HubSpot dit ook niet?" | Niet sterk beantwoord | "HubSpot toont je 12 deals. fromThoughts zegt: je hebt €360K te weinig pipeline — dit zijn de 3 acties." |
+| 13 maart 2026 | Rikkert Walbeek | "Wat haal je uit mijn HubSpot? En wat komt er daarna uit waar ik iets mee kan?" | Kon het niet concreet beantwoorden | Input→output script: deal data in → weekly brief + pipeline diagnose + Sales Playbook eruit |
+| 13 maart 2026 | Rikkert Walbeek | "Voor welke organisaties is dit zinvol?" | Niet concreet geantwoord | "€300K–€1.5M ARR, actieve CRM, eerste hire in zicht, sales kennis zit in hoofd van founder" |
+| 13 maart 2026 | Rikkert Walbeek | "Hoe ga je concurreren met ZZP'ers die ook Sales aanbieden?" | Niet sterk beantwoord | "ZZP'er is een persoon — vertrekt. fromThoughts is een systeem — blijft en bouwt IP op. €15K vs €60-90K/jaar." |
+| 13 maart 2026 | Rikkert Walbeek | "Ik zie het probleem maar niet de meerwaarde — wat krijg je nu eigenlijk?" | Niet overtuigend | Stop met uitleggen. Toon concrete output. "Geef me 10 minuten pipeline data en ik laat je zien wat er uitkomt." |
+| 13 maart 2026 | Rikkert Walbeek | "NL ondernemers kijken naar credibiliteit — die heb je nu nog niet" | Niet beantwoord | Design partner frame: 30 dagen, output bewijst zichzelf, geen risico |
 
 ---
 
 ## Patterns & Insights
 
-*Update as conversations accumulate:*
+*Updated: March 2026 — based on Rikkert Walbeek call + early outreach*
 
 **Common themes:**
+- Meerwaarde is niet zichtbaar zonder concrete output te zien. Het concept landt, de invulling niet.
+- HubSpot wordt onmiddellijk als benchmark/alternatief gezien. Elke founder met een CRM denkt dit.
+- Prijs (€15K) is acceptabel en reëel — prijs is vrijwel nooit de echte blokkade.
 
 **Surprising objections:**
+- ZZP'ers als concurrent — de NL markt heeft veel freelance sales managers. Dit was onderschat.
+- HubSpot als potentiële concurrent — niet als CRM maar als "kan HubSpot dit ook niet?"
+- Senioriteit als actieve drempel — NL founders willen credibility voordat ze openstaan.
+- Founders werken op gevoel en zijn eigenwijs — data-argumenten overtuigen minder dan verwacht.
 
 **What resonates most:**
+- Het founder transitie probleem — iedereen herkent het. "Eerste hire gaat mis, wordt 2-3x vervangen."
+- Prijs vs alternatief (fractional, ZZP, mislukte hire) — kosten vergelijking werkt.
+- DGA coachen is waardevoller dan de salesperson managen — Rikkert bevestigde dit zelf.
 
 **What falls flat:**
+- "Denklaag" framing — te abstract, niemand visualiseert wat het doet.
+- "Hybride platform" — roept geen concreet beeld op.
+- "AI-powered" — zegt iedereen, differentiëert niets.
+- Het concept uitleggen als iemand vraagt naar de meerwaarde — stop met uitleggen, toon output.
 
 ---
 
@@ -357,6 +458,6 @@ These open conversations without selling and surface whether they feel the pain:
 
 *Ideas to try in outreach or conversations:*
 
-1.
-2.
-3.
+1. "fromThoughts leest je pipeline, vertelt je wat er mis gaat, en bouwt het Sales Playbook dat je eerste hire mee begint." — test in LinkedIn outreach
+2. "Je geeft fromThoughts toegang tot je CRM. Het vertelt je welke deals je deze week nodig hebt, waar je lekt, en wat je eerste hire op dag 1 in handen krijgt." — test in cold email
+3. "HubSpot is je CRM. fromThoughts is de Head of Sales die achter je CRM zit." — test as positioning line vs HubSpot objection
