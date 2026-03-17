@@ -71,7 +71,7 @@ Heeft de sales bij TAAI neergelegd bij Rikkert. Gaf aan: "voor mij heb je niet d
 ### Hans Elsen
 
 **Bedrijf:** *(toevoegen)*
-**LinkedIn:** *(toevoegen)*
+**LinkedIn:** https://www.linkedin.com/in/hanselsen/
 **Intro via:** persoonlijk netwerk
 **Eerste contact:** februari 2026
 **Gesprekken:**
