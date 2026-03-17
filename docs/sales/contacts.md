@@ -100,8 +100,44 @@ Persoonlijke bekende. Heeft vorig jaar zijn eerste salesrep aangenomen en na 6 m
 
 ---
 
+## Distributiepartners & Netwerken — Utrecht regio
+
+*Nog geen gesprek gevoerd — dit zijn de prioritaire eerste contacten op basis van de eerste-10-klanten strategie. Zie `docs/gtm/eerste-10-klanten.md` voor de volledige aanpak.*
+
+**Status opties:** `nog niet benaderd` · `benaderd` · `gesprek gepland` · `actief partner`
+
+| Naam | Organisatie / Rol | LinkedIn | Prioriteit | Status |
+|------|-------------------|----------|------------|--------|
+| Richard Veffer | Greyt NL — Managing Partner | [linkedin.com/in/rveffer](https://www.linkedin.com/in/rveffer/) | ⭐⭐⭐ | nog niet benaderd |
+| Anton Oppenhuizen | Greyt NL — Partner CFO | [linkedin.com/in/antonoppenhuizen](https://www.linkedin.com/in/antonoppenhuizen/) | ⭐⭐⭐ | nog niet benaderd |
+| Bert van der Meer | Greyt NL — CFO Partner | [linkedin.com/in/cyclistbertvandermeer](https://www.linkedin.com/in/cyclistbertvandermeer/) | ⭐⭐ | nog niet benaderd |
+| Jelle Drijver | Dotslash Utrecht — Community Manager | [linkedin.com/in/jelledrijver](https://www.linkedin.com/in/jelledrijver/) | ⭐⭐ | nog niet benaderd |
+| Joris Vermeulen | Dotslash Utrecht | [linkedin.com/in/joris-vermeulen-85871558](https://www.linkedin.com/in/joris-vermeulen-85871558/) | ⭐ | nog niet benaderd |
+| Juri van Dolderen | ROM Utrecht Region — Sr. Investment Manager | [linkedin.com/in/juri-van-dolderen-551062a](https://www.linkedin.com/in/juri-van-dolderen-551062a/) | ⭐⭐ | nog niet benaderd |
+| Irene Van de Poll | ROM Utrecht Region — Investment Manager | [linkedin.com/in/irenevandepoll](https://www.linkedin.com/in/irenevandepoll/) | ⭐⭐ | nog niet benaderd |
+| *(naam toe te voegen)* | UtrechtInc — Foundership programma lead | [linkedin.com/company/utrechtinc](https://nl.linkedin.com/company/utrechtinc) | ⭐⭐⭐ | nog niet benaderd |
+
+### Organisatiekaarten
+
+**Greyt NL** — Fractional CFO's voor founders en scale-ups. 700+ organisaties geholpen. Hun klanten zijn jouw ICP. Doel: distributiepartner waarbij Greyt CFO's fromThoughts aanraden bij hun klanten die een eerste sales hire voorbereiden.
+Website: [greyt.nl](https://www.greyt.nl) · LinkedIn: [nl.linkedin.com/company/greyt](https://nl.linkedin.com/company/greyt)
+*Eerste bericht → Richard Veffer of Anton Oppenhuizen deze week.*
+
+**UtrechtInc Foundership** — 30+ startups "ready to accelerate sales." Directe ICP-toegang via één gesprek met hun programma-lead. Doel: partner of resource worden voor hun community.
+Website: [utrechtinc.nl/programs/foundership](https://utrechtinc.nl/programs/foundership/)
+*Naam Foundership programma-lead opzoeken via teampagina: [utrechtinc.nl/community-overview/team-utrechtinc](https://utrechtinc.nl/community-overview/team-utrechtinc/)*
+
+**ROM Utrecht Region** — Regionaal fonds, €60M+, 60+ investeringen in Utrecht regio. Benaderen als resource voor portfolio-bedrijven, niet voor funding. Doel: introductie bij portfolio-founders in jouw ARR range.
+Website: [romutrechtregion.nl](https://romutrechtregion.nl) · LinkedIn: [linkedin.com/company/rom-utrecht-region](https://nl.linkedin.com/company/rom-utrecht-region)
+
+**Dotslash Utrecht** — B2B SaaS startup/scale-up hub. Organiseert wekelijkse events en B2B SaaS hackathons. Doel: aanwezigheid opbouwen als expert op het founder sales transitie probleem.
+Website: [dotslash.nl](https://www.dotslash.nl) · LinkedIn: [linkedin.com/company/dotslashutrecht](https://nl.linkedin.com/company/dotslashutrecht)
+
+---
+
 ## Notities
 
 - Gebruik `docs/sales/call-prep-*.md` voor gedetailleerde gespreksvoorbereiding per persoon
 - Voeg bezwaren uit gesprekken toe aan `docs/sales/sales-objections-playbook.md`
 - Update `docs/strategy/competitive-landscape.md` als iemand een nieuw alternatief noemt
+- Volledige eerste-10-klanten strategie: `docs/gtm/eerste-10-klanten.md`
