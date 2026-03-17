@@ -1,6 +1,6 @@
 # fromThoughts — Competitive Landscape
 
-*Structuur: februari 2026 | In te vullen na eerste 3–5 gesprekken met founders*
+*Structuur: februari 2026 | Laatste update: maart 2026*
 
 > Dit document legt de structuur vast voor twee competitive positioning visuals. De huidige posities zijn hypothetisch — gebaseerd op desk research en het onderzoek in `docs/strategy/market-research-deep.md`. Vul de kolom "Bevestigd in gesprek?" aan naarmate founders aangeven met welke alternatieven ze hebben vergeleken en waarom. De echte waarde van deze map zit in wat founders zelf zeggen, niet in wat wij denken.
 
@@ -27,11 +27,12 @@
 | Speler | X-as (Tool → Mens) | Y-as (Generiek → Specifiek) | Prijs indicatie | Bevestigd in gesprek? |
 |---|---|---|---|---|
 | ChatGPT / Claude (algemeen) | Tool (links) | Generiek (onder) | Gratis / €20/maand | 🔲 |
-| HubSpot / Pipedrive | Tool (links) | Licht specifiek (midden-onder) | €0–€500/maand | 🔲 |
+| HubSpot / Pipedrive | Tool (links) | Licht specifiek (midden-onder) | €0–€500/maand | ✅ Rikkert Walbeek (HubSpot vergelijking) |
+| **Forecastio** | **Tool (midden-links)** | **Specifiek (boven-midden) — maar geen acties** | **$149–$300/maand** | **🔲 Dichtstbijzijnde tool-concurrent** |
 | Gong / Clari | Tool (midden-links) | Specifiek (boven) — maar enterprise | €1.000–€3.000/maand | 🔲 |
 | Sales coach | Menselijk (midden-rechts) | Gedeeltelijk generiek (midden) | €1.000–€3.000/maand | 🔲 |
 | Fractional sales consultant | Menselijk (rechts) | Specifiek (boven) | €2.000–€5.000/maand | 🔲 |
-| Interim sales manager (SalesXeed-model) | Menselijk (rechts) | Specifiek (boven) | €5.000–€10.000/maand | 🔲 |
+| Interim sales manager (SalesXeed-model) | Menselijk (rechts) | Specifiek (boven) | €5.000–€10.000/maand | ✅ Rikkert Walbeek (SalesXeed) |
 | Niets doen / founder improviseert | — | — | €0 (maar hoge tijdskost) | 🔲 |
 | **fromThoughts** | **Hybride (midden)** | **Specifiek (boven)** | **€1.250/maand equivalent** | — |
 
@@ -62,10 +63,11 @@ fromThoughts zit in een kwadrant dat leeg is: **hybride (mens + AI) én specifie
 |---|---|---|---|
 | Niets doen / improviseren | Gratis | Maximale tijdsinvestering (boven-links) | 🔲 |
 | ChatGPT (zonder structuur) | Gratis / €20/maand | Hoog — founder moet zelf prompts maken, output interpreteren (boven-links) | 🔲 |
-| HubSpot / Pipedrive (basis) | €0–€200/maand | Hoog — data is er maar founder moet zelf conclusies trekken (boven-midden) | 🔲 |
+| HubSpot / Pipedrive (basis) | €0–€200/maand | Hoog — data is er maar founder moet zelf conclusies trekken (boven-midden) | ✅ Rikkert Walbeek |
+| **Forecastio** (HubSpot add-on) | **$149–$300/maand** | **Hoog — analytics zonder actieprioritering, founder beslist zelf** | **🔲** |
 | Sales coach | €1.000–€3.000/maand | Middel — voorbereiding kost tijd, coach geeft richting (midden) | 🔲 |
 | Fractional consultant | €2.000–€5.000/maand | Laag — consultant neemt initiatief (midden-onder rechts) | 🔲 |
-| Interim sales manager | €5.000–€10.000/maand | Zeer laag — volledig hands-on (rechts-onder) | 🔲 |
+| Interim sales manager (ZZP) | €5.000–€8.000/maand | Laag — hands-on, maar founder-afhankelijk van beschikbaarheid | ✅ Rikkert Walbeek (ZZP vraag) |
 | VP of Sales hire | €80K–€120K/jaar | Zeer laag in theorie — maar 70% faalt binnen 12 maanden | 🔲 |
 | **fromThoughts** | **€1.250/maand equivalent** | **Laag — systeem + Ranjith doet het denkwerk, founder handelt** | — |
 
@@ -102,15 +104,30 @@ fromThoughts zit rechts-onder op de tijdsinvestering-as (laag, want het systeem 
 
 ### Gereedschapsalternatieven (indirect)
 
+**Forecastio** *(dichtstbijzijnde tool-concurrent — voeg toe aan radar)*
+- Wat ze bieden: HubSpot add-on voor pipeline forecasting en analytics — coverage ratio, deal probability, forecast vs. actual
+- Wat ze niet bieden: revenue doel als startpunt, geprioriteerde acties vanuit de gap, strategische OKRs, menselijke review laag, Sales Playbook
+- Prijs: $149–$300/maand (3 seats minimum, HubSpot vereist)
+- fromThoughts-positie: "Forecastio toont je de gap. fromThoughts begint bij je revenue doel en zegt wat je vandaag doet om het te halen."
+- Wanneer dit bezwaar komt: als een founder al Forecastio gebruikt of overweegt als alternatief voor fromThoughts
+- Bevestigd: niet in gesprek gehoord, maar waarschijnlijk — elke HubSpot-gebruiker die de HubSpot vergelijking stelt, stuit op Forecastio als tussenoplossing
+
 **HubSpot / Pipedrive**
 - Wat ze bieden: CRM-structuur, data vastleggen, pipeline overzicht
-- Wat ze niet bieden: interpretatie, coaching, prioritering, forecast realisme
-- fromThoughts-positie: "fromThoughts werkt met HubSpot of Pipedrive — het vertelt je wat de data betekent"
+- Wat ze niet bieden: vertrekpunt vanuit revenue doel, actieprioritering, strategisch oordeel
+- fromThoughts-positie: "HubSpot is je CRM. fromThoughts is de laag die jouw revenue doel verbindt met wat je vandaag doet."
+- Bevestigd: Rikkert Walbeek (13 maart 2026) stelde direct de vergelijking — centrale bezwaar in eerste pitch
 
 **ChatGPT / Claude (algemeen gebruik)**
 - Wat ze bieden: generieke antwoorden op generieke vragen
-- Wat ze niet bieden: kennis van jouw specifieke deals, jouw rep, jouw markt
+- Wat ze niet bieden: kennis van jouw specifieke deals, jouw rep, jouw markt, continuïteit
 - fromThoughts-positie: "ChatGPT kent jouw pipeline niet. fromThoughts wel."
+
+**G8te.io** *(geen concurrent — ter referentie)*
+- Tagline: "The Real-Time Selling Game for Qualified Meetings"
+- Wat ze doen: top-of-funnel meeting generatie via gamification
+- Reden geen concurrent: fromThoughts begint bij het jaarlijkse revenue doel en werkt terug naar pipeline en acties. G8te werkt bottom-up vanuit het boeken van meetings. Verschillende niveaus, verschillende vraag.
+- Wanneer relevant: als een founder vraagt naar meeting generatie tools — doorverwijzen, geen directe concurrentie
 
 **Gong / Clari / RevOps platforms**
 - Wat ze bieden: call recording, AI-analyse, forecasting op schaal
@@ -125,8 +142,7 @@ Na elk gesprek met een prospect of design partner, noteer:
 
 | Datum | Met wie | Welke alternatieven noemden ze? | Waarom hadden ze dat niet gekozen? | Hoe positioneerde fromThoughts zich in hun hoofd? |
 |---|---|---|---|---|
-| | | | | |
-| | | | | |
+| 13 maart 2026 | Rikkert Walbeek (TA Audit / SalesXeed) | HubSpot, ZZP'ers | HubSpot was vergelijking, ZZP'er was zijn eigen businessmodel | "Kan HubSpot dit ook niet?" — fromThoughts landde niet als duidelijk onderscheiden |
 | | | | | |
 
 **De vragen die dit ophalen:**

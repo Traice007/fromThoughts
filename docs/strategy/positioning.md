@@ -1,6 +1,6 @@
 # fromThoughts — Positionering
 
-*Laatste update: februari 2026*
+*Laatste update: maart 2026*
 
 > Dit is een levend document. Pas de kernzin aan op basis van wat landt in gesprekken — noteer onderaan welke versie het beste werkt en waarom.
 
@@ -24,9 +24,15 @@ De formule die werkt: **[Wie] + [Probleem] + [Wat verandert]**
 
 ### Eén zin
 
-> **fromThoughts is de denklaag die een goede Head of Sales meebrengt — voor founders die dat budget nog niet hebben.**
+> **"Jij zet het revenue doel. fromThoughts vertaalt dat naar wat je pipeline nodig heeft, waar je tekort komt, en wat je deze week doet om het gat te dichten."**
 
-Een Head of Sales doet meer dan reps aansturen. Hij vertaalt de strategie naar een weekplan, bepaalt de forecast, kijkt welke deals echt zijn, coacht de rep op specifieke deals, en bouwt het systeem dat de sales functie draaiende houdt. fromThoughts levert die laag — zonder de €80–120K jaarsalaris.
+**Waarom dit werkt beter dan de vorige formulering:**
+"Denklaag" was te abstract — twee gesprekspartners (Hans Elsen, Rikkert Walbeek) gaven aan het niet te visualiseren. De nieuwe zin bevat het mechanisme: *doel → pipeline vereiste → gap → actie*. Dat is concreet en onmiddellijk herkenbaar voor een founder die dit probleem heeft.
+
+**De vorige kernzin** (intern referentie):
+> *"fromThoughts is de denklaag die een goede Head of Sales meebrengt — voor founders die dat budget nog niet hebben."*
+
+Gebruik de "Head of Sales" vergelijking nog wel als verduidelijking — maar niet meer als openingszin. Een Head of Sales doet meer dan reps aansturen: hij vertaalt de ARR-target naar een weekplan, bepaalt de forecast, kijkt welke deals echt zijn, coacht de rep op specifieke deals, en bouwt het systeem dat de sales functie draaiende houdt. fromThoughts levert die laag — zonder de €80–120K jaarsalaris.
 
 ### Waarom "Head of Sales" en niet "VP of Sales"
 
@@ -36,12 +42,14 @@ De taken die fromThoughts invult:
 
 | Wat een Head of Sales doet | Hoe fromThoughts dit levert |
 |---|---|
-| Vertaalt ARR-target naar wekelijkse rep-activiteit | Pipeline wiskunde + OKR-framework |
-| Bepaalt welke deals echt zijn vs. zombie pipeline | Pipeline reality verdict |
-| Coacht de rep op specifieke deals deze week | Opportunities board met concrete volgende stappen |
-| Herkent het patroon dat de founder niet ziet | Structurele observatie per maand |
-| Bouwt het salesproces voor de eerste hire | Executieplan + playbook |
-| Rapporteert forecast aan founder/board | Health Score en maandelijkse strategiesessie |
+| Vertaalt ARR-target naar pipeline vereisten | Pipeline wiskunde: coverage ratio, deal flow, win rate benchmarks |
+| Toont de founder of ze op koers liggen voor het grote doel | CEO dashboard: doel → vereiste pipeline → werkelijke pipeline → trajectory |
+| Bepaalt welke deals echt zijn vs. zombie pipeline | Pipeline reality check per deal |
+| Genereert geprioriteerde acties voor deze week | Weekly Brief met 3 specifieke deal-acties |
+| Coacht op specifieke deals | Opportunities board met concrete volgende stappen |
+| Herkent het patroon dat de founder niet ziet | Strategische review met Ranjith — maandelijks |
+| Bouwt het salesproces voor de eerste hire | Sales Playbook — standaard output |
+| Geeft signaal wanneer je klaar bent om te huren | Hire Readiness Score |
 
 ---
 
@@ -62,19 +70,25 @@ De taken die fromThoughts invult:
 ## Uitleg per situatie
 
 ### Op een verjaardag of bij vrienden (30 seconden)
-> "Ik help B2B founders met hun eerste salesrep. De meeste founders nemen iemand aan en verwachten dat die persoon het zelf uitzoekt — maar die rep weet niks. Ik zorg dat er een systeem is dat die persoon van dag één kan uitvoeren, en dat de founder elke week weet waar ze op moeten focussen."
+> "Ik help B2B founders bij de overgang van zelf alles verkopen naar hun eerste salesrep. Die overgang mislukt bijna altijd — de founder weet wat werkt maar heeft het nooit opgeschreven. Ik bouw het systeem dat de rep van dag één kan uitvoeren, en geef de founder elke week drie concrete acties om op koers te blijven voor zijn omzetdoel."
 
-### In een serieus gesprek met een founder (één zin)
-> "fromThoughts vertelt jou en je salesrep elke week precies waar jullie op moeten focussen — zodat jij stopt met elke deal zelf te sluiten."
+### De kernzin in een serieus gesprek
+> "Jij zet het revenue doel. fromThoughts vertaalt dat naar wat je pipeline nodig heeft, waar je tekort komt, en wat je deze week doet om het gat te dichten."
 
 ### Als iemand vraagt 'maar wat doet het dan echt?' (twee zinnen)
-> "Ik kijk elke week mee in je pipeline, zeg welke deals echt zijn en welke niet, en geef jou en je rep een prioriteitenlijst. Dat is wat een goede Sales Manager doet — maar dan voor founders die dat budget nog niet hebben."
+> "Je vult je omzetdoel in, wij koppelen je CRM, en je ziet elke week of je pipeline groot genoeg is om dat doel te halen — en wat de drie meest impactvolle acties zijn. Dat is wat een goede Head of Sales doet, maar dan voor founders die dat budget nog niet hebben."
+
+### Als iemand vraagt 'kan HubSpot dit niet ook?'
+> "HubSpot toont je pipeline. fromThoughts begint bij je revenue doel en werkt terug: wat heeft je pipeline nodig om dat te halen, wat mist er, en wat doe je deze week. HubSpot is je CRM. fromThoughts is de laag die jouw revenue doel verbindt met wat je vandaag doet."
 
 ### In het Engels
-> "fromThoughts is the thinking a Head of Sales would bring, without hiring one. Every week we tell you which deals are real and what your rep should focus on."
+> "You set the revenue target. fromThoughts tells you what your pipeline needs to look like, where it's falling short, and what to do this week to close the gap."
 
 ### Op de vraag 'waarom niet gewoon ChatGPT?'
-> "ChatGPT kent jouw pipeline niet, jouw team niet en jouw markt niet. Het geeft generiek advies. fromThoughts kijkt naar jouw specifieke deals en zegt: deze drie zijn dood, focus daar op. Dat vereist iemand die jouw context kent — en dat is precies wat we bieden."
+> "ChatGPT kent jouw pipeline niet, jouw omzetdoel niet, en jouw conversieratio's niet. Het geeft generiek advies. fromThoughts kijkt naar jouw specifieke situatie en zegt: je hebt €520K te weinig pipeline, dit zijn de twee acties die dat veranderen. Dat vereist context — en dat is precies wat we bieden."
+
+### Als iemand vraagt naar het CEO dashboard
+> "Jij ziet je jaarlijkse omzetdoel, je werkelijke pipeline op dit moment, en of je op koers ligt. Week over week, automatisch vanuit je CRM. Dat is wat founders nu op vrijdagmiddag handmatig doen in een spreadsheet."
 
 ---
 
@@ -83,9 +97,11 @@ De taken die fromThoughts invult:
 Dit is net zo belangrijk als wat het wel is. Gebruik dit als iemand het verkeerd categoriseert:
 
 - **Geen CRM** — HubSpot laat je data zien. fromThoughts vertelt je wat die data betekent en wat je moet doen.
+- **Geen pipeline analytics tool** — Forecastio toont je pipeline coverage. fromThoughts begint bij je revenue doel en werkt terug naar wat je deze week doet om het te halen.
 - **Geen sales training** — we leren je rep niet hoe ze moeten verkopen. We vertellen ze waar ze deze week op moeten focussen.
 - **Geen consultant** — een consultant denkt voor je. fromThoughts versterkt jouw eigen oordeel met data en een tweede mening.
 - **Geen template generator** — de output is specifiek voor jouw pipeline, jouw deals, jouw fase.
+- **Geen generieke AI** — ChatGPT kent jouw pipeline niet. fromThoughts wel.
 
 ---
 
@@ -99,12 +115,11 @@ Anker altijd tegen de alternatieve kosten: een Sales Manager kost €80–120K p
 
 ## Wat landt het best — bijhouden
 
-*Vul aan na gesprekken:*
-
 | Datum | Met wie | Welke uitleg | Reactie | Werkte het? |
 |---|---|---|---|---|
-| | | | | |
-| | | | | |
+| Feb 2026 | Hans Elsen (tech founder, CRM-loos) | "denklaag die een Head of Sales meebrengt" | "Denklaag is te abstract — ik zou zeggen het gereedschap dat een Head of Sales kan uitstellen" | Nee — te abstract |
+| 13 maart 2026 | Rikkert Walbeek (SalesXeed/TA Audit) | "hybride sales strategy platform" (via LinkedIn) | Verwachtte een tool-demo. Stelde direct: "kan HubSpot dit niet ook?" | Nee — geen concreet mechanisme duidelijk |
+| 13 maart 2026 | Rikkert Walbeek | "denklaag" + product demo | "Ik zie het probleem maar niet de meerwaarde. Wat haal je uit mijn HubSpot?" | Nee — output niet zichtbaar gemaakt |
 
 ---
 
@@ -113,3 +128,5 @@ Anker altijd tegen de alternatieve kosten: een Sales Manager kost €80–120K p
 - [x] Wat doet een Head of Sales precies in NL/DE/Nordics bij een bedrijf van 5–20 mensen? — zie `docs/strategy/sales-manager-scope.md`
 - [ ] Werkt "Head of Sales" als referentie beter of slechter dan "VP of Sales" in gesprekken? Onderzoek zegt Head of Sales is de juiste term — valideren in practice
 - [ ] Resoneer de personal trainer analogie bij founders met 15+ jaar werkervaring, of klinkt het te simpel?
+- [ ] Test de nieuwe one-liner ("jij zet het revenue doel...") in 3 gesprekken — landt het mechanisme meteen of heb je een vervolgvraag nodig?
+- [ ] Test het CEO dashboard concept vroeg in een gesprek — herkent de founder dit als een probleem dat ze nu manueel oplossen?
