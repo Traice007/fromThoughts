@@ -23,7 +23,7 @@ Mini-CRM voor alle mensen waarmee je gesproken hebt over fromThoughts. Vul aan n
 ### Rikkert Walbeek
 
 **Bedrijf:** TA Audit (co-founder) · SalesXeed (oprichter, 2002)
-**LinkedIn:** *(toevoegen)*
+**LinkedIn:** https://www.linkedin.com/in/rikkertwalbeek/
 **Intro via:** Bas van de Haterd
 **Eerste contact:** maart 2026
 **Gesprekken:**
@@ -48,8 +48,8 @@ Mini-CRM voor alle mensen waarmee je gesproken hebt over fromThoughts. Vul aan n
 
 ### Bas van de Haterd
 
-**Bedrijf:** TAAI
-**LinkedIn:** *(toevoegen)*
+**Bedrijf:** Talent Acquisition Audit Institute (TAAI)
+**LinkedIn:** https://www.linkedin.com/in/basvandehaterd/
 **Intro via:** eigen netwerk
 **Eerste contact:** maart 2026
 **Gesprekken:**
