@@ -115,7 +115,8 @@ Persoonlijke bekende. Heeft vorig jaar zijn eerste salesrep aangenomen en na 6 m
 | Joris Vermeulen | Dotslash Utrecht | [linkedin.com/in/joris-vermeulen-85871558](https://www.linkedin.com/in/joris-vermeulen-85871558/) | ⭐ | nog niet benaderd |
 | Juri van Dolderen | ROM Utrecht Region — Sr. Investment Manager | [linkedin.com/in/juri-van-dolderen-551062a](https://www.linkedin.com/in/juri-van-dolderen-551062a/) | ⭐⭐ | nog niet benaderd |
 | Irene Van de Poll | ROM Utrecht Region — Investment Manager | [linkedin.com/in/irenevandepoll](https://www.linkedin.com/in/irenevandepoll/) | ⭐⭐ | nog niet benaderd |
-| *(naam toe te voegen)* | UtrechtInc — Foundership programma lead | [linkedin.com/company/utrechtinc](https://nl.linkedin.com/company/utrechtinc) | ⭐⭐⭐ | nog niet benaderd |
+| Stefan Braam | UtrechtInc — Startup Incubation Lead | [linkedin.com/in/stefanbraam](https://www.linkedin.com/in/stefanbraam/) | ⭐⭐⭐ | nog niet benaderd |
+| Robin Lechner | UtrechtInc — Program & Event Manager | [linkedin.com/in/robin-lechner-6742b273](https://www.linkedin.com/in/robin-lechner-6742b273/) | ⭐⭐ | nog niet benaderd |
 
 ### Organisatiekaarten
 
@@ -125,7 +126,7 @@ Website: [greyt.nl](https://www.greyt.nl) · LinkedIn: [nl.linkedin.com/company/
 
 **UtrechtInc Foundership** — 30+ startups "ready to accelerate sales." Directe ICP-toegang via één gesprek met hun programma-lead. Doel: partner of resource worden voor hun community.
 Website: [utrechtinc.nl/programs/foundership](https://utrechtinc.nl/programs/foundership/)
-*Naam Foundership programma-lead opzoeken via teampagina: [utrechtinc.nl/community-overview/team-utrechtinc](https://utrechtinc.nl/community-overview/team-utrechtinc/)*
+Contacten: **Stefan Braam** (Startup Incubation Lead, spreekt 100+ founders/jaar) en Robin Lechner (Program & Event Manager voor events en workshops).
 
 **ROM Utrecht Region** — Regionaal fonds, €60M+, 60+ investeringen in Utrecht regio. Benaderen als resource voor portfolio-bedrijven, niet voor funding. Doel: introductie bij portfolio-founders in jouw ARR range.
 Website: [romutrechtregion.nl](https://romutrechtregion.nl) · LinkedIn: [linkedin.com/company/rom-utrecht-region](https://nl.linkedin.com/company/rom-utrecht-region)
