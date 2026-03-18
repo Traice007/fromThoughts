@@ -79,9 +79,11 @@ Dit zijn de signalen die aangeven dat een founder *nu* in de markt is voor wat f
 [Wat jij doet voor founders in precies die situatie]
 ```
 
-**Voorbeeld: Vacature-trigger**
+**Voorbeeld: Vacature-trigger (State B — about-to-hire)**
 
-> "Zag dat jullie een Account Executive zoeken. Dat is precies het moment dat founders ontdekken hoe ingewikkeld het is om iemand succesvol te laten starten zonder een goed ingewerkt salesproces. Ik help B2B-founders dat fundament te bouwen vóór de hire. Heeft dit relevantie voor je?"
+> "Zag je zoekt iemand voor sales bij [bedrijf]. Eén vraag: wat geef je diegene mee op dag 1 om succesvol te zijn? Niet het product — maar het kader: welke leads zijn het waard, wanneer is een deal realistisch, wat is succes na 90 dagen? Ik help founders dat vóór de hire scherp te krijgen. Relevant?"
+
+**Waarom dit werkt en de vorige versie niet:** De vorige versie challengede impliciet de beslissing van de founder ("je hebt nog geen geformaliseerd salesproces"). Een founder in actie-modus stopt direct. Deze versie sluit aan bij waar ze zijn: ze gaan het doen, en je helpt het beter te laten landen.
 
 **Voorbeeld: Funding-trigger**
 
@@ -127,37 +129,110 @@ Yurii Veremchuk (Head of Business Growth, Woodpecker.co) is de meest geciteerde 
 
 ---
 
-## 6. Concrete Berichten voor fromThoughts' ICP
+## 6. De Drie Mindsets — Elke Vraagt Een Ander Bericht
 
-### LinkedIn DM — Vacature-trigger (NL)
+Dit is de meest kritieke nuance in de outreach voor fromThoughts. De vacature-trigger lijkt één ding, maar de founder zit in een van drie heel verschillende mentale staten. Elke staat vraagt een ander bericht.
 
-**Connection request note (300 tekens max):**
+### State A — Pre-hire: "Ik doe alles nog zelf"
 
-> "Zag de vacature voor AE bij [bedrijf]. Ik help B2B-founders het salesfundament bouwen vóór die eerste hire. Als dat nu speelt, vertel ik je graag hoe dat werkt — [naam]"
-
-**Na acceptatie — eerste bericht:**
-
-> "Goed dat we verbonden zijn. De timing bij jullie is interessant: een AE werven terwijl je nog geen geformaliseerd salesproces hebt is het meest voorkomende patroon dat ik zie. Het eindigt vaak in een kostbare mismatch. Ik help founders dat vóór de hire in orde te brengen — niet na. Is dat relevant voor jullie situatie?"
+**Mentale staat:** Founder voert zelf alle sales. Voelt de pijn maar heeft nog geen beslissing genomen over een hire. Ruimte voor reflectie.
+**Wat werkt:** Discovery-vraag, vrijdagmiddag-patroon, infrastructuurframe
+**Wat niet werkt:** Urgentie creëren — ze zijn er nog niet klaar voor
 
 ---
 
-### LinkedIn DM — Funding-trigger (NL)
+### State B — About-to-hire: "Ik zoek een go-getter"
+
+**Mentale staat:** Founder heeft een vacature uitgezet of zoekt actief. Ze zijn in actie-modus. Ze willen iemand die direct de telefoon pakt en omzet binnenhaalt. Ze zijn NIET ontvankelijk voor "wacht even" of "bouw eerst je fundament." Dat voelt als vertraging.
+
+**Wat niet werkt:**
+> ~~"De timing bij jullie is interessant: een AE werven terwijl je nog geen geformaliseerd salesproces hebt..."~~
+
+Dit challenget hun plan direct. Ze zetten hun hakken in de grond.
+
+**Wat wél werkt:** Aansluit bij hun energie (ze gaan het doen), maar plant een vraag die ze nog niet gesteld hebben.
+
+**Twee angles die werken:**
+
+*Angle 1 — Maak de hire succesvol:*
+> "Zag je zoekt iemand voor koude acquisitie in SaaS — precies de profielen waarmee ik werk. Één vraag die founders me achteraf altijd stellen: wat geef je diegene mee op dag 1? Niet het product — maar: welke leads zijn het waard, wanneer is een deal sluipbaar, wat verwacht je in de eerste 90 dagen? Ik help founders dat in kaart brengen. Relevant voor een kort gesprek?"
+
+*Angle 2 — Geef ze het evaluatiekader:*
+> "Zag je zoekt een go-getter voor sales. Hoe weet je na 60 dagen of het werkt — of niet? De meeste founders merken het pas na 6 maanden. Ik help founders van tevoren duidelijke criteria te stellen zodat je niet op gevoel evalueert. Is dat iets?"
+
+**Waarom angle 2 zo sterk is:** Het refereert impliciet aan het patroon dat Rikkert beschreef — "eerste hire wordt 2–3x vervangen." De founder voelt onbewust die onzekerheid, maar je benoemt hun plan niet als fout.
+
+**Verboden in state B:**
+- "Eerst fundament, dan hire" als opener → klinkt als vertraging
+- "Dit gaat mis als je nu iemand aanneemt" → challenge die ze weerstaan
+- Prijs noemen → veel te vroeg
+
+---
+
+### State C — Post-first-hire: "Ik heb al iemand aangenomen (en het werkte niet)"
+
+**Mentale staat:** Founder heeft een eerste salesmedewerker aangenomen, die na 3–9 maanden ontslagen of vertrokken. Founder doet opnieuw alles zelf. Hoge pijn, hoge receptiviteit. Schaamd zich soms voor de mislukking.
+
+**Referentiecase:** Hans Elsen — eerste salesrep aangenomen, na 6 maanden ontslagen omdat deze niets binnenbracht. Founder deed alles nog zelf. *Dit patroon is het meest voorkomende in de markt.*
+
+**Wat werkt:** Validatie + herkenning + concrete volgende stap. Geen pitch — eerst empathie.
+
+> "Ik spreek veel founders die een eerste salesmedewerker hebben aangenomen die het niet bracht. Het meest frustrerende is achteraf: de persoon was niet slecht — de context ontbrak. Ik help founders die mislukking te analyseren en de volgende hire anders op te zetten. Zou je daar een keer over willen praten?"
+
+*Of korter, als je weet dat ze het hebben meegemaakt:*
+> "Hoor dat je eerste sales hire niet de verwachte resultaten bracht. Dat is een patroon dat ik vaak zie — en het ligt bijna nooit aan de persoon. Ik help founders begrijpen wat er ontbrak. Heeft dat waarde voor je?"
+
+---
+
+## 7. Concrete Berichten — Alle Templates
+
+### LinkedIn DM — State B: About-to-hire, vacature-trigger (NL)
+
+**Connection request note (300 tekens max):**
+
+> "Zag je zoekt iemand voor sales bij [bedrijf] — ik werk veel met founders in die fase. Ik heb een vraag die je mogelijk helpt bij de selectie. — Ranjith"
+
+**Na acceptatie — eerste bericht:**
+
+> "Goed dat we verbonden zijn. De vacature die je hebt uitgezet — voor welk profiel heb je gekozen en wat geef je diegene mee op dag 1 om succesvol te zijn? Ik stel de vraag omdat dat het moment is waar de meeste founders later van zeggen 'dat hadden we eerder moeten bedenken.' Ik help daar graag bij nadenken als je dat wil."
+
+---
+
+### LinkedIn DM — State B: About-to-hire, evaluatieframe (NL)
+
+> "Zag je zoekt een go-getter voor sales. Eén praktische vraag: wat is jouw criterium om na 60 dagen te weten of het aanslaat — of niet? De founders die ik spreek die dit van tevoren scherp hebben, maken een veel betere eerste hire. Ik help daar graag bij als dat relevant is."
+
+---
+
+### LinkedIn DM — State A: Pre-hire, discovery (NL)
+
+> "Hoe traceer jij momenteel of je op koers ligt voor je jaarlijkse omzetdoel — of is dat nog een vrijdagmiddag oefening? Ik stel de vraag omdat dat het startpunt is van het gesprek dat ik met founders heb voordat ze hun eerste salesmedewerker aannemen. Is dat iets dat nu speelt?"
+
+---
+
+### LinkedIn DM — State C: Post-first-hire, validatie (NL)
+
+> "Ik werk veel met founders die een eerste salesmedewerker hebben aangenomen die het uiteindelijk niet bracht. Bijna altijd ligt het niet aan de persoon maar aan wat ze meekrijgen. Ik help founders dat patroon doorbreken voor de volgende hire. Is dat relevant voor jou?"
+
+---
+
+### LinkedIn DM — Funding-trigger, State A (NL)
 
 > "Congrats met de ronde — heb het op LinkedIn gezien. Vanuit mijn werk met founders weet ik dat de periode net ná funding de meest kritieke is: de druk om omzet te laten zien is groot, maar het salesproces is nog founder-dependent. Ik help precies daarmee. Heeft dit relevantie voor je de komende maanden?"
 
 ---
 
-### LinkedIn DM — LinkedIn post-trigger (NL)
+### LinkedIn DM — LinkedIn post-trigger, State A (NL)
 
 *Founder postte over pipeline of hiring op LinkedIn:*
 
-> "Zag je post over [onderwerp van de post] — herkende het direct. Ik werk met B2B-founders in exact die fase. Het fundamentele probleem is altijd hetzelfde: founders weten wat ze moeten bereiken, maar niet hoe ze het dagelijks aandrijven zonder een salesmedewerker. Zou je open staan voor een kort gesprek hierover?"
+> "Zag je post over [onderwerp] — herkende het direct. Ik werk met B2B-founders in exact die fase. Het fundamentele probleem is altijd hetzelfde: founders weten wat ze moeten bereiken, maar niet hoe ze het dagelijks aandrijven. Zou je open staan voor een kort gesprek?"
 
 ---
 
-### LinkedIn DM — Vacature-trigger (Engels, voor DK/UK/Nordics)
+### LinkedIn DM — State B: About-to-hire, vacature-trigger (Engels, DK/UK/Nordics)
 
-> "Noticed you're hiring an Account Executive. That's the moment founders usually discover how hard it is to onboard a sales hire without a structured process in place. I help B2B founders build that foundation before the hire — not after. Is that something on your mind right now?"
+> "Noticed you're hiring for a sales role. One question: what will you give that person on day 1 to be successful — beyond product knowledge? That's the question founders usually wish they'd answered before the hire. Happy to share what I've seen work. Relevant?"
 
 ---
 
