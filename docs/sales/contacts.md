@@ -30,7 +30,7 @@ Mini-CRM voor alle mensen waarmee je gesproken hebt over fromThoughts. Vul aan n
 - 13 maart 2026 — 30 minuten, feedback call
 
 **Achtergrond:**
-20+ jaar in sales outsourcing, interim sales, consulting en recruitment via SalesXeed. Is zelf meer op DGA coaching gaan focussen. Zijn businessmodel (SalesXeed) is de menselijke versie van fromThoughts. Heeft bij TAAI de sales neergelegd.
+Gevestigd in **Haarlem** (niet Utrecht). 20+ jaar in sales outsourcing, interim sales, consulting en recruitment via SalesXeed (opgericht 2002). Ook oprichter van FlexTask (payroll/HR staffing, 2006). Schreef het boek "Sales Bijdehand" (2008) en runde NL's eerste sales weblog "Sales is een vak." Is zelf meer op DGA coaching gaan focussen. Zijn dienstmodel (SalesXeed) is de menselijke versie van fromThoughts: hij doet handmatig wat fromThoughts systematisch maakt. **Let op:** Rikkert is een sales consultant/adviseur — hij is geen SaaS-founder die zelf door het first-hire-probleem is gegaan. Zijn waarde zit in zijn netwerk van founders die hij begeleidt bij de sales transitie, en als potentiële distributiepartner.
 
 **Wat hij zei:**
 - Herkent het founder sales transitie probleem — eerste hire wordt 2-3x vervangen
@@ -89,6 +89,26 @@ Persoonlijke bekende. Heeft vorig jaar zijn eerste salesrep aangenomen en na 6 m
 - [ ] Testen of de nieuwe one-liner beter landt dan "denklaag"
 
 ---
+
+## Prospects — Utrecht ICP Bedrijven (nog niet benaderd)
+
+*Geïdentificeerd op basis van research maart 2026. Valideer vóór outreach of er al een commercieel medewerker is via LinkedIn → People → filter Sales.*
+
+| Naam | Bedrijf | Rol | ICP-fit | Status | Trigger |
+|------|---------|-----|---------|--------|---------|
+| Bart Zuidgeest | Florbs | Founder | ⭐⭐⭐ 5 medewerkers, seed | nog niet benaderd | Geen sales medewerker gevonden |
+| Tycho Klessens | Florbs | Founder | ⭐⭐⭐ | nog niet benaderd | — |
+| Taco Hiddink | Brainial | Founder | ⭐⭐⭐ angel-backed, 11–50 emp. | nog niet benaderd | Angel-ronde mrt 2025 |
+| Fedor Klinkenberg | Brainial | CEO | ⭐⭐⭐ ex-Mendix, tech founder | nog niet benaderd | — |
+| Stijn van der Vat | Deepler | CEO | ⭐⭐ 4–7 medewerkers | nog niet benaderd | — |
+| Belén Hein | Neurolytics | Founder | ⭐⭐ 8–12 medewerkers | nog niet benaderd | €500K ronde jan 2023 |
+
+**Vóór outreach — check per bedrijf:**
+1. Open LinkedIn → bedrijfspagina → People → filter "Sales"
+2. Geen resultaat = waarschijnlijk founder-led → go
+3. Resultaat met SDR/AE/Account Manager titel = mogelijk al voorbij het punt; toch benaderen met State C-template (post-hire)
+
+**Aanpak:** State B (about-to-hire) of State A (pre-hire) template uit `docs/strategy/outreach-messaging.md`. Florbs en Brainial starten met een gepersonaliseerde connection request op basis van hun meest recente LinkedIn-post.
 
 ## Toe te voegen
 

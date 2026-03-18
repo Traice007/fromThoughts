@@ -84,24 +84,75 @@ Crossroads (jaarlijkse Utrecht startup conferentie, 500+ founders) publiceert ge
 
 ---
 
-## 3. Bekende Utrecht-Nabije Bedrijven — Voorbeeldprofiel
+## 3. Concrete Utrecht ICP-Bedrijven — Prioriteitenlijst
 
-*(Dit zijn voorbeeldprofielen op basis van research; geen garantie van exacte ICP-match — valideer via LinkedIn voor outreach)*
+Research heeft vier high-confidence ICP-matches in de Utrecht-regio opgeleverd. Valideer voor outreach of ze al een commercieel profiel in dienst hebben (LinkedIn → People → filter Sales).
 
-**Neurolytics** (Utrecht, opgericht 2018)
+---
+
+### ⭐⭐⭐ Hoogste prioriteit
+
+**Florbs** — Google Workspace cloud security SaaS
+- Founders: Bart Zuidgeest, Tycho Klessens, Niek Waarbroek
+- Opgericht: 2021, Utrecht
+- Team: 5 medewerkers
+- Funding: €1M+ seed (angels: Chris Zadeh/Ohpen, Kalo Bagijn/BinckBank, Kees Koolen/Booking.com, Maikel Lobbezoo/Adyen, Dennis Dijkstra/Flow Traders)
+- Klanten: 300.000 gebruikers in 25 landen
+- ICP-fit: 5 medewerkers, seed-fase, B2B SaaS, founders doen waarschijnlijk alle commercial zelf
+- LinkedIn: [linkedin.com/company/florbs](https://www.linkedin.com/company/florbs/)
+- Actie: zoek Bart Zuidgeest op LinkedIn → check of er al een sales/commercial medewerker is
+
+---
+
+**Brainial** — AI-powered tender management SaaS
+- Founders: Fedor Klinkenberg (CEO, ex-Mendix 11 jaar), Taco Hiddink (ex-verkoper van Jibes Data Analytics aan Waterland)
+- Opgericht: 2019, Utrecht
+- Team: 11–50 medewerkers
+- Funding: angel-ronde maart 2025 (Pieter Schoen, serieel NL-ondernemer)
+- ICP-fit: sterke technische founders met weinig sales-ervaring, angel-fase, B2B SaaS — typisch patroon voor uitgestelde eerste sales hire
+- UtrechtInc spotlight: [utrechtinc.nl/artikel/startup-spotlight-brainial](https://utrechtinc.nl/artikel/startup-spotlight-brainial/)
+- LinkedIn founder: [Taco Hiddink](https://www.linkedin.com/in/tacohiddink/)
+
+---
+
+### ⭐⭐ Goede ICP-match
+
+**Deepler** — Employee retention en performance analytics SaaS
+- Founder: Stijn van der Vat (CEO)
+- Opgericht: 2020, Utrecht (Nyenrode Business University achtergrond)
+- Team: 4–7 medewerkers
+- Funding: $1.13M
+- ICP-fit: zeer klein team, recente founding, B2B SaaS, founder doet vrijwel zeker alle sales
+- LinkedIn: [Stijn van der Vat](https://www.linkedin.com/in/stijn-van-der-vat/)
+
+---
+
+**Neurolytics** — AI video-assessment SaaS voor HR/recruitment
 - Founders: Belén Hein, Felix Hermsen, Marnix Naber
-- B2B SaaS voor HR/recruitment (AI video-analyse voor cultural fit)
+- Opgericht: 2018, Utrecht
+- Team: 8–12 medewerkers
+- Funding: €500K (jan 2023) + €250K NWO + EU Horizon 2020 (totaal ~€1M)
 - Klanten: PwC, Ministerie van Defensie
-- Funding: €500K (jan 2023) + EU Horizon 2020 + NWO
-- Medewerkers: 1–10 (2024)
-- ICP-match: klein team, B2B, SaaS-model, waarschijnlijk founder-led sales
+- ICP-fit: klein team, B2B SaaS, wetenschappelijke founders — commercieel waarschijnlijk nog founder-led
 - LinkedIn: [linkedin.com/company/neurolytics](https://www.linkedin.com/company/neurolytics/)
-- Check: heeft Neurolytics een commercieel profiel in dienst?
+
+---
+
+### Monitor (mogelijk net voorbij ICP-fase)
+
+**Solvimon** — Usage-based billing SaaS (ex-Adyen VPs Kim Verkooij en Etienne Gerts)
+- €9M seed van Northzone (nov 2023), ~20 medewerkers — check of er al een commercieel profiel is
+
+**Roseman Labs** — Privacy-preserving data collaboration SaaS
+- €5M Series A, 35 medewerkers — waarschijnlijk al voorbij de pre-sales-hire fase
+
+---
 
 **Hoe je soortgelijke bedrijven vindt:**
-- Zoek op LinkedIn: "Utrecht" + "SaaS" + "CEO" + "11-50 employees" + verbonden via 2e graad
-- Filter op bedrijven opgericht 2018–2023 (via LinkedIn Company Search)
-- Zoek op Tracxn: [tracxn.com: SaaS startups in Netherlands](https://tracxn.com/d/explore/saas-startups-in-netherlands/)
+- [seedtable.com/startups-utrecht](https://www.seedtable.com/startups-utrecht) — 52 Utrecht startups, publiek toegankelijk
+- LinkedIn: "Utrecht" + "SaaS" + "CEO" + "11-50 employees" + 2e-graads verbinding
+- [tracxn.com: SaaS startups in Netherlands](https://tracxn.com/d/explore/saas-startups-in-netherlands/)
+- ROM Utrecht portfolio: [romutrechtregion.nl/portfolio](https://romutrechtregion.nl/) — GraphPolaris, Withthegrid, Neurolytics, Sygno als bekende namen
 
 ---
 
