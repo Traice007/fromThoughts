@@ -15,6 +15,7 @@ Mini-CRM voor alle mensen waarmee je gesproken hebt over fromThoughts. Vul aan n
 | Rikkert Walbeek | TA Audit (co-founder) / SalesXeed (oprichter) | Mrt 2026 | 13 mrt 2026 | feedback |
 | Bas van de Haterd | TAAI | Mrt 2026 | Mrt 2026 | referrer |
 | Hans Elsen | — | Feb 2026 | Feb 2026 | feedback |
+| Robin (achternaam onbekend) | Candidflow (oprichter) | Mrt 2026 | 19 mrt 2026 | potentiële design partner |
 
 ---
 
@@ -87,6 +88,42 @@ Persoonlijke bekende. Heeft vorig jaar zijn eerste salesrep aangenomen en na 6 m
 **Openstaande acties:**
 - [ ] Dieper gesprek plannen — hij heeft de exact juiste pijnervaring (eerste hire aangenomen en ontslagen)
 - [ ] Testen of de nieuwe one-liner beter landt dan "denklaag"
+
+---
+
+### Robin (achternaam onbekend)
+
+**Bedrijf:** Candidflow — recruitment marketing SaaS
+**Website:** https://www.candidflow.nl/
+**LinkedIn:** *(nog toevoegen)*
+**Intro via:** eigen netwerk
+**Eerste contact:** maart 2026
+**Gesprekken:**
+- 19 maart 2026 — 1e gesprek, verkennend
+- 23 maart 2026 — vervolggesprek gepland
+
+**Achtergrond:**
+Solo founder, 29 jaar. 3 freelance medewerkers. Candidflow helpt bedrijven applicanten aantrekken zonder recruitment bureaus. Heeft een freelance SDR-vacature geplaatst (performance-based, €500–€1.000 per getekend contract, koude acquisitie via LinkedIn/email/telefoon). Wil dat de sales persoon "meedenkt" — nog niet geconcretiseerd.
+
+**ICP Candidflow:**
+- Bedrijven 50–150 medewerkers, groeiend
+- Inclusief bedrijven die "blue collar" medewerkers aannemen
+
+**Wat hij zei:**
+- Kon "qualified appointment" niet definiëren (gevraagd in gesprek 1)
+- Wil iemand die meedenkt — betekenis nog onduidelijk
+- Vervolggesprek 23 maart om dieper in te gaan op de rol
+
+**Relevantie voor fromThoughts:**
+Robin is zelf het patroon: solo founder zonder gedefinieerd sales process, zoekt eerste commercial profiel. Te vroeg en te klein als klant nu, maar waardevol als leerlab en potentiële toekomstige case study. Ranjith overweegt de freelance SDR-rol aan te nemen als leerervaring.
+
+**Openstaande acties:**
+- [ ] Vervolggesprek 23 maart: "meedenken" concretiseren, success criteria definiëren, pilot-aanpak voorstellen
+- [ ] Achternaam en LinkedIn toevoegen
+- [ ] Beslissen of freelance rol past (na maandag)
+- [ ] fromThoughts onthullen in week 2–3 als samenwerking start
+
+*Call prep: `docs/sales/call-prep-candidflow-2026-03-23.md`*
 
 ---
 
