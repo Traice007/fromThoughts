@@ -117,12 +117,12 @@ export default function PricingPage() {
                   <Sparkles className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-amber-900">fromThoughts Growth</p>
-                  <p className="text-sm text-amber-700">AI platform + dedicated revenue advisor</p>
+                  <p className="font-semibold text-amber-900">fromThoughts Foundation</p>
+                  <p className="text-sm text-amber-700">AI platform — annual commitment, no setup fees</p>
                 </div>
               </div>
               <span className="text-2xl font-bold text-amber-700">
-                €19,000<span className="text-sm font-medium text-amber-600"> / year</span>
+                €20,000<span className="text-sm font-medium text-amber-600"> / year</span>
               </span>
             </div>
 

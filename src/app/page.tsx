@@ -69,11 +69,11 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-8 text-sm text-slate-400">
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
-              30-day money-back guarantee
+              30-day satisfaction guarantee
             </span>
             <span className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
-              Ready in under 10 minutes
+              Annual commitment. No setup fees.
             </span>
             <span className="hidden sm:flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
@@ -834,7 +834,7 @@ export default function HomePage() {
             Build the Sales Mechanism Your Team Can Execute
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            Turn what&apos;s in your head into a sales mechanism your team can follow and your pipeline can show progress against. In under 10 minutes.
+            Turn what&apos;s in your head into a sales mechanism your team can follow and your pipeline can show progress against.
           </p>
           <Link
             href="/forecast"

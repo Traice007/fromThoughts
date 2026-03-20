@@ -86,12 +86,12 @@ export function PricingCards() {
           <div className="mb-1">
             {showMonthly ? (
               <>
-                <span className="text-4xl font-bold text-gray-900">€1,250</span>
+                <span className="text-4xl font-bold text-gray-900">€1,667</span>
                 <span className="text-gray-500 font-medium"> / month</span>
               </>
             ) : (
               <>
-                <span className="text-4xl font-bold text-gray-900">€15,000</span>
+                <span className="text-4xl font-bold text-gray-900">€20,000</span>
                 <span className="text-gray-500 font-medium"> / year</span>
               </>
             )}
@@ -102,7 +102,7 @@ export function PricingCards() {
             </p>
           ) : (
             <p className="text-xs text-gray-400 mb-6">
-              €1,250 / month equivalent, billed annually
+              €1,667 / month equivalent, billed annually
             </p>
           )}
 
@@ -140,12 +140,12 @@ export function PricingCards() {
           <div className="mb-1">
             {showMonthly ? (
               <>
-                <span className="text-4xl font-bold">€1,583</span>
+                <span className="text-4xl font-bold">€3,000</span>
                 <span className="text-white/70 font-medium"> / month</span>
               </>
             ) : (
               <>
-                <span className="text-4xl font-bold">€19,000</span>
+                <span className="text-4xl font-bold">€36,000</span>
                 <span className="text-white/70 font-medium"> / year</span>
               </>
             )}
@@ -156,7 +156,7 @@ export function PricingCards() {
             </p>
           ) : (
             <p className="text-xs text-white/50 mb-6">
-              €1,583 / month equivalent, billed annually
+              €3,000 / month equivalent, billed annually
             </p>
           )}
 

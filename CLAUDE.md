@@ -21,11 +21,11 @@ fromThoughts is an AI-powered Revenue Operations platform for B2B founders (€3
 - Deployed on Vercel (Hobby/free plan)
 
 ## Pricing (EUR, European market focus)
-- Starter: €1,500 one-time (30 days full access)
-- Pro: €15,000/year
+- Foundation: €20,000/year (€1,667/month equivalent) — platform only
+- Growth: €36,000/year (€3,000/month equivalent) — platform + dedicated revenue strategist
 - Enterprise: Custom
-- Credit card required at signup
-- 14-day money-back guarantee
+- Annual commitment, no setup fees
+- 30-day satisfaction guarantee
 - Outbound sales / BD is the primary revenue channel — lower conversion, higher margin
 
 ## Current product state
