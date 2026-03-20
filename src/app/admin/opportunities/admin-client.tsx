@@ -105,11 +105,11 @@ export function AdminClient({ initialUsers }: { initialUsers: AdminUser[] }) {
 
   function updateUserOpportunities(userId: string, updater: (opps: Opportunity[]) => Opportunity[]) {
     setUsers((prev) =>
-      prev.map((u) =>
-        u.id === userId
-          ? { ...u, opportunities: updater(u.opportunities), _count: { ...u._count, opportunities: updater(u.opportunities).length } }
-          : u
-      )
+      prev.map((u) => {
+        if (u.id !== userId) return u;
+        const newOpps = updater(u.opportunities);
+        return { ...u, opportunities: newOpps, _count: { ...u._count, opportunities: newOpps.length } };
+      })
     );
   }
 

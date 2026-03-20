@@ -8,7 +8,7 @@ const PLANS = [
   {
     name: "Foundation",
     planId: "STARTER" as const, // Stripe/DB ID — do not change
-    price: "€15,000",
+    price: "€20,000",
     period: " / year",
     description: "AI platform for founders who just made their first sales hire",
     features: [
@@ -25,7 +25,7 @@ const PLANS = [
   {
     name: "Growth",
     planId: "PRO" as const, // Stripe/DB ID — do not change
-    price: "€19,000",
+    price: "€36,000",
     period: " / year",
     description: "AI platform + dedicated revenue advisor for post-hire founders",
     features: [

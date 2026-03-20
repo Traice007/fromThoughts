@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getStripe, PLANS } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { prisma } from "@/lib/db";
 import Stripe from "stripe";
 
@@ -42,25 +42,13 @@ export async function POST(request: NextRequest) {
           break;
         }
 
-        if (planId === "STARTER") {
-          // One-time payment - grant 30 days access
-          const accessEnd = new Date();
-          accessEnd.setDate(accessEnd.getDate() + PLANS.STARTER.accessDays);
-
+        // Both STARTER and PRO are annual subscriptions.
+        // Set tier and active status immediately; subscription.created will set the period_end.
+        if (planId === "STARTER" || planId === "PRO") {
           await prisma.user.update({
             where: { id: userId },
             data: {
-              subscriptionTier: "STARTER",
-              subscriptionStatus: "active",
-              subscriptionPeriodEnd: accessEnd,
-            },
-          });
-        } else if (planId === "PRO") {
-          // Subscription - will be updated by subscription events
-          await prisma.user.update({
-            where: { id: userId },
-            data: {
-              subscriptionTier: "PRO",
+              subscriptionTier: planId,
               subscriptionStatus: "active",
             },
           });
@@ -82,10 +70,14 @@ export async function POST(request: NextRequest) {
           break;
         }
 
+        // Read planId from subscription metadata to set the correct tier
+        const planId = subscription.metadata?.planId;
+        const tier = planId === "STARTER" ? "STARTER" : "PRO";
+
         await prisma.user.update({
           where: { id: user.id },
           data: {
-            subscriptionTier: "PRO",
+            subscriptionTier: tier,
             subscriptionStatus: subscription.status,
             subscriptionPeriodEnd: new Date(
               subscription.current_period_end * 1000

@@ -62,67 +62,42 @@ export async function POST(request: NextRequest) {
 
     const baseUrl = process.env.NEXTAUTH_URL || "https://fromthoughts.com";
 
-    // Create checkout session based on plan type
-    if (plan.mode === "payment") {
-      // One-time payment for Starter
-      const session = await stripe.checkout.sessions.create({
-        customer: customerId,
-        mode: "payment",
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            price_data: {
-              currency: plan.currency,
-              product_data: {
-                name: `fromThoughts ${plan.name}`,
-                description: `${plan.accessDays} days of full access to fromThoughts`,
-              },
-              unit_amount: plan.price,
+    // Both plans are annual subscriptions
+    const session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      mode: "subscription",
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: plan.currency,
+            product_data: {
+              name: `fromThoughts ${plan.name}`,
+              description: "Annual subscription to fromThoughts",
             },
-            quantity: 1,
+            unit_amount: plan.price,
+            recurring: {
+              interval: plan.interval,
+            },
           },
-        ],
-        success_url: `${baseUrl}/dashboard/billing?success=true&plan=${planId}`,
-        cancel_url: `${baseUrl}/dashboard/billing?canceled=true`,
+          quantity: 1,
+        },
+      ],
+      subscription_data: {
         metadata: {
           userId: user.id,
           planId,
         },
-      });
+      },
+      success_url: `${baseUrl}/dashboard/billing?success=true&plan=${planId}`,
+      cancel_url: `${baseUrl}/dashboard/billing?canceled=true`,
+      metadata: {
+        userId: user.id,
+        planId,
+      },
+    });
 
-      return NextResponse.json({ url: session.url });
-    } else {
-      // Subscription for Pro
-      const session = await stripe.checkout.sessions.create({
-        customer: customerId,
-        mode: "subscription",
-        payment_method_types: ["card"],
-        line_items: [
-          {
-            price_data: {
-              currency: plan.currency,
-              product_data: {
-                name: `fromThoughts ${plan.name}`,
-                description: "Annual subscription to fromThoughts Pro",
-              },
-              unit_amount: plan.price,
-              recurring: {
-                interval: plan.interval,
-              },
-            },
-            quantity: 1,
-          },
-        ],
-        success_url: `${baseUrl}/dashboard/billing?success=true&plan=${planId}`,
-        cancel_url: `${baseUrl}/dashboard/billing?canceled=true`,
-        metadata: {
-          userId: user.id,
-          planId,
-        },
-      });
-
-      return NextResponse.json({ url: session.url });
-    }
+    return NextResponse.json({ url: session.url });
   } catch (error) {
     console.error("Checkout error:", error);
     const message = error instanceof Error ? error.message : "Failed to create checkout session";

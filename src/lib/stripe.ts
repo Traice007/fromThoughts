@@ -16,15 +16,15 @@ export function getStripe() {
 
 export const PLANS = {
   STARTER: {
-    name: "Starter",
-    price: 150000, // €1,500 in cents
+    name: "Foundation",
+    price: 2000000, // €20,000 in cents
     currency: "eur",
-    mode: "payment" as const,
-    accessDays: 30,
+    mode: "subscription" as const,
+    interval: "year" as const,
   },
   PRO: {
-    name: "Pro",
-    price: 1500000, // €15,000 in cents
+    name: "Growth",
+    price: 3600000, // €36,000 in cents
     currency: "eur",
     mode: "subscription" as const,
     interval: "year" as const,

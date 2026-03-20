@@ -29,6 +29,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Reject if already processed — prevents duplicate OKRs from re-triggering
+    if (forecast.status !== "PENDING") {
+      return NextResponse.json(
+        { error: "Forecast has already been processed" },
+        { status: 409 }
+      );
+    }
+
     // Update status to processing
     await prisma.forecast.update({
       where: { id: forecastId },
@@ -82,7 +90,6 @@ export async function POST(request: NextRequest) {
     } catch (aiError) {
       // Detailed error logging for debugging
       const errorMessage = aiError instanceof Error ? aiError.message : "Unknown AI error";
-      const errorStack = aiError instanceof Error ? aiError.stack : undefined;
       console.error("AI generation error:", {
         message: errorMessage,
         forecastId,

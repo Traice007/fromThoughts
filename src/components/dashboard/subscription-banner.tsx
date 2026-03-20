@@ -94,15 +94,18 @@ export function SubscriptionBanner({
     );
   }
 
-  // Cancellation scheduled banner (Pro plan only)
-  if (cancelAtPeriodEnd && hasAccess && tier === "PRO") {
+  // Cancellation scheduled banner (any paid plan)
+  const tierDisplayNames: Record<string, string> = { STARTER: "Foundation", PRO: "Growth", ENTERPRISE: "Enterprise" };
+  const tierDisplayName = tierDisplayNames[tier] ?? tier;
+
+  if (cancelAtPeriodEnd && hasAccess) {
     return (
       <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
         <XCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
         <div className="flex-1">
           <p className="font-medium text-amber-900">Cancellation scheduled</p>
           <p className="text-sm text-amber-700">
-            Your Pro plan will end on{" "}
+            Your {tierDisplayName} plan will end on{" "}
             {expiresAt ? new Date(expiresAt).toLocaleDateString() : "N/A"}.
             You&apos;ll continue to have access until then.
           </p>
