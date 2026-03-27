@@ -16,7 +16,6 @@ import { getTotalSampleSize } from "@/data/benchmarks";
 
 interface ResultsClientProps {
   forecast: ForecastWithOkrs & {
-    status: string;
     industry?: string | null;
     leadToMqaRate?: number | null;
     mqaToSqlRate?: number | null;
@@ -26,6 +25,9 @@ interface ResultsClientProps {
   };
 }
 
+// Maximum time (ms) to poll before giving up and showing a failure state
+const POLLING_TIMEOUT_MS = 90_000;
+
 export function ResultsClient({ forecast: initialForecast }: ResultsClientProps) {
   const { data: session, status: sessionStatus } = useSession();
   const [forecast, setForecast] = useState(initialForecast);
@@ -33,6 +35,7 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
     initialForecast.status === "PENDING" || initialForecast.status === "PROCESSING"
   );
   const generationTriggered = useRef(false);
+  const pollingStartTime = useRef<number>(0);
   const [progressStep, setProgressStep] = useState(0);
 
   // Trigger AI generation if forecast is PENDING (just created, not yet processed)
@@ -63,11 +66,20 @@ export function ResultsClient({ forecast: initialForecast }: ResultsClientProps)
     return () => clearInterval(interval);
   }, [polling]);
 
-  // Poll for completion
+  // Poll for completion, with a hard timeout so we never spin forever
   useEffect(() => {
     if (!polling) return;
 
+    pollingStartTime.current = Date.now();
+
     const interval = setInterval(async () => {
+      // Give up after POLLING_TIMEOUT_MS — surface a failure state to the user
+      if (Date.now() - pollingStartTime.current > POLLING_TIMEOUT_MS) {
+        setPolling(false);
+        setForecast((prev) => ({ ...prev, status: "FAILED" }));
+        return;
+      }
+
       try {
         const response = await fetch(`/api/forecast/${forecast.id}`);
         if (response.ok) {

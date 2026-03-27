@@ -3,8 +3,9 @@ import { formatBenchmarkForPrompt, compareToBenchmark, getTotalSampleSize } from
 
 export function buildOkrPrompt(forecast: Forecast): string {
   const revenueGap = forecast.targetRevenue - forecast.currentRevenue;
-  const growthRequired = ((revenueGap / forecast.currentRevenue) * 100).toFixed(1);
-  const monthlyGrowthRate = (Math.pow(forecast.targetRevenue / forecast.currentRevenue, 1 / forecast.timeHorizonMonths) - 1) * 100;
+  const currentRevenueSafe = forecast.currentRevenue > 0 ? forecast.currentRevenue : 1;
+  const growthRequired = ((revenueGap / currentRevenueSafe) * 100).toFixed(1);
+  const monthlyGrowthRate = (Math.pow(forecast.targetRevenue / currentRevenueSafe, 1 / forecast.timeHorizonMonths) - 1) * 100;
 
   let metricsSection = "";
   if (forecast.monthlyInboundLeads || forecast.marketingQualifiedAccounts || forecast.salesQualifiedLeads) {

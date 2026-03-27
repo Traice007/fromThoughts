@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { sendVerificationEmail } from "@/lib/email";
-import { randomBytes } from "crypto";
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,26 +30,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Delete any existing verification tokens for this user
-    await prisma.verificationToken.deleteMany({
-      where: { identifier: email },
-    });
-
-    // Generate new verification token
-    const token = randomBytes(32).toString("hex");
-    const expires = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
-
-    await prisma.verificationToken.create({
-      data: {
-        identifier: email,
-        token,
-        expires,
-      },
-    });
-
-    // Send verification email
+    // sendVerificationEmail handles token creation internally (deletes old + creates new)
+    // Pass the user's name so the email greeting is correct
     console.log(`[RESEND] Sending verification email to: ${email}`);
-    const emailResult = await sendVerificationEmail(email, token);
+    const emailResult = await sendVerificationEmail(email, user.name || "there");
 
     if (!emailResult.success) {
       console.error(`[RESEND] Failed to send verification email: ${emailResult.error}`);

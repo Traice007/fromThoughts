@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Hide marketing footer on dashboard and admin routes
+  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin");
+  if (isDashboardRoute) return null;
+
   return (
     <footer className="bg-slate-900 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">

@@ -13,13 +13,13 @@ interface Step2MetricsProps {
 export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
   const [formData, setFormData] = useState<MetricsStepData>(data);
 
-  // Derive auto-calculated rates from funnel volumes
+  // Derive auto-calculated rates from funnel volumes, clamped to 0-100%
   const autoMqlToSqlRate = formData.monthlyInboundLeads && formData.marketingQualifiedAccounts && formData.monthlyInboundLeads > 0
-    ? Math.round((formData.marketingQualifiedAccounts / formData.monthlyInboundLeads) * 100 * 10) / 10
+    ? Math.min(100, Math.round((formData.marketingQualifiedAccounts / formData.monthlyInboundLeads) * 100 * 10) / 10)
     : undefined;
 
   const autoSqlToOppRate = formData.marketingQualifiedAccounts && formData.salesQualifiedLeads && formData.marketingQualifiedAccounts > 0
-    ? Math.round((formData.salesQualifiedLeads / formData.marketingQualifiedAccounts) * 100 * 10) / 10
+    ? Math.min(100, Math.round((formData.salesQualifiedLeads / formData.marketingQualifiedAccounts) * 100 * 10) / 10)
     : undefined;
 
   // Use auto-calculated rates when available, otherwise use manual input

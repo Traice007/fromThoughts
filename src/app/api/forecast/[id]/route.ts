@@ -40,11 +40,29 @@ export async function GET(
       );
     }
 
-    // Parse JSON strings from SQLite
+    // Parse JSON strings — guard against malformed data from partial writes
+    let gapAnalysis = null;
+    let recommendations = null;
+
+    if (forecast.gapAnalysis) {
+      try {
+        gapAnalysis = JSON.parse(forecast.gapAnalysis);
+      } catch {
+        console.error(`Malformed gapAnalysis JSON for forecast ${id}`);
+      }
+    }
+    if (forecast.recommendations) {
+      try {
+        recommendations = JSON.parse(forecast.recommendations);
+      } catch {
+        console.error(`Malformed recommendations JSON for forecast ${id}`);
+      }
+    }
+
     const response = {
       ...forecast,
-      gapAnalysis: forecast.gapAnalysis ? JSON.parse(forecast.gapAnalysis) : null,
-      recommendations: forecast.recommendations ? JSON.parse(forecast.recommendations) : null,
+      gapAnalysis,
+      recommendations,
     };
 
     return NextResponse.json(response);

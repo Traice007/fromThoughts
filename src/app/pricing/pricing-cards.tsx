@@ -117,7 +117,7 @@ export function PricingCards() {
 
           <Link
             href="/lets-talk"
-            className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-amber-500 text-amber-600 rounded-xl font-semibold hover:bg-amber-50 transition-colors"
+            className="flex items-center justify-center gap-2 w-full px-6 py-4 border-2 border-amber-500 text-amber-600 rounded-xl font-semibold hover:bg-amber-50 transition-colors cursor-pointer"
           >
             Get Started
             <ArrowRight className="h-4 w-4" />
@@ -179,7 +179,7 @@ export function PricingCards() {
 
           <Link
             href="/lets-talk"
-            className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-colors shadow-lg"
+            className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-colors shadow-lg cursor-pointer"
           >
             Get Started
             <ArrowRight className="h-4 w-4" />

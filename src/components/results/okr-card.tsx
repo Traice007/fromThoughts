@@ -15,8 +15,14 @@ const CATEGORY_CONFIG: Record<OkrCategory, { icon: typeof Target; color: string;
   PRODUCT: { icon: Package, color: "text-pink-600 bg-pink-100", label: "Product" },
 };
 
+const FALLBACK_CONFIG: { icon: typeof Target; color: string; label: string } = {
+  icon: Target,
+  color: "text-gray-600 bg-gray-100",
+  label: "Other",
+};
+
 export function OkrCard({ okr, index }: OkrCardProps) {
-  const config = CATEGORY_CONFIG[okr.category];
+  const config = CATEGORY_CONFIG[okr.category] ?? FALLBACK_CONFIG;
   const Icon = config.icon;
 
   return (

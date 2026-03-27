@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/session";
 import { DashboardNav } from "@/components/dashboard/dashboard-nav";
 import { SubscriptionBannerWrapper } from "@/components/dashboard/subscription-banner-wrapper";
+import { ImpersonationBanner } from "@/components/dashboard/impersonation-banner";
 
 export default async function DashboardLayout({
   children,
@@ -19,6 +20,7 @@ export default async function DashboardLayout({
     <div className="flex min-h-screen">
       <DashboardNav />
       <div className="flex-1 pt-16">
+        {user.isImpersonated && <ImpersonationBanner email={user.email} />}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-24 lg:pb-8">
           <Suspense fallback={<div className="h-0" />}>
             <SubscriptionBannerWrapper />

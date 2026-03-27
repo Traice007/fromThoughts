@@ -2,8 +2,18 @@ import { z } from "zod";
 
 // Step 1: Revenue Data
 export const revenueStepSchema = z.object({
-  currentRevenue: z.number().min(0, "Current revenue must be positive"),
-  targetRevenue: z.number().min(0, "Target revenue must be positive"),
+  currentRevenue: z.number().min(1, "Current revenue must be greater than zero"),
+  targetRevenue: z.number().min(1, "Target revenue must be greater than zero"),
+  timeHorizonMonths: z.number().min(3).max(36),
+}).refine((data) => data.targetRevenue > data.currentRevenue, {
+  message: "Target revenue must be greater than current revenue",
+  path: ["targetRevenue"],
+});
+// Export a plain object schema (without the refine) for use with .merge()
+// The cross-field check is re-applied on the final forecastSchema below.
+const revenueStepBaseSchema = z.object({
+  currentRevenue: z.number().min(1, "Current revenue must be greater than zero"),
+  targetRevenue: z.number().min(1, "Target revenue must be greater than zero"),
   timeHorizonMonths: z.number().min(3).max(36),
 });
 
@@ -41,11 +51,16 @@ export const contactStepSchema = z.object({
 
 export type ContactStepData = z.infer<typeof contactStepSchema>;
 
-// Complete forecast submission
-export const forecastSchema = revenueStepSchema
+// Complete forecast submission — refine is re-applied here because Zod's .merge()
+// drops refinements from the left-hand schema.
+export const forecastSchema = revenueStepBaseSchema
   .merge(metricsStepSchema)
   .merge(marketStepSchema)
-  .merge(contactStepSchema);
+  .merge(contactStepSchema)
+  .refine((data) => data.targetRevenue > data.currentRevenue, {
+    message: "Target revenue must be greater than current revenue",
+    path: ["targetRevenue"],
+  });
 
 export type ForecastData = z.infer<typeof forecastSchema>;
 
@@ -71,7 +86,9 @@ export interface ForecastWithOkrs {
   currentRevenue: number;
   targetRevenue: number;
   timeHorizonMonths: number;
-  status: "PENDING" | "PROCESSING" | "COMPLETED" | "FAILED";
+  // Status is stored as a plain string in the database; use string here so the
+  // interface is compatible with direct Prisma results and client state updates.
+  status: string;
   okrs: OkrWithKeyResults[];
   gapAnalysis: GapAnalysis | null;
   recommendations: string[] | null;

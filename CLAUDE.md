@@ -50,6 +50,12 @@ The market research (docs/market-research.pdf) envisions a **guided growth execu
 - Phase 3: Continuous AI feedback loop + conversational guidance + hiring readiness (intelligence)
 - Phase 4: Salesforce + more task tools + European localization (expansion)
 
+### Design partner learnings (Hans van den Elsen / Vevigo, 2026-03-27)
+- **No CRM integration needed short-term** — Hans uses ERPNext → migrating to Odoo end 2026. Build on product usage first.
+- **"Paste into Claude" is a core use case** — founders paste individual lead messages into Claude for response advice. fromThoughts needs deal-specific, contextual AI coaching on live situations.
+- **Visibility is solved, intelligence is not** — Hans built his own Grafana dashboard for deal visibility. The gap is the AI layer: "what are my 3 priorities this week" and "does my pipeline cover my target."
+- **Core ask is always the same** — "How do I get from X ARR to 2X ARR in 12 months?" This must be answerable from the forecast flow.
+
 ### Market research gaps to address
 - TAM/SAM/SOM numbers need sourcing (300K companies claim)
 - Competitive analysis needs specific competitor names (Clari, Gong, Quantive, etc.)

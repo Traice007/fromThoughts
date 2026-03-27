@@ -15,6 +15,7 @@ export function Step4Email({ data, onSubmit, onBack, isSubmitting }: Step4EmailP
   const [formData, setFormData] = useState<ContactStepData>(data);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
 

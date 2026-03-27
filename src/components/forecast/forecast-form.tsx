@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { StepIndicator } from "./step-indicator";
 import { Step1Revenue } from "./step-1-revenue";
 import { Step2Metrics } from "./step-2-metrics";
@@ -39,10 +40,25 @@ const initialState: ForecastFormState = {
 export function ForecastForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { data: session } = useSession();
   const [formState, setFormState] = useState<ForecastFormState>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [importBanner, setImportBanner] = useState<string | null>(null);
+  const formTopRef = useRef<HTMLDivElement>(null);
+
+  // Pre-populate email from session when user is logged in
+  useEffect(() => {
+    if (session?.user?.email) {
+      setFormState((prev) => ({
+        ...prev,
+        contact: {
+          ...prev.contact,
+          email: prev.contact.email || session.user!.email!,
+        },
+      }));
+    }
+  }, [session]);
 
   // Pre-populate from pipeline import if importId is in URL
   useEffect(() => {
@@ -71,12 +87,22 @@ export function ForecastForm() {
       });
   }, [searchParams]);
 
+  // Scroll to top of form whenever the step changes
+  const scrollToTop = () => {
+    if (formTopRef.current) {
+      formTopRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const handleRevenueNext = (data: RevenueStepData) => {
     setFormState((prev) => ({
       ...prev,
       revenue: data,
       step: 2,
     }));
+    scrollToTop();
   };
 
   const handleMetricsNext = (data: MetricsStepData) => {
@@ -85,6 +111,7 @@ export function ForecastForm() {
       metrics: data,
       step: 3,
     }));
+    scrollToTop();
   };
 
   const handleMarketNext = (data: MarketStepData) => {
@@ -93,6 +120,7 @@ export function ForecastForm() {
       market: data,
       step: 4,
     }));
+    scrollToTop();
   };
 
   const handleBack = () => {
@@ -100,6 +128,7 @@ export function ForecastForm() {
       ...prev,
       step: Math.max(1, prev.step - 1) as 1 | 2 | 3 | 4,
     }));
+    scrollToTop();
   };
 
   const handleSubmit = async (contactData: ContactStepData) => {
@@ -137,7 +166,7 @@ export function ForecastForm() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 sm:p-8 bg-white">
+    <div ref={formTopRef} className="max-w-3xl mx-auto p-6 sm:p-8 bg-white">
       {/* Step Indicator */}
       <div className="mb-10">
         <StepIndicator currentStep={formState.step} steps={STEPS} />
@@ -178,6 +207,7 @@ export function ForecastForm() {
         )}
         {formState.step === 4 && (
           <Step4Email
+            key={formState.contact.email || "step4"}
             data={formState.contact}
             onSubmit={handleSubmit}
             onBack={handleBack}

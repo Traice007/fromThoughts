@@ -45,8 +45,9 @@ export default async function SettingsPage() {
             <div>
               <label className="text-sm text-secondary">Subscription</label>
               <p className="font-medium">
-                {userData?.subscriptionTier === "TRIAL" && "Starter"}
-                {userData?.subscriptionTier === "PRO" && "Pro Plan"}
+                {userData?.subscriptionTier === "TRIAL" && "Trial"}
+                {userData?.subscriptionTier === "STARTER" && "Foundation"}
+                {userData?.subscriptionTier === "PRO" && "Growth"}
                 {userData?.subscriptionTier === "ENTERPRISE" && "Enterprise"}
               </p>
             </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Users, TrendingUp, Target, Settings, Lightbulb, Plus, Pencil, Trash2, X, Check } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Users, TrendingUp, Target, Settings, Lightbulb, Plus, Pencil, Trash2, X, Check, LogIn, RefreshCw } from "lucide-react";
 
 type Opportunity = {
   id: string;
@@ -61,6 +62,7 @@ const EMPTY_FORM = {
 };
 
 export function AdminClient({ initialUsers }: { initialUsers: AdminUser[] }) {
+  const router = useRouter();
   const [users, setUsers] = useState(initialUsers);
   const [selectedUserId, setSelectedUserId] = useState<string | null>(
     initialUsers[0]?.id ?? null
@@ -69,7 +71,37 @@ export function AdminClient({ initialUsers }: { initialUsers: AdminUser[] }) {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [impersonating, setImpersonating] = useState(false);
+  const [confirmImpersonate, setConfirmImpersonate] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  async function handleRefresh() {
+    setRefreshing(true);
+    router.refresh();
+    setTimeout(() => setRefreshing(false), 800);
+  }
+
+  async function handleImpersonate(userId: string) {
+    if (!confirmImpersonate) {
+      setConfirmImpersonate(true);
+      return;
+    }
+    setConfirmImpersonate(false);
+    setImpersonating(true);
+    try {
+      const res = await fetch("/api/admin/impersonate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ targetUserId: userId }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      router.push("/dashboard");
+    } catch {
+      setError("Failed to start impersonation.");
+      setImpersonating(false);
+    }
+  }
 
   const selectedUser = users.find((u) => u.id === selectedUserId) ?? null;
 
@@ -183,10 +215,22 @@ export function AdminClient({ initialUsers }: { initialUsers: AdminUser[] }) {
     <div className="max-w-7xl mx-auto flex gap-0 h-[calc(100vh-73px)]">
       {/* Left panel: user list */}
       <aside className="w-72 flex-shrink-0 border-r border-gray-200 bg-white overflow-y-auto">
+        <div className="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+          <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">Users</span>
+          <button
+            onClick={handleRefresh}
+            disabled={refreshing}
+            className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-700 transition-colors disabled:opacity-50"
+            title="Refresh user list"
+          >
+            <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin" : ""}`} />
+            {refreshing ? "Refreshing..." : "Refresh"}
+          </button>
+        </div>
         {users.map((u) => (
           <button
             key={u.id}
-            onClick={() => { setSelectedUserId(u.id); cancelEdit(); }}
+            onClick={() => { setSelectedUserId(u.id); cancelEdit(); setConfirmImpersonate(false); }}
             className={`w-full text-left px-4 py-3 border-b border-gray-100 transition-colors ${
               selectedUserId === u.id ? "bg-amber-50 border-l-2 border-l-amber-500" : "hover:bg-gray-50"
             }`}
@@ -218,9 +262,38 @@ export function AdminClient({ initialUsers }: { initialUsers: AdminUser[] }) {
                   <p className="text-sm text-gray-500">{selectedUser.email}</p>
                 )}
               </div>
-              <span className="text-sm text-gray-400">
-                {sortedOpportunities.length} opportunities
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-400">
+                  {sortedOpportunities.length} opportunities
+                </span>
+                {confirmImpersonate ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-gray-500">Sure?</span>
+                    <button
+                      onClick={() => handleImpersonate(selectedUser.id)}
+                      disabled={impersonating}
+                      className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors disabled:opacity-50"
+                    >
+                      {impersonating ? "Loading..." : "Yes, enter"}
+                    </button>
+                    <button
+                      onClick={() => setConfirmImpersonate(false)}
+                      className="px-3 py-1.5 text-xs font-medium text-gray-600 border border-gray-200 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => handleImpersonate(selectedUser.id)}
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors"
+                    title="View dashboard as this user"
+                  >
+                    <LogIn className="h-3.5 w-3.5" />
+                    View as user
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Create / edit form */}

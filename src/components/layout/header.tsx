@@ -3,20 +3,28 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 import { Menu, X, User, LogOut, LayoutDashboard, ChevronDown, MessageCircle } from "lucide-react";
 
 export function Header() {
   const { data: session, status } = useSession();
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Hide marketing header on dashboard and admin routes
+  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin");
+
   useEffect(() => {
+    if (isDashboardRoute) return;
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isDashboardRoute]);
+
+  if (isDashboardRoute) return null;
 
   return (
     <header

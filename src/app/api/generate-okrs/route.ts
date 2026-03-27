@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { generateOkrs } from "@/lib/ai";
 import { sendGenerationFailureAlert } from "@/lib/email";
+import { getCurrentUser } from "@/lib/auth/session";
 
 // AI generation can take 15-30s — extend beyond the default 10s timeout
 export const maxDuration = 60;
@@ -27,6 +28,20 @@ export async function POST(request: NextRequest) {
         { error: "Forecast not found" },
         { status: 404 }
       );
+    }
+
+    // Verify that the caller is allowed to trigger generation for this forecast.
+    // If the forecast is owned by a specific user, only that user may trigger it.
+    // Anonymous forecasts (userId = null) may be triggered by anyone who knows the ID
+    // because the ID is only returned to the submitter immediately after creation.
+    if (forecast.userId) {
+      const user = await getCurrentUser();
+      if (!user || forecast.userId !== user.id) {
+        return NextResponse.json(
+          { error: "Forbidden" },
+          { status: 403 }
+        );
+      }
     }
 
     // Reject if already processed — prevents duplicate OKRs from re-triggering
@@ -101,8 +116,8 @@ export async function POST(request: NextRequest) {
         data: { status: "FAILED" },
       });
 
-      // Alert via email so you know when generation fails
-      await sendGenerationFailureAlert(forecastId, errorMessage);
+      // Alert via email — fire-and-forget so alerting delays don't affect the response
+      void sendGenerationFailureAlert(forecastId, errorMessage);
 
       return NextResponse.json(
         { error: `Failed to generate OKRs: ${errorMessage}` },

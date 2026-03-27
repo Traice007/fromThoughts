@@ -127,10 +127,10 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
         <div className="flex gap-3">
           <button
             type="button"
-            onClick={() => onNext({})}
+            onClick={() => onNext(formData)}
             className="px-6 py-4 text-gray-500 hover:text-gray-700 font-semibold transition-colors"
           >
-            Skip
+            Generate →
           </button>
           <button
             type="submit"
