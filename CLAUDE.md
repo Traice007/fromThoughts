@@ -65,3 +65,58 @@ The market research (docs/market-research.pdf) envisions a **guided growth execu
 
 ## Full analysis
 See docs/product/gap-analysis.md for the complete comparison.
+
+---
+
+## Architecture principles (read every session)
+
+These rules exist to prevent silent quality decay. Follow them without exception.
+
+### Security — non-negotiable
+- **Every API route that reads or writes user data must verify ownership.** Check that `forecast.userId === session.user.id` (or equivalent) before returning or mutating data. Never trust that a URL parameter belongs to the requesting user.
+- **Every API route that modifies data must require authentication.** Call `getCurrentUser()` and return 403 if null.
+- **Admin routes** use `ADMIN_EMAIL` env var check — never hardcode email addresses in code.
+- **Never expose other users' data.** Dashboard queries must always be scoped with `where: { userId: user.id }`.
+
+### Data integrity
+- **Validate on both client AND server.** Client validation is UX. Server validation (Zod) is security. Never rely on only one.
+- **Zod `.merge()` drops `.refine()` validators** — always re-apply cross-field validation on the merged schema explicitly.
+- **Never call `JSON.parse()` without a try/catch.** AI-generated or external data can always be malformed.
+- **Guard against division by zero** in any calculation involving user-supplied numbers (revenue, rates, counts).
+- **Numeric fields from users must have `min(1)` or higher** where zero makes no business sense.
+
+### Authentication & sessions
+- `getCurrentUser()` is in `src/lib/auth/session.ts` — always use this, never access the session directly.
+- Session strategy is JWT (not database). Session contains: `id`, `email`, `name`, `image`, `subscriptionTier`, `isImpersonated`.
+- `VerificationToken` model is reused for password reset with a `reset:` prefix on the identifier field.
+- Admin impersonation: when `isImpersonated` is true, `getCurrentUser()` returns the target user transparently. All data operations happen as that user.
+
+### API routes
+- **Always wrap async handlers in try/catch** and return a meaningful status code (400 for bad input, 401 for unauth, 403 for forbidden, 404 for not found, 500 for unexpected).
+- **Fire-and-forget side effects** (emails, alerts) with `void fn()` — never `await` them in the critical path.
+- **Polling endpoints** must have a server-side timeout or status check so clients never loop forever.
+- **Never double-await AI generation** — check `forecast.status !== "PENDING"` before triggering generation to prevent duplicate OKR creation.
+
+### React & Next.js
+- **All hooks must be called before any conditional return** — React rules of hooks, always.
+- **Never call `Date.now()` or `Math.random()` during render** — use `useRef` initialised to a neutral value and set it inside a `useEffect`.
+- **Never call `setState` synchronously in a `useEffect` body** — use a `key` prop to remount the component when the underlying data changes, or derive state during render instead.
+- **Client components that depend on session** use `useSession()` from `next-auth/react`. Server components use `getCurrentUser()` from `src/lib/auth/session.ts`.
+- **Header and footer hide on `/dashboard` and `/admin` routes** — do not remove this behaviour.
+
+### Forms & UX
+- **Multi-step forms preserve state when going back** — parent component holds all step data in one object and passes slices down as props.
+- **Scroll to top on every step transition** — call `scrollIntoView()` on the form container ref.
+- **Double-submit prevention** — disable the submit button while `isSubmitting` is true.
+- **Conversion rates are clamped to [0, 100]** before display or submission.
+
+### Code quality
+- **Run `npx tsc --noEmit` before every commit** — zero TypeScript errors is the baseline.
+- **ESLint runs as a pre-commit hook** — fix lint errors rather than bypassing the hook.
+- **No `any` casts without a comment explaining why** — prefer proper types or unknown + type guards.
+- **No dead imports** — remove unused imports when touching a file.
+
+### Maintenance cadence
+- **Monthly security audit** — re-run the ownership-check audit on all API routes that handle user data.
+- **Monthly code audit** — check for new `JSON.parse` calls without try/catch, division without zero-guards, and unauthenticated routes.
+- **After every new feature** — verify that the new API routes follow the security rules above before deploying to production.
