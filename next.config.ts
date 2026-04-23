@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -30,4 +31,27 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: "fromthoughts",
+  project: "fromthoughts",
+
+  // Silent in CI to avoid noisy output
+  silent: !process.env.CI,
+
+  // Upload source maps so Sentry stack traces show original TypeScript
+  widenClientFileUpload: true,
+
+  // Route Sentry requests through a proxy to avoid ad blockers
+  tunnelRoute: "/monitoring",
+
+  // Hide source maps from the client bundle
+  sourcemaps: {
+    disable: false,
+    deleteSourcemapsAfterUpload: true,
+  },
+
+  // Automatically instrument Server Components and Route Handlers
+  webpack: {
+    autoInstrumentServerFunctions: true,
+  },
+});
