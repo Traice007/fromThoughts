@@ -27,17 +27,10 @@ export async function POST(request: NextRequest) {
     });
 
     if (!forecast) {
-      forecast = await prisma.forecast.create({
-        data: {
-          userId: user.id,
-          email: user.email ?? "",
-          currentRevenue: 0,
-          targetRevenue: 0,
-          timeHorizonMonths: 12,
-          status: "PENDING",
-        },
-        select: { id: true },
-      });
+      // No forecast exists yet — cannot attach a CRM preference without one.
+      // Return success silently; the preference will be captured when the user
+      // creates their first forecast via the results page CRM interest endpoint.
+      return NextResponse.json({ success: true });
     }
 
     await prisma.crmIntegration.upsert({

@@ -53,12 +53,29 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
     }
 
-    const { userId, title, description, category, priority, impact, nextAction, dueDate } =
+    const { userId, title, description, category, priority, impact, nextAction, dueDate, status } =
       body as Record<string, string | undefined>;
 
     if (!userId || !title || !category || !nextAction) {
       return NextResponse.json(
         { error: "userId, title, category, and nextAction are required" },
+        { status: 400 }
+      );
+    }
+
+    const validPriorities = ["high", "medium", "low"];
+    const validStatuses = ["open", "in_progress", "done"];
+
+    if (priority && !validPriorities.includes(priority)) {
+      return NextResponse.json(
+        { error: `Invalid priority. Must be one of: ${validPriorities.join(", ")}` },
+        { status: 400 }
+      );
+    }
+
+    if (status && !validStatuses.includes(status)) {
+      return NextResponse.json(
+        { error: `Invalid status. Must be one of: ${validStatuses.join(", ")}` },
         { status: 400 }
       );
     }
@@ -72,6 +89,7 @@ export async function POST(request: NextRequest) {
         priority: priority || "medium",
         impact: impact || null,
         nextAction,
+        status: status || "open",
         dueDate: dueDate ? new Date(dueDate) : null,
         reviewedAt: new Date(),
       },

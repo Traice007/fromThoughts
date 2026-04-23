@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth/session";
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,6 +11,25 @@ export async function POST(request: NextRequest) {
         { error: "forecastId and crm are required" },
         { status: 400 }
       );
+    }
+
+    // Verify forecast exists and enforce ownership:
+    // if the forecast belongs to a user, only that user may record interest.
+    // Anonymous forecasts (userId = null) are accessible to anyone who knows the ID.
+    const forecast = await prisma.forecast.findUnique({
+      where: { id: forecastId },
+      select: { userId: true },
+    });
+
+    if (!forecast) {
+      return NextResponse.json({ error: "Forecast not found" }, { status: 404 });
+    }
+
+    if (forecast.userId) {
+      const user = await getCurrentUser();
+      if (!user || user.id !== forecast.userId) {
+        return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+      }
     }
 
     // Store as a CRM integration record with NOT_SYNCED status

@@ -44,19 +44,20 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Reject if already processed — prevents duplicate OKRs from re-triggering
-    if (forecast.status !== "PENDING") {
+    // Atomically claim the forecast by updating status only if it is still PENDING.
+    // This eliminates the TOCTOU race condition where two concurrent requests could
+    // both read PENDING and both proceed to generate duplicate OKRs.
+    const claimed = await prisma.forecast.updateMany({
+      where: { id: forecastId, status: "PENDING" },
+      data: { status: "PROCESSING" },
+    });
+
+    if (claimed.count === 0) {
       return NextResponse.json(
         { error: "Forecast has already been processed" },
         { status: 409 }
       );
     }
-
-    // Update status to processing
-    await prisma.forecast.update({
-      where: { id: forecastId },
-      data: { status: "PROCESSING" },
-    });
 
     try {
       // Generate OKRs using AI
