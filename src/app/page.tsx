@@ -13,9 +13,7 @@ import {
   ChevronRight,
   PieChart,
   Building2,
-  UserCircle,
   Gauge,
-  Globe,
   AlertTriangle,
   TrendingDown,
   Shield,
@@ -23,6 +21,9 @@ import {
   Minus,
   Bot,
   UserCheck,
+  ArrowDown,
+  Calendar,
+  LineChart,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -33,20 +34,18 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
 
         <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-white text-sm font-medium mb-8">
             <Shield className="h-4 w-4" />
-            For B2B Founders at €300K–€1.5M Annual Revenue
+            For B2B Founders with 1–3 Sales Reps
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-white">
-            You Can&apos;t Scale If{" "}
-            <span className="text-amber-400">
-              Every Deal Needs <span className="text-6xl sm:text-7xl lg:text-8xl">YOU</span>
-            </span>
+            <span className="text-amber-400">You know the strategy.</span>{" "}
+            Your team doesn&apos;t know what to do on Monday.
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Your sales instincts are what got you here. fromThoughts turns them into a sales mechanism your team can execute on, so you stop being the bottleneck in every deal.
+            fromThoughts turns your revenue target into a sales mechanism your team can execute on.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -54,7 +53,7 @@ export default function HomePage() {
               href="/forecast"
               className="group inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-all shadow-lg text-lg"
             >
-              Build Your Revenue Execution Plan
+              See If Your Pipeline Covers Your Target
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -77,7 +76,7 @@ export default function HomePage() {
             </span>
             <span className="hidden sm:flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-amber-500" />
-              Export as PDF to share
+              Works with HubSpot &amp; Pipedrive
             </span>
           </div>
         </div>
@@ -88,18 +87,18 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
             <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-white">3 actions</div>
+              <div className="text-sm text-slate-400 mt-1">Every Monday for your team</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-slate-700" />
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-white">Week-over-week</div>
+              <div className="text-sm text-slate-400 mt-1">Pipeline tracking vs. your target</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-slate-700" />
+            <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-white">90% cheaper</div>
-              <div className="text-sm text-slate-400 mt-1">vs. a Head of Sales</div>
-            </div>
-            <div className="hidden sm:block w-px h-12 bg-slate-700" />
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">&lt; 10 min</div>
-              <div className="text-sm text-slate-400 mt-1">To build your sales mechanism</div>
-            </div>
-            <div className="hidden sm:block w-px h-12 bg-slate-700" />
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white">Day 1</div>
-              <div className="text-sm text-slate-400 mt-1">Your new hire has a sales mechanism</div>
+              <div className="text-sm text-slate-400 mt-1">vs. a fractional VP of Sales</div>
             </div>
           </div>
         </div>
@@ -112,10 +111,9 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-red-50 text-red-600 text-sm font-medium mb-4">
               The Challenge
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">Why First Sales Hires Fail</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">You&apos;ve Hired the Team. Now What?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Most founders hand off sales without a documented sales mechanism. The new hire
-              struggles, costs €150K+, and fails within a year.
+              Most founders hire their first reps and expect revenue to follow. It doesn&apos;t — because strategy without weekly execution direction isn&apos;t enough.
             </p>
           </div>
 
@@ -206,9 +204,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6">
                 <Target className="h-7 w-7 text-red-500" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Knowledge Trapped in Your Head</h3>
+              <h3 className="text-xl font-bold mb-3">Your Strategy Doesn&apos;t Reach the Team</h3>
               <p className="text-gray-600 leading-relaxed">
-                You know why your pitch works, which objections matter, and who your best customers are. But none of it is written down, so no one else can do it.
+                You know your ICP, your best deal profile, and which objections matter. But your reps can&apos;t read your mind — so every week they improvise instead of executing.
               </p>
             </div>
 
@@ -216,9 +214,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-6">
                 <Users className="h-7 w-7 text-amber-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">No Sales Mechanism to Hand Over</h3>
+              <h3 className="text-xl font-bold mb-3">Pipeline Reviews Without Direction</h3>
               <p className="text-gray-600 leading-relaxed">
-                You hire someone smart, give them access to the CRM, and expect them to figure it out. They can&apos;t, because there&apos;s nothing to follow.
+                You review the pipeline together and something feels off. But you leave the meeting without clear priorities — and next week looks exactly the same.
               </p>
             </div>
 
@@ -226,9 +224,9 @@ export default function HomePage() {
               <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center mb-6">
                 <BarChart3 className="h-7 w-7 text-slate-700" />
               </div>
-              <h3 className="text-xl font-bold mb-3">The €150K Mistake</h3>
+              <h3 className="text-xl font-bold mb-3">No Link Between Target and Today</h3>
               <p className="text-gray-600 leading-relaxed">
-                A senior sales hire costs €150K–€250K/year. Most fail within 12 months at early-stage companies, not because they&apos;re bad, but because there&apos;s no foundation.
+                You have a revenue target for the year. Your team has deals in the CRM. But the connection between the two — what the pipeline actually needs to hit that number — is never calculated.
               </p>
             </div>
 
@@ -245,172 +243,278 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Not Just Use AI? — Comparison Section */}
+      {/* The Chain — How fromThoughts Works Concretely */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4 border border-amber-500/30">
-              The Difference
+              How It Works
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-              Why Not Just Use ChatGPT?
+              From Target to This Week&apos;s Actions
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              You can ask ChatGPT to write you a sales plan. But it doesn&apos;t know what to leave out.
-              <span className="text-slate-300 font-medium"> The value is in the curation, not the generation.</span>
+              Every week, fromThoughts reads your CRM and runs this chain automatically.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                step: "1",
+                label: "Your revenue target",
+                value: "€2M ARR by end of year",
+                color: "bg-slate-800 border-slate-700",
+                labelColor: "text-slate-400",
+                valueColor: "text-white",
+              },
+              {
+                step: "2",
+                label: "What your pipeline needs",
+                value: "€800K active pipeline at all times — based on your deal size and win rate",
+                color: "bg-slate-800 border-slate-700",
+                labelColor: "text-slate-400",
+                valueColor: "text-white",
+              },
+              {
+                step: "3",
+                label: "What you actually have",
+                value: "€280K active — and €140K of that hasn't moved in 45+ days",
+                color: "bg-red-950/40 border-red-800/50",
+                labelColor: "text-slate-400",
+                valueColor: "text-red-300",
+              },
+              {
+                step: "4",
+                label: "The gap",
+                value: "€520K short. At current pace you hit €420K ARR, not €2M.",
+                color: "bg-red-950/40 border-red-800/50",
+                labelColor: "text-slate-400",
+                valueColor: "text-red-300",
+              },
+              {
+                step: "5",
+                label: "This week's 3 actions",
+                value: null,
+                color: "bg-amber-950/30 border-amber-700/50",
+                labelColor: "text-amber-400",
+                valueColor: "text-white",
+                actions: [
+                  "Deal X — call today, it dies in 48 hours without contact",
+                  "Drop Deal Y — 90 days stalled, no decision maker, move on",
+                  "Open 2 new deals in segment Z — your win rate is highest there",
+                ],
+              },
+            ].map((item, index) => (
+              <div key={item.step}>
+                <div className={`rounded-xl border p-5 ${item.color}`}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-amber-400 text-sm font-bold">{item.step}</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className={`text-xs font-medium uppercase tracking-wide mb-1 ${item.labelColor}`}>
+                        {item.label}
+                      </div>
+                      {item.value && (
+                        <div className={`text-base font-medium ${item.valueColor}`}>{item.value}</div>
+                      )}
+                      {item.actions && (
+                        <ul className="space-y-2 mt-1">
+                          {item.actions.map((action, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-amber-400 font-bold text-sm mt-0.5">{i + 1}.</span>
+                              <span className="text-white text-sm">{action}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                {index < 4 && (
+                  <div className="flex justify-center py-1">
+                    <ArrowDown className="h-4 w-4 text-slate-600" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-slate-400 mt-10 text-sm">
+            fromThoughts runs this every week. Automatically. From your CRM.
+          </p>
+        </div>
+      </section>
+
+      {/* Why Not Just Use AI? — Comparison Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-4">
+              The Difference
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">
+              Why Not Just Use ChatGPT?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              You can ask ChatGPT to write you a sales plan. But it doesn&apos;t know your pipeline, your numbers, or what happened last week.
+              <span className="text-slate-800 font-medium"> The value is in the context, not the generation.</span>
             </p>
           </div>
 
           {/* Comparison Cards */}
           <div className="grid md:grid-cols-3 gap-6 mb-6">
             {/* Generic AI */}
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-              <div className="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center mb-6">
-                <Bot className="h-6 w-6 text-slate-400" />
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+              <div className="w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center mb-6">
+                <Bot className="h-6 w-6 text-slate-500" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">Generic AI</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-1">Generic AI</h3>
               <p className="text-sm text-slate-500 mb-6">ChatGPT, Claude, Gemini</p>
               <div className="space-y-4">
                 {[
-                  { label: "Knows your stage", status: "no" },
-                  { label: "Opinionated framework", status: "no" },
-                  { label: "Stage-specific benchmarks", status: "no" },
-                  { label: "Structured execution plan", status: "partial" },
-                  { label: "Continuous follow-up", status: "no" },
-                  { label: "Handoff-ready for first hire", status: "no" },
+                  { label: "Reads your live pipeline", status: "no" },
+                  { label: "Knows your stage benchmarks", status: "no" },
+                  { label: "Weekly direction for your team", status: "no" },
+                  { label: "Tracks progress toward your target", status: "no" },
+                  { label: "Tells you which deals to drop", status: "partial" },
+                  { label: "Connects strategy to execution", status: "no" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
                     {item.status === "no" ? (
-                      <X className="h-4 w-4 text-slate-600 flex-shrink-0" />
+                      <X className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     ) : (
-                      <Minus className="h-4 w-4 text-slate-600 flex-shrink-0" />
+                      <Minus className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     )}
-                    <span className="text-sm text-slate-400">{item.label}</span>
+                    <span className="text-sm text-slate-500">{item.label}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 pt-6 border-t border-slate-700">
+              <div className="mt-8 pt-6 border-t border-slate-200">
                 <p className="text-xs text-slate-500 leading-relaxed">
                   You get answers to what you ask, but you don&apos;t know what you don&apos;t know.
                 </p>
               </div>
             </div>
 
-            {/* Hiring VP Sales */}
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-              <div className="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center mb-6">
-                <UserCheck className="h-6 w-6 text-slate-400" />
+            {/* Your CRM */}
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+              <div className="w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center mb-6">
+                <LineChart className="h-6 w-6 text-slate-500" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">VP of Sales Hire</h3>
-              <p className="text-sm text-slate-500 mb-6">Fractional or full-time</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-1">Your CRM Alone</h3>
+              <p className="text-sm text-slate-500 mb-6">HubSpot, Pipedrive, Salesforce</p>
               <div className="space-y-4">
                 {[
-                  { label: "Knows your stage", status: "partial" },
-                  { label: "Opinionated framework", status: "yes" },
-                  { label: "Stage-specific benchmarks", status: "partial" },
-                  { label: "Structured execution plan", status: "partial" },
-                  { label: "Continuous follow-up", status: "yes" },
-                  { label: "Handoff-ready for first hire", status: "partial" },
+                  { label: "Reads your live pipeline", status: "yes" },
+                  { label: "Knows your stage benchmarks", status: "no" },
+                  { label: "Weekly direction for your team", status: "no" },
+                  { label: "Tracks progress toward your target", status: "partial" },
+                  { label: "Tells you which deals to drop", status: "no" },
+                  { label: "Connects strategy to execution", status: "no" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
                     {item.status === "yes" ? (
-                      <CheckCircle className="h-4 w-4 text-slate-500 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-slate-400 flex-shrink-0" />
+                    ) : item.status === "partial" ? (
+                      <Minus className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     ) : (
-                      <Minus className="h-4 w-4 text-slate-600 flex-shrink-0" />
+                      <X className="h-4 w-4 text-slate-400 flex-shrink-0" />
                     )}
-                    <span className="text-sm text-slate-400">{item.label}</span>
+                    <span className="text-sm text-slate-500">{item.label}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 pt-6 border-t border-slate-700">
+              <div className="mt-8 pt-6 border-t border-slate-200">
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  The right person can transform your business, but 70% of first sales hires at this stage fail within 12 months.
+                  Your CRM tells you what happened. It doesn&apos;t tell you what to do about it.
                 </p>
               </div>
             </div>
 
             {/* fromThoughts */}
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 relative">
+            <div className="bg-slate-900 rounded-2xl p-8 border border-slate-700 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span className="px-3 py-1 bg-amber-500 text-slate-900 text-xs font-bold rounded-full">
                   Built for this
                 </span>
               </div>
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
-                <Zap className="h-6 w-6 text-amber-600" />
+                <Zap className="h-6 w-6 text-amber-400" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-1">
-                <span className="font-[family-name:var(--font-playfair)] italic font-normal text-slate-500">from</span>
-                <span className="font-bold text-slate-900">Thoughts</span>
+              <h3 className="text-lg font-bold text-white mb-1">
+                <span className="font-[family-name:var(--font-playfair)] italic font-normal text-slate-400">from</span>
+                <span className="font-bold text-white">Thoughts</span>
               </h3>
-              <p className="text-sm text-slate-500 mb-6">Curated sales mechanism</p>
+              <p className="text-sm text-slate-400 mb-6">Strategy-to-execution layer</p>
               <div className="space-y-4">
                 {[
-                  "Knows your stage",
-                  "Opinionated framework",
-                  "Stage-specific benchmarks",
-                  "Structured execution plan",
-                  "Continuous follow-up",
-                  "Handoff-ready for first hire",
+                  "Reads your live pipeline",
+                  "Knows your stage benchmarks",
+                  "Weekly direction for your team",
+                  "Tracks progress toward your target",
+                  "Tells you which deals to drop",
+                  "Connects strategy to execution",
                 ].map((label) => (
                   <div key={label} className="flex items-center gap-3">
                     <CheckCircle className="h-4 w-4 text-amber-500 flex-shrink-0" />
-                    <span className="text-sm text-slate-700">{label}</span>
+                    <span className="text-sm text-slate-200">{label}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-8 pt-6 border-t border-slate-200">
-                <p className="text-xs text-slate-600 leading-relaxed">
+              <div className="mt-8 pt-6 border-t border-slate-700">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   10+ years of B2B commercial experience, structured for your stage, your numbers, your market.
                 </p>
               </div>
             </div>
           </div>
-          <p className="text-center text-xs text-slate-500 mt-4">
+          <p className="text-center text-xs text-gray-400 mt-4">
             Continuous pipeline monitoring, weekly briefs, and ICP sharpening are included in the Growth plan. Foundation includes the platform and weekly structure without the advisory layer.
           </p>
         </div>
       </section>
 
-      {/* Built For You — Merged Who + When */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Built For You */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-200 text-slate-700 text-sm font-medium mb-4">
               Built For You
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               Does This Sound Like You?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              <span className="font-[family-name:var(--font-playfair)] italic font-normal">from</span><span className="font-bold text-gray-900">Thoughts</span> is purpose-built for one specific stage of growth
+              <span className="font-[family-name:var(--font-playfair)] italic font-normal">from</span><span className="font-bold text-gray-900">Thoughts</span> is built for one specific stage of growth
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
             {[
               {
                 icon: Building2,
                 title: "B2B company doing €300K–€1.5M in revenue",
-                description: "SaaS, tech-enabled services, or B2B platform preparing for the next growth phase.",
+                description: "SaaS, tech-enabled services, or B2B platform with a repeatable product and a growing pipeline.",
               },
               {
-                icon: UserCircle,
-                title: "You're still closing every deal yourself",
-                description: "Your product knowledge and relationships drive revenue, but that doesn't scale.",
+                icon: Users,
+                title: "You have 1–3 sales reps on the team",
+                description: "You've made the hire. Now you need to make it work — with clear direction, not gut feel.",
               },
               {
                 icon: Gauge,
-                title: "You've made your first hire but the deals still run through you",
-                description: "You've started building a team, but without clear direction and a documented process, every deal still runs through you.",
+                title: "You have a CRM but not a system",
+                description: "Deals are logged but the pipeline review still ends with \"let's see how next week goes.\"",
               },
               {
-                icon: Globe,
-                title: "Deliberate about your next hire",
-                description: "You'd rather build a structured sales mechanism first than hire a VP of Sales and hope they figure it out.",
+                icon: Target,
+                title: "You have a revenue target but no line to it",
+                description: "You know where you want to go. You don't know if what your team is doing today will get you there.",
               },
             ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4 bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <div key={item.title} className="flex items-start gap-4 bg-white p-6 rounded-xl border border-slate-200">
                 <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <item.icon className="h-5 w-5 text-amber-400" />
                 </div>
@@ -422,32 +526,18 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Timing — inline with the section */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <p className="text-center text-sm font-medium text-slate-500 uppercase tracking-wide mb-8">
-              The right moment to start
-            </p>
+          {/* Not for you */}
+          <div className="max-w-4xl mx-auto bg-white rounded-xl border border-slate-200 p-6">
+            <p className="text-sm font-medium text-slate-500 uppercase tracking-wide mb-4">This is not for you if</p>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
-                {
-                  title: "Just raised seed funding",
-                  description: "Runway and pressure to professionalize sales, but haven't hired yet",
-                },
-                {
-                  title: "3–6 months from first sales hire",
-                  description: "Planning to hire but want a documented process to hand over",
-                },
-                {
-                  title: "You've made your first hire and need to manage them",
-                  description: "Know exactly where to point them each week, and see whether it's working",
-                },
+                "You don't have a CRM or consistent pipeline data",
+                "You're still searching for product-market fit",
+                "You already have a Head of Sales managing the team",
               ].map((item) => (
-                <div key={item.title} className="flex items-start gap-3 p-4 rounded-lg bg-amber-50 border border-amber-200/60">
-                  <CheckCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-sm font-semibold text-slate-900 mb-1">{item.title}</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
-                  </div>
+                <div key={item} className="flex items-start gap-3">
+                  <X className="h-4 w-4 text-slate-400 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-500">{item}</p>
                 </div>
               ))}
             </div>
@@ -462,46 +552,42 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4 border border-amber-500/30">
               4 Steps
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">How It Works</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">Get Started in Under 10 Minutes</h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-4 items-start">
             {[
               {
                 title: "Set Your Target",
-                description: "Where you are and where you want to be",
+                description: "Where you are and where you want to be by end of year",
                 icon: Euro,
               },
               {
                 title: "Add Your Numbers",
-                description: "Current funnel metrics and deal sizes",
+                description: "Current funnel metrics, deal sizes, and team setup",
                 icon: BarChart3,
               },
               {
-                title: "Get Your Plan",
-                description: "AI-powered priorities based on industry benchmarks",
+                title: "Get Your Analysis",
+                description: "Pipeline gap, benchmark comparison, and prioritized actions",
                 icon: Zap,
               },
               {
-                title: "Start Executing",
-                description: "Export as PDF or CSV and take action",
-                icon: Download,
+                title: "Execute Every Week",
+                description: "Your team knows exactly what to do — updated automatically",
+                icon: Calendar,
               },
             ].map((item, index) => (
               <div key={item.title} className="relative text-center">
-                {/* Connector arrow between steps */}
                 {index < 3 && (
                   <div className="hidden md:flex absolute top-10 left-[60%] w-[80%] items-center">
                     <div className="flex-1 h-0.5 bg-slate-700" />
                     <ChevronRight className="h-4 w-4 text-slate-600 -ml-1" />
                   </div>
                 )}
-
-                {/* Icon */}
                 <div className="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto mb-5">
                   <item.icon className="h-9 w-9 text-amber-400" />
                 </div>
-
                 <h3 className="text-lg font-bold mb-2 text-white">{item.title}</h3>
                 <p className="text-slate-400 text-sm">{item.description}</p>
               </div>
@@ -510,7 +596,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features — What's Inside */}
       <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -519,7 +605,7 @@ export default function HomePage() {
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">What&apos;s Inside</h2>
             <p className="text-xl text-gray-600">
-              Turn a revenue target into a plan your team can act on
+              Everything your team needs to go from target to execution — every week
             </p>
           </div>
 
@@ -534,7 +620,7 @@ export default function HomePage() {
               <ul className="space-y-3">
                 {[
                   "Revenue roadmap with clear objectives and key results",
-                  "Documented strategy your first hire can follow",
+                  "Documented strategy your team can follow without you",
                   "Priority ranking so they know what to focus on first",
                   "Timeframes aligned to your growth targets",
                 ].map((item) => (
@@ -579,7 +665,7 @@ export default function HomePage() {
               <ul className="space-y-3">
                 {[
                   "Direct sync to HubSpot and Pipedrive",
-                  "Push execution plans as deals and notes",
+                  "Pipeline read — automatic weekly gap calculation",
                   "Salesforce support on the roadmap",
                   "Currently: export as PDF or CSV to share with your team",
                 ].map((item) => (
@@ -625,13 +711,12 @@ export default function HomePage() {
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">What You&apos;ll Get</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A complete revenue execution plan you can hand to your first hire on day one
+              A complete revenue execution plan your team can act on — updated every week
             </p>
           </div>
 
           {/* Product Mockup with Callouts */}
           <div className="relative">
-            {/* Main Product Window */}
             <div className="relative max-w-4xl mx-auto">
               <div className="relative bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
                 {/* Window chrome */}
@@ -705,10 +790,10 @@ export default function HomePage() {
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <div className="flex items-center gap-2 mb-2">
                         <Zap className="h-4 w-4 text-amber-600" />
-                        <span className="text-sm font-medium text-gray-700">Action Items</span>
+                        <span className="text-sm font-medium text-gray-700">This Week&apos;s Actions</span>
                       </div>
-                      <p className="text-2xl font-bold text-gray-900">24</p>
-                      <p className="text-xs text-gray-500">Specific next steps</p>
+                      <p className="text-2xl font-bold text-gray-900">3</p>
+                      <p className="text-xs text-gray-500">Specific priorities for your team</p>
                     </div>
                   </div>
 
@@ -736,7 +821,7 @@ export default function HomePage() {
                   </div>
                   <span className="text-xs font-semibold text-gray-900">Prioritized</span>
                 </div>
-                <p className="text-xs text-gray-500">Know exactly what to focus on first based on your biggest gaps</p>
+                <p className="text-xs text-gray-500">Know exactly what your team should focus on first, based on your biggest gaps</p>
               </div>
             </div>
 
@@ -746,9 +831,9 @@ export default function HomePage() {
                   <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center">
                     <Users className="h-3.5 w-3.5 text-slate-700" />
                   </div>
-                  <span className="text-xs font-semibold text-gray-900">Handoff-Ready</span>
+                  <span className="text-xs font-semibold text-gray-900">Team-Ready</span>
                 </div>
-                <p className="text-xs text-gray-500">Give your first sales hire a sales mechanism they can execute from day one</p>
+                <p className="text-xs text-gray-500">Your reps know what to do on Monday — no translation needed</p>
               </div>
             </div>
 
@@ -765,7 +850,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Bottom CTA */}
           <div className="text-center mt-16">
             <Link
               href="/pricing"
@@ -778,16 +862,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What Happens Next — Bridge Section */}
+      {/* What Happens Next */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 text-sm font-medium mb-4">
-              You&apos;re Not On Your Own
+              Ongoing
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Happens After You Get Your Plan</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Not a Report. A Weekly System.</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              This isn&apos;t a report that sits in a folder. Every plan comes with ongoing intelligence from fromThoughts, so you always know what to do next.
+              Every week, fromThoughts updates your picture so you and your team always know where you stand and what to do next.
             </p>
           </div>
 
@@ -807,7 +891,7 @@ export default function HomePage() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">ICP Sharpening</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Over time, fromThoughts identifies which types of deals you&apos;re winning and losing, and adjusts where you and your team should be spending time.
+                Over time, fromThoughts identifies which types of deals you&apos;re winning and losing, and adjusts where your team should be spending time.
               </p>
             </div>
             <div className="text-center p-6">
@@ -816,13 +900,13 @@ export default function HomePage() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Weekly Direction</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Every week, you and your team know exactly where to focus. Not based on gut feel, but on what your pipeline data is actually saying.
+                Every week, you and your team know exactly where to focus. Not based on gut feel — based on what your pipeline data is actually saying.
               </p>
             </div>
           </div>
 
           <p className="text-center text-sm text-gray-500 mt-8">
-            You don&apos;t just get a report. fromThoughts learns your business and tells you what to do next.
+            fromThoughts learns your business over time and gets sharper every week.
           </p>
         </div>
       </section>
@@ -831,16 +915,16 @@ export default function HomePage() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-            Build the Sales Mechanism Your Team Can Execute
+            Stop Managing on Gut Feel.
           </h2>
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-            Turn what&apos;s in your head into a sales mechanism your team can follow and your pipeline can show progress against.
+            Connect your revenue target to what your team does this week — and know every Monday whether you&apos;re on track.
           </p>
           <Link
             href="/forecast"
             className="group inline-flex items-center gap-2 px-10 py-5 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-all shadow-lg text-lg"
           >
-            Build Your Revenue Execution Plan
+            See If Your Pipeline Covers Your Target
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
