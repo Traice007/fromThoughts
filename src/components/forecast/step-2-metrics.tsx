@@ -214,7 +214,7 @@ export function Step2Metrics({ data, onNext, onBack }: Step2MetricsProps) {
               </div>
             </div>
             <div>
-              <label htmlFor="salesCycle" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-1">
+              <label htmlFor="salesCycle" className="flex text-sm font-semibold text-gray-700 mb-2 items-center gap-1">
                 <Clock className="h-4 w-4 text-amber-600" aria-hidden="true" />
                 Sales Cycle Length (days)
               </label>

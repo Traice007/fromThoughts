@@ -7,7 +7,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 const foundationFeatures = [
   "Sales mechanism & execution plan",
   "Pipeline dashboard & health score",
-  "Weekly brief with deal prioritisation",
+  "Weekly brief with deal prioritization",
   "Stall detection & deal alerts",
   "Gap analysis & OKR framework",
   "HubSpot & Pipedrive integration (coming soon)",

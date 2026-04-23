@@ -130,7 +130,7 @@ export function Step3Market({ data, onNext, onBack }: Step3MarketProps) {
             onClick={() => onNext(formData)}
             className="px-6 py-4 text-gray-500 hover:text-gray-700 font-semibold transition-colors"
           >
-            Generate →
+            Skip
           </button>
           <button
             type="submit"

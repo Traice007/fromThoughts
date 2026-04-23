@@ -21,7 +21,7 @@ export function Footer() {
               <span className="font-bold text-white">Thoughts</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md leading-relaxed">
-              For B2B founders where every deal still runs through you. Turn what&apos;s in your head into a sales mechanism your team can execute.
+              For B2B founders with 1–3 sales reps. Turn your revenue target into a sales mechanism your team can execute on every week.
             </p>
             <p className="mt-4 text-gray-400 text-sm">
               <a href="mailto:ranjith@fromthoughts.com" className="hover:text-amber-400 transition-colors">
