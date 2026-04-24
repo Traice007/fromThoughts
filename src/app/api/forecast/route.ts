@@ -5,7 +5,12 @@ import { getCurrentUser } from "@/lib/auth/session";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
 
     // Validate input
     const validationResult = forecastSchema.safeParse(body);

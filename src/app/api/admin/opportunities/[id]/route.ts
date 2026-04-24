@@ -27,6 +27,22 @@ export async function PATCH(
 
     const { title, description, category, priority, impact, nextAction, status, dueDate } = body as Record<string, string | undefined>;
 
+    const validPriorities = ["high", "medium", "low"];
+    const validStatuses = ["open", "in_progress", "done"];
+
+    if (priority !== undefined && !validPriorities.includes(priority)) {
+      return NextResponse.json(
+        { error: `Invalid priority. Must be one of: ${validPriorities.join(", ")}` },
+        { status: 400 }
+      );
+    }
+    if (status !== undefined && !validStatuses.includes(status)) {
+      return NextResponse.json(
+        { error: `Invalid status. Must be one of: ${validStatuses.join(", ")}` },
+        { status: 400 }
+      );
+    }
+
     const opportunity = await prisma.opportunity.findUnique({ where: { id } });
     if (!opportunity) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });

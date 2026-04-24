@@ -77,10 +77,15 @@ export async function generateOkrsWithGroq(forecast: Forecast): Promise<Generate
     throw new Error("No response content from Groq");
   }
 
-  const parsed = JSON.parse(content);
+  let parsed: Record<string, unknown>;
+  try {
+    parsed = JSON.parse(content);
+  } catch {
+    throw new Error(`Groq returned malformed JSON. Raw response: ${content.slice(0, 200)}`);
+  }
 
   // Validate and transform the response
-  const okrs: GeneratedOkr[] = parsed.okrs.map((okr: GeneratedOkr) => ({
+  const okrs: GeneratedOkr[] = (parsed.okrs as GeneratedOkr[]).map((okr: GeneratedOkr) => ({
     objective: okr.objective,
     category: okr.category as OkrCategory,
     priority: okr.priority,
@@ -98,8 +103,8 @@ export async function generateOkrsWithGroq(forecast: Forecast): Promise<Generate
 
   return {
     okrs,
-    gapAnalysis: parsed.gapAnalysis,
-    recommendations: parsed.recommendations,
+    gapAnalysis: parsed.gapAnalysis as GeneratedOkrResponse["gapAnalysis"],
+    recommendations: parsed.recommendations as string[],
     tokensUsed,
     processingTimeMs,
   };

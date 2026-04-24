@@ -43,10 +43,15 @@ export async function generateOkrsWithOpenAI(forecast: Forecast): Promise<Genera
     throw new Error("No response content from OpenAI");
   }
 
-  const parsed = JSON.parse(content);
+  let parsed: Record<string, unknown>;
+  try {
+    parsed = JSON.parse(content);
+  } catch {
+    throw new Error(`OpenAI returned malformed JSON. Raw response: ${content.slice(0, 200)}`);
+  }
 
   // Validate and transform the response
-  const okrs = parsed.okrs.map((okr: {
+  type RawOkr = {
     objective: string;
     category: string;
     priority: number;
@@ -60,9 +65,11 @@ export async function generateOkrsWithOpenAI(forecast: Forecast): Promise<Genera
       targetValue: number;
       unit: string;
     }[];
-  }) => ({
+  };
+
+  const okrs: GeneratedOkrResponse["okrs"] = (parsed.okrs as RawOkr[]).map((okr) => ({
     objective: okr.objective,
-    category: okr.category,
+    category: okr.category as import("@/types/forecast").OkrCategory,
     priority: okr.priority,
     timeframe: okr.timeframe,
     howToAchieve: okr.howToAchieve || null,
@@ -78,8 +85,8 @@ export async function generateOkrsWithOpenAI(forecast: Forecast): Promise<Genera
 
   return {
     okrs,
-    gapAnalysis: parsed.gapAnalysis,
-    recommendations: parsed.recommendations,
+    gapAnalysis: parsed.gapAnalysis as GeneratedOkrResponse["gapAnalysis"],
+    recommendations: parsed.recommendations as string[],
     tokensUsed,
     processingTimeMs,
   };

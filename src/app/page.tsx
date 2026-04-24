@@ -911,6 +911,99 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Reactive vs Systematic */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm font-medium mb-4">
+              The Shift
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-slate-900">
+              From Reactive to Systematic
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              This work happens in every sales team. In most, it happens too late.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+            {/* Header row */}
+            <div className="grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_220px_220px] bg-slate-900">
+              <div className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                What needs to happen every week
+              </div>
+              <div className="px-6 py-4 text-xs font-semibold text-slate-400 uppercase tracking-wide text-center border-l border-slate-700">
+                Without a system
+              </div>
+              <div className="px-6 py-4 text-xs font-semibold text-amber-400 uppercase tracking-wide text-center border-l border-slate-700">
+                fromThoughts
+              </div>
+            </div>
+
+            {/* Rows */}
+            {[
+              {
+                task: "Pipeline status overview",
+                without: "2–3 hrs of manual CRM review",
+                with: "Automatic, every Monday",
+              },
+              {
+                task: "Gap between target and reality",
+                without: "Gut feel, usually too optimistic",
+                with: "Calculated from live pipeline data",
+              },
+              {
+                task: "3 priorities for the team this week",
+                without: "Decided ad hoc, if at all",
+                with: "Delivered every week, ranked by impact",
+              },
+              {
+                task: "Stalling deals identified before they die",
+                without: "Noticed when the prospect stops replying",
+                with: "Flagged early, with a suggested action",
+              },
+              {
+                task: "Coaching agenda for 1:1s with reps",
+                without: "Based on feeling, not data",
+                with: "Built from each rep's pipeline reality",
+              },
+              {
+                task: "Forecast corrected for slippage",
+                without: "Optimistic stack of pipeline numbers",
+                with: "Adjusted for deal age and win rate patterns",
+              },
+              {
+                task: "Board or investor update",
+                without: "One hour of manual work per month",
+                with: "Auto-generated from your pipeline data",
+              },
+            ].map((row, i) => (
+              <div
+                key={row.task}
+                className={`grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_220px_220px] border-t border-slate-100 ${i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}
+              >
+                <div className="px-6 py-4 text-sm font-medium text-slate-800 flex items-center">
+                  {row.task}
+                </div>
+                <div className="px-6 py-4 text-sm text-slate-400 flex items-center justify-center border-l border-slate-100 text-center leading-snug">
+                  {row.without}
+                </div>
+                <div className="px-6 py-4 text-sm text-slate-700 flex items-center gap-2 border-l border-slate-100 text-center justify-center leading-snug">
+                  <CheckCircle className="h-4 w-4 text-amber-500 flex-shrink-0 hidden sm:block" />
+                  {row.with}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Honest disclaimer */}
+          <p className="text-center text-sm text-slate-400 mt-8 max-w-2xl mx-auto">
+            What fromThoughts doesn&apos;t replace: key deal presence, rep motivation conversations, and hiring.
+            Those stay with you. And take far less time when the rest runs on a system.
+          </p>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl mx-auto text-center">
