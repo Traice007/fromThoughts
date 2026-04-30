@@ -7,7 +7,7 @@ export function Footer() {
   const pathname = usePathname();
 
   // Hide marketing footer on dashboard and admin routes
-  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin");
+  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin") || pathname?.startsWith("/onboarding");
   if (isDashboardRoute) return null;
 
   return (

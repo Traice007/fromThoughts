@@ -14,7 +14,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   // Hide marketing header on dashboard and admin routes
-  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin");
+  const isDashboardRoute = pathname?.startsWith("/dashboard") || pathname?.startsWith("/admin") || pathname?.startsWith("/onboarding");
 
   useEffect(() => {
     if (isDashboardRoute) return;

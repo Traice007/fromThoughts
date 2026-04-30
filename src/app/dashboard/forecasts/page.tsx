@@ -41,7 +41,7 @@ export default async function ForecastsPage() {
           </p>
         </div>
         <Link
-          href="/forecast"
+          href="/dashboard/forecasts/new"
           className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
         >
           <Plus className="h-5 w-5" />
@@ -58,7 +58,7 @@ export default async function ForecastsPage() {
             on industry benchmarks from 10,000+ companies.
           </p>
           <Link
-            href="/forecast"
+            href="/dashboard/forecasts/new"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
           >
             <Plus className="h-5 w-5" />

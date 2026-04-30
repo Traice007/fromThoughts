@@ -79,7 +79,7 @@ export default async function DashboardPage() {
           </div>
 
           <Link
-            href="/forecast"
+            href="/onboarding"
             className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-all shadow-lg shadow-amber-500/25 text-lg"
           >
             Build Your Sales Mechanism
@@ -107,7 +107,7 @@ export default async function DashboardPage() {
           </p>
         </div>
         <Link
-          href="/forecast"
+          href="/dashboard/forecasts/new"
           className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
         >
           <Plus className="h-5 w-5" />
@@ -125,7 +125,7 @@ export default async function DashboardPage() {
           <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
           <div className="space-y-3">
             <Link
-              href="/forecast"
+              href="/dashboard/forecasts/new"
               className="block p-4 border border-border rounded-lg hover:bg-muted transition-colors"
             >
               <p className="font-medium">Create New Forecast</p>

@@ -57,7 +57,7 @@ export default async function OkrsPage() {
           </p>
         </div>
         <Link
-          href="/forecast"
+          href="/dashboard/forecasts/new"
           className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
         >
           Generate New OKRs
@@ -73,7 +73,7 @@ export default async function OkrsPage() {
             benchmarks.
           </p>
           <Link
-            href="/forecast"
+            href="/dashboard/forecasts/new"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
           >
             Create Forecast
