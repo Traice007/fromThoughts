@@ -61,7 +61,11 @@ export function PipedriveCard({
     setDisconnecting(true);
 
     try {
-      await fetch("/api/integrations/pipedrive/disconnect", { method: "DELETE" });
+      const res = await fetch("/api/integrations/pipedrive/disconnect", { method: "DELETE" });
+      if (!res.ok) {
+        setError("Failed to disconnect — please try again.");
+        return;
+      }
       router.refresh();
     } catch {
       setError("Failed to disconnect — please try again.");
@@ -137,8 +141,8 @@ export function PipedriveCard({
             disabled={syncing || syncStatus === "SYNCING"}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 text-white text-xs font-medium rounded-lg hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            <RefreshCw className={`h-3 w-3 ${syncing ? "animate-spin" : ""}`} />
-            {syncing ? "Syncing…" : "Sync now"}
+            <RefreshCw className={`h-3 w-3 ${syncing || syncStatus === "SYNCING" ? "animate-spin" : ""}`} />
+            {syncing || syncStatus === "SYNCING" ? "Syncing…" : "Sync now"}
           </button>
           <button
             onClick={handleDisconnect}

@@ -245,7 +245,7 @@ export function mapPipedriveDeals(
       createdDate: deal.add_time,
       contactName: deal.person_name ?? null,
       companyName: deal.org_name ?? null,
-      probability: deal.probability ? deal.probability / 100 : null,
+      probability: deal.probability != null ? deal.probability / 100 : null,
       notes: null,
     };
   });

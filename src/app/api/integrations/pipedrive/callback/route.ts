@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { exchangePipedriveCode } from "@/lib/integrations/pipedrive";
+import { getCurrentUser } from "@/lib/auth/session";
 
-// Security: no session cookie check here — the callback URL is on a different domain from
-// where the user authenticated. The CSRF state token is sufficient: it was issued during an
-// authenticated session, encodes the userId, is single-use, and expires in 10 minutes.
+// Security: primary verification is the CSRF state token (single-use, 10-min expiry, encodes userId).
+// If a session cookie is also present, we cross-check it matches the state token's userId to prevent
+// a logged-in user from being tricked into completing another user's OAuth flow.
 
 function appUrl(path: string) {
   const base = (process.env.APP_URL || process.env.NEXTAUTH_URL || "http://localhost:3000").replace(/\/$/, "");
@@ -38,6 +39,11 @@ export async function GET(request: NextRequest) {
     }
 
     const userId = stateRecord.identifier.replace("pipedrive_state:", "");
+
+    const sessionUser = await getCurrentUser();
+    if (sessionUser !== null && sessionUser.id !== userId) {
+      return NextResponse.redirect(appUrl("/dashboard/integrations?error=invalid_state"));
+    }
 
     await prisma.verificationToken.delete({ where: { token: state } });
 

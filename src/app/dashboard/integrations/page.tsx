@@ -70,7 +70,6 @@ export default async function IntegrationsPage({ searchParams }: PageProps) {
           Connect your CRM so fromThoughts can read your live pipeline.
         </p>
         <IntegrationCards
-          userId={user.id}
           existingProvider={existingInterest?.provider?.toLowerCase() ?? null}
           pipedriveSlot={
             <PipedriveCard

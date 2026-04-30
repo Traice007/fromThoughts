@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import { CheckCircle, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
 interface IntegrationCardsProps {
-  userId: string;
   existingProvider: string | null;
   pipedriveSlot: ReactNode;
 }
@@ -68,7 +67,7 @@ const INTEGRATIONS = [
   },
 ];
 
-export function IntegrationCards({ userId, existingProvider, pipedriveSlot }: IntegrationCardsProps) {
+export function IntegrationCards({ existingProvider, pipedriveSlot }: IntegrationCardsProps) {
   const [selected, setSelected] = useState<string | null>(existingProvider);
   const [saved, setSaved] = useState<string | null>(existingProvider);
   const [saving, setSaving] = useState(false);

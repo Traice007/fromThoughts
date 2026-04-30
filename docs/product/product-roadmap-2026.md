@@ -298,3 +298,20 @@ When a new rep joins:
 5. **Hire-readiness scorecard** — unique differentiator, no competitor has this
 6. **Pre-call briefs** — high daily-use value for reps
 7. **Everything else** — build based on demand from first 10 clients
+
+---
+
+## Security Backlog (Before Scale)
+
+These items are not urgent for early design partners but must be addressed before the product handles paying customers at scale.
+
+### OAuth token encryption
+**Status:** Not yet implemented. Deferred until post-launch.
+
+OAuth access tokens and refresh tokens (Pipedrive, future HubSpot) are currently stored in plain text in the `user_integrations` table in PostgreSQL. If the database is ever compromised, an attacker would have live CRM access to every connected user's pipeline.
+
+**Fix:** Encrypt `accessToken` and `refreshToken` with AES-256-GCM before writing to the database. Decrypt transparently when reading in `getValidTokens()`. Store the encryption key in an env var (`INTEGRATION_ENCRYPTION_KEY`), not in the database.
+
+**Files to change:** `src/lib/integrations/pipedrive.ts` (encrypt on write in callback, decrypt on read in `getValidTokens`), `prisma/schema.prisma` (no schema change needed — columns stay `String`).
+
+**Priority:** Implement before going beyond 10 users or before any enterprise conversations.
