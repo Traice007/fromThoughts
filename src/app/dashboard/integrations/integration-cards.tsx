@@ -1,33 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import type { ReactNode } from "react";
 import { CheckCircle, Clock, ArrowRight, AlertCircle } from "lucide-react";
 
 interface IntegrationCardsProps {
   userId: string;
   existingProvider: string | null;
+  pipedriveSlot: ReactNode;
 }
 
 const INTEGRATIONS = [
   {
     id: "hubspot",
     name: "HubSpot",
-    description: "Sync your execution plan directly to HubSpot as deals and notes.",
+    description: "Connect HubSpot so fromThoughts can read your live pipeline.",
     category: "CRM",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .873.52 1.628 1.267 1.984V7.93a5.736 5.736 0 00-3.597 1.98l-6.167-4.79a2.37 2.37 0 00.078-.58 2.348 2.348 0 10-2.348 2.348c.467 0 .898-.142 1.263-.38l6.073 4.72a5.74 5.74 0 00-.427 2.18c0 .778.16 1.519.44 2.197l-1.87 1.87a1.92 1.92 0 00-.614-.102 1.94 1.94 0 100 3.88 1.94 1.94 0 001.94-1.94c0-.22-.038-.43-.103-.627l1.822-1.822a5.76 5.76 0 003.343 1.066 5.76 5.76 0 005.76-5.76 5.76 5.76 0 00-3.707-5.37zm-1.88 8.685a3.32 3.32 0 01-3.316-3.316 3.32 3.32 0 013.316-3.316 3.32 3.32 0 013.316 3.316 3.32 3.32 0 01-3.316 3.316z" />
-      </svg>
-    ),
-  },
-  {
-    id: "pipedrive",
-    name: "Pipedrive",
-    description: "Push execution plans and OKRs into Pipedrive as deals and activities.",
-    category: "CRM",
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 17.5h-3v-3h-3v3h-3v-11h3v5h3v-5h3v11z" />
       </svg>
     ),
   },
@@ -77,7 +68,7 @@ const INTEGRATIONS = [
   },
 ];
 
-export function IntegrationCards({ userId, existingProvider }: IntegrationCardsProps) {
+export function IntegrationCards({ userId, existingProvider, pipedriveSlot }: IntegrationCardsProps) {
   const [selected, setSelected] = useState<string | null>(existingProvider);
   const [saved, setSaved] = useState<string | null>(existingProvider);
   const [saving, setSaving] = useState(false);
@@ -123,17 +114,11 @@ export function IntegrationCards({ userId, existingProvider }: IntegrationCardsP
 
       {/* CRM Integrations */}
       <div>
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-xl font-semibold">CRM</h2>
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-medium">
-            <Clock className="h-3 w-3" />
-            Coming Soon
-          </span>
-        </div>
-        <p className="text-secondary text-sm mb-4">
-          We&apos;re building direct CRM integrations to sync your execution plans. Let us know which CRM you use so we can prioritize.
-        </p>
         <div className="grid sm:grid-cols-3 gap-4">
+          {/* Pipedrive — live integration, rendered by parent */}
+          {pipedriveSlot}
+
+          {/* HubSpot + Salesforce — Coming Soon with preference capture */}
           {crmIntegrations.map((integration) => {
             const isSelected = selected === integration.id;
             const isSaved = saved === integration.id;

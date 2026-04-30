@@ -1,98 +1,71 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { getCurrentUser } from "@/lib/auth/session";
-import { exchangePipedriveCode, syncToPipedrive } from "@/lib/integrations/pipedrive";
+import { exchangePipedriveCode } from "@/lib/integrations/pipedrive";
+
+// Security: no session cookie check here — the callback URL is on a different domain from
+// where the user authenticated. The CSRF state token is sufficient: it was issued during an
+// authenticated session, encodes the userId, is single-use, and expires in 10 minutes.
+
+function appUrl(path: string) {
+  const base = (process.env.APP_URL || process.env.NEXTAUTH_URL || "http://localhost:3000").replace(/\/$/, "");
+  return `${base}${path}`;
+}
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
-  const forecastId = request.nextUrl.searchParams.get("state");
-  const error = request.nextUrl.searchParams.get("error");
+  const state = request.nextUrl.searchParams.get("state");
+  const oauthError = request.nextUrl.searchParams.get("error");
 
-  if (error) {
-    return NextResponse.redirect(
-      new URL(`/results/${forecastId}?error=pipedrive_auth_failed`, request.url)
-    );
+  if (oauthError) {
+    return NextResponse.redirect(appUrl("/dashboard/integrations?error=pipedrive_denied"));
   }
 
-  if (!code || !forecastId) {
-    return NextResponse.redirect(
-      new URL(`/results/${forecastId}?error=missing_params`, request.url)
-    );
+  if (!code || !state) {
+    return NextResponse.redirect(appUrl("/dashboard/integrations?error=invalid_callback"));
   }
 
   try {
-    // Verify authentication
-    const user = await getCurrentUser();
-    if (!user) {
-      return NextResponse.redirect(
-        new URL(`/auth/signin`, request.url)
-      );
-    }
-
-    // Exchange code for tokens
-    const tokens = await exchangePipedriveCode(code);
-
-    // Get forecast with OKRs
-    const forecast = await prisma.forecast.findUnique({
-      where: { id: forecastId },
-      include: {
-        okrs: {
-          include: { keyResults: true },
-        },
-      },
+    const stateRecord = await prisma.verificationToken.findUnique({
+      where: { token: state },
     });
 
-    if (!forecast) {
-      return NextResponse.redirect(
-        new URL(`/results/${forecastId}?error=forecast_not_found`, request.url)
-      );
+    if (
+      !stateRecord ||
+      stateRecord.expires < new Date() ||
+      !stateRecord.identifier.startsWith("pipedrive_state:")
+    ) {
+      return NextResponse.redirect(appUrl("/dashboard/integrations?error=invalid_state"));
     }
 
-    // Verify ownership
-    if (forecast.userId && forecast.userId !== user.id) {
-      return NextResponse.redirect(
-        new URL(`/results/${forecastId}?error=unauthorized`, request.url)
-      );
-    }
+    const userId = stateRecord.identifier.replace("pipedrive_state:", "");
 
-    // Sync to Pipedrive
-    const { dealId } = await syncToPipedrive(forecast, tokens.accessToken, tokens.apiDomain);
+    await prisma.verificationToken.delete({ where: { token: state } });
 
-    // Save integration
-    await prisma.crmIntegration.upsert({
-      where: {
-        forecastId_provider: {
-          forecastId,
-          provider: "PIPEDRIVE",
-        },
-      },
+    const tokens = await exchangePipedriveCode(code);
+
+    await prisma.userIntegration.upsert({
+      where: { userId_provider: { userId, provider: "PIPEDRIVE" } },
       create: {
-        forecastId,
+        userId,
         provider: "PIPEDRIVE",
         accessToken: tokens.accessToken,
         refreshToken: tokens.refreshToken,
         tokenExpiresAt: tokens.expiresAt,
-        syncStatus: "SYNCED",
-        lastSyncAt: new Date(),
-        externalDealId: dealId.toString(),
+        apiDomain: tokens.apiDomain,
       },
       update: {
         accessToken: tokens.accessToken,
         refreshToken: tokens.refreshToken,
         tokenExpiresAt: tokens.expiresAt,
-        syncStatus: "SYNCED",
-        lastSyncAt: new Date(),
-        externalDealId: dealId.toString(),
+        apiDomain: tokens.apiDomain,
+        syncStatus: "IDLE",
+        syncError: null,
       },
     });
 
-    return NextResponse.redirect(
-      new URL(`/results/${forecastId}?synced=pipedrive`, request.url)
-    );
+    return NextResponse.redirect(appUrl("/dashboard/integrations?connected=pipedrive"));
   } catch (err) {
     console.error("Pipedrive callback error:", err);
-    return NextResponse.redirect(
-      new URL(`/results/${forecastId}?error=pipedrive_sync_failed`, request.url)
-    );
+    return NextResponse.redirect(appUrl("/dashboard/integrations?error=pipedrive_failed"));
   }
 }

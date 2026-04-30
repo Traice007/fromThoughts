@@ -29,6 +29,7 @@ model User {
   sessions              Session[]
   pipelineImports       PipelineImport[]
   opportunities         Opportunity[]
+  userIntegrations      UserIntegration[]
 
   @@index([email])
   @@map("users")
@@ -245,6 +246,25 @@ model Deal {
 
   @@index([pipelineImportId])
   @@map("deals")
+}
+
+model UserIntegration {
+  id             String    @id @default(cuid())
+  userId         String
+  provider       String    // "PIPEDRIVE" | "HUBSPOT"
+  accessToken    String
+  refreshToken   String?
+  tokenExpiresAt DateTime?
+  apiDomain      String?
+  connectedAt    DateTime  @default(now())
+  lastSyncAt     DateTime?
+  syncStatus     String    @default("IDLE") // "IDLE" | "SYNCING" | "ERROR"
+  syncError      String?
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, provider])
+  @@index([userId])
+  @@map("user_integrations")
 }
 
 model Opportunity {
